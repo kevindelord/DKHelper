@@ -100,6 +100,17 @@ CGRect CGRectSetX(CGRect rect, CGFloat x);
 CGRect CGRectSetY(CGRect rect, CGFloat y);
 CGRect CGRectSetOrigin(CGRect rect, CGPoint origin);
 
+#pragma mark - UIDevice+Model 
+
+@interface UIDevice (Model)
+
++ (NSString *)platform;
++ (NSString *)platformString;
++ (BOOL)isPlatformAllowedForBlurredBackground;
++ (BOOL)isIPad;
+
+@end
+
 #pragma mark - DKLog
 
 #if defined (DEBUG)
