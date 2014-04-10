@@ -106,7 +106,7 @@ CGRect CGRectSetOrigin(CGRect rect, CGPoint origin);
 
 + (NSString *)platform;
 + (NSString *)platformString;
-+ (BOOL)isPlatformAllowedForBlurredBackground;
++ (BOOL)isSlowDevice;
 + (BOOL)isIPad;
 
 @end

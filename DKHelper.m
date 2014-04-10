@@ -371,7 +371,8 @@ CGRect CGRectSetOrigin(CGRect rect, CGPoint origin) {
     return platform;
 }
 
-+ (BOOL)isPlatformAllowedForBlurredBackground {
++ (BOOL)isSlowDevice {
+	// this method considers any iPhone 4 and older as a slow device
     NSArray * forbiddenPlatforms = [NSArray arrayWithObjects:
                                     @"iPhone1,1", // iPhone 1G
                                     @"iPhone1,2", // iPhone 3G
