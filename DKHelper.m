@@ -28,7 +28,7 @@
 
 + (NSString *)stringFromDate:(NSDate *)date {
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    [df setDateFormat:@"yyyy-MM-dd"];
+    [df setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
     return [df stringFromDate:date];
 }
 
@@ -148,12 +148,12 @@ static Method origImageNamedMethod = nil;
 }
 
 + (NSDate *)dateFromString:(NSString *)string {
-    return [NSDate dateFromString:string format:@"yyyy-MM-dd'T'HH:mm:ssz"];
+    return [NSDate dateFromString:string format:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
 }
 
 + (NSDate *)dateFromDayString:(NSString *)string {
     // parameter format: @"yyyy-MM-dd"
-    return [NSDate dateFromString:[NSString stringWithFormat:@"%@T00:00:00z", string]];
+    return [NSDate dateFromString:[NSString stringWithFormat:@"%@T00:00:00Z", string]];
 }
 
 + (NSDate *)currentDate {
