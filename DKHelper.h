@@ -162,3 +162,7 @@ CGRect CGRectSetOrigin(CGRect rect, CGPoint origin);
 // Common File Formats
 #define IMAGE_FILE_EXTENSIONS                       @[@".tif", @".tiff", @".gif", @".jpeg", @".jpg", @".png", @".pjpeg"]
 #define AUDIO_FILE_EXTENSIONS                       @[@".mp3", @".mp2", @".wma", @".aac", @".m4a", @".mp4", @".m4p"]
+
+// Math
+#define degreesToRadians(degrees)                  ((degrees * M_PI) / 180.0)
+#define radiansToDegrees(radians)                  ((radians * 180.0) / M_PI)
