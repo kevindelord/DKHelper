@@ -57,7 +57,6 @@
                     <connections>
                         <outlet property="backgroundView" destination="ZFL-ei-Sgx" id="PDO-p9-xNJ"/>
                         <outlet property="versionLabel" destination="Phj-gk-NPb" id="IcG-rS-DAo"/>
-                        <outlet property="view" destination="kh9-bI-dsS" id="sZe-F2-BAX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
