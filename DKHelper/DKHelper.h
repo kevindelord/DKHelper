@@ -17,6 +17,7 @@
 #import "UIImage+DKHelper.h"
 #import "NSObject+DKHelper.h"
 #import "NSDate+DKHelper.h"
+#import "UIColor+DKHelper.h"
 
 #pragma mark - DKLog
 

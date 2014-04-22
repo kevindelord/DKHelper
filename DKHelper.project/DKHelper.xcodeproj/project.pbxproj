@@ -27,6 +27,7 @@
 		754A7327190710F600D0D432 /* NSObject+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 754A7321190710F600D0D432 /* NSObject+DKHelper.m */; };
 		754A7328190710F600D0D432 /* NSString+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 754A7322190710F600D0D432 /* NSString+DKHelper.m */; };
 		754A7329190710F600D0D432 /* UIView+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 754A7323190710F600D0D432 /* UIView+DKHelper.m */; };
+		754A73401907122200D0D432 /* UIColor+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 754A733F1907122200D0D432 /* UIColor+DKHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,8 @@
 		754A7321190710F600D0D432 /* NSObject+DKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+DKHelper.m"; path = "../DKHelper/NSObject+DKHelper.m"; sourceTree = "<group>"; };
 		754A7322190710F600D0D432 /* NSString+DKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+DKHelper.m"; path = "../DKHelper/NSString+DKHelper.m"; sourceTree = "<group>"; };
 		754A7323190710F600D0D432 /* UIView+DKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+DKHelper.m"; path = "../DKHelper/UIView+DKHelper.m"; sourceTree = "<group>"; };
+		754A733E1907122200D0D432 /* UIColor+DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+DKHelper.h"; path = "../DKHelper/UIColor+DKHelper.h"; sourceTree = "<group>"; };
+		754A733F1907122200D0D432 /* UIColor+DKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+DKHelper.m"; path = "../DKHelper/UIColor+DKHelper.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +192,8 @@
 				754A7322190710F600D0D432 /* NSString+DKHelper.m */,
 				754A7320190710F600D0D432 /* UIView+DKHelper.h */,
 				754A7323190710F600D0D432 /* UIView+DKHelper.m */,
+				754A733E1907122200D0D432 /* UIColor+DKHelper.h */,
+				754A733F1907122200D0D432 /* UIColor+DKHelper.m */,
 			);
 			name = DKHelper;
 			sourceTree = "<group>";
@@ -291,6 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				754A73401907122200D0D432 /* UIColor+DKHelper.m in Sources */,
 				754A7328190710F600D0D432 /* NSString+DKHelper.m in Sources */,
 				754A7326190710F600D0D432 /* UIImage+DKHelper.m in Sources */,
 				753A287E19070F53006FEF71 /* main.m in Sources */,
