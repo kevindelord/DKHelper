@@ -18,7 +18,7 @@ it simply add the following line to your Podfile:
 
 ## Author
 
-kevindelordw, delord.kevin@gmail.com
+kevindelord, delord.kevin@gmail.com
 
 ## License
 

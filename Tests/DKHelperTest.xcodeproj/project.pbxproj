@@ -19,8 +19,6 @@
 		7543618F19070B7D0000C444 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7543618E19070B7D0000C444 /* XCTest.framework */; };
 		7543619019070B7D0000C444 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7543616F19070B7D0000C444 /* Foundation.framework */; };
 		7543619119070B7D0000C444 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7543617319070B7D0000C444 /* UIKit.framework */; };
-		7543619919070B7D0000C444 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7543619719070B7D0000C444 /* InfoPlist.strings */; };
-		7543619B19070B7D0000C444 /* DKHelperTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7543619A19070B7D0000C444 /* DKHelperTestTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,9 +48,6 @@
 		7543618719070B7D0000C444 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7543618D19070B7D0000C444 /* DKHelperTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DKHelperTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7543618E19070B7D0000C444 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		7543619619070B7D0000C444 /* DKHelperTestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DKHelperTestTests-Info.plist"; sourceTree = "<group>"; };
-		7543619819070B7D0000C444 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		7543619A19070B7D0000C444 /* DKHelperTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DKHelperTestTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +78,6 @@
 			isa = PBXGroup;
 			children = (
 				7543617519070B7D0000C444 /* DKHelperTest */,
-				7543619419070B7D0000C444 /* DKHelperTestTests */,
 				7543616E19070B7D0000C444 /* Frameworks */,
 				7543616D19070B7D0000C444 /* Products */,
 			);
@@ -130,24 +124,6 @@
 				7543617819070B7D0000C444 /* InfoPlist.strings */,
 				7543617B19070B7D0000C444 /* main.m */,
 				7543617D19070B7D0000C444 /* DKHelperTest-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		7543619419070B7D0000C444 /* DKHelperTestTests */ = {
-			isa = PBXGroup;
-			children = (
-				7543619A19070B7D0000C444 /* DKHelperTestTests.m */,
-				7543619519070B7D0000C444 /* Supporting Files */,
-			);
-			path = DKHelperTestTests;
-			sourceTree = "<group>";
-		};
-		7543619519070B7D0000C444 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				7543619619070B7D0000C444 /* DKHelperTestTests-Info.plist */,
-				7543619719070B7D0000C444 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -239,7 +215,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7543619919070B7D0000C444 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,7 +235,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7543619B19070B7D0000C444 /* DKHelperTestTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,14 +263,6 @@
 				7543618219070B7D0000C444 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		7543619719070B7D0000C444 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7543619819070B7D0000C444 /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -461,6 +427,7 @@
 				754361A019070B7D0000C444 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		754361A119070B7D0000C444 /* Build configuration list for PBXNativeTarget "DKHelperTestTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +436,7 @@
 				754361A319070B7D0000C444 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

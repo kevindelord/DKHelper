@@ -21,6 +21,12 @@
 		753A289319070F53006FEF71 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 753A287519070F53006FEF71 /* UIKit.framework */; };
 		753A289B19070F53006FEF71 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 753A289919070F53006FEF71 /* InfoPlist.strings */; };
 		753A289D19070F53006FEF71 /* DKHelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 753A289C19070F53006FEF71 /* DKHelperTests.m */; };
+		754A7324190710F600D0D432 /* UIDevice+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 754A7318190710F600D0D432 /* UIDevice+DKHelper.m */; };
+		754A7325190710F600D0D432 /* NSDate+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 754A7319190710F600D0D432 /* NSDate+DKHelper.m */; };
+		754A7326190710F600D0D432 /* UIImage+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 754A731A190710F600D0D432 /* UIImage+DKHelper.m */; };
+		754A7327190710F600D0D432 /* NSObject+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 754A7321190710F600D0D432 /* NSObject+DKHelper.m */; };
+		754A7328190710F600D0D432 /* NSString+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 754A7322190710F600D0D432 /* NSString+DKHelper.m */; };
+		754A7329190710F600D0D432 /* UIView+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 754A7323190710F600D0D432 /* UIView+DKHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +59,19 @@
 		753A289819070F53006FEF71 /* DKHelperTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DKHelperTests-Info.plist"; sourceTree = "<group>"; };
 		753A289A19070F53006FEF71 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		753A289C19070F53006FEF71 /* DKHelperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DKHelperTests.m; sourceTree = "<group>"; };
+		754A7317190710F600D0D432 /* DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKHelper.h; path = ../DKHelper/DKHelper.h; sourceTree = "<group>"; };
+		754A7318190710F600D0D432 /* UIDevice+DKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIDevice+DKHelper.m"; path = "../DKHelper/UIDevice+DKHelper.m"; sourceTree = "<group>"; };
+		754A7319190710F600D0D432 /* NSDate+DKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+DKHelper.m"; path = "../DKHelper/NSDate+DKHelper.m"; sourceTree = "<group>"; };
+		754A731A190710F600D0D432 /* UIImage+DKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+DKHelper.m"; path = "../DKHelper/UIImage+DKHelper.m"; sourceTree = "<group>"; };
+		754A731B190710F600D0D432 /* NSObject+DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+DKHelper.h"; path = "../DKHelper/NSObject+DKHelper.h"; sourceTree = "<group>"; };
+		754A731C190710F600D0D432 /* NSDate+DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+DKHelper.h"; path = "../DKHelper/NSDate+DKHelper.h"; sourceTree = "<group>"; };
+		754A731D190710F600D0D432 /* UIImage+DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+DKHelper.h"; path = "../DKHelper/UIImage+DKHelper.h"; sourceTree = "<group>"; };
+		754A731E190710F600D0D432 /* NSString+DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+DKHelper.h"; path = "../DKHelper/NSString+DKHelper.h"; sourceTree = "<group>"; };
+		754A731F190710F600D0D432 /* UIDevice+DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIDevice+DKHelper.h"; path = "../DKHelper/UIDevice+DKHelper.h"; sourceTree = "<group>"; };
+		754A7320190710F600D0D432 /* UIView+DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+DKHelper.h"; path = "../DKHelper/UIView+DKHelper.h"; sourceTree = "<group>"; };
+		754A7321190710F600D0D432 /* NSObject+DKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+DKHelper.m"; path = "../DKHelper/NSObject+DKHelper.m"; sourceTree = "<group>"; };
+		754A7322190710F600D0D432 /* NSString+DKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+DKHelper.m"; path = "../DKHelper/NSString+DKHelper.m"; sourceTree = "<group>"; };
+		754A7323190710F600D0D432 /* UIView+DKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+DKHelper.m"; path = "../DKHelper/UIView+DKHelper.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +101,8 @@
 		753A286519070F52006FEF71 = {
 			isa = PBXGroup;
 			children = (
-				753A287719070F53006FEF71 /* DKHelper */,
+				754A7316190710E500D0D432 /* DKHelper */,
+				753A287719070F53006FEF71 /* DKHelperProject */,
 				753A289619070F53006FEF71 /* DKHelperTests */,
 				753A287019070F52006FEF71 /* Frameworks */,
 				753A286F19070F52006FEF71 /* Products */,
@@ -109,7 +129,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		753A287719070F53006FEF71 /* DKHelper */ = {
+		753A287719070F53006FEF71 /* DKHelperProject */ = {
 			isa = PBXGroup;
 			children = (
 				753A288019070F53006FEF71 /* DKAppDelegate.h */,
@@ -120,6 +140,7 @@
 				753A288919070F53006FEF71 /* Images.xcassets */,
 				753A287819070F53006FEF71 /* Supporting Files */,
 			);
+			name = DKHelperProject;
 			path = DKHelper;
 			sourceTree = "<group>";
 		};
@@ -150,6 +171,26 @@
 				753A289919070F53006FEF71 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		754A7316190710E500D0D432 /* DKHelper */ = {
+			isa = PBXGroup;
+			children = (
+				754A7317190710F600D0D432 /* DKHelper.h */,
+				754A731F190710F600D0D432 /* UIDevice+DKHelper.h */,
+				754A7318190710F600D0D432 /* UIDevice+DKHelper.m */,
+				754A731C190710F600D0D432 /* NSDate+DKHelper.h */,
+				754A7319190710F600D0D432 /* NSDate+DKHelper.m */,
+				754A731D190710F600D0D432 /* UIImage+DKHelper.h */,
+				754A731A190710F600D0D432 /* UIImage+DKHelper.m */,
+				754A731B190710F600D0D432 /* NSObject+DKHelper.h */,
+				754A7321190710F600D0D432 /* NSObject+DKHelper.m */,
+				754A731E190710F600D0D432 /* NSString+DKHelper.h */,
+				754A7322190710F600D0D432 /* NSString+DKHelper.m */,
+				754A7320190710F600D0D432 /* UIView+DKHelper.h */,
+				754A7323190710F600D0D432 /* UIView+DKHelper.m */,
+			);
+			name = DKHelper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,9 +291,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				754A7328190710F600D0D432 /* NSString+DKHelper.m in Sources */,
+				754A7326190710F600D0D432 /* UIImage+DKHelper.m in Sources */,
 				753A287E19070F53006FEF71 /* main.m in Sources */,
 				753A288819070F53006FEF71 /* DKViewController.m in Sources */,
+				754A7324190710F600D0D432 /* UIDevice+DKHelper.m in Sources */,
+				754A7329190710F600D0D432 /* UIView+DKHelper.m in Sources */,
 				753A288219070F53006FEF71 /* DKAppDelegate.m in Sources */,
+				754A7327190710F600D0D432 /* NSObject+DKHelper.m in Sources */,
+				754A7325190710F600D0D432 /* NSDate+DKHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +508,7 @@
 				753A28A219070F53006FEF71 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		753A28A319070F53006FEF71 /* Build configuration list for PBXNativeTarget "DKHelperTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +517,7 @@
 				753A28A519070F53006FEF71 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

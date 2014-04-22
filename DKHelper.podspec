@@ -14,5 +14,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => "https://github.com/kevindelord/DKHelper.git", :tag => s.version.to_s }
   s.platform         = :ios
   s.requires_arc     = true
-  s.source_files     = 'DKHelper.{h,m}'
+  s.public_header_files = 'DKHelper/*.h'
+  s.source_files = 'DKHelper/*'
+  # s.source_files     = './DKHelper/*.{h,m}'
 end
