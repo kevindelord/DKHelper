@@ -22,7 +22,6 @@
  *
  * @param string The date as a string.
  * @param format The date format of the string.
- *
  * @discussion Example of code will be [NSDate dateFromString:@"1970-01-01" format:@"yyyy-MM-dd"];
  * @return The new NSDate object created from a given string.
  */
@@ -32,7 +31,6 @@
  * Returns a new NSDate object created from a string with a default format.
  *
  * @param string The date as a string. The string must be formated like @"yyyy-MM-dd"
- *
  * @return The new NSDate object created with the ISO8601 format. NULL if the date is wrong.
  */
 + (NSDate *)dateFromDayString:(NSString *)string;
@@ -41,7 +39,6 @@
  * Returns a new NSDate object created from a string with a IOS8601 default format.
  *
  * @param string The date as a string. The string must be formated like @"yyyy-MM-dd'T'HH:mm:ss'Z'"
- *
  * @return The new NSDate object created with the ISO8601 format. NULL if the date is wrong.
  */
 + (NSDate *)dateFromString:(NSString *)string;
