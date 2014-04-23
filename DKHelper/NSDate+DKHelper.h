@@ -18,9 +18,10 @@
 /**
  * Returns a new NSDate object created from a string with a specified format.
  *
+ * @discussion Example of code will be [NSDate dateFromString:@"1970-01-01" format:@"yyyy-MM-dd"];
+ *
  * @param string The NSString object representing the date.
  * @param format The NSString object representing the format in which the string is formatted.
- * @discussion Example of code will be [NSDate dateFromString:@"1970-01-01" format:@"yyyy-MM-dd"];
  * @return A NSDate created from a given string. NULL if the date isn't valid.
  */
 + (NSDate *)dateFromString:(NSString *)string format:(NSString *)format;

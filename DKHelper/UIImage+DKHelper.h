@@ -24,8 +24,9 @@
 /**
  * Returns a new UIImage object created from a filename.
  *
- * @param imageName The NSString object representing the filename of the image.
  * @discussion This method will automatically add the needed image suffix for the current device ("@2x", "-568h@2x" or nothing).
+ *
+ * @param imageName The NSString object representing the filename of the image.
  * @return An UIImage created from a given string.
  */
 + (UIImage *)retina4ImageNamed:(NSString *)imageName;
