@@ -7,26 +7,25 @@
 //
 
 #import "NSString+DKHelper.h"
+#import "DKHelper.h"
 
 @implementation NSString (DKHelper)
 
 #pragma mark - NSString+NSDate
 
-+ (NSString *)stringFromDate:(NSDate *)date {
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    [df setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
-    return [df stringFromDate:date];
-}
-
 + (NSString *)stringFromDate:(NSDate *)date format:(NSString *)format {
-    if (!date) return @"n/a";
+    if (!date) return nil;
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     [df setDateFormat:format];
     return [df stringFromDate:date];
 }
 
++ (NSString *)stringFromDate:(NSDate *)date {
+    return [NSString stringFromDate:date format:ISO8601_DATE_FORMAT];
+}
+
 + (NSString *)monthNameFromDate:(NSDate *)date {
-    if (!date) return @"n/a";
+    if (!date) return nil;
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     [df setDateFormat:@"MM"];
     return [[df standaloneMonthSymbols] objectAtIndex:([[df stringFromDate:date] integerValue] - 1)];
@@ -67,7 +66,7 @@
 - (NSString *)firstOccuranceForPattern:(NSString *)pattern {
     NSRange searchedRange = NSMakeRange(0, [self length]);
     NSError  *error = nil;
-    
+
     NSRegularExpression* regex = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:&error];
     NSTextCheckingResult *match = [regex firstMatchInString:self options:0 range:searchedRange];
     if (match.numberOfRanges == 0)
