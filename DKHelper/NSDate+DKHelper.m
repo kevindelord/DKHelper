@@ -20,21 +20,21 @@
 }
 
 + (NSDate *)dateFromString:(NSString *)string {
-    return [NSDate dateFromString:string format:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
+    return [NSDate dateFromString:string format:ISO8601_DATE_FORMAT];
 }
 
 + (NSDate *)dateFromDayString:(NSString *)string {
-    // parameter format: @"yyyy-MM-dd"
     return [NSDate dateFromString:[NSString stringWithFormat:@"%@T00:00:00Z", string]];
 }
 
-+ (NSDate *)currentDate {
++ (NSDate *)currentDayDate {
     NSCalendar* gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    unsigned int unitFlags = NSYearCalendarUnit | NSDayCalendarUnit | NSMonthCalendarUnit;
+    unsigned int unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSTimeZoneCalendarUnit;
     NSDateComponents* dateComponents = [gregorian components:unitFlags fromDate:[NSDate date]];
+    dateComponents.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
     [dateComponents setMinute:0];
     [dateComponents setSecond:0];
-    [dateComponents setHour:1];
+    [dateComponents setHour:0];
     return [gregorian dateFromComponents:dateComponents];
 }
 

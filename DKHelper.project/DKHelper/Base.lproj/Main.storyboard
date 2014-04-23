@@ -34,13 +34,9 @@
                                     <constraint firstAttribute="height" constant="200" id="nzB-Vt-tTG"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="version" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XAg-cz-Rb1">
-                                <rect key="frame" x="60" y="392" width="200" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="version" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="XAg-cz-Rb1">
+                                <rect key="frame" x="60" y="392" width="200" height="176"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="Yzq-Nn-H2V"/>
-                                    <constraint firstAttribute="height" constant="21" id="pIU-YP-RWP"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                 <color key="textColor" white="0.75" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -52,6 +48,7 @@
                             <constraint firstAttribute="trailing" secondItem="XAg-cz-Rb1" secondAttribute="trailing" constant="60" id="KXS-dM-y9Z"/>
                             <constraint firstItem="XAg-cz-Rb1" firstAttribute="top" secondItem="akp-Vx-mLa" secondAttribute="bottom" constant="8" id="Lqc-KK-xID"/>
                             <constraint firstItem="XAg-cz-Rb1" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="60" id="qZt-w3-63T"/>
+                            <constraint firstItem="nfV-Gc-YgW" firstAttribute="top" secondItem="XAg-cz-Rb1" secondAttribute="bottom" id="uKd-2O-7bA"/>
                             <constraint firstAttribute="centerX" secondItem="akp-Vx-mLa" secondAttribute="centerX" id="xqZ-Hu-4oe"/>
                         </constraints>
                     </view>
