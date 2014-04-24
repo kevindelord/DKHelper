@@ -18,13 +18,58 @@
  */
 BOOL    CGRectInsideContainer(CGRect frame, CGRect container);
 
-
+/**
+ * Creates and returns a CGRect structure from a receiver object and a new width.
+ *
+ * @param rect The original CGRect structure.
+ * @param width A CGFloat value indicating the new width value.
+ * @return A new CGRect structure with updated values.
+ */
 CGRect  CGRectSetWidth(CGRect rect, CGFloat width);
-CGRect  CGRectSetHeight(CGRect rect, CGFloat height);
-CGRect  CGRectSetSize(CGRect rect, CGSize size);
-CGRect  CGRectSetX(CGRect rect, CGFloat x);
-CGRect  CGRectSetY(CGRect rect, CGFloat y);
-CGRect  CGRectSetOrigin(CGRect rect, CGPoint origin);
 
+/**
+ * Creates and returns a CGRect structure from a receiver object and a new height.
+ *
+ * @param rect The original CGRect structure.
+ * @param width A CGFloat value indicating the new height value.
+ * @return A new CGRect structure with updated values.
+ */
+CGRect  CGRectSetHeight(CGRect rect, CGFloat height);
+
+/**
+ * Creates and returns a CGRect structure from a receiver object and a new x position.
+ *
+ * @param rect The original CGRect structure.
+ * @param width A CGFloat value indicating the new x position value.
+ * @return A new CGRect structure with updated values.
+ */
+CGRect  CGRectSetX(CGRect rect, CGFloat x);
+
+/**
+ * Creates and returns a CGRect structure from a receiver object and a new y position.
+ *
+ * @param rect The original CGRect structure.
+ * @param width A CGFloat value indicating the new y position value.
+ * @return A new CGRect structure with updated values.
+ */
+CGRect  CGRectSetY(CGRect rect, CGFloat y);
+
+/**
+ * Creates and returns a CGRect structure from a receiver object and a new size.
+ *
+ * @param rect The original CGRect structure.
+ * @param width A CGSize value indicating the new size value.
+ * @return A new CGRect structure with updated values.
+ */
+CGRect  CGRectSetSize(CGRect rect, CGSize size);
+
+/**
+ * Creates and returns a CGRect structure from a receiver object and a new origin.
+ *
+ * @param rect The original CGRect structure.
+ * @param width A CGPoint value indicating the new origin value.
+ * @return A new CGRect structure with updated values.
+ */
+CGRect  CGRectSetOrigin(CGRect rect, CGPoint origin);
 
 #endif
