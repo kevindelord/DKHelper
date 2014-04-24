@@ -19,6 +19,6 @@ Initial release.
 - Add comments for every methods and functions
 - Improve CGSize and CGRect functions
 
-## 0.5.0
+## 0.5.0 (coming soon)
 
 - Fix header in files.
