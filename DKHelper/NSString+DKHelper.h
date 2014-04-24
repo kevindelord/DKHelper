@@ -16,14 +16,6 @@
 #pragma mark - NSString+NSDate
 
 /**
- * Returns a new NSString object created from a NSDate object.
- *
- * @param date The NSDate to convert into a string.
- * @return A NSString containing the date with the ISO8601 date format. NULL if the date isn't valid.
- */
-+ (NSString *)stringFromDate:(NSDate *)date;
-
-/**
  * Returns a new NSString object containing the name of the month for the given NSDate.
  *
  * @param date The NSDate from which the month name will be generated.

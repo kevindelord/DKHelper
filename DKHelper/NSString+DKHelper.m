@@ -20,10 +20,6 @@
     return [df stringFromDate:date];
 }
 
-+ (NSString *)stringFromDate:(NSDate *)date {
-    return [NSString stringFromDate:date format:ISO8601_DATE_FORMAT];
-}
-
 + (NSString *)monthNameFromDate:(NSDate *)date {
     if (!date) return nil;
     NSDateFormatter *df = [[NSDateFormatter alloc] init];

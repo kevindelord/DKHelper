@@ -57,6 +57,20 @@
  */
 - (NSDate *)dateByAddingOneMonthInterval;
 
+/**
+ * Returns a new NSString object created from the receiver's date.
+ *
+ * @return A NSString containing the date as a string of the receiver.
+ */
+- (NSString *)stringValue;
+
+/**
+ * Returns a new NSString object created from the receiver's date with the ISO8601 format.
+ *
+ * @return A ISO8601 formatted NSString containing the receiver's date.
+ */
+- (NSString *)ISO8601StringValue;
+
 @end
 
 #endif

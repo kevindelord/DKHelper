@@ -42,4 +42,12 @@
     return [self dateByAddingTimeInterval:MONTH_IN_SECONDS];
 }
 
+- (NSString *)stringValue {
+    return [NSString stringWithFormat:@"%@", self];
+}
+
+- (NSString *)ISO8601StringValue {
+    return [NSString stringFromDate:self format:ISO8601_DATE_FORMAT];
+}
+
 @end
