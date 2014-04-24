@@ -18,6 +18,8 @@
 #import "NSObject+DKHelper.h"
 #import "NSDate+DKHelper.h"
 #import "UIColor+DKHelper.h"
+#import "CGSize+DKHelper.h"
+#import "CGRect+DKHelper.h"
 
 #pragma mark - DKLog
 
