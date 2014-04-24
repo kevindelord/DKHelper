@@ -1,9 +1,9 @@
 //
 //  NSString+DKHelper.m
-//  
+//  DKHelper
 //
-//  Created by Kévin Delord on 4/22/14.
-//
+//  Created by kevin delord on 24/04/14.
+//  Copyright (c) 2014 DK. All rights reserved.
 //
 
 #import "NSString+DKHelper.h"
@@ -18,10 +18,6 @@
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     [df setDateFormat:format];
     return [df stringFromDate:date];
-}
-
-+ (NSString *)stringFromDate:(NSDate *)date {
-    return [NSString stringFromDate:date format:ISO8601_DATE_FORMAT];
 }
 
 + (NSString *)monthNameFromDate:(NSDate *)date {

@@ -1,9 +1,9 @@
 //
 //  NSString+DKHelper.h
-//  
+//  DKHelper
 //
-//  Created by Kévin Delord on 4/22/14.
-//
+//  Created by kevin delord on 24/04/14.
+//  Copyright (c) 2014 DK. All rights reserved.
 //
 
 #ifndef DKHelper_NSString_h__
@@ -14,14 +14,6 @@
 @interface NSString (DKHelper)
 
 #pragma mark - NSString+NSDate
-
-/**
- * Returns a new NSString object created from a NSDate object.
- *
- * @param date The NSDate to convert into a string.
- * @return A NSString containing the date with the ISO8601 date format. NULL if the date isn't valid.
- */
-+ (NSString *)stringFromDate:(NSDate *)date;
 
 /**
  * Returns a new NSString object containing the name of the month for the given NSDate.

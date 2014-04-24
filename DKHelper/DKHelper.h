@@ -1,9 +1,9 @@
 //
 //  DKHelper.h
-//  Pons
+//  DKHelper
 //
-//  Created by kevin delord on 16/01/14.
-//  Copyright (c) 2014 smartmobilefactory. All rights reserved.
+//  Created by kevin delord on 24/04/14.
+//  Copyright (c) 2014 DK. All rights reserved.
 //
 
 #ifndef DKHelper_h__
@@ -18,6 +18,8 @@
 #import "NSObject+DKHelper.h"
 #import "NSDate+DKHelper.h"
 #import "UIColor+DKHelper.h"
+#import "CGSize+DKHelper.h"
+#import "CGRect+DKHelper.h"
 
 #pragma mark - DKLog
 

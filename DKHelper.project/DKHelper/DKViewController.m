@@ -15,17 +15,17 @@
 
 @implementation DKViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-
     [self.backgroundView roundCorner:(UIRectCornerAllCorners) radius:self.backgroundView.frame.size.width];
     self.versionLabel.text = DK_APP_VERSION;
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+}
+
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

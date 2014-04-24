@@ -1,9 +1,9 @@
 //
 //  NSDate+DKHelper.h
-//  
+//  DKHelper
 //
-//  Created by Kévin Delord on 4/22/14.
-//
+//  Created by kevin delord on 24/04/14.
+//  Copyright (c) 2014 DK. All rights reserved.
 //
 
 #ifndef DKHelper_NSDate_h__
@@ -56,6 +56,20 @@
  * @return A NSDate set one month in the future from the receiver's date.
  */
 - (NSDate *)dateByAddingOneMonthInterval;
+
+/**
+ * Returns a new NSString object created from the receiver's date.
+ *
+ * @return A NSString containing the date as a string of the receiver.
+ */
+- (NSString *)stringValue;
+
+/**
+ * Returns a new NSString object created from the receiver's date with the ISO8601 format.
+ *
+ * @return A ISO8601 formatted NSString containing the receiver's date.
+ */
+- (NSString *)ISO8601StringValue;
 
 @end
 

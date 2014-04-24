@@ -1,9 +1,9 @@
 //
 //  NSDate+DKHelper.m
-//  
+//  DKHelper
 //
-//  Created by Kévin Delord on 4/22/14.
-//
+//  Created by kevin delord on 24/04/14.
+//  Copyright (c) 2014 DK. All rights reserved.
 //
 
 #import "NSDate+DKHelper.h"
@@ -40,6 +40,14 @@
 
 - (NSDate *)dateByAddingOneMonthInterval {
     return [self dateByAddingTimeInterval:MONTH_IN_SECONDS];
+}
+
+- (NSString *)stringValue {
+    return [NSString stringWithFormat:@"%@", self];
+}
+
+- (NSString *)ISO8601StringValue {
+    return [NSString stringFromDate:self format:ISO8601_DATE_FORMAT];
 }
 
 @end

@@ -1,9 +1,9 @@
 //
 //  UIDevice+DKHelper.m
-//  
+//  DKHelper
 //
-//  Created by Kévin Delord on 4/22/14.
-//
+//  Created by kevin delord on 24/04/14.
+//  Copyright (c) 2014 DK. All rights reserved.
 //
 
 #import "UIDevice+DKHelper.h"
