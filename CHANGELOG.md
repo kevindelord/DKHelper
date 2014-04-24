@@ -2,7 +2,7 @@
 
 ## 0.1.0
 
-Initial release.
+- Initial release.
 
 ## 0.2.0
 
@@ -19,6 +19,7 @@ Initial release.
 - Add comments for every methods and functions
 - Improve CGSize and CGRect functions
 
-## 0.5.0 (coming soon)
+## 0.5.0
 
 - Fix header in files.
+- Add HTML documentation
