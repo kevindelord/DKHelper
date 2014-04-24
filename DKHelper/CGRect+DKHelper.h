@@ -17,6 +17,8 @@
  * @return YES if the frame is inside the given container.
  */
 BOOL    CGRectInsideContainer(CGRect frame, CGRect container);
+
+
 CGRect  CGRectSetWidth(CGRect rect, CGFloat width);
 CGRect  CGRectSetHeight(CGRect rect, CGFloat height);
 CGRect  CGRectSetSize(CGRect rect, CGSize size);
