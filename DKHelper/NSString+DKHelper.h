@@ -61,6 +61,7 @@
 /**
  * Returns a new NSString object corresponding to the first occurence of a given regex pattern within the receiver's string.
  *
+ * @param pattern A NSString value representing a regular expression to search with.
  * @return A NSString representing the first occurence. NULL if there is no match.
  */
 - (NSString *)firstOccuranceForPattern:(NSString *)pattern;
