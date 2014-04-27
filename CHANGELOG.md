@@ -23,3 +23,7 @@
 
 - Fix header in files.
 - Add HTML documentation
+
+## 0.5.1
+
+- NSDate improvements

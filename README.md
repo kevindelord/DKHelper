@@ -7,6 +7,10 @@
 
 To run the example project; clone the repo, and run `pod install` from the Example directory first.
 
+## Documentation
+
+A HTML documentation is exist on the /doc directory. 
+
 ## Requirements
 
 This pod requires ARC.
