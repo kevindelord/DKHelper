@@ -20,13 +20,6 @@
     return [df stringFromDate:date];
 }
 
-+ (NSString *)monthNameFromDate:(NSDate *)date {
-    if (!date) return nil;
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    [df setDateFormat:@"MM"];
-    return [[df standaloneMonthSymbols] objectAtIndex:([[df stringFromDate:date] integerValue] - 1)];
-}
-
 #pragma mark - NSString+Helper
 
 - (NSString *)removeDuplicateCharacters {

@@ -35,14 +35,6 @@
 + (NSDate *)dateFromDayString:(NSString *)string;
 
 /**
- * Returns a new NSDate object created from a string with a IOS8601 default format.
- *
- * @param string The NSString object representing the date. The string must be formated like @"yyyy-MM-dd'T'HH:mm:ss'Z'"
- * @return A NSDate object created with the ISO8601 format. NULL if the date isn't valid.
- */
-+ (NSDate *)dateFromString:(NSString *)string;
-
-/**
  * Returns a new NSDate object containing the current date of the day with a IOS8601 default format.
  * The number of hours, minutes, seconds and the GMT timezone is set to 0.
  *
@@ -58,6 +50,13 @@
 - (NSDate *)dateByAddingOneMonthInterval;
 
 /**
+ * Returns a new NSDate object that is set to the receiver's date plus one day in the future.
+ *
+ * @return A NSDate set one day in the future from the receiver's date.
+ */
+- (NSDate *)dateByAddingOneDayInterval;
+
+/**
  * Returns a new NSString object created from the receiver's date.
  *
  * @return A NSString containing the date as a string of the receiver.
@@ -70,6 +69,20 @@
  * @return A ISO8601 formatted NSString containing the receiver's date.
  */
 - (NSString *)ISO8601StringValue;
+
+/**
+ * Returns a new NSString object containing the name of the month of the receiver.
+ *
+ * @return A NSString containing the month name of the receiver. The string is localized with the current NSLocale.
+ */
+- (NSString *)monthName;
+
+/**
+ * Returns a new NSString object containing the name of the day of the receiver.
+ *
+ * @return A NSString containing the day name of the receiver. The string is localized with the current NSLocale.
+ */
+- (NSString *)dayName;
 
 @end
 

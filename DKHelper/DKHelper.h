@@ -46,7 +46,6 @@
 // Numbers
 #pragma mark - Numbers
 #define MINMAX(v, min, max)                         ((v < min) ? min : (v > max) ? (max) : v )
-#define MONTH_IN_SECONDS                            (60 * 60 * 24 * 30)
 #define cL(v)                                       (long)(v)
 #define cUL(v)                                      (unsigned long)(v)
 

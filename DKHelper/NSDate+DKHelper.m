@@ -15,16 +15,13 @@
 
 + (NSDate *)dateFromString:(NSString *)string format:(NSString *)format {
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    [df setDateFormat:format];
+    df.dateFormat = format;
+    df.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
     return [df dateFromString:string];
 }
 
-+ (NSDate *)dateFromString:(NSString *)string {
-    return [NSDate dateFromString:string format:ISO8601_DATE_FORMAT];
-}
-
 + (NSDate *)dateFromDayString:(NSString *)string {
-    return [NSDate dateFromString:[NSString stringWithFormat:@"%@T00:00:00Z", string]];
+    return [NSDate dateFromString:[NSString stringWithFormat:@"%@T00:00:00Z", string] format:ISO8601_DATE_FORMAT];
 }
 
 + (NSDate *)currentDayDate {
@@ -39,7 +36,17 @@
 }
 
 - (NSDate *)dateByAddingOneMonthInterval {
-    return [self dateByAddingTimeInterval:MONTH_IN_SECONDS];
+    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+    [dateComponents setMonth:1];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    return [calendar dateByAddingComponents:dateComponents toDate:self options:0];
+}
+
+- (NSDate *)dateByAddingOneDayInterval {
+    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+    [dateComponents setDay:1];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    return [calendar dateByAddingComponents:dateComponents toDate:self options:0];
 }
 
 - (NSString *)stringValue {
@@ -48,6 +55,18 @@
 
 - (NSString *)ISO8601StringValue {
     return [NSString stringFromDate:self format:ISO8601_DATE_FORMAT];
+}
+
+- (NSString *)monthName {
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *comps = [gregorian components:NSMonthCalendarUnit fromDate:self];
+    return [[[NSDateFormatter new] standaloneMonthSymbols] objectAtIndex:([comps month] - 1)];
+}
+
+- (NSString *)dayName {
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *comps = [gregorian components:NSWeekdayCalendarUnit fromDate:self];
+    return [[[NSDateFormatter new] standaloneWeekdaySymbols] objectAtIndex:([comps weekday] - 1)];
 }
 
 @end
