@@ -27,6 +27,16 @@
 + (NSDate *)dateFromString:(NSString *)string format:(NSString *)format;
 
 /**
+ * Returns a new NSDate object created from a string.
+ *
+ * @discussion The string has to be formatted with the ISO8601 date format.
+ *
+ * @param string The NSString object representing the date.
+ * @return A NSDate created from a given string. NULL if the date isn't valid.
+ */
++ (NSDate *)dateFromISOString:(NSString *)string;
+
+/**
  * Returns a new NSDate object created from a string with a default format.
  *
  * @param string The NSString object representing the date. The string must be formated like @"yyyy-MM-dd"

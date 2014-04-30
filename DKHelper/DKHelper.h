@@ -55,7 +55,7 @@
 #define VALID(dict, key)                            (dict && [dict objectForKey:key] && ![[dict objectForKey:key] isEqual:[NSNull null]])
 #define GET_FLOAT(dictionary, key)                  ( VALID(dictionary, key) ? [NSNumber numberWithFloat:[[dictionary objectForKey:key] floatValue]] : nil )
 #define GET_NUMBER(dictionary, key)                 ( VALID(dictionary, key) ? [NSNumber numberWithInteger:[[dictionary objectForKey:key] integerValue]] : nil )
-#define GET_DATE(dictionary, key)                   ( VALID(dictionary, key) ? [NSDate dateFromString:[dictionary objectForKey:key]] : nil )
+#define GET_DATE(dictionary, key)                   ( VALID(dictionary, key) ? [NSDate dateFromISOString:[dictionary objectForKey:key]] : nil )
 #define GET_STRING(dictionary, key)                 ( VALID(dictionary, key) ? ( ![[dictionary objectForKey:key] isEqualToString:@""] ? [dictionary objectForKey:key] : nil ) : nil )
 #define GET_ASSET_URL(dictionary, key1, key2)       ( VALID(dictionary, key1) ? ( VALID([dictionary objectForKey:key1], key2) ? [[dictionary objectForKey:key1] objectForKey:key2] : nil ) : nil )
 

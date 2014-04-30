@@ -20,6 +20,10 @@
     return [df dateFromString:string];
 }
 
++ (NSDate *)dateFromISOString:(NSString *)string {
+    return [NSDate dateFromString:string format:ISO8601_DATE_FORMAT];
+}
+
 + (NSDate *)dateFromDayString:(NSString *)string {
     return [NSDate dateFromString:[NSString stringWithFormat:@"%@T00:00:00Z", string] format:ISO8601_DATE_FORMAT];
 }
