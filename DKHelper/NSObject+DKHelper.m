@@ -19,4 +19,10 @@
     }
 }
 
+- (void)performBlockInBackground:(void (^)(void))block {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, (unsigned long)NULL), ^(void) {
+        block();
+    });
+}
+
 @end

@@ -23,6 +23,13 @@
  */
 - (void)performBlock:(void (^)(void))block afterDelay:(NSTimeInterval)delay;
 
+/**
+ * Performs a code block on a background thread.
+ *
+ * @param block A block object containing the code to execute. This block takes no parameters and has no return value.
+ */
+- (void)performBlockInBackground:(void (^)(void))block;
+
 @end
 
 #endif
