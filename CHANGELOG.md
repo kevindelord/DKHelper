@@ -4,7 +4,6 @@
 
 - NSDate: add dateFromISOString
 - NSObject: add performBlockInBackground
-- update documentation
 
 ## 0.5.1
 
