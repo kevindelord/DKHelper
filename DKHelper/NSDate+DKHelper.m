@@ -39,6 +39,17 @@
     return [gregorian dateFromComponents:dateComponents];
 }
 
+- (NSDate *)midnightDate {
+    NSCalendar* gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    unsigned int unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSTimeZoneCalendarUnit;
+    NSDateComponents* dateComponents = [gregorian components:unitFlags fromDate:self];
+    dateComponents.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
+    [dateComponents setMinute:0];
+    [dateComponents setSecond:0];
+    [dateComponents setHour:0];
+    return [gregorian dateFromComponents:dateComponents];
+}
+
 - (NSDate *)dateByAddingOneMonthInterval {
     NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
     [dateComponents setMonth:1];

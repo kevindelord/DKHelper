@@ -94,6 +94,13 @@
  */
 - (NSString *)dayName;
 
+/**
+ * Returns a new NSDate object containing the same date as the current object set at midnight.
+ *
+ * @return A NSDate containing a date with the hours, minutes and seconds set at 0.
+ */
+- (NSDate *)midnightDate;
+
 @end
 
 #endif
