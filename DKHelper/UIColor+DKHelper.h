@@ -6,6 +6,9 @@
 //  Copyright (c) 2014 DK. All rights reserved.
 //
 
+#ifndef DKHelper_UIColor_h__
+#define DKHelper_UIColor_h__
+
 #import <UIKit/UIKit.h>
 
 @interface UIColor (DKHelper)
@@ -87,3 +90,5 @@
 + (UIColor *)r:(CGFloat)red g:(CGFloat)green b:(CGFloat)blue a:(CGFloat)alpha;
 
 @end
+
+#endif
