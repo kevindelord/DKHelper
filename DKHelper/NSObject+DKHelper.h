@@ -11,6 +11,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ * A categorized class of NSObject to add a bunch of helping methods.
+ */
 @interface NSObject (Block)
 
 #pragma mark - NSObject+Block

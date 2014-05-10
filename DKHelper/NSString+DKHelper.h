@@ -11,6 +11,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ * A categorized class of NSString to add a bunch of helping methods.
+ */
 @interface NSString (DKHelper)
 
 #pragma mark - NSString+NSDate

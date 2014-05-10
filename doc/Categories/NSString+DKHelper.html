@@ -26,6 +26,8 @@
 					<select id="jumpTo">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
 	
 	
 	
@@ -38,10 +40,6 @@
 	
 	
 	<option value="class_methods">Class Methods</option>
-	
-	<option value="//api/name/monthNameFromDate:">&nbsp;&nbsp;&nbsp;&nbsp;+ monthNameFromDate:</option>
-	
-	<option value="//api/name/stringFromDate:">&nbsp;&nbsp;&nbsp;&nbsp;+ stringFromDate:</option>
 	
 	<option value="//api/name/stringFromDate:format:">&nbsp;&nbsp;&nbsp;&nbsp;+ stringFromDate:format:</option>
 	
@@ -65,6 +63,8 @@
 		<nav id="tocContainer" class="isShowingTOC">
 			<ul id="toc" role="tree">
 				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
 
 
 
@@ -79,10 +79,6 @@
 
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/monthNameFromDate:">monthNameFromDate:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stringFromDate:">stringFromDate:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stringFromDate:format:">stringFromDate:format:</a></span></li>
 	
@@ -129,6 +125,14 @@
                     
                     
 					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>A categorized class of NSString to add a bunch of helping methods.</p>
+					</div>
+					
+					
+					
 					
 					
 					<div class="section section-tasks">
@@ -141,18 +145,6 @@
 
 						<ul class="task-list">
 							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/stringFromDate:">+&nbsp;stringFromDate:</a></code>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/monthNameFromDate:">+&nbsp;monthNameFromDate:</a></code>
-	</span>
-	
-	
-</li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/stringFromDate:format:">+&nbsp;stringFromDate:format:</a></code>
 	</span>
@@ -190,118 +182,6 @@
 					<div class="section section-methods">
 						<a title="Class Methods" name="class_methods"></a>
 						<h2 class="subtitle subtitle-methods">Class Methods</h2>
-						
-						<div class="section-method">
-	<a name="//api/name/monthNameFromDate:" title="monthNameFromDate:"></a>
-	<h3 class="subsubtitle method-title">monthNameFromDate:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Returns a new NSString object containing the name of the month for the given NSDate.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (NSString *)monthNameFromDate:(NSDate *)<em>date</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>date</em></dt>
-			<dd><p>The NSDate from which the month name will be generated.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>A NSString containing the date with the ISO8601 date format. The string is localized with the current NSLocale. NULL if the date isn&rsquo;t valid.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Returns a new NSString object containing the name of the month for the given NSDate.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">NSString+DKHelper.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/stringFromDate:" title="stringFromDate:"></a>
-	<h3 class="subsubtitle method-title">stringFromDate:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Returns a new NSString object created from a NSDate object.</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (NSString *)stringFromDate:(NSDate *)<em>date</em></code></div>
-
-    
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>date</em></dt>
-			<dd><p>The NSDate to convert into a string.</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	<div class="method-subsection return">
-		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>A NSString containing the date with the ISO8601 date format. NULL if the date isn&rsquo;t valid.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Returns a new NSString object created from a NSDate object.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">NSString+DKHelper.h</code><br />
-	</div>				
-	
-	
-</div>
 						
 						<div class="section-method">
 	<a name="//api/name/stringFromDate:format:" title="stringFromDate:format:"></a>
@@ -535,7 +415,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2014 Kevin Delord. All rights reserved. (Last updated: 2014-04-24)</span><br />
+						<p><span class="copyright">&copy; 2014 Kevin Delord. All rights reserved. (Last updated: 2014-05-10)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 961)</a>.</span></p>
 						

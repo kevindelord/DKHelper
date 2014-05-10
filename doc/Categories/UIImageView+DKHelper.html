@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>UIImage(Retina4) Category Reference</title>
+		<title>UIImageView(DKHelper) Category Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">UIImage(Retina4) Category Reference</h1>
+				<h1 class="hideInXcode">UIImageView(DKHelper) Category Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -39,11 +39,15 @@
 	
 	
 	
-	<option value="class_methods">Class Methods</option>
-	
-	<option value="//api/name/retina4ImageNamed:">&nbsp;&nbsp;&nbsp;&nbsp;+ retina4ImageNamed:</option>
 	
 	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/initWithFrame:image:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithFrame:image:</option>
+	
+	<option value="//api/name/initWithFrame:imageNamed:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithFrame:imageNamed:</option>
+	
+	<option value="//api/name/initWithImageNamed:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithImageNamed:</option>
 	
 	
 	
@@ -69,20 +73,24 @@
 
 
 
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/retina4ImageNamed:">retina4ImageNamed:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithFrame:image:">initWithFrame:image:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithFrame:imageNamed:">initWithFrame:imageNamed:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithImageNamed:">initWithImageNamed:</a></span></li>
 	
 </ul></li>
-
-
 
 
 			</ul>
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="UIImage(Retina4) Category Reference" name="top"></a>
+				<a title="UIImageView(DKHelper) Category Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -91,7 +99,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">UIImage(Retina4) Category Reference</h1>
+						<h1 class="title title-header">UIImageView(DKHelper) Category Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -99,7 +107,7 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">UIImage+DKHelper.h<br />UIImage+DKHelper.m</td>
+	<td class="specification-value">UIImageView+DKHelper.h<br />UIImageView+DKHelper.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -109,7 +117,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>A categorized class of UIImage to add a bunch of helping methods.</p>
+						<p>A categorized class of UIImageView to add a bunch of helping methods.</p>
 					</div>
 					
 					
@@ -127,7 +135,19 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/retina4ImageNamed:">+&nbsp;retina4ImageNamed:</a></code>
+		<code><a href="#//api/name/initWithImageNamed:">&ndash;&nbsp;initWithImageNamed:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithFrame:image:">&ndash;&nbsp;initWithFrame:image:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithFrame:imageNamed:">&ndash;&nbsp;initWithFrame:imageNamed:</a></code>
 	</span>
 	
 	
@@ -142,23 +162,25 @@
 					
 					
 					
+					
+					
 					<div class="section section-methods">
-						<a title="Class Methods" name="class_methods"></a>
-						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/retina4ImageNamed:" title="retina4ImageNamed:"></a>
-	<h3 class="subsubtitle method-title">retina4ImageNamed:</h3>
+	<a name="//api/name/initWithFrame:image:" title="initWithFrame:image:"></a>
+	<h3 class="subsubtitle method-title">initWithFrame:image:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns a new UIImage object created from a filename.</p>
+		<p>Initializes the receiver with a frame and an image.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (UIImage *)retina4ImageNamed:(NSString *)<em>imageName</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (instancetype)initWithFrame:(CGRect)<em>frame</em> image:(UIImage *)<em>image</em></code></div>
 
     
 	
@@ -166,8 +188,13 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>imageName</em></dt>
-			<dd><p>The NSString object representing the filename of the image.</p></dd>
+			<dt><em>frame</em></dt>
+			<dd><p>The frame rectangle for the view, measured in points. The origin of the frame is relative to the superview in which you plan to add it.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>image</em></dt>
+			<dd><p>An image containing the source data.</p></dd>
 		</dl>
 		
 	</div>
@@ -176,7 +203,7 @@
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>An UIImage created from a given string.</p>
+		<p>The initialiazed receiver.</p>
 	</div>
 	
 	
@@ -185,7 +212,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Returns a new UIImage object created from a filename.</p><p>This method will automatically add the needed image suffix for the current device (&ldquo;@2x&rdquo;, &ldquo;-568h@2x&rdquo; or nothing).</p>
+		<p>Initializes the receiver with a frame and an image.</p>
 	</div>
 	
 	
@@ -196,15 +223,130 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">UIImage+DKHelper.h</code><br />
+		<code class="declared-in-ref">UIImageView+DKHelper.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithFrame:imageNamed:" title="initWithFrame:imageNamed:"></a>
+	<h3 class="subsubtitle method-title">initWithFrame:imageNamed:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initializes the receiver with a frame and an image name.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (instancetype)initWithFrame:(CGRect)<em>frame</em> imageNamed:(NSString *)<em>imageName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>frame</em></dt>
+			<dd><p>The frame rectangle for the view, measured in points. The origin of the frame is relative to the superview in which you plan to add it.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>imageName</em></dt>
+			<dd><p>The name of the file. If this is the first time the image is being loaded, the method looks for an image with the specified name in the application’s main bundle.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The initialiazed receiver.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Initializes the receiver with a frame and an image name.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIImageView+DKHelper.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/initWithImageNamed:" title="initWithImageNamed:"></a>
+	<h3 class="subsubtitle method-title">initWithImageNamed:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Initializes the receiver with an image name.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (instancetype)initWithImageNamed:(NSString *)<em>imageName</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>imageName</em></dt>
+			<dd><p>The name of the file. If this is the first time the image is being loaded, the method looks for an image with the specified name in the application’s main bundle.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The initialiazed receiver.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Initializes the receiver with an image name.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIImageView+DKHelper.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 					</div>
-					
-					
 					
 					
                     

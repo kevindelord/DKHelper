@@ -11,6 +11,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ * A categorized class of UIImageView to add a bunch of helping methods.
+ */
 @interface UIImageView (DKHelper)
 
 /**

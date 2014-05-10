@@ -11,6 +11,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ * A categorized class of NSDate to add a bunch of helping methods.
+ */
 @interface NSDate (NSString)
 
 #pragma mark - NSDate+NSString
@@ -136,15 +139,15 @@
 /**
  * Returns a new NSDate object with new date conponents.
  *
- * @param yearInterval The number of year units.
- * @param monthInterval The number of month units.
- * @param dayInterval The number of day units.
- * @param hourInterval The number of hour units.
- * @param minuteInterval The number of minute units.
- * @param secondInterval The number of second units.
+ * @param years The number of year units.
+ * @param months The number of month units.
+ * @param days The number of day units.
+ * @param hours The number of hour units.
+ * @param minutes The number of minute units.
+ * @param seconds The number of second units.
  * @return A NSDate set with new date components from the receiver's date.
  */
-- (NSDate *)dateByAddingIntervalsWithYear:(NSInteger)years months:(NSInteger)month days:(NSInteger)days hours:(NSInteger)hours minutes:(NSInteger)minutes seconds:(NSInteger)seconds;
+- (NSDate *)dateByAddingIntervalsWithYear:(NSInteger)years months:(NSInteger)months days:(NSInteger)days hours:(NSInteger)hours minutes:(NSInteger)minutes seconds:(NSInteger)seconds;
 
 /**
  * Returns a new NSDate object with n years interval from the receiver's.

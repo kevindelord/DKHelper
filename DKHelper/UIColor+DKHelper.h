@@ -11,6 +11,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ * A categorized class of UIColor to add a bunch of helping methods.
+ */
 @interface UIColor (DKHelper)
 
 #pragma mark - DEBUG colors

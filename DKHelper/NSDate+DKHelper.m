@@ -110,10 +110,10 @@
 
 #pragma mark - Adding Interval
 
-- (NSDate *)dateByAddingIntervalsWithYear:(NSInteger)years months:(NSInteger)month days:(NSInteger)days hours:(NSInteger)hours minutes:(NSInteger)minutes seconds:(NSInteger)seconds {
+- (NSDate *)dateByAddingIntervalsWithYear:(NSInteger)years months:(NSInteger)months days:(NSInteger)days hours:(NSInteger)hours minutes:(NSInteger)minutes seconds:(NSInteger)seconds {
     NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
     [dateComponents setYear:years];
-    [dateComponents setMonth:month];
+    [dateComponents setMonth:months];
     [dateComponents setDay:days];
     [dateComponents setHour:hours];
     [dateComponents setMinute:minutes];

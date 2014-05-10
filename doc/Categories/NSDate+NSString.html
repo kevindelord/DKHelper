@@ -26,6 +26,8 @@
 					<select id="jumpTo">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
 	
 	
 	
@@ -43,7 +45,7 @@
 	
 	<option value="//api/name/dateFromDayString:">&nbsp;&nbsp;&nbsp;&nbsp;+ dateFromDayString:</option>
 	
-	<option value="//api/name/dateFromString:">&nbsp;&nbsp;&nbsp;&nbsp;+ dateFromString:</option>
+	<option value="//api/name/dateFromISOString:">&nbsp;&nbsp;&nbsp;&nbsp;+ dateFromISOString:</option>
 	
 	<option value="//api/name/dateFromString:format:">&nbsp;&nbsp;&nbsp;&nbsp;+ dateFromString:format:</option>
 	
@@ -52,7 +54,41 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/dateByAddingOneMonthInterval">&nbsp;&nbsp;&nbsp;&nbsp;- dateByAddingOneMonthInterval</option>
+	<option value="//api/name/ISO8601StringValue">&nbsp;&nbsp;&nbsp;&nbsp;- ISO8601StringValue</option>
+	
+	<option value="//api/name/dateByAddingDayInterval:">&nbsp;&nbsp;&nbsp;&nbsp;- dateByAddingDayInterval:</option>
+	
+	<option value="//api/name/dateByAddingHourInterval:">&nbsp;&nbsp;&nbsp;&nbsp;- dateByAddingHourInterval:</option>
+	
+	<option value="//api/name/dateByAddingIntervalsWithYear:months:days:hours:minutes:seconds:">&nbsp;&nbsp;&nbsp;&nbsp;- dateByAddingIntervalsWithYear:months:days:hours:minutes:seconds:</option>
+	
+	<option value="//api/name/dateByAddingMinuteInterval:">&nbsp;&nbsp;&nbsp;&nbsp;- dateByAddingMinuteInterval:</option>
+	
+	<option value="//api/name/dateByAddingMonthInterval:">&nbsp;&nbsp;&nbsp;&nbsp;- dateByAddingMonthInterval:</option>
+	
+	<option value="//api/name/dateByAddingSecondInterval:">&nbsp;&nbsp;&nbsp;&nbsp;- dateByAddingSecondInterval:</option>
+	
+	<option value="//api/name/dateByAddingYearInterval:">&nbsp;&nbsp;&nbsp;&nbsp;- dateByAddingYearInterval:</option>
+	
+	<option value="//api/name/day">&nbsp;&nbsp;&nbsp;&nbsp;- day</option>
+	
+	<option value="//api/name/dayName">&nbsp;&nbsp;&nbsp;&nbsp;- dayName</option>
+	
+	<option value="//api/name/hour">&nbsp;&nbsp;&nbsp;&nbsp;- hour</option>
+	
+	<option value="//api/name/midnightDate">&nbsp;&nbsp;&nbsp;&nbsp;- midnightDate</option>
+	
+	<option value="//api/name/minute">&nbsp;&nbsp;&nbsp;&nbsp;- minute</option>
+	
+	<option value="//api/name/month">&nbsp;&nbsp;&nbsp;&nbsp;- month</option>
+	
+	<option value="//api/name/monthName">&nbsp;&nbsp;&nbsp;&nbsp;- monthName</option>
+	
+	<option value="//api/name/second">&nbsp;&nbsp;&nbsp;&nbsp;- second</option>
+	
+	<option value="//api/name/stringValue">&nbsp;&nbsp;&nbsp;&nbsp;- stringValue</option>
+	
+	<option value="//api/name/year">&nbsp;&nbsp;&nbsp;&nbsp;- year</option>
 	
 	
 	
@@ -63,6 +99,8 @@
 		<nav id="tocContainer" class="isShowingTOC">
 			<ul id="toc" role="tree">
 				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
 
 
 
@@ -82,7 +120,7 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dateFromDayString:">dateFromDayString:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dateFromString:">dateFromString:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dateFromISOString:">dateFromISOString:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dateFromString:format:">dateFromString:format:</a></span></li>
 	
@@ -92,7 +130,41 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dateByAddingOneMonthInterval">dateByAddingOneMonthInterval</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/ISO8601StringValue">ISO8601StringValue</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dateByAddingDayInterval:">dateByAddingDayInterval:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dateByAddingHourInterval:">dateByAddingHourInterval:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dateByAddingIntervalsWithYear:months:days:hours:minutes:seconds:">dateByAddingIntervalsWithYear:months:days:hours:minutes:seconds:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dateByAddingMinuteInterval:">dateByAddingMinuteInterval:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dateByAddingMonthInterval:">dateByAddingMonthInterval:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dateByAddingSecondInterval:">dateByAddingSecondInterval:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dateByAddingYearInterval:">dateByAddingYearInterval:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/day">day</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/dayName">dayName</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/hour">hour</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/midnightDate">midnightDate</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/minute">minute</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/month">month</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/monthName">monthName</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/second">second</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/stringValue">stringValue</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/year">year</a></span></li>
 	
 </ul></li>
 
@@ -125,6 +197,14 @@
                     
                     
 					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>A categorized class of NSDate to add a bunch of helping methods.</p>
+					</div>
+					
+					
+					
 					
 					
 					<div class="section section-tasks">
@@ -144,13 +224,13 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/dateFromDayString:">+&nbsp;dateFromDayString:</a></code>
+		<code><a href="#//api/name/dateFromISOString:">+&nbsp;dateFromISOString:</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/dateFromString:">+&nbsp;dateFromString:</a></code>
+		<code><a href="#//api/name/dateFromDayString:">+&nbsp;dateFromDayString:</a></code>
 	</span>
 	
 	
@@ -162,7 +242,109 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/dateByAddingOneMonthInterval">&ndash;&nbsp;dateByAddingOneMonthInterval</a></code>
+		<code><a href="#//api/name/year">&ndash;&nbsp;year</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/month">&ndash;&nbsp;month</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/day">&ndash;&nbsp;day</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/hour">&ndash;&nbsp;hour</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/minute">&ndash;&nbsp;minute</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/second">&ndash;&nbsp;second</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/stringValue">&ndash;&nbsp;stringValue</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/ISO8601StringValue">&ndash;&nbsp;ISO8601StringValue</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/monthName">&ndash;&nbsp;monthName</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/dayName">&ndash;&nbsp;dayName</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/midnightDate">&ndash;&nbsp;midnightDate</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/dateByAddingIntervalsWithYear:months:days:hours:minutes:seconds:">&ndash;&nbsp;dateByAddingIntervalsWithYear:months:days:hours:minutes:seconds:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/dateByAddingYearInterval:">&ndash;&nbsp;dateByAddingYearInterval:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/dateByAddingMonthInterval:">&ndash;&nbsp;dateByAddingMonthInterval:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/dateByAddingDayInterval:">&ndash;&nbsp;dateByAddingDayInterval:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/dateByAddingHourInterval:">&ndash;&nbsp;dateByAddingHourInterval:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/dateByAddingMinuteInterval:">&ndash;&nbsp;dateByAddingMinuteInterval:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/dateByAddingSecondInterval:">&ndash;&nbsp;dateByAddingSecondInterval:</a></code>
 	</span>
 	
 	
@@ -188,7 +370,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns a new NSDate object containing the current date of the day with a IOS8601 default format.
+		<p>Returns a new NSDate object containing the current date of the <a href="#//api/name/day">day</a> with a IOS8601 default format.
 The number of hours, minutes, seconds and the GMT timezone is set to 0.</p>
 	</div>		
 	
@@ -202,7 +384,7 @@ The number of hours, minutes, seconds and the GMT timezone is set to 0.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>A NSDate containing the current date of the day. The date format is the ISO8601 one.</p>
+		<p>A NSDate containing the current date of the <a href="#//api/name/day">day</a>. The date format is the ISO8601 one.</p>
 	</div>
 	
 	
@@ -211,7 +393,7 @@ The number of hours, minutes, seconds and the GMT timezone is set to 0.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Returns a new NSDate object containing the current date of the day with a IOS8601 default format.
+		<p>Returns a new NSDate object containing the current date of the <a href="#//api/name/day">day</a> with a IOS8601 default format.
 The number of hours, minutes, seconds and the GMT timezone is set to 0.</p>
 	</div>
 	
@@ -286,18 +468,18 @@ The number of hours, minutes, seconds and the GMT timezone is set to 0.</p>
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/dateFromString:" title="dateFromString:"></a>
-	<h3 class="subsubtitle method-title">dateFromString:</h3>
+	<a name="//api/name/dateFromISOString:" title="dateFromISOString:"></a>
+	<h3 class="subsubtitle method-title">dateFromISOString:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns a new NSDate object created from a string with a IOS8601 default format.</p>
+		<p>Returns a new NSDate object created from a string.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>+ (NSDate *)dateFromString:(NSString *)<em>string</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (NSDate *)dateFromISOString:(NSString *)<em>string</em></code></div>
 
     
 	
@@ -306,7 +488,7 @@ The number of hours, minutes, seconds and the GMT timezone is set to 0.</p>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>string</em></dt>
-			<dd><p>The NSString object representing the date. The string must be formated like @&ldquo;yyyy-MM-dd&rsquo;T'HH:mm:ss'Z'&rdquo;</p></dd>
+			<dd><p>The NSString object representing the date.</p></dd>
 		</dl>
 		
 	</div>
@@ -315,7 +497,7 @@ The number of hours, minutes, seconds and the GMT timezone is set to 0.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>A NSDate object created with the ISO8601 format. NULL if the date isn&rsquo;t valid.</p>
+		<p>A NSDate created from a given string. NULL if the date isn&rsquo;t valid.</p>
 	</div>
 	
 	
@@ -324,7 +506,7 @@ The number of hours, minutes, seconds and the GMT timezone is set to 0.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Returns a new NSDate object created from a string with a IOS8601 default format.</p>
+		<p>Returns a new NSDate object created from a string.</p><p>The string has to be formatted with the ISO8601 date format.</p>
 	</div>
 	
 	
@@ -411,18 +593,18 @@ The number of hours, minutes, seconds and the GMT timezone is set to 0.</p>
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/dateByAddingOneMonthInterval" title="dateByAddingOneMonthInterval"></a>
-	<h3 class="subsubtitle method-title">dateByAddingOneMonthInterval</h3>
+	<a name="//api/name/ISO8601StringValue" title="ISO8601StringValue"></a>
+	<h3 class="subsubtitle method-title">ISO8601StringValue</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns a new NSDate object that is set to the receiver&rsquo;s date plus one month in the future.</p>
+		<p>Returns a new NSString object created from the receiver&rsquo;s date with the ISO8601 format.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (NSDate *)dateByAddingOneMonthInterval</code></div>
+	<div class="method-subsection method-declaration"><code>- (NSString *)ISO8601StringValue</code></div>
 
     
 	
@@ -430,7 +612,7 @@ The number of hours, minutes, seconds and the GMT timezone is set to 0.</p>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>A NSDate set one month in the future from the receiver&rsquo;s date.</p>
+		<p>A ISO8601 formatted NSString containing the receiver&rsquo;s date.</p>
 	</div>
 	
 	
@@ -439,7 +621,884 @@ The number of hours, minutes, seconds and the GMT timezone is set to 0.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Returns a new NSDate object that is set to the receiver&rsquo;s date plus one month in the future.</p>
+		<p>Returns a new NSString object created from the receiver&rsquo;s date with the ISO8601 format.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+DKHelper.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/dateByAddingDayInterval:" title="dateByAddingDayInterval:"></a>
+	<h3 class="subsubtitle method-title">dateByAddingDayInterval:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a new NSDate object with n days interval from the receiver&rsquo;s.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSDate *)dateByAddingDayInterval:(NSInteger)<em>dayInterval</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>dayInterval</em></dt>
+			<dd><p>The number of <a href="#//api/name/day">day</a> units.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A NSDate set with n days from the receiver&rsquo;s date.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a new NSDate object with n days interval from the receiver&rsquo;s.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+DKHelper.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/dateByAddingHourInterval:" title="dateByAddingHourInterval:"></a>
+	<h3 class="subsubtitle method-title">dateByAddingHourInterval:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a new NSDate object with n hours interval from the receiver&rsquo;s.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSDate *)dateByAddingHourInterval:(NSInteger)<em>hourInterval</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>hourInterval</em></dt>
+			<dd><p>The number of <a href="#//api/name/hour">hour</a> units.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A NSDate set with n hours from the receiver&rsquo;s date.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a new NSDate object with n hours interval from the receiver&rsquo;s.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+DKHelper.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/dateByAddingIntervalsWithYear:months:days:hours:minutes:seconds:" title="dateByAddingIntervalsWithYear:months:days:hours:minutes:seconds:"></a>
+	<h3 class="subsubtitle method-title">dateByAddingIntervalsWithYear:months:days:hours:minutes:seconds:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a new NSDate object with new date conponents.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSDate *)dateByAddingIntervalsWithYear:(NSInteger)<em>years</em> months:(NSInteger)<em>months</em> days:(NSInteger)<em>days</em> hours:(NSInteger)<em>hours</em> minutes:(NSInteger)<em>minutes</em> seconds:(NSInteger)<em>seconds</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>years</em></dt>
+			<dd><p>The number of <a href="#//api/name/year">year</a> units.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>months</em></dt>
+			<dd><p>The number of <a href="#//api/name/month">month</a> units.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>days</em></dt>
+			<dd><p>The number of <a href="#//api/name/day">day</a> units.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>hours</em></dt>
+			<dd><p>The number of <a href="#//api/name/hour">hour</a> units.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>minutes</em></dt>
+			<dd><p>The number of <a href="#//api/name/minute">minute</a> units.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>seconds</em></dt>
+			<dd><p>The number of <a href="#//api/name/second">second</a> units.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A NSDate set with new date components from the receiver&rsquo;s date.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a new NSDate object with new date conponents.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+DKHelper.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/dateByAddingMinuteInterval:" title="dateByAddingMinuteInterval:"></a>
+	<h3 class="subsubtitle method-title">dateByAddingMinuteInterval:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a new NSDate object with n minutes interval from the receiver&rsquo;s.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSDate *)dateByAddingMinuteInterval:(NSInteger)<em>minuteInterval</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>minuteInterval</em></dt>
+			<dd><p>The number of <a href="#//api/name/minute">minute</a> units.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A NSDate set with n minutes from the receiver&rsquo;s date.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a new NSDate object with n minutes interval from the receiver&rsquo;s.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+DKHelper.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/dateByAddingMonthInterval:" title="dateByAddingMonthInterval:"></a>
+	<h3 class="subsubtitle method-title">dateByAddingMonthInterval:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a new NSDate object with n months interval from the receiver&rsquo;s.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSDate *)dateByAddingMonthInterval:(NSInteger)<em>monthInterval</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>monthInterval</em></dt>
+			<dd><p>The number of <a href="#//api/name/month">month</a> units.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A NSDate set with n months from the receiver&rsquo;s date.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a new NSDate object with n months interval from the receiver&rsquo;s.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+DKHelper.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/dateByAddingSecondInterval:" title="dateByAddingSecondInterval:"></a>
+	<h3 class="subsubtitle method-title">dateByAddingSecondInterval:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a new NSDate object with n seconds interval from the receiver&rsquo;s.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSDate *)dateByAddingSecondInterval:(NSInteger)<em>secondInterval</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>secondInterval</em></dt>
+			<dd><p>The number of <a href="#//api/name/second">second</a> units.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A NSDate set with n seconds from the receiver&rsquo;s date.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a new NSDate object with n seconds interval from the receiver&rsquo;s.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+DKHelper.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/dateByAddingYearInterval:" title="dateByAddingYearInterval:"></a>
+	<h3 class="subsubtitle method-title">dateByAddingYearInterval:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a new NSDate object with n years interval from the receiver&rsquo;s.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSDate *)dateByAddingYearInterval:(NSInteger)<em>yearInterval</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>yearInterval</em></dt>
+			<dd><p>The number of <a href="#//api/name/year">year</a> units.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A NSDate set with n years from the receiver&rsquo;s date.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a new NSDate object with n years interval from the receiver&rsquo;s.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+DKHelper.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/day" title="day"></a>
+	<h3 class="subsubtitle method-title">day</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the day component of the receiver as a NSInteger.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSInteger)day</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A NSInteger corresponding to the day component of the receiver.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the day component of the receiver as a NSInteger.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+DKHelper.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/dayName" title="dayName"></a>
+	<h3 class="subsubtitle method-title">dayName</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a new NSString object containing the name of the <a href="#//api/name/day">day</a> of the receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)dayName</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A NSString containing the <a href="#//api/name/day">day</a> name of the receiver. The string is localized with the current NSLocale.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a new NSString object containing the name of the <a href="#//api/name/day">day</a> of the receiver.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+DKHelper.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/hour" title="hour"></a>
+	<h3 class="subsubtitle method-title">hour</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the hour component of the receiver as a NSInteger.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSInteger)hour</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A NSInteger corresponding to the hour component of the receiver.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the hour component of the receiver as a NSInteger.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+DKHelper.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/midnightDate" title="midnightDate"></a>
+	<h3 class="subsubtitle method-title">midnightDate</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a new NSDate object containing the same date as the current object set at midnight.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSDate *)midnightDate</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A NSDate containing a date with the hours, minutes and seconds set at 0.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a new NSDate object containing the same date as the current object set at midnight.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+DKHelper.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/minute" title="minute"></a>
+	<h3 class="subsubtitle method-title">minute</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the minute component of the receiver as a NSInteger.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSInteger)minute</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A NSInteger corresponding to the minute component of the receiver.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the minute component of the receiver as a NSInteger.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+DKHelper.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/month" title="month"></a>
+	<h3 class="subsubtitle method-title">month</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the month component of the receiver as a NSInteger.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSInteger)month</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A NSInteger corresponding to the month component of the receiver.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the month component of the receiver as a NSInteger.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+DKHelper.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/monthName" title="monthName"></a>
+	<h3 class="subsubtitle method-title">monthName</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a new NSString object containing the name of the <a href="#//api/name/month">month</a> of the receiver.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)monthName</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A NSString containing the <a href="#//api/name/month">month</a> name of the receiver. The string is localized with the current NSLocale.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a new NSString object containing the name of the <a href="#//api/name/month">month</a> of the receiver.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+DKHelper.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/second" title="second"></a>
+	<h3 class="subsubtitle method-title">second</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the second component of the receiver as a NSInteger.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSInteger)second</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A NSInteger corresponding to the second component of the receiver.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the second component of the receiver as a NSInteger.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+DKHelper.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/stringValue" title="stringValue"></a>
+	<h3 class="subsubtitle method-title">stringValue</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a new NSString object created from the receiver&rsquo;s date.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)stringValue</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A NSString containing the date as a string of the receiver.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns a new NSString object created from the receiver&rsquo;s date.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSDate+DKHelper.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/year" title="year"></a>
+	<h3 class="subsubtitle method-title">year</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the year component of the receiver as a NSInteger.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSInteger)year</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A NSInteger corresponding to the year component of the receiver.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the year component of the receiver as a NSInteger.</p>
 	</div>
 	
 	
@@ -471,7 +1530,7 @@ The number of hours, minutes, seconds and the GMT timezone is set to 0.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2014 Kevin Delord. All rights reserved. (Last updated: 2014-04-24)</span><br />
+						<p><span class="copyright">&copy; 2014 Kevin Delord. All rights reserved. (Last updated: 2014-05-10)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 961)</a>.</span></p>
 						

@@ -11,6 +11,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ * A categorized class of UIImage to add a bunch of helping methods.
+ */
 @interface UIImage (Retina4)
 
 #pragma mark - UIImage+Retina4

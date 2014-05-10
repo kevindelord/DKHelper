@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>NSObject(Block) Category Reference</title>
+		<title>UIView(DKHelper) Category Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">NSObject(Block) Category Reference</h1>
+				<h1 class="hideInXcode">UIView(DKHelper) Category Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -43,15 +43,19 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/performBlock:afterDelay:">&nbsp;&nbsp;&nbsp;&nbsp;- performBlock:afterDelay:</option>
+	<option value="//api/name/roundCorner:radius:">&nbsp;&nbsp;&nbsp;&nbsp;- roundCorner:radius:</option>
 	
-	<option value="//api/name/performBlock:afterDelay:completion:">&nbsp;&nbsp;&nbsp;&nbsp;- performBlock:afterDelay:completion:</option>
+	<option value="//api/name/setFrameHeight:">&nbsp;&nbsp;&nbsp;&nbsp;- setFrameHeight:</option>
 	
-	<option value="//api/name/performBlock:completion:">&nbsp;&nbsp;&nbsp;&nbsp;- performBlock:completion:</option>
+	<option value="//api/name/setFrameOrigin:">&nbsp;&nbsp;&nbsp;&nbsp;- setFrameOrigin:</option>
 	
-	<option value="//api/name/performBlockInBackground:">&nbsp;&nbsp;&nbsp;&nbsp;- performBlockInBackground:</option>
+	<option value="//api/name/setFrameSize:">&nbsp;&nbsp;&nbsp;&nbsp;- setFrameSize:</option>
 	
-	<option value="//api/name/performBlockInBackground:completion:">&nbsp;&nbsp;&nbsp;&nbsp;- performBlockInBackground:completion:</option>
+	<option value="//api/name/setFrameWidth:">&nbsp;&nbsp;&nbsp;&nbsp;- setFrameWidth:</option>
+	
+	<option value="//api/name/setFrameX:">&nbsp;&nbsp;&nbsp;&nbsp;- setFrameX:</option>
+	
+	<option value="//api/name/setFrameY:">&nbsp;&nbsp;&nbsp;&nbsp;- setFrameY:</option>
 	
 	
 	
@@ -81,15 +85,19 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/performBlock:afterDelay:">performBlock:afterDelay:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/roundCorner:radius:">roundCorner:radius:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/performBlock:afterDelay:completion:">performBlock:afterDelay:completion:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setFrameHeight:">setFrameHeight:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/performBlock:completion:">performBlock:completion:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setFrameOrigin:">setFrameOrigin:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/performBlockInBackground:">performBlockInBackground:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setFrameSize:">setFrameSize:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/performBlockInBackground:completion:">performBlockInBackground:completion:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setFrameWidth:">setFrameWidth:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setFrameX:">setFrameX:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setFrameY:">setFrameY:</a></span></li>
 	
 </ul></li>
 
@@ -98,7 +106,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="NSObject(Block) Category Reference" name="top"></a>
+				<a title="UIView(DKHelper) Category Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -107,7 +115,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">NSObject(Block) Category Reference</h1>
+						<h1 class="title title-header">UIView(DKHelper) Category Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -115,7 +123,7 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">NSObject+DKHelper.h<br />NSObject+DKHelper.m</td>
+	<td class="specification-value">UIView+DKHelper.h<br />UIView+DKHelper.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -125,7 +133,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>A categorized class of NSObject to add a bunch of helping methods.</p>
+						<p>A categorized class of UIView to add a bunch of helping methods.</p>
 					</div>
 					
 					
@@ -143,31 +151,43 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/performBlock:afterDelay:">&ndash;&nbsp;performBlock:afterDelay:</a></code>
+		<code><a href="#//api/name/roundCorner:radius:">&ndash;&nbsp;roundCorner:radius:</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/performBlockInBackground:">&ndash;&nbsp;performBlockInBackground:</a></code>
+		<code><a href="#//api/name/setFrameOrigin:">&ndash;&nbsp;setFrameOrigin:</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/performBlockInBackground:completion:">&ndash;&nbsp;performBlockInBackground:completion:</a></code>
+		<code><a href="#//api/name/setFrameSize:">&ndash;&nbsp;setFrameSize:</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/performBlock:afterDelay:completion:">&ndash;&nbsp;performBlock:afterDelay:completion:</a></code>
+		<code><a href="#//api/name/setFrameWidth:">&ndash;&nbsp;setFrameWidth:</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/performBlock:completion:">&ndash;&nbsp;performBlock:completion:</a></code>
+		<code><a href="#//api/name/setFrameHeight:">&ndash;&nbsp;setFrameHeight:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setFrameX:">&ndash;&nbsp;setFrameX:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setFrameY:">&ndash;&nbsp;setFrameY:</a></code>
 	</span>
 	
 	
@@ -189,18 +209,18 @@
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/performBlock:afterDelay:" title="performBlock:afterDelay:"></a>
-	<h3 class="subsubtitle method-title">performBlock:afterDelay:</h3>
+	<a name="//api/name/roundCorner:radius:" title="roundCorner:radius:"></a>
+	<h3 class="subsubtitle method-title">roundCorner:radius:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Performs a code block after a given delay.</p>
+		<p>Rounds the specified corner(s) of the receiver with a given radius.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)performBlock:(void ( ^ ) ( void ))<em>block</em> afterDelay:(NSTimeInterval)<em>delay</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)roundCorner:(UIRectCorner)<em>corner</em> radius:(CGFloat)<em>cornerRadius</em></code></div>
 
     
 	
@@ -208,18 +228,23 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>block</em></dt>
-			<dd><p>A block object containing the code to execute. This block takes no parameters and has no return value.</p></dd>
+			<dt><em>corner</em></dt>
+			<dd><p>A bitmask value that identifies the corners that you want rounded. You can use this parameter to round only a subset of the corners of the rectangle.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>delay</em></dt>
-			<dd><p>The amount of time (measured in seconds) to wait before beginning the animations. Specify a value of 0 to begin the animations immediately.</p></dd>
+			<dt><em>cornerRadius</em></dt>
+			<dd><p>A CGFloat value corresponding to the radius of each corner oval. Values larger than half the rectangle’s width or height are clamped appropriately to half the width or height.</p></dd>
 		</dl>
 		
 	</div>
 	
 	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A NSString containing the date with the given date format. NULL if the date isn&rsquo;t valid.</p>
+	</div>
 	
 	
 	
@@ -227,7 +252,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Performs a code block after a given delay.</p>
+		<p>Rounds the specified corner(s) of the receiver with a given radius.</p>
 	</div>
 	
 	
@@ -238,25 +263,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">NSObject+DKHelper.h</code><br />
+		<code class="declared-in-ref">UIView+DKHelper.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/performBlock:afterDelay:completion:" title="performBlock:afterDelay:completion:"></a>
-	<h3 class="subsubtitle method-title">performBlock:afterDelay:completion:</h3>
+	<a name="//api/name/setFrameHeight:" title="setFrameHeight:"></a>
+	<h3 class="subsubtitle method-title">setFrameHeight:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Performs a code block after a given delay and call a completion block when it&rsquo;s done.</p>
+		<p>Set the height of the receiver&rsquo;s frame.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)performBlock:(void ( ^ ) ( void ))<em>block</em> afterDelay:(NSTimeInterval)<em>delay</em> completion:(void ( ^ ) ( void ))<em>completionBlock</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)setFrameHeight:(CGFloat)<em>height</em></code></div>
 
     
 	
@@ -264,18 +289,8 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>block</em></dt>
-			<dd><p>A block object containing the code to execute. This block takes no parameters and has no return value.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>delay</em></dt>
-			<dd><p>The amount of time (measured in seconds) to wait before beginning the animations. Specify a value of 0 to begin the animations immediately.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>completionBlock</em></dt>
-			<dd><p>A block object containing the code to execute. This block takes no parameters and has no return value. It will be called after the main block has been executed.</p></dd>
+			<dt><em>height</em></dt>
+			<dd><p>The new CGFloat value.</p></dd>
 		</dl>
 		
 	</div>
@@ -288,7 +303,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Performs a code block after a given delay and call a completion block when it&rsquo;s done.</p>
+		<p>Set the height of the receiver&rsquo;s frame.</p>
 	</div>
 	
 	
@@ -299,25 +314,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">NSObject+DKHelper.h</code><br />
+		<code class="declared-in-ref">UIView+DKHelper.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/performBlock:completion:" title="performBlock:completion:"></a>
-	<h3 class="subsubtitle method-title">performBlock:completion:</h3>
+	<a name="//api/name/setFrameOrigin:" title="setFrameOrigin:"></a>
+	<h3 class="subsubtitle method-title">setFrameOrigin:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Performs a code block and call a completion block when it&rsquo;s done.</p>
+		<p>Set the origin of the receiver&rsquo;s frame.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)performBlock:(void ( ^ ) ( void ))<em>block</em> completion:(void ( ^ ) ( void ))<em>completionBlock</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)setFrameOrigin:(CGPoint)<em>origin</em></code></div>
 
     
 	
@@ -325,13 +340,8 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>block</em></dt>
-			<dd><p>A block object containing the code to execute. This block takes no parameters and has no return value.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>completionBlock</em></dt>
-			<dd><p>A block object containing the code to execute. This block takes no parameters and has no return value. It will be called after the main block has been executed.</p></dd>
+			<dt><em>origin</em></dt>
+			<dd><p>The new CGPoint value.</p></dd>
 		</dl>
 		
 	</div>
@@ -344,7 +354,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Performs a code block and call a completion block when it&rsquo;s done.</p>
+		<p>Set the origin of the receiver&rsquo;s frame.</p>
 	</div>
 	
 	
@@ -355,25 +365,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">NSObject+DKHelper.h</code><br />
+		<code class="declared-in-ref">UIView+DKHelper.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/performBlockInBackground:" title="performBlockInBackground:"></a>
-	<h3 class="subsubtitle method-title">performBlockInBackground:</h3>
+	<a name="//api/name/setFrameSize:" title="setFrameSize:"></a>
+	<h3 class="subsubtitle method-title">setFrameSize:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Performs a code block on a background thread.</p>
+		<p>Set the size of the receiver&rsquo;s frame.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)performBlockInBackground:(void ( ^ ) ( void ))<em>block</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)setFrameSize:(CGSize)<em>size</em></code></div>
 
     
 	
@@ -381,8 +391,8 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>block</em></dt>
-			<dd><p>A block object containing the code to execute. This block takes no parameters and has no return value.</p></dd>
+			<dt><em>size</em></dt>
+			<dd><p>The new CGSize value.</p></dd>
 		</dl>
 		
 	</div>
@@ -395,7 +405,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Performs a code block on a background thread.</p>
+		<p>Set the size of the receiver&rsquo;s frame.</p>
 	</div>
 	
 	
@@ -406,25 +416,25 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">NSObject+DKHelper.h</code><br />
+		<code class="declared-in-ref">UIView+DKHelper.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/performBlockInBackground:completion:" title="performBlockInBackground:completion:"></a>
-	<h3 class="subsubtitle method-title">performBlockInBackground:completion:</h3>
+	<a name="//api/name/setFrameWidth:" title="setFrameWidth:"></a>
+	<h3 class="subsubtitle method-title">setFrameWidth:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Performs a code block on a background thread and call a completion block when it&rsquo;s done.</p>
+		<p>Set the size.width of the receiver&rsquo;s frame.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)performBlockInBackground:(void ( ^ ) ( void ))<em>block</em> completion:(void ( ^ ) ( void ))<em>completionBlock</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)setFrameWidth:(CGFloat)<em>width</em></code></div>
 
     
 	
@@ -432,13 +442,8 @@
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>block</em></dt>
-			<dd><p>A block object containing the code to execute. This block takes no parameters and has no return value.</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>completionBlock</em></dt>
-			<dd><p>A block object containing the code to execute. This block takes no parameters and has no return value. It will be called after the main block has been executed.</p></dd>
+			<dt><em>width</em></dt>
+			<dd><p>The new CGFloat value.</p></dd>
 		</dl>
 		
 	</div>
@@ -451,7 +456,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Performs a code block on a background thread and call a completion block when it&rsquo;s done.</p>
+		<p>Set the size.width of the receiver&rsquo;s frame.</p>
 	</div>
 	
 	
@@ -462,7 +467,109 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">NSObject+DKHelper.h</code><br />
+		<code class="declared-in-ref">UIView+DKHelper.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setFrameX:" title="setFrameX:"></a>
+	<h3 class="subsubtitle method-title">setFrameX:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set the origin.x of the receiver&rsquo;s frame.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setFrameX:(CGFloat)<em>x</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>x</em></dt>
+			<dd><p>The new CGFloat value.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Set the origin.x of the receiver&rsquo;s frame.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIView+DKHelper.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setFrameY:" title="setFrameY:"></a>
+	<h3 class="subsubtitle method-title">setFrameY:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set the origin.y of the receiver&rsquo;s frame.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setFrameY:(CGFloat)<em>y</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>y</em></dt>
+			<dd><p>The new CGFloat value.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Set the origin.y of the receiver&rsquo;s frame.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">UIView+DKHelper.h</code><br />
 	</div>				
 	
 	
