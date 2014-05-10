@@ -52,6 +52,50 @@
  */
 + (NSDate *)currentDayDate;
 
+#pragma mark - Getter Methods
+
+/**
+ * Returns the year component of the receiver as a NSInteger.
+ *
+ * @return A NSInteger corresponding to the year component of the receiver.
+ */
+- (NSInteger)year;
+
+/**
+ * Returns the month component of the receiver as a NSInteger.
+ *
+ * @return A NSInteger corresponding to the month component of the receiver.
+ */
+- (NSInteger)month;
+
+/**
+ * Returns the day component of the receiver as a NSInteger.
+ *
+ * @return A NSInteger corresponding to the day component of the receiver.
+ */
+- (NSInteger)day;
+
+/**
+ * Returns the hour component of the receiver as a NSInteger.
+ *
+ * @return A NSInteger corresponding to the hour component of the receiver.
+ */
+- (NSInteger)hour;
+
+/**
+ * Returns the minute component of the receiver as a NSInteger.
+ *
+ * @return A NSInteger corresponding to the minute component of the receiver.
+ */
+- (NSInteger)minute;
+
+/**
+ * Returns the second component of the receiver as a NSInteger.
+ *
+ * @return A NSInteger corresponding to the second component of the receiver.
+ */
+- (NSInteger)second;
+
 /**
  * Returns a new NSString object created from the receiver's date.
  *

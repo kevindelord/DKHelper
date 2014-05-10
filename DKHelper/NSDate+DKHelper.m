@@ -70,6 +70,44 @@
     return [[[NSDateFormatter new] standaloneWeekdaySymbols] objectAtIndex:([comps weekday] - 1)];
 }
 
+#pragma mark - Getter methods
+
+- (NSInteger)year {
+	NSCalendar *calendar = [NSCalendar currentCalendar];
+	calendar.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
+    return [[calendar components:NSYearCalendarUnit fromDate:self] year];
+}
+
+- (NSInteger)month {
+	NSCalendar *calendar = [NSCalendar currentCalendar];
+	calendar.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
+    return [[calendar components:NSMonthCalendarUnit fromDate:self] month];
+}
+
+- (NSInteger)day {
+	NSCalendar *calendar = [NSCalendar currentCalendar];
+	calendar.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
+    return [[calendar components:NSDayCalendarUnit fromDate:self] day];
+}
+
+- (NSInteger)hour {
+	NSCalendar *calendar = [NSCalendar currentCalendar];
+	calendar.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
+    return [[calendar components:NSHourCalendarUnit|NSTimeZoneCalendarUnit fromDate:self] hour];
+}
+
+- (NSInteger)minute {
+	NSCalendar *calendar = [NSCalendar currentCalendar];
+	calendar.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
+    return [[calendar components:NSMinuteCalendarUnit fromDate:self] minute];
+}
+
+- (NSInteger)second {
+	NSCalendar *calendar = [NSCalendar currentCalendar];
+	calendar.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
+    return [[calendar components:NSSecondCalendarUnit fromDate:self] second];
+}
+
 #pragma mark - Adding Interval
 
 - (NSDate *)dateByAddingIntervalsWithYear:(NSInteger)years months:(NSInteger)month days:(NSInteger)days hours:(NSInteger)hours minutes:(NSInteger)minutes seconds:(NSInteger)seconds {
