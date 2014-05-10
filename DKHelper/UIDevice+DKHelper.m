@@ -93,9 +93,9 @@
     NSString *currentPlatform = [UIDevice platform];
     for (NSString *platform in forbiddenPlatforms) {
         if ([platform isEqualToString:currentPlatform])
-            return NO;
+            return YES;
     }
-    return YES;
+    return NO;
 }
 
 + (BOOL)isIPad {
