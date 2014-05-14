@@ -6,8 +6,14 @@
 //  Copyright (c) 2014 DK. All rights reserved.
 //
 
+#ifndef DKHelper_UIColor_h__
+#define DKHelper_UIColor_h__
+
 #import <UIKit/UIKit.h>
 
+/**
+ * A categorized class of UIColor to add a bunch of helping methods.
+ */
 @interface UIColor (DKHelper)
 
 #pragma mark - DEBUG colors
@@ -87,3 +93,5 @@
 + (UIColor *)r:(CGFloat)red g:(CGFloat)green b:(CGFloat)blue a:(CGFloat)alpha;
 
 @end
+
+#endif

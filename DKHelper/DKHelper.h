@@ -20,6 +20,7 @@
 #import "UIColor+DKHelper.h"
 #import "CGSize+DKHelper.h"
 #import "CGRect+DKHelper.h"
+#import "UIImageView+DKHelper.h"
 
 #pragma mark - DKLog
 

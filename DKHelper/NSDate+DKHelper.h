@@ -11,6 +11,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ * A categorized class of NSDate to add a bunch of helping methods.
+ */
 @interface NSDate (NSString)
 
 #pragma mark - NSDate+NSString
@@ -52,19 +55,49 @@
  */
 + (NSDate *)currentDayDate;
 
-/**
- * Returns a new NSDate object that is set to the receiver's date plus one month in the future.
- *
- * @return A NSDate set one month in the future from the receiver's date.
- */
-- (NSDate *)dateByAddingOneMonthInterval;
+#pragma mark - Getter Methods
 
 /**
- * Returns a new NSDate object that is set to the receiver's date plus one day in the future.
+ * Returns the year component of the receiver as a NSInteger.
  *
- * @return A NSDate set one day in the future from the receiver's date.
+ * @return A NSInteger corresponding to the year component of the receiver.
  */
-- (NSDate *)dateByAddingOneDayInterval;
+- (NSInteger)year;
+
+/**
+ * Returns the month component of the receiver as a NSInteger.
+ *
+ * @return A NSInteger corresponding to the month component of the receiver.
+ */
+- (NSInteger)month;
+
+/**
+ * Returns the day component of the receiver as a NSInteger.
+ *
+ * @return A NSInteger corresponding to the day component of the receiver.
+ */
+- (NSInteger)day;
+
+/**
+ * Returns the hour component of the receiver as a NSInteger.
+ *
+ * @return A NSInteger corresponding to the hour component of the receiver.
+ */
+- (NSInteger)hour;
+
+/**
+ * Returns the minute component of the receiver as a NSInteger.
+ *
+ * @return A NSInteger corresponding to the minute component of the receiver.
+ */
+- (NSInteger)minute;
+
+/**
+ * Returns the second component of the receiver as a NSInteger.
+ *
+ * @return A NSInteger corresponding to the second component of the receiver.
+ */
+- (NSInteger)second;
 
 /**
  * Returns a new NSString object created from the receiver's date.
@@ -93,6 +126,76 @@
  * @return A NSString containing the day name of the receiver. The string is localized with the current NSLocale.
  */
 - (NSString *)dayName;
+
+/**
+ * Returns a new NSDate object containing the same date as the current object set at midnight.
+ *
+ * @return A NSDate containing a date with the hours, minutes and seconds set at 0.
+ */
+- (NSDate *)midnightDate;
+
+#pragma mark - Adding Interval
+
+/**
+ * Returns a new NSDate object with new date conponents.
+ *
+ * @param years The number of year units.
+ * @param months The number of month units.
+ * @param days The number of day units.
+ * @param hours The number of hour units.
+ * @param minutes The number of minute units.
+ * @param seconds The number of second units.
+ * @return A NSDate set with new date components from the receiver's date.
+ */
+- (NSDate *)dateByAddingIntervalsWithYear:(NSInteger)years months:(NSInteger)months days:(NSInteger)days hours:(NSInteger)hours minutes:(NSInteger)minutes seconds:(NSInteger)seconds;
+
+/**
+ * Returns a new NSDate object with n years interval from the receiver's.
+ *
+ * @param yearInterval The number of year units.
+ * @return A NSDate set with n years from the receiver's date.
+ */
+- (NSDate *)dateByAddingYearInterval:(NSInteger)yearInterval;
+
+/**
+ * Returns a new NSDate object with n months interval from the receiver's.
+ *
+ * @param monthInterval The number of month units.
+ * @return A NSDate set with n months from the receiver's date.
+ */
+- (NSDate *)dateByAddingMonthInterval:(NSInteger)monthInterval;
+
+/**
+ * Returns a new NSDate object with n days interval from the receiver's.
+ *
+ * @param dayInterval The number of day units.
+ * @return A NSDate set with n days from the receiver's date.
+ */
+- (NSDate *)dateByAddingDayInterval:(NSInteger)dayInterval;
+
+/**
+ * Returns a new NSDate object with n hours interval from the receiver's.
+ *
+ * @param hourInterval The number of hour units.
+ * @return A NSDate set with n hours from the receiver's date.
+ */
+- (NSDate *)dateByAddingHourInterval:(NSInteger)hourInterval;
+
+/**
+ * Returns a new NSDate object with n minutes interval from the receiver's.
+ *
+ * @param minuteInterval The number of minute units.
+ * @return A NSDate set with n minutes from the receiver's date.
+ */
+- (NSDate *)dateByAddingMinuteInterval:(NSInteger)minuteInterval;
+
+/**
+ * Returns a new NSDate object with n seconds interval from the receiver's.
+ *
+ * @param secondInterval The number of second units.
+ * @return A NSDate set with n seconds from the receiver's date.
+ */
+- (NSDate *)dateByAddingSecondInterval:(NSInteger)secondInterval;
 
 @end
 

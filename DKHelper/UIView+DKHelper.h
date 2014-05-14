@@ -11,6 +11,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ * A categorized class of UIView to add a bunch of helping methods.
+ */
 @interface UIView (DKHelper)
 
 #pragma mark - UIView+RoundCorner

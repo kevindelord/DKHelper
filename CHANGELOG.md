@@ -1,5 +1,16 @@
 # DKHelper CHANGELOG
 
+## 0.6.0
+
+- Improve Documentation
+- Improve Test workspace
+- Add and improve performBlock methods
+- Add UIImageView::initwithframe:image(name)
+- Add NSDate component getters
+- Improve NSDate::dateByAddingInterval methods
+- Add NSDate::midnightDate
+- UIDevice::isSlowDevice bug fix
+
 ## 0.5.2
 
 - NSDate: add dateFromISOString

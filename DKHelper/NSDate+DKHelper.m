@@ -39,18 +39,15 @@
     return [gregorian dateFromComponents:dateComponents];
 }
 
-- (NSDate *)dateByAddingOneMonthInterval {
-    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
-    [dateComponents setMonth:1];
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    return [calendar dateByAddingComponents:dateComponents toDate:self options:0];
-}
-
-- (NSDate *)dateByAddingOneDayInterval {
-    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
-    [dateComponents setDay:1];
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    return [calendar dateByAddingComponents:dateComponents toDate:self options:0];
+- (NSDate *)midnightDate {
+    NSCalendar* gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    unsigned int unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSTimeZoneCalendarUnit;
+    NSDateComponents* dateComponents = [gregorian components:unitFlags fromDate:self];
+    dateComponents.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
+    [dateComponents setMinute:0];
+    [dateComponents setSecond:0];
+    [dateComponents setHour:0];
+    return [gregorian dateFromComponents:dateComponents];
 }
 
 - (NSString *)stringValue {
@@ -71,6 +68,81 @@
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     NSDateComponents *comps = [gregorian components:NSWeekdayCalendarUnit fromDate:self];
     return [[[NSDateFormatter new] standaloneWeekdaySymbols] objectAtIndex:([comps weekday] - 1)];
+}
+
+#pragma mark - Getter methods
+
+- (NSInteger)year {
+	NSCalendar *calendar = [NSCalendar currentCalendar];
+	calendar.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
+    return [[calendar components:NSYearCalendarUnit fromDate:self] year];
+}
+
+- (NSInteger)month {
+	NSCalendar *calendar = [NSCalendar currentCalendar];
+	calendar.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
+    return [[calendar components:NSMonthCalendarUnit fromDate:self] month];
+}
+
+- (NSInteger)day {
+	NSCalendar *calendar = [NSCalendar currentCalendar];
+	calendar.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
+    return [[calendar components:NSDayCalendarUnit fromDate:self] day];
+}
+
+- (NSInteger)hour {
+	NSCalendar *calendar = [NSCalendar currentCalendar];
+	calendar.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
+    return [[calendar components:NSHourCalendarUnit|NSTimeZoneCalendarUnit fromDate:self] hour];
+}
+
+- (NSInteger)minute {
+	NSCalendar *calendar = [NSCalendar currentCalendar];
+	calendar.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
+    return [[calendar components:NSMinuteCalendarUnit fromDate:self] minute];
+}
+
+- (NSInteger)second {
+	NSCalendar *calendar = [NSCalendar currentCalendar];
+	calendar.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
+    return [[calendar components:NSSecondCalendarUnit fromDate:self] second];
+}
+
+#pragma mark - Adding Interval
+
+- (NSDate *)dateByAddingIntervalsWithYear:(NSInteger)years months:(NSInteger)months days:(NSInteger)days hours:(NSInteger)hours minutes:(NSInteger)minutes seconds:(NSInteger)seconds {
+    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+    [dateComponents setYear:years];
+    [dateComponents setMonth:months];
+    [dateComponents setDay:days];
+    [dateComponents setHour:hours];
+    [dateComponents setMinute:minutes];
+    [dateComponents setSecond:seconds];
+    return [[NSCalendar currentCalendar] dateByAddingComponents:dateComponents toDate:self options:0];
+}
+
+- (NSDate *)dateByAddingYearInterval:(NSInteger)yearInterval {
+    return [self dateByAddingIntervalsWithYear:yearInterval months:0 days:0 hours:0 minutes:0 seconds:0];
+}
+
+- (NSDate *)dateByAddingMonthInterval:(NSInteger)monthInterval {
+    return [self dateByAddingIntervalsWithYear:0 months:monthInterval days:0 hours:0 minutes:0 seconds:0];
+}
+
+- (NSDate *)dateByAddingDayInterval:(NSInteger)dayInterval {
+    return [self dateByAddingIntervalsWithYear:0 months:0 days:dayInterval hours:0 minutes:0 seconds:0];
+}
+
+- (NSDate *)dateByAddingHourInterval:(NSInteger)hourInterval {
+    return [self dateByAddingIntervalsWithYear:0 months:0 days:0 hours:hourInterval minutes:0 seconds:0];
+}
+
+- (NSDate *)dateByAddingMinuteInterval:(NSInteger)minuteInterval {
+    return [self dateByAddingIntervalsWithYear:0 months:0 days:0 hours:0 minutes:minuteInterval seconds:0];
+}
+
+- (NSDate *)dateByAddingSecondInterval:(NSInteger)secondInterval {
+    return [self dateByAddingIntervalsWithYear:0 months:0 days:0 hours:0 minutes:0 seconds:secondInterval];
 }
 
 @end

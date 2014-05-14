@@ -11,6 +11,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ * A categorized class of UIDevice to add a bunch of helping methods.
+ */
 @interface UIDevice (Model)
 
 #pragma mark - UIDevice+Model
