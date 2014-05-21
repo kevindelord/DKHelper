@@ -89,6 +89,6 @@
 #define ISO8601_DATE_FORMAT                         @"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"
 
 // colors
-#define UIColorFromHexa(hexa)                    [UIColor r:((float)((hexa & 0xFF0000) >> 16)) g:((float)((hexa & 0xFF00) >> 8)) b:((float)(hexa & 0xFF))]
+#define UIColorFromHexa(hexa)                       [UIColor r:((float)((hexa & 0xFF0000) >> 16)) g:((float)((hexa & 0xFF00) >> 8)) b:((float)(hexa & 0xFF))]
 
 #endif
