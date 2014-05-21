@@ -46,7 +46,7 @@
 
 // Numbers
 #pragma mark - Numbers
-#define MINMAX(v, min, max)                         ((v < min) ? min : (v > max) ? (max) : v )
+#define MINMAX(v, min, max)                         ((v <= min) ? min : (v >= max) ? (max) : v )
 #define cL(v)                                       (long)(v)
 #define cUL(v)                                      (unsigned long)(v)
 
