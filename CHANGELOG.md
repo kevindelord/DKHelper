@@ -1,5 +1,12 @@
 # DKHelper CHANGELOG
 
+## 0.6.1
+
+- Add Getter for UIVIew frame attributes
+- Add NSNumber::currencyStringValue
+- MINMAX macro now use <= and >= operator
+- Add UIColorFromHexa maccro
+
 ## 0.6.0
 
 - Improve Documentation
