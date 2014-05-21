@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7519D3A6192D3BAE00488AD1 /* NSNumber+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7519D3A5192D3BAE00488AD1 /* NSNumber+DKHelper.m */; };
 		753A287219070F52006FEF71 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 753A287119070F52006FEF71 /* Foundation.framework */; };
 		753A287419070F52006FEF71 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 753A287319070F52006FEF71 /* CoreGraphics.framework */; };
 		753A287619070F53006FEF71 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 753A287519070F53006FEF71 /* UIKit.framework */; };
@@ -44,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7519D3A4192D3BAE00488AD1 /* NSNumber+DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSNumber+DKHelper.h"; path = "../DKHelper/NSNumber+DKHelper.h"; sourceTree = "<group>"; };
+		7519D3A5192D3BAE00488AD1 /* NSNumber+DKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSNumber+DKHelper.m"; path = "../DKHelper/NSNumber+DKHelper.m"; sourceTree = "<group>"; };
 		753A286E19070F52006FEF71 /* DKHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DKHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		753A287119070F52006FEF71 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		753A287319070F52006FEF71 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -195,6 +198,8 @@
 				75D3EE0A19092BA8004ABB08 /* CGRect+DKHelper.m */,
 				754A731F190710F600D0D432 /* UIDevice+DKHelper.h */,
 				754A7318190710F600D0D432 /* UIDevice+DKHelper.m */,
+				7519D3A4192D3BAE00488AD1 /* NSNumber+DKHelper.h */,
+				7519D3A5192D3BAE00488AD1 /* NSNumber+DKHelper.m */,
 				754A731C190710F600D0D432 /* NSDate+DKHelper.h */,
 				754A7319190710F600D0D432 /* NSDate+DKHelper.m */,
 				754A731D190710F600D0D432 /* UIImage+DKHelper.h */,
@@ -321,6 +326,7 @@
 				753A288819070F53006FEF71 /* DKViewController.m in Sources */,
 				754A7324190710F600D0D432 /* UIDevice+DKHelper.m in Sources */,
 				754A7329190710F600D0D432 /* UIView+DKHelper.m in Sources */,
+				7519D3A6192D3BAE00488AD1 /* NSNumber+DKHelper.m in Sources */,
 				753A288219070F53006FEF71 /* DKAppDelegate.m in Sources */,
 				754A7327190710F600D0D432 /* NSObject+DKHelper.m in Sources */,
 				754A7325190710F600D0D432 /* NSDate+DKHelper.m in Sources */,

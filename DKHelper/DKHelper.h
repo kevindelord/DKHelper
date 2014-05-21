@@ -21,6 +21,7 @@
 #import "CGSize+DKHelper.h"
 #import "CGRect+DKHelper.h"
 #import "UIImageView+DKHelper.h"
+#import "NSNumber+DKHelper.h"
 
 #pragma mark - DKLog
 
