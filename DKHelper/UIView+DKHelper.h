@@ -27,7 +27,7 @@
  */
 - (void)roundCorner:(UIRectCorner)corner radius:(CGFloat)cornerRadius;
 
-#pragma mark - CGRect Methods
+#pragma mark - CGRect Methods (Setter)
 
 /**
  * Set the origin of the receiver's frame.
@@ -70,6 +70,38 @@
  * @param y The new CGFloat value.
  */
 - (void)setFrameY:(CGFloat)y;
+
+#pragma mark - CGRect Methods (Getter)
+
+/**
+ * Returns the origin value of the receiver's frame.
+ */
+- (CGPoint)frameOrigin;
+
+/**
+ * Returns the size value of the receiver's frame.
+ */
+- (CGSize)frameSize;
+
+/**
+ * Returns the size.width of the receiver's frame.
+ */
+- (CGFloat)frameWidth;
+
+/**
+ * Returns the height of the receiver's frame.
+ */
+- (CGFloat)frameHeight;
+
+/**
+ * Returns the origin.x of the receiver's frame.
+ */
+- (CGFloat)frameX;
+
+/**
+ * Set the origin.y of the receiver's frame.
+ */
+- (CGFloat)frameY;
 
 @end
 

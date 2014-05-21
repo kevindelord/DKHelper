@@ -52,4 +52,48 @@
     self.frame = CGRectSetSize(self.frame, size);
 }
 
+#pragma mark - CGRect Methods (Getter)
+
+/**
+ * Returns the origin value of the receiver's frame.
+ */
+- (CGPoint)frameOrigin {
+    return self.frame.origin;
+}
+
+/**
+ * Returns the size value of the receiver's frame.
+ */
+- (CGSize)frameSize {
+    return self.frame.size;
+}
+
+/**
+ * Returns the size.width of the receiver's frame.
+ */
+- (CGFloat)frameWidth {
+    return self.frame.size.width;
+}
+
+/**
+ * Returns the height of the receiver's frame.
+ */
+- (CGFloat)frameHeight {
+    return self.frame.size.height;
+}
+
+/**
+ * Returns the origin.x of the receiver's frame.
+ */
+- (CGFloat)frameX {
+    return self.frame.origin.x;
+}
+
+/**
+ * Set the origin.y of the receiver's frame.
+ */
+- (CGFloat)frameY {
+    return self.frame.origin.y;
+}
+
 @end
