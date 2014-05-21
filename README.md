@@ -9,7 +9,7 @@ To run the example project; clone the repo, and run `pod install` from the Examp
 
 ## Documentation
 
-A HTML documentation is exist on the /doc directory. 
+The documentation is available on [CocoaDocs](http://cocoadocs.org/docsets/DKHelper)
 
 ## Requirements
 
