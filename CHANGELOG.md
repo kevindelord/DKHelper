@@ -1,5 +1,9 @@
 # DKHelper CHANGELOG
 
+## 0.6.2
+
+- NSString::stringFromDate now use temporary timezone set to 0
+
 ## 0.6.1
 
 - Add Getter for UIVIew frame attributes
