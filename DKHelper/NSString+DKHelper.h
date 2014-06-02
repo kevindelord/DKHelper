@@ -21,9 +21,10 @@
 /**
  * Returns a new NSString object created from a NSDate object with a specific format.
  *
- * @param date The NSDate to convert into a string.
- * @param format The NSString object representing the format in which the date is formatted.
- * @return A NSString containing the date with the given date format. NULL if the date isn't valid.
+ * @discussion The method use a temporary timeZone set to 0.
+ * @param date The NSDate to convert into a string. Must not be NULL.
+ * @param format The NSString object representing the format in which the date is formatted. Must not be NULL.
+ * @return A NSString containing the date with the given date format. NULL if the date or the format isn't valid.
  */
 + (NSString *)stringFromDate:(NSDate *)date format:(NSString *)format;
 
