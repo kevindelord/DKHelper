@@ -1,5 +1,5 @@
 PODS:
-  - DKHelper (0.6)
+  - DKHelper (0.6.2)
 
 DEPENDENCIES:
   - DKHelper (from `../DKHelper.podspec`)
@@ -9,6 +9,6 @@ EXTERNAL SOURCES:
     :path: ../DKHelper.podspec
 
 SPEC CHECKSUMS:
-  DKHelper: 418b788446b6d5f2ecffe3de5a9493d918810137
+  DKHelper: 16bf8fa7730e40fd8a1e6d74db1e4e070866eac8
 
-COCOAPODS: 0.32.1
+COCOAPODS: 0.33.1
