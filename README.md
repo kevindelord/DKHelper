@@ -1,7 +1,8 @@
 # DKHelper
 
-[![Version](http://cocoapod-badges.herokuapp.com/v/DKHelper/badge.png)](http://cocoadocs.org/docsets/DKHelper)
-[![Platform](http://cocoapod-badges.herokuapp.com/p/DKHelper/badge.png)](http://cocoadocs.org/docsets/DKHelper)
+[![Version](https://img.shields.io/cocoapods/v/DKHelper.svg?style=flat)](http://cocoadocs.org/docsets/DKHelper)
+[![License](https://img.shields.io/cocoapods/l/DKHelper.svg?style=flat)](http://cocoadocs.org/docsets/DKHelper)
+[![Platform](https://img.shields.io/cocoapods/p/DKHelper.svg?style=flat)](http://cocoadocs.org/docsets/DKHelper)
 
 ## Usage
 

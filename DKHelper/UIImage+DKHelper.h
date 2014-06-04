@@ -18,10 +18,11 @@
 
 #pragma mark - UIImage+Retina4
 
-//
-// Method to override the imageNamed: method with the retina4ImageNamed: one.
-// The new methode and its implementation will be executed instead of the default  UIImage::imageNamed:
-//
+/**
+ * Method to override the UIImage::imageNamed: method with the retina4ImageNamed: one.
+ * The new method and its implementation will be executed instead of the default UIImage::imageNamed:
+ * The user don't need to do anything.
+ */
 + (void)initialize;
 
 /**
