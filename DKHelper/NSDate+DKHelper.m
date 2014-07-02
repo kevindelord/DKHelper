@@ -74,37 +74,31 @@
 
 - (NSInteger)year {
 	NSCalendar *calendar = [NSCalendar currentCalendar];
-	calendar.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
     return [[calendar components:NSYearCalendarUnit fromDate:self] year];
 }
 
 - (NSInteger)month {
 	NSCalendar *calendar = [NSCalendar currentCalendar];
-	calendar.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
     return [[calendar components:NSMonthCalendarUnit fromDate:self] month];
 }
 
 - (NSInteger)day {
 	NSCalendar *calendar = [NSCalendar currentCalendar];
-	calendar.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
     return [[calendar components:NSDayCalendarUnit fromDate:self] day];
 }
 
 - (NSInteger)hour {
 	NSCalendar *calendar = [NSCalendar currentCalendar];
-	calendar.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
     return [[calendar components:NSHourCalendarUnit|NSTimeZoneCalendarUnit fromDate:self] hour];
 }
 
 - (NSInteger)minute {
 	NSCalendar *calendar = [NSCalendar currentCalendar];
-	calendar.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
     return [[calendar components:NSMinuteCalendarUnit fromDate:self] minute];
 }
 
 - (NSInteger)second {
 	NSCalendar *calendar = [NSCalendar currentCalendar];
-	calendar.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
     return [[calendar components:NSSecondCalendarUnit fromDate:self] second];
 }
 
