@@ -2,6 +2,10 @@
 
 ## 0.6.3
 
+- NSDate: component getters now use default time zone
+
+## 0.6.3
+
 - Add minor documentation on UIImage class
 
 ## 0.6.2
