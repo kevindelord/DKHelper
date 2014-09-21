@@ -39,7 +39,7 @@
 /**
  * Returns a Boolean value indicating whether the current device is a slow one or not.
  *
- * @discussion iPod 3G, iPhone 4 and iPad 1 are considered as slow devices.
+ * @discussion iPod 4G, iPhone 4S, iPad 2 and older are considered as slow devices.
  *
  * @return YES if the current device is a slow one.
  */

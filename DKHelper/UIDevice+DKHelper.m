@@ -39,6 +39,8 @@
     if ([platform isEqualToString:@"iPhone5,4"])    return @"iPhone 5c (UK+Europe+Asis+China)";
     if ([platform isEqualToString:@"iPhone6,1"])    return @"iPhone 5s (GSM+CDMA)";
     if ([platform isEqualToString:@"iPhone6,2"])    return @"iPhone 5s (UK+Europe+Asis+China)";
+    if ([platform isEqualToString:@"iPhone7,1"])    return @"iPhone 6 Plus";
+    if ([platform isEqualToString:@"iPhone7,2"])    return @"iPhone 6";
     
     if ([platform isEqualToString:@"iPod1,1"])      return @"iPod Touch (1 Gen)";
     if ([platform isEqualToString:@"iPod2,1"])      return @"iPod Touch (2 Gen)";
@@ -77,17 +79,24 @@
 }
 
 + (BOOL)isSlowDevice {
-	// this method considers any iPhone 4 and older as a slow device
+	// this method considers any iPhone 4S, iPod 4G, iPad 2 and older as a slow devices
     NSArray * forbiddenPlatforms = [NSArray arrayWithObjects:
                                     @"iPhone1,1", // iPhone 1G
                                     @"iPhone1,2", // iPhone 3G
                                     @"iPhone2,1", // iPhone 3GS
                                     @"iPhone3,1", // iPhone 4
                                     @"iPhone3,3", // Verizon iPhone 4
+                                    @"iPhone4,1", // iPhone 4S
                                     @"iPod1,1", // iPod 1G
                                     @"iPod2,1", // iPod 2G
                                     @"iPod3,1", // iPod 3G
+                                    @"iPod4,1", // iPod 4G
                                     @"iPad1,1", // iPad 1
+                                    @"iPad1,2", // iPad 3G
+                                    @"iPad2,1", // iPad 2 (WiFi)
+                                    @"iPad2,2", // iPad 2
+                                    @"iPad2,3", // iPad 2 (CDMA)
+                                    @"iPad2,4", // iPad 2
                                     nil];
     
     NSString *currentPlatform = [UIDevice platform];
