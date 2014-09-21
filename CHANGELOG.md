@@ -1,8 +1,19 @@
 # DKHelper CHANGELOG
 
-## 0.6.3
+## 0.6.5
 
-- NSDate: component getters now use default time zone
+- Add is4InchScreen, is47InchScreen, is55InchScreen defines.
+- ISO8601_DATE_FORMAT define has been removed. Use NSDate::ISO8601StringFormat instead.
+- Add NSDate::ISO8601StringFormat method to get the ISO 8601 date format as a string.
+- UIColorFromHexa define has been removed. Use UIColor::colorFromHexString instead.
+- UIColor: add color from hexa methods
+- UIView::roundCorner methods improved with maskToBounds parameter.
+- Update device family with iPhone 6 and iPhone 6 Plus.
+- NSCalendar unit warning fixes for iOS 8.
+
+## 0.6.4
+
+- NSDate: Use default timezone for NSDate components
 
 ## 0.6.3
 
