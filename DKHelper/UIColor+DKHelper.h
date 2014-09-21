@@ -92,6 +92,27 @@
  */
 + (UIColor *)r:(CGFloat)red g:(CGFloat)green b:(CGFloat)blue a:(CGFloat)alpha;
 
+#pragma mark - Hexa
+
+/**
+ * Creates and returns a color object using the given hexadecimal and alpha values.
+ *
+ * @param hexString The hexadecimal value as a string.
+ * @param alpha The opacity value of the color object, specified as a value from 0.0 to 1.0.
+ * @return Returns The color object.
+ */
++ (UIColor *)colorFromHexString:(NSString *)hexString alpha:(CGFloat)alpha;
+
+/**
+ * Creates and returns a color object using the given hexadecimal value as a NSString.
+ *
+ * @discussion The alpha is set by default to 1.0
+ *
+ * @param hexString The hexadecimal value as a string.
+ * @return Returns The color object.
+ */
++ (UIColor *)colorFromHexString:(NSString *)hexString;
+
 @end
 
 #endif

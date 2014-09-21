@@ -38,4 +38,18 @@
     return [UIColor colorWithRed:red / 255. green:green / 255. blue:blue / 255. alpha:alpha];
 }
 
+#pragma mark - Hexa
+
++ (UIColor *)colorFromHexString:(NSString *)hexString {
+    return [UIColor colorFromHexString:hexString alpha:1.0];
+}
+
++ (UIColor *)colorFromHexString:(NSString *)hexString alpha:(CGFloat)alpha {
+    unsigned rgbValue = 0;
+    NSScanner *scanner = [NSScanner scannerWithString:hexString];
+    [scanner setScanLocation:1]; // bypass '#' character
+    [scanner scanHexInt:&rgbValue];
+    return [UIColor r:((rgbValue & 0xFF0000) >> 16) g:((rgbValue & 0xFF00) >> 8) b:(rgbValue & 0xFF) a:alpha];
+}
+
 @end
