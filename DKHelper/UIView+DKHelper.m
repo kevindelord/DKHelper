@@ -14,14 +14,19 @@
 #pragma mark - UIView+RoundCorner
 
 - (void)roundCorner:(UIRectCorner)corner radius:(CGFloat)cornerRadius {
+    [self roundCorner:corner radius:corner maskToBounds:NO];
+}
+
+- (void)roundCorner:(UIRectCorner)corner radius:(CGFloat)cornerRadius maskToBounds:(BOOL)maskToBounds {
     // Create the path (with only the top-left corner rounded)
     UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds byRoundingCorners:corner cornerRadii:CGSizeMake(cornerRadius, cornerRadius)];
-    
+
     // Create the shape layer and set its path
     CAShapeLayer *maskLayer = [CAShapeLayer layer];
     maskLayer.frame = self.bounds;
     maskLayer.path = maskPath.CGPath;
-    
+    maskLayer.masksToBounds = maskToBounds;
+
     // Set the newly created shape layer as the mask for the image view's layer
     self.layer.mask = maskLayer;
 }

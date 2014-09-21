@@ -21,11 +21,21 @@
 /**
  * Rounds the specified corner(s) of the receiver with a given radius.
  *
- * @param corner A bitmask value that identifies the corners that you want rounded. You can use this parameter to round only a subset of the corners of the rectangle.
+ * @discussion By default set the layer's maskToBound value to NO
+ *
+ * @param corner A bitmask value that identifies the corners that you want rounded. You can use this parameter to round only a subset of the corners of the rectangle or all of them.
  * @param cornerRadius A CGFloat value corresponding to the radius of each corner oval. Values larger than half the rectangle’s width or height are clamped appropriately to half the width or height.
- * @return A NSString containing the date with the given date format. NULL if the date isn't valid.
  */
 - (void)roundCorner:(UIRectCorner)corner radius:(CGFloat)cornerRadius;
+
+/**
+ * Rounds the specified corner(s) of the receiver with a given radius.
+ *
+ * @param corner A bitmask value that identifies the corners that you want rounded. You can use this parameter to round only a subset of the corners of the rectangle or all of them.
+ * @param cornerRadius A CGFloat value corresponding to the radius of each corner oval. Values larger than half the rectangle’s width or height are clamped appropriately to half the width or height.
+ * @param maskToBounds A Boolean value to apply, if true, an implicit mask matching the layer bounds (will tell the UIView not to draw everything that is outside itself).
+ */
+- (void)roundCorner:(UIRectCorner)corner radius:(CGFloat)cornerRadius maskToBounds:(BOOL)maskToBounds;
 
 #pragma mark - CGRect Methods (Setter)
 
