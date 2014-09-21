@@ -64,7 +64,9 @@
 // Screen
 #pragma mark - Screen
 #define iOS7Delta                                   (([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0 ) ? 20 : 0 )
-#define is4InchScreen                               ([UIScreen mainScreen].bounds.size.height == 568.)
+#define is4InchScreen                               ([UIScreen mainScreen].bounds.size.height == 568. && [UIScreen mainScreen].bounds.size.width == 320.)
+#define is47InchScreen                              ([UIScreen mainScreen].bounds.size.height == 667. && [UIScreen mainScreen].bounds.size.width == 375.)
+#define is55InchScreen                              ([UIScreen mainScreen].bounds.size.height == 960. && [UIScreen mainScreen].bounds.size.width == 540.)
 
 // iOS version
 #pragma mark - iOS Version
