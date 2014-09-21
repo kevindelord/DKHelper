@@ -21,11 +21,11 @@
 }
 
 + (NSDate *)dateFromISOString:(NSString *)string {
-    return [NSDate dateFromString:string format:ISO8601_DATE_FORMAT];
+    return [NSDate dateFromString:string format:NSDate.ISO8601StringFormat];
 }
 
 + (NSDate *)dateFromDayString:(NSString *)string {
-    return [NSDate dateFromString:[NSString stringWithFormat:@"%@T00:00:00Z", string] format:ISO8601_DATE_FORMAT];
+    return [NSDate dateFromString:[NSString stringWithFormat:@"%@T00:00:00Z", string] format:NSDate.ISO8601StringFormat];
 }
 
 + (NSDate *)currentDayDate {
@@ -55,7 +55,7 @@
 }
 
 - (NSString *)ISO8601StringValue {
-    return [NSString stringFromDate:self format:ISO8601_DATE_FORMAT];
+    return [NSString stringFromDate:self format:NSDate.ISO8601StringFormat];
 }
 
 - (NSString *)monthName {
@@ -137,6 +137,12 @@
 
 - (NSDate *)dateByAddingSecondInterval:(NSInteger)secondInterval {
     return [self dateByAddingIntervalsWithYear:0 months:0 days:0 hours:0 minutes:0 seconds:secondInterval];
+}
+
+#pragma mark - ISO formats
+
++ (NSString *)ISO8601StringFormat {
+    return @"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'";
 }
 
 @end

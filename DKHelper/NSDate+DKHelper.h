@@ -197,6 +197,15 @@
  */
 - (NSDate *)dateByAddingSecondInterval:(NSInteger)secondInterval;
 
+#pragma mark - ISO formats
+
+/**
+ * Returns the default ISO 8601 date format as a string.
+ *
+ * @return A NSString object corresponding to the default ISO 8601 date format.
+ */
++ (NSString *)ISO8601StringFormat;
+
 @end
 
 #endif
