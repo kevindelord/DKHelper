@@ -22,6 +22,7 @@
 #import "CGRect+DKHelper.h"
 #import "UIImageView+DKHelper.h"
 #import "NSNumber+DKHelper.h"
+#import "NSArray+DKHelper.h"
 
 #pragma mark - DKLog
 
@@ -81,8 +82,9 @@
 #define AND_PREDICATE(a, b)                         (a ? [NSCompoundPredicate andPredicateWithSubpredicates:@[a, b]] : b)
 
 // Common File Formats
-#define IMAGE_FILE_EXTENSIONS                       @[@".tif", @".tiff", @".gif", @".jpeg", @".jpg", @".png", @".pjpeg"]
-#define AUDIO_FILE_EXTENSIONS                       @[@".mp3", @".mp2", @".wma", @".aac", @".m4a", @".mp4", @".m4p"]
+#define IMAGE_FILE_EXTENSIONS                       NSArray.imageFileExtensions
+#define AUDIO_FILE_EXTENSIONS                       NSArray.audioFileExtensions
+#define VIDEO_FILE_EXTENSIONS                       NSArray.videoFileExtensions
 
 // Math
 #define degreesToRadians(degrees)                  ((degrees * M_PI) / 180.0)
