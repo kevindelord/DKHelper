@@ -29,7 +29,11 @@
 /**
  * Return a string describing the current version of the application including the build number.
  */
-NSString * appVersion();
+NSString *  appVersion();
+
+CGFloat     degreesToRadians(CGFloat degrees);
+
+CGFloat     radiansToDegrees(CGFloat radians);
 
 #pragma mark - DKLog
 
@@ -69,7 +73,7 @@ NSString * appVersion();
 
 // Screen
 #pragma mark - Screen
-#define iOS7Delta                                   (([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0 ) ? 20 : 0 )
+#define iOS7Delta                                   [UIDevice iOS7Delta]
 #define is4InchScreen                               ([UIScreen mainScreen].bounds.size.height == 568. && [UIScreen mainScreen].bounds.size.width == 320.)
 #define is47InchScreen                              ([UIScreen mainScreen].bounds.size.height == 667. && [UIScreen mainScreen].bounds.size.width == 375.)
 #define is55InchScreen                              ([UIScreen mainScreen].bounds.size.height == 960. && [UIScreen mainScreen].bounds.size.width == 540.)
@@ -90,9 +94,5 @@ NSString * appVersion();
 #define IMAGE_FILE_EXTENSIONS                       NSArray.imageFileExtensions
 #define AUDIO_FILE_EXTENSIONS                       NSArray.audioFileExtensions
 #define VIDEO_FILE_EXTENSIONS                       NSArray.videoFileExtensions
-
-// Math
-#define degreesToRadians(degrees)                  ((degrees * M_PI) / 180.0)
-#define radiansToDegrees(radians)                  ((radians * 180.0) / M_PI)
 
 #endif
