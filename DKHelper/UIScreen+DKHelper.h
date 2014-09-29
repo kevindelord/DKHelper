@@ -34,3 +34,4 @@
 + (BOOL)is55InchScreen;
 
 @end
+

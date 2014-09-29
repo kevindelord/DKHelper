@@ -80,26 +80,12 @@ NSPredicate *   AND_PREDICATE(NSPredicate *a, NSPredicate *b);
 
 #pragma mark - Preprocessor Defines
 
-// Log
+#define DK_APP_VERSION                              appVersion()
 #define __STRING_PRETTY_FUNCTION__                  [NSString stringWithFormat:@"%s", __PRETTY_FUNCTION__]
-
-// Screen
+#define iOS7Delta                                   [UIDevice iOS7Delta]
 #define is35InchScreen                              [UIScreen is35InchScreen]
 #define is4InchScreen                               [UIScreen is4InchScreen]
 #define is47InchScreen                              [UIScreen is47InchScreen]
 #define is55InchScreen                              [UIScreen is55InchScreen]
-
-// iOS version
-#define iOS7Delta                                   [UIDevice iOS7Delta]
-#define SYSTEM_VERSION_EQUAL_TO(v)                  [UIDevice systemVersionEqualTo:v]
-#define SYSTEM_VERSION_GREATER_THAN(v)              [UIDevice systemVersionGreaterThan:v]
-#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  [UIDevice systemVersionGreaterThanOrEqualTo:v]
-#define SYSTEM_VERSION_LESS_THAN(v)                 [UIDevice systemVersionLessThan:v]
-#define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     [UIDevice systemVersionLessThanOrEqualTo:v]
-
-// Common File Formats
-#define IMAGE_FILE_EXTENSIONS                       NSArray.imageFileExtensions
-#define AUDIO_FILE_EXTENSIONS                       NSArray.audioFileExtensions
-#define VIDEO_FILE_EXTENSIONS                       NSArray.videoFileExtensions
 
 #endif

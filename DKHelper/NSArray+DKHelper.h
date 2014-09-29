@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+#define IMAGE_FILE_EXTENSIONS                       NSArray.imageFileExtensions
+#define AUDIO_FILE_EXTENSIONS                       NSArray.audioFileExtensions
+#define VIDEO_FILE_EXTENSIONS                       NSArray.videoFileExtensions
+
 /**
  * A categorized class of NSArray to add a bunch of helping methods.
  */
