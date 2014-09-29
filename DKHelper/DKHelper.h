@@ -65,15 +65,10 @@ NSString *  RGX_FILE_NAME_AND_EXTENSION();
 
 #pragma mark - DKLog
 
+void        DKLog(BOOL verbose, NSString *format, ...);
+
 // Log
 #define __STRING_PRETTY_FUNCTION__                  [NSString stringWithFormat:@"%s", __PRETTY_FUNCTION__]
-
-#if defined (DEBUG)
-//# define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
-# define DKLog(verbose, fmt, ...) if (verbose) { NSLog(fmt, ##__VA_ARGS__); }
-#else
-# define DKLog(...) // do nothing
-#endif
 
 #pragma mark - Preprocessor Defines
 

@@ -70,3 +70,19 @@ NSString *  RGX_FILE_EXTENSION() {
 NSString *  RGX_FILE_NAME_AND_EXTENSION() {
     return @"[0-9a-zA-Z]+.[0-9a-zA-Z]+$";
 }
+
+#pragma mark - DKLog
+
+void        DKLog(BOOL verbose, NSString *format, ...) {
+#if defined (DEBUG)
+    if (verbose) {
+        va_list args;
+        va_start(args, format);
+        NSString *content = [[NSString alloc] initWithFormat:format arguments:args];
+        va_end(args);
+        NSLog(@"%@", content);
+    }
+#else
+    // do nothing
+#endif
+}
