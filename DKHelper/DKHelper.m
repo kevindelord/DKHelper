@@ -94,3 +94,14 @@ void        DKLog(BOOL verbose, NSString *format, ...) {
     // do nothing
 #endif
 }
+
+#pragma mark - Predicate
+
+NSPredicate *   OR_PREDICATE(NSPredicate *a, NSPredicate *b) {
+    return (a ? [NSCompoundPredicate orPredicateWithSubpredicates:@[a, b]] : b);
+}
+
+NSPredicate *   AND_PREDICATE(NSPredicate *a, NSPredicate *b) {
+    return (a ? [NSCompoundPredicate andPredicateWithSubpredicates:@[a, b]] : b);
+}
+
