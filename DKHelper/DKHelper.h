@@ -23,6 +23,7 @@
 #import "UIImageView+DKHelper.h"
 #import "NSNumber+DKHelper.h"
 #import "NSArray+DKHelper.h"
+#import "UIScreen+DKHelper.h"
 
 #pragma mark - Functions
 
@@ -79,13 +80,14 @@ NSString *  GET_STRING(NSDictionary *dict, id key);
 
 // Screen
 #pragma mark - Screen
-#define iOS7Delta                                   [UIDevice iOS7Delta]
-#define is4InchScreen                               ([UIScreen mainScreen].bounds.size.height == 568. && [UIScreen mainScreen].bounds.size.width == 320.)
-#define is47InchScreen                              ([UIScreen mainScreen].bounds.size.height == 667. && [UIScreen mainScreen].bounds.size.width == 375.)
-#define is55InchScreen                              ([UIScreen mainScreen].bounds.size.height == 960. && [UIScreen mainScreen].bounds.size.width == 540.)
+#define is35InchScreen                              [UIScreen is35InchScreen]
+#define is4InchScreen                               [UIScreen is4InchScreen]
+#define is47InchScreen                              [UIScreen is47InchScreen]
+#define is55InchScreen                              [UIScreen is55InchScreen]
 
 // iOS version
 #pragma mark - iOS Version
+#define iOS7Delta                                   [UIDevice iOS7Delta]
 #define SYSTEM_VERSION_EQUAL_TO(v)                  [UIDevice systemVersionEqualTo:v]
 #define SYSTEM_VERSION_GREATER_THAN(v)              [UIDevice systemVersionGreaterThan:v]
 #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  [UIDevice systemVersionGreaterThanOrEqualTo:v]

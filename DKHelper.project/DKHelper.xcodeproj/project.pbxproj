@@ -31,6 +31,7 @@
 		754A73401907122200D0D432 /* UIColor+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 754A733F1907122200D0D432 /* UIColor+DKHelper.m */; };
 		7577623119D9F0D200C60D9B /* NSArray+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7577623019D9F0D200C60D9B /* NSArray+DKHelper.m */; };
 		7577623319D9F85200C60D9B /* DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7577623219D9F85200C60D9B /* DKHelper.m */; };
+		7577623619D9FFFA00C60D9B /* UIScreen+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7577623519D9FFFA00C60D9B /* UIScreen+DKHelper.m */; };
 		75D3EE0819092B53004ABB08 /* CGSize+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D3EE0719092B53004ABB08 /* CGSize+DKHelper.m */; };
 		75D3EE0B19092BA8004ABB08 /* CGRect+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D3EE0A19092BA8004ABB08 /* CGRect+DKHelper.m */; };
 		75F0AAE5191E552D00B6BDB1 /* UIImageView+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F0AAE4191E552D00B6BDB1 /* UIImageView+DKHelper.m */; };
@@ -86,6 +87,8 @@
 		7577622F19D9F0D200C60D9B /* NSArray+DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+DKHelper.h"; path = "../DKHelper/NSArray+DKHelper.h"; sourceTree = "<group>"; };
 		7577623019D9F0D200C60D9B /* NSArray+DKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+DKHelper.m"; path = "../DKHelper/NSArray+DKHelper.m"; sourceTree = "<group>"; };
 		7577623219D9F85200C60D9B /* DKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKHelper.m; path = ../DKHelper/DKHelper.m; sourceTree = "<group>"; };
+		7577623419D9FFFA00C60D9B /* UIScreen+DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIScreen+DKHelper.h"; path = "../DKHelper/UIScreen+DKHelper.h"; sourceTree = "<group>"; };
+		7577623519D9FFFA00C60D9B /* UIScreen+DKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScreen+DKHelper.m"; path = "../DKHelper/UIScreen+DKHelper.m"; sourceTree = "<group>"; };
 		75D3EE0619092B53004ABB08 /* CGSize+DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CGSize+DKHelper.h"; path = "../DKHelper/CGSize+DKHelper.h"; sourceTree = "<group>"; };
 		75D3EE0719092B53004ABB08 /* CGSize+DKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CGSize+DKHelper.m"; path = "../DKHelper/CGSize+DKHelper.m"; sourceTree = "<group>"; };
 		75D3EE0919092BA8004ABB08 /* CGRect+DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CGRect+DKHelper.h"; path = "../DKHelper/CGRect+DKHelper.h"; sourceTree = "<group>"; };
@@ -222,6 +225,8 @@
 				75D3EE0719092B53004ABB08 /* CGSize+DKHelper.m */,
 				7577622F19D9F0D200C60D9B /* NSArray+DKHelper.h */,
 				7577623019D9F0D200C60D9B /* NSArray+DKHelper.m */,
+				7577623419D9FFFA00C60D9B /* UIScreen+DKHelper.h */,
+				7577623519D9FFFA00C60D9B /* UIScreen+DKHelper.m */,
 			);
 			name = DKHelper;
 			sourceTree = "<group>";
@@ -337,6 +342,7 @@
 				754A7324190710F600D0D432 /* UIDevice+DKHelper.m in Sources */,
 				754A7329190710F600D0D432 /* UIView+DKHelper.m in Sources */,
 				7519D3A6192D3BAE00488AD1 /* NSNumber+DKHelper.m in Sources */,
+				7577623619D9FFFA00C60D9B /* UIScreen+DKHelper.m in Sources */,
 				753A288219070F53006FEF71 /* DKAppDelegate.m in Sources */,
 				754A7327190710F600D0D432 /* NSObject+DKHelper.m in Sources */,
 				754A7325190710F600D0D432 /* NSDate+DKHelper.m in Sources */,
@@ -467,7 +473,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DKHelper/DKHelper-Prefix.pch";
 				INFOPLIST_FILE = "DKHelper/DKHelper-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -481,7 +487,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DKHelper/DKHelper-Prefix.pch";
 				INFOPLIST_FILE = "DKHelper/DKHelper-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
