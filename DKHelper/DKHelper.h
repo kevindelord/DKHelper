@@ -31,9 +31,25 @@
  */
 NSString *  appVersion();
 
+/**
+ * Convert degrees to radians.
+ */
 CGFloat     degreesToRadians(CGFloat degrees);
 
+/**
+ * Convert radians to degrees.
+ */
 CGFloat     radiansToDegrees(CGFloat radians);
+
+id          OBJECT(NSDictionary *dict, id key);
+id          OBJECT_FOR_KEYS(NSDictionary *dict, id key1, id key2);
+
+BOOL        VALID(NSDictionary *dict, id key);
+CGFloat     GET_FLOAT(NSDictionary *dict, id key);
+NSInteger   GET_INTEGER(NSDictionary *dict, id key);
+NSNumber *  GET_NUMBER(NSDictionary *dict, id key);
+NSDate *    GET_DATE(NSDictionary *dict, id key);
+NSString *  GET_STRING(NSDictionary *dict, id key);
 
 #pragma mark - DKLog
 
@@ -47,8 +63,8 @@ CGFloat     radiansToDegrees(CGFloat radians);
 # define DKLog(...) // do nothing
 #endif
 
-// App version
-#pragma mark - AppVersion
+#pragma mark - Preprocessor Defines
+
 #define DK_APP_VERSION                              appVersion()
 
 // Regex
@@ -60,16 +76,6 @@ CGFloat     radiansToDegrees(CGFloat radians);
 #define MINMAX(v, min, max)                         ((v <= min) ? min : (v >= max) ? (max) : v )
 #define cL(v)                                       (long)(v)
 #define cUL(v)                                      (unsigned long)(v)
-
-// NSObjects
-#pragma mark - NSObjects
-#define OBJECT(dictionary, key)                     ( VALID(dictionary, key) ? [dictionary objectForKey:key] : nil )
-#define VALID(dict, key)                            (dict && [dict objectForKey:key] && ![[dict objectForKey:key] isEqual:[NSNull null]])
-#define GET_FLOAT(dictionary, key)                  ( VALID(dictionary, key) ? [NSNumber numberWithFloat:[[dictionary objectForKey:key] floatValue]] : nil )
-#define GET_NUMBER(dictionary, key)                 ( VALID(dictionary, key) ? [NSNumber numberWithInteger:[[dictionary objectForKey:key] integerValue]] : nil )
-#define GET_DATE(dictionary, key)                   ( VALID(dictionary, key) ? [NSDate dateFromISOString:[dictionary objectForKey:key]] : nil )
-#define GET_STRING(dictionary, key)                 ( VALID(dictionary, key) ? ( ![[dictionary objectForKey:key] isEqualToString:@""] ? [dictionary objectForKey:key] : nil ) : nil )
-#define GET_ASSET_URL(dictionary, key1, key2)       ( VALID(dictionary, key1) ? ( VALID([dictionary objectForKey:key1], key2) ? [[dictionary objectForKey:key1] objectForKey:key2] : nil ) : nil )
 
 // Screen
 #pragma mark - Screen
