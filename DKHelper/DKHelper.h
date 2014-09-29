@@ -24,6 +24,13 @@
 #import "NSNumber+DKHelper.h"
 #import "NSArray+DKHelper.h"
 
+#pragma mark - Functions
+
+/**
+ * Return a string describing the current version of the application including the build number.
+ */
+NSString * appVersion();
+
 #pragma mark - DKLog
 
 // Log
@@ -38,9 +45,7 @@
 
 // App version
 #pragma mark - AppVersion
-#define DK_APP_VERSION                              [NSString stringWithFormat:@"Version %@ (%@)", \
-                                                    [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"], \
-                                                    [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]]
+#define DK_APP_VERSION                              appVersion()
 
 // Regex
 #define RGX_FILE_EXTENSION                          @".[0-9a-zA-Z]+$"
