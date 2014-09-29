@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ * A categorized class of UIScreen to add a bunch of helping methods.
+ */
 @interface UIScreen (DKHelper)
 
 /**
