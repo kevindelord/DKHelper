@@ -112,4 +112,30 @@
     return [currentModel hasPrefix:@"iPad"];
 }
 
++ (CGFloat)iOS7Delta {
+    return (([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0 ) ? 20 : 0);
+}
+
+#pragma mark - System Version
+
++ (BOOL)systemVersionEqualTo:(NSString *)version {
+    return ([[[UIDevice currentDevice] systemVersion] compare:version options:NSNumericSearch] == NSOrderedSame);
+}
+
++ (BOOL)systemVersionGreaterThan:(NSString *)version {
+    return ([[[UIDevice currentDevice] systemVersion] compare:version options:NSNumericSearch] == NSOrderedDescending);
+}
+
++ (BOOL)systemVersionGreaterThanOrEqualTo:(NSString *)version {
+    return ([[[UIDevice currentDevice] systemVersion] compare:version options:NSNumericSearch] != NSOrderedAscending);
+}
+
++ (BOOL)systemVersionLessThan:(NSString *)version {
+    return ([[[UIDevice currentDevice] systemVersion] compare:version options:NSNumericSearch] == NSOrderedAscending);
+}
+
++ (BOOL)systemVersionLessThanOrEqualTo:(NSString *)version {
+    return ([[[UIDevice currentDevice] systemVersion] compare:version options:NSNumericSearch] != NSOrderedDescending);
+}
+
 @end

@@ -52,6 +52,38 @@
  */
 + (BOOL)isIPad;
 
+/**
+ * Return 20px if the system version is superior or equal to 7.0.
+ */
++ (CGFloat)iOS7Delta;
+
+#pragma mark - System Version
+
+/**
+ * Return true if the system version is equal to the given parameter.
+ */
++ (BOOL)systemVersionEqualTo:(NSString *)version;
+
+/**
+ * Return true if the system version is greater than the given parameter.
+ */
++ (BOOL)systemVersionGreaterThan:(NSString *)version;
+
+/**
+ * Return true if the system version is greater or equal to the given parameter.
+ */
++ (BOOL)systemVersionGreaterThanOrEqualTo:(NSString *)version;
+
+/**
+ * Return true if the system version is less than the given parameter.
+ */
++ (BOOL)systemVersionLessThan:(NSString *)version;
+
+/**
+ * Return true if the system version is less than or equal to the given parameter.
+ */
++ (BOOL)systemVersionLessThanOrEqualTo:(NSString *)version;
+
 @end
 
 #endif
