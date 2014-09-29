@@ -83,9 +83,6 @@ NSPredicate *   AND_PREDICATE(NSPredicate *a, NSPredicate *b);
 // Log
 #define __STRING_PRETTY_FUNCTION__                  [NSString stringWithFormat:@"%s", __PRETTY_FUNCTION__]
 
-// Version
-#define DK_APP_VERSION                              appVersion()
-
 // Screen
 #define is35InchScreen                              [UIScreen is35InchScreen]
 #define is4InchScreen                               [UIScreen is4InchScreen]
