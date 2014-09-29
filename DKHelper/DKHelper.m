@@ -71,6 +71,14 @@ NSString *  RGX_FILE_NAME_AND_EXTENSION() {
     return @"[0-9a-zA-Z]+.[0-9a-zA-Z]+$";
 }
 
+#pragma mark - Numbers
+
+BOOL            MINMAX(CGFloat v, CGFloat min, CGFloat max) { return ((v <= min) ? min : (v >= max) ? (max) : v ); }
+
+long            cL(int v) {     return (long)(v);           }
+
+unsigned long   cUL(int v) {    return (unsigned long)(v);  }
+
 #pragma mark - DKLog
 
 void        DKLog(BOOL verbose, NSString *format, ...) {

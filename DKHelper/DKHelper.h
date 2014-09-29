@@ -67,18 +67,19 @@ NSString *  RGX_FILE_NAME_AND_EXTENSION();
 
 void        DKLog(BOOL verbose, NSString *format, ...);
 
-// Log
-#define __STRING_PRETTY_FUNCTION__                  [NSString stringWithFormat:@"%s", __PRETTY_FUNCTION__]
+#pragma mark - Numbers
+
+BOOL            MINMAX(CGFloat v, CGFloat min, CGFloat max);
+long            cL(int v);
+unsigned long   cUL(int v);
 
 #pragma mark - Preprocessor Defines
 
+// Log
+#define __STRING_PRETTY_FUNCTION__                  [NSString stringWithFormat:@"%s", __PRETTY_FUNCTION__]
+
 // Version
 #define DK_APP_VERSION                              appVersion()
-
-// Numbers
-#define MINMAX(v, min, max)                         ((v <= min) ? min : (v >= max) ? (max) : v )
-#define cL(v)                                       (long)(v)
-#define cUL(v)                                      (unsigned long)(v)
 
 // Screen
 #define is35InchScreen                              [UIScreen is35InchScreen]
