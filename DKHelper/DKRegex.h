@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ * A class about regex as strings.
+ */
 @interface DKRegex : NSObject
 
 /**
