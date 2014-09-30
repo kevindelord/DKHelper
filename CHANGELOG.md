@@ -1,5 +1,19 @@
 # DKHelper CHANGELOG
 
+## 0.7.0
+
+- Improve documentation
+- Add localized function L()
+- Add NSPredicate function helpers
+- Add Number and cast functions
+- Add DKLog as a function
+- Add regex functions
+- Add functions to get the current screen size
+- Add functions to get valid data from a dictionary
+- Add Math fonction to convert radians and degrees
+- Add categorised methods to UIDevice to check system version
+- Create array category for file extensions
+
 ## 0.6.5
 
 - Add is4InchScreen, is47InchScreen, is55InchScreen defines.
