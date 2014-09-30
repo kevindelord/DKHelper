@@ -62,7 +62,7 @@ NSString *      L(NSString *key);
  *
  * @param dict A NSDictionary object.
  * @param key An object used as a key into the given dictionary.
- * @return If valid returns the object for key from the dictionary. Returns nil otherwise.
+ * @return If valid the object for key from the dictionary. Returns nil otherwise.
  * @see BOOL VALID(NSDictionary *dict, id key);
  */
 id              OBJECT(NSDictionary *dict, id key);
@@ -74,7 +74,7 @@ id              OBJECT(NSDictionary *dict, id key);
  * @param dict A NSDictionary object.
  * @param key1 An object used as the first key into the given dictionary.
  * @param key2 An object used as the second the given dictionary.
- * @return If valid returns the second level object for the keys from the dictionary. Returns nil otherwise.
+ * @return If valid the second level object for the keys from the dictionary. Returns nil otherwise.
  * @see BOOL VALID(NSDictionary *dict, id key);
  */
 id              OBJECT_FOR_KEYS(NSDictionary *dict, id key1, id key2);
@@ -84,7 +84,7 @@ id              OBJECT_FOR_KEYS(NSDictionary *dict, id key1, id key2);
  *
  * @param dict A NSDictionary object.
  * @param key An object used as a key into the given dictionary.
- * @return Returns true if the dictionary and if the object for key exist and are different from NSNull. Returns false otherwise.
+ * @return True if the dictionary and if the object for key exist and are different from NSNull. Returns false otherwise.
  */
 BOOL            VALID(NSDictionary *dict, id key);
 
@@ -98,7 +98,14 @@ NSString *      GET_STRING(NSDictionary *dict, id key);
 
 #pragma mark - Regex
 
+/**
+ * Returns a regex as a NSString object to get a file's extension.
+ */
 NSString *      RGX_FILE_EXTENSION();
+
+/**
+ * Returns a regex as a NSString object to get a file's name and extension.
+ */
 NSString *      RGX_FILE_NAME_AND_EXTENSION();
 
 #pragma mark - DKLog
@@ -107,8 +114,24 @@ void            DKLog(BOOL verbose, NSString *format, ...);
 
 #pragma mark - Numbers
 
-BOOL            MINMAX(CGFloat v, CGFloat min, CGFloat max);
+/**
+ * Check and return a value between minimal and maximum ones. If the given value is outside its limits then returns the appropriate value.
+ *
+ * @param value A CGFloat value to be return if in between the 'min' and 'max' parameters
+ * @param min A CGFloat value corresponding to the minimal 'min' value.
+ * @param min A CGFloat value corresponding to the maximal 'max' value.
+ * @return A CGFloat value corresponding to the value if it is in between the min/max limits. Otherwise returns either the minimal or maximal value.
+ */
+CGFloat         MINMAX(CGFloat value, CGFloat min, CGFloat max);
+
+/**
+ * Cast an 'int' value as a 'long' type.
+ */
 long            cL(int v);
+
+/**
+ * Cast an 'int' value as a 'unsigned long' type.
+ */
 unsigned long   cUL(int v);
 
 #pragma mark - Predicate

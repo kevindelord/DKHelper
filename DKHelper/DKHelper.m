@@ -79,11 +79,17 @@ NSString *  RGX_FILE_NAME_AND_EXTENSION() {
 
 #pragma mark - Numbers
 
-BOOL            MINMAX(CGFloat v, CGFloat min, CGFloat max) { return ((v <= min) ? min : (v >= max) ? (max) : v ); }
+CGFloat     MINMAX(CGFloat value, CGFloat min, CGFloat max) {
+    return ((value <= min) ? min : (value >= max) ? (max) : value);
+}
 
-long            cL(int v) {     return (long)(v);           }
+long            cL(int v) {
+    return (long)(v);
+}
 
-unsigned long   cUL(int v) {    return (unsigned long)(v);  }
+unsigned long   cUL(int v) {
+    return (unsigned long)(v);
+}
 
 #pragma mark - DKLog
 
