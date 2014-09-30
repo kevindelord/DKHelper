@@ -11,6 +11,12 @@
 
 #import <UIKit/UIKit.h>
 
+#define SYSTEM_VERSION_EQUAL_TO(v)                  [UIDevice systemVersionEqualTo:v]
+#define SYSTEM_VERSION_GREATER_THAN(v)              [UIDevice systemVersionGreaterThan:v]
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  [UIDevice systemVersionGreaterThanOrEqualTo:v]
+#define SYSTEM_VERSION_LESS_THAN(v)                 [UIDevice systemVersionLessThan:v]
+#define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     [UIDevice systemVersionLessThanOrEqualTo:v]
+
 /**
  * A categorized class of UIDevice to add a bunch of helping methods.
  */
@@ -51,6 +57,38 @@
  * @return YES if the current device is an iPad.
  */
 + (BOOL)isIPad;
+
+/**
+ * Return 20px if the system version is superior or equal to 7.0.
+ */
++ (CGFloat)iOS7Delta;
+
+#pragma mark - System Version
+
+/**
+ * Return true if the system version is equal to the given parameter.
+ */
++ (BOOL)systemVersionEqualTo:(NSString *)version;
+
+/**
+ * Return true if the system version is greater than the given parameter.
+ */
++ (BOOL)systemVersionGreaterThan:(NSString *)version;
+
+/**
+ * Return true if the system version is greater or equal to the given parameter.
+ */
++ (BOOL)systemVersionGreaterThanOrEqualTo:(NSString *)version;
+
+/**
+ * Return true if the system version is less than the given parameter.
+ */
++ (BOOL)systemVersionLessThan:(NSString *)version;
+
+/**
+ * Return true if the system version is less than or equal to the given parameter.
+ */
++ (BOOL)systemVersionLessThanOrEqualTo:(NSString *)version;
 
 @end
 
