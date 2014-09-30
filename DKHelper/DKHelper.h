@@ -46,12 +46,46 @@ CGFloat         radiansToDegrees(CGFloat radians);
 
 #pragma mark - Localization
 
+/**
+ * Return the localized version as a string of the key.
+ *
+ * @discussion This function is a short verion of "NSLocalizedString(key, nil)".
+ * @param key The key as a string referencing the localized entity.
+ * @return The localized string of the key.
+ */
 NSString *      L(NSString *key);
 
 #pragma mark - Object verification
 
+/**
+ * Get an object from a dictionary.
+ *
+ * @param dict A NSDictionary object.
+ * @param key An object used as a key into the given dictionary.
+ * @return If valid returns the object for key from the dictionary. Returns nil otherwise.
+ * @see BOOL VALID(NSDictionary *dict, id key);
+ */
 id              OBJECT(NSDictionary *dict, id key);
+
+/**
+ * Get an object from a second level dictionary.
+ *
+ * @discussion This function add some validity test around this: [[dictionary objectForKey:key1] objectForKey:key2]
+ * @param dict A NSDictionary object.
+ * @param key1 An object used as the first key into the given dictionary.
+ * @param key2 An object used as the second the given dictionary.
+ * @return If valid returns the second level object for the keys from the dictionary. Returns nil otherwise.
+ * @see BOOL VALID(NSDictionary *dict, id key);
+ */
 id              OBJECT_FOR_KEYS(NSDictionary *dict, id key1, id key2);
+
+/**
+ * Check the validity of an object inside a dictionary.
+ *
+ * @param dict A NSDictionary object.
+ * @param key An object used as a key into the given dictionary.
+ * @return Returns true if the dictionary and if the object for key exist and are different from NSNull. Returns false otherwise.
+ */
 BOOL            VALID(NSDictionary *dict, id key);
 
 #pragma mark - Getters

@@ -41,7 +41,7 @@ BOOL        VALID(NSDictionary *dict, id key) {
 
 #pragma mark - Localization
 
-NSString *      L(NSString *key) {
+NSString *  L(NSString *key) {
     return NSLocalizedString(key, nil);
 }
 
