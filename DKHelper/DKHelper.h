@@ -60,7 +60,7 @@ NSString *      L(NSString *key);
 /**
  * Get an object from a dictionary.
  *
- * @param dict A NSDictionary object.
+ * @param dict The NSDictionary object to extract the object from.
  * @param key An object used as a key into the given dictionary.
  * @return If valid the object for key from the dictionary. Returns nil otherwise.
  * @see BOOL VALID(NSDictionary *dict, id key);
@@ -70,8 +70,8 @@ id              OBJECT(NSDictionary *dict, id key);
 /**
  * Get an object from a second level dictionary.
  *
- * @discussion This function add some validity test around this: [[dictionary objectForKey:key1] objectForKey:key2]
- * @param dict A NSDictionary object.
+ * @discussion This function add some validity tests around this: [[dictionary objectForKey:key1] objectForKey:key2]
+ * @param dict The NSDictionary object to extract the object from.
  * @param key1 An object used as the first key into the given dictionary.
  * @param key2 An object used as the second the given dictionary.
  * @return If valid the second level object for the keys from the dictionary. Returns nil otherwise.
@@ -90,10 +90,54 @@ BOOL            VALID(NSDictionary *dict, id key);
 
 #pragma mark - Getters
 
+/**
+ * Extract a CGFloat value out of a dictionary with a given key.
+ *
+ * @discussion This function add some validity tests to extract the value without crashing if an object isn't valid.
+ * @param dict The NSDictionary object to extract the object from.
+ * @param key An object used as a key.
+ * @return A new CGFloat value extracted from the given dictionary. If the object isn't valid returns 0 instead.
+ */
 CGFloat         GET_FLOAT(NSDictionary *dict, id key);
+
+/**
+ * Extract a NSInteger value out of a dictionary with a given key.
+ *
+ * @discussion This function add some validity tests to extract the value without crashing if an object isn't valid.
+ * @param dict The NSDictionary object to extract the object from.
+ * @param key An object used as a key.
+ * @return A new NSInteger value extracted from the given dictionary. If the object isn't valid returns 0 instead.
+ */
 NSInteger       GET_INTEGER(NSDictionary *dict, id key);
+
+/**
+ * Extract a NSNumber value out of a dictionary with a given key.
+ *
+ * @discussion This function add some validity tests to extract the value without crashing if an object isn't valid.
+ * @param dict The NSDictionary object to extract the object from.
+ * @param key An object used as a key.
+ * @return A new NSNumber value extracted from the given dictionary. If the object isn't valid returns nil instead.
+ */
 NSNumber *      GET_NUMBER(NSDictionary *dict, id key);
+
+/**
+ * Extract a NSDate value out of a dictionary with a given key.
+ *
+ * @discussion This function add some validity tests to extract the value without crashing if an object isn't valid.
+ * @param dict The NSDictionary object to extract the object from.
+ * @param key An object used as a key.
+ * @return A new NSDate value extracted from the given dictionary. If the object isn't valid returns nil instead.
+ */
 NSDate *        GET_DATE(NSDictionary *dict, id key);
+
+/**
+ * Extract a NSString value out of a dictionary with a given key.
+ *
+ * @discussion This function add some validity tests to extract the value without crashing if an object isn't valid.
+ * @param dict The NSDictionary object to extract the object from.
+ * @param key An object used as a key.
+ * @return A new NSString value extracted from the given dictionary. If the object isn't valid returns nil instead.
+ */
 NSString *      GET_STRING(NSDictionary *dict, id key);
 
 #pragma mark - Regex
