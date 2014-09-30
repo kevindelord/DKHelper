@@ -67,16 +67,6 @@ NSString *  GET_STRING(NSDictionary *dict, id key) {
     return ( VALID(dict, key) ? ( ![dict[key] isEqualToString:@""] ? dict[key] : nil ) : nil);
 }
 
-#pragma mark - Regex
-
-NSString *  RGX_FILE_EXTENSION() {
-    return @".[0-9a-zA-Z]+$";
-}
-
-NSString *  RGX_FILE_NAME_AND_EXTENSION() {
-    return @"[0-9a-zA-Z]+.[0-9a-zA-Z]+$";
-}
-
 #pragma mark - Numbers
 
 CGFloat     MINMAX(CGFloat value, CGFloat min, CGFloat max) {

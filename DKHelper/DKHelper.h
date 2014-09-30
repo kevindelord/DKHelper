@@ -24,6 +24,7 @@
 #import "NSNumber+DKHelper.h"
 #import "NSArray+DKHelper.h"
 #import "UIScreen+DKHelper.h"
+#import "DKRegex.h"
 
 #pragma mark - AppVersion
 
@@ -139,18 +140,6 @@ NSDate *        GET_DATE(NSDictionary *dict, id key);
  * @return A new NSString value extracted from the given dictionary. If the object isn't valid returns nil instead.
  */
 NSString *      GET_STRING(NSDictionary *dict, id key);
-
-#pragma mark - Regex
-
-/**
- * Returns a regex as a NSString object to get a file's extension.
- */
-NSString *      RGX_FILE_EXTENSION();
-
-/**
- * Returns a regex as a NSString object to get a file's name and extension.
- */
-NSString *      RGX_FILE_NAME_AND_EXTENSION();
 
 #pragma mark - DKLog
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7511F6DE19DABB3C00C29B75 /* DKRegex.m in Sources */ = {isa = PBXBuildFile; fileRef = 7511F6DD19DABB3C00C29B75 /* DKRegex.m */; };
 		7519D3A6192D3BAE00488AD1 /* NSNumber+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7519D3A5192D3BAE00488AD1 /* NSNumber+DKHelper.m */; };
 		753A287219070F52006FEF71 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 753A287119070F52006FEF71 /* Foundation.framework */; };
 		753A287419070F52006FEF71 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 753A287319070F52006FEF71 /* CoreGraphics.framework */; };
@@ -49,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7511F6DC19DABB3C00C29B75 /* DKRegex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKRegex.h; path = ../DKHelper/DKRegex.h; sourceTree = "<group>"; };
+		7511F6DD19DABB3C00C29B75 /* DKRegex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKRegex.m; path = ../DKHelper/DKRegex.m; sourceTree = "<group>"; };
 		7519D3A4192D3BAE00488AD1 /* NSNumber+DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSNumber+DKHelper.h"; path = "../DKHelper/NSNumber+DKHelper.h"; sourceTree = "<group>"; };
 		7519D3A5192D3BAE00488AD1 /* NSNumber+DKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSNumber+DKHelper.m"; path = "../DKHelper/NSNumber+DKHelper.m"; sourceTree = "<group>"; };
 		753A286E19070F52006FEF71 /* DKHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DKHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -232,6 +235,8 @@
 				7577623519D9FFFA00C60D9B /* UIScreen+DKHelper.m */,
 				7577623719DA09B000C60D9B /* NSPredicate+DKHelper.h */,
 				7577623819DA09B000C60D9B /* NSPredicate+DKHelper.m */,
+				7511F6DC19DABB3C00C29B75 /* DKRegex.h */,
+				7511F6DD19DABB3C00C29B75 /* DKRegex.m */,
 			);
 			name = DKHelper;
 			sourceTree = "<group>";
@@ -347,6 +352,7 @@
 				753A288819070F53006FEF71 /* DKViewController.m in Sources */,
 				754A7324190710F600D0D432 /* UIDevice+DKHelper.m in Sources */,
 				754A7329190710F600D0D432 /* UIView+DKHelper.m in Sources */,
+				7511F6DE19DABB3C00C29B75 /* DKRegex.m in Sources */,
 				7519D3A6192D3BAE00488AD1 /* NSNumber+DKHelper.m in Sources */,
 				7577623619D9FFFA00C60D9B /* UIScreen+DKHelper.m in Sources */,
 				753A288219070F53006FEF71 /* DKAppDelegate.m in Sources */,
