@@ -160,12 +160,12 @@ CGFloat         MINMAX(CGFloat value, CGFloat min, CGFloat max);
 /**
  * Cast an 'int' value as a 'long' type.
  */
-long            cL(int v);
+long            cL(NSInteger v);
 
 /**
  * Cast an 'int' value as a 'unsigned long' type.
  */
-unsigned long   cUL(int v);
+unsigned long   cUL(NSUInteger v);
 
 #pragma mark - Predicate
 

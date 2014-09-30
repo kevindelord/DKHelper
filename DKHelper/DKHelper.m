@@ -73,11 +73,11 @@ CGFloat     MINMAX(CGFloat value, CGFloat min, CGFloat max) {
     return ((value <= min) ? min : (value >= max) ? (max) : value);
 }
 
-long            cL(int v) {
+long            cL(NSInteger v) {
     return (long)(v);
 }
 
-unsigned long   cUL(int v) {
+unsigned long   cUL(NSUInteger v) {
     return (unsigned long)(v);
 }
 
