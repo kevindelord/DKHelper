@@ -1,5 +1,10 @@
 # DKHelper CHANGELOG
 
+## 0.7.1
+
+- Bug fix
+- Add DKRegex class
+
 ## 0.7.0
 
 - Improve documentation
