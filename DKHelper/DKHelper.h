@@ -136,7 +136,22 @@ unsigned long   cUL(int v);
 
 #pragma mark - Predicate
 
+/**
+ * Create and return a 'OR' predicate out of two given predicates.
+ *
+ * @param a A NSPredicate object. If nil will be ignored.
+ * @param b A NSPredicate object. If nil will be ignored.
+ * @return A new NSPredicate object created from the parameters one with a 'OR' statement. Could return nil if both parameters are.
+ */
 NSPredicate *   OR_PREDICATE(NSPredicate *a, NSPredicate *b);
+
+/**
+ * Create and return a 'AND' predicate out of two given predicates.
+ *
+ * @param a A NSPredicate object. If nil will be ignored.
+ * @param b A NSPredicate object. If nil will be ignored.
+ * @return A new NSPredicate object created from the parameters one with a 'AND' statement. Could return nil if both parameters are.
+ */
 NSPredicate *   AND_PREDICATE(NSPredicate *a, NSPredicate *b);
 
 #pragma mark - Preprocessor Defines
