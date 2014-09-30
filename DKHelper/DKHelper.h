@@ -44,6 +44,10 @@ CGFloat         degreesToRadians(CGFloat degrees);
  */
 CGFloat         radiansToDegrees(CGFloat radians);
 
+#pragma mark - Localization
+
+NSString *      L(NSString *key);
+
 #pragma mark - Object verification
 
 id              OBJECT(NSDictionary *dict, id key);

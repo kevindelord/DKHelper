@@ -39,6 +39,12 @@ BOOL        VALID(NSDictionary *dict, id key) {
     return (dict && dict[key] && ![dict[key] isEqual:[NSNull null]]);
 }
 
+#pragma mark - Localization
+
+NSString *      L(NSString *key) {
+    return NSLocalizedString(key, nil);
+}
+
 #pragma mark - Getters
 
 CGFloat     GET_FLOAT(NSDictionary *dict, id key) {
