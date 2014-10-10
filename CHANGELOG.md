@@ -1,8 +1,12 @@
 # DKHelper CHANGELOG
 
+## 0.7.2
+
+- NSPredicate bug fixes
+
 ## 0.7.1
 
-- Bug fix
+- Bug fixes
 - Add DKRegex class
 
 ## 0.7.0
