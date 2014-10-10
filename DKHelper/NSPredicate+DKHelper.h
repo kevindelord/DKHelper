@@ -13,7 +13,7 @@
  */
 @interface NSPredicate (DKHelper)
 
-/*
+/**
  * Returns a predicate applying a 'OR' logic on the current object with the given parameter.
  *
  * @param predicate The predicate to apply to the current object. If nil, only the current object will be returned.
@@ -21,7 +21,7 @@
  */
 - (NSPredicate *)OR:(NSPredicate *)predicate;
 
-/*
+/**
  * Returns a predicate applying a 'AND' logic on the current object with the given parameter.
  *
  * @param predicate The predicate to apply to the current object. If nil, only the current object will be returned.
