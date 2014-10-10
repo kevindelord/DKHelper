@@ -1,5 +1,9 @@
 # DKHelper CHANGELOG
 
+## 0.7.3
+
+- NSPredicate documentation fixed
+
 ## 0.7.2
 
 - NSPredicate bug fixes
