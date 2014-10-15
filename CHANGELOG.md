@@ -1,5 +1,9 @@
 # DKHelper CHANGELOG
 
+## 0.7.4
+
+- GET_NUMBER bug fix
+
 ## 0.7.3
 
 - NSPredicate documentation fixed
