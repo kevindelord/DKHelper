@@ -56,7 +56,16 @@ NSInteger  GET_INTEGER(NSDictionary *dict, id key) {
 }
 
 NSNumber *  GET_NUMBER(NSDictionary *dict, id key) {
-    return (VALID(dict, key) ? @([dict[key] integerValue]) : nil);
+    id obj = OBJECT(dict, key);
+    if (obj && [obj isKindOfClass:[NSString class]]) {
+        NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
+        [f setNumberStyle:NSNumberFormatterDecimalStyle];
+        return [f numberFromString:(NSString *)obj];
+
+    } else if (obj && [obj isKindOfClass:[NSNumber class]]) {
+        return obj;
+    }
+    return nil;
 }
 
 NSDate *    GET_DATE(NSDictionary *dict, id key) {

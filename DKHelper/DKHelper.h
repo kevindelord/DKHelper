@@ -52,6 +52,7 @@ CGFloat         radiansToDegrees(CGFloat radians);
  * Return the localized version as a string of the key.
  *
  * @discussion This function is a short verion of "NSLocalizedString(key, nil)".
+ *
  * @param key The key as a string referencing the localized entity.
  * @return The localized string of the key.
  */
@@ -73,6 +74,7 @@ id              OBJECT(NSDictionary *dict, id key);
  * Get an object from a second level dictionary.
  *
  * @discussion This function add some validity tests around this: [[dictionary objectForKey:key1] objectForKey:key2]
+ *
  * @param dict The NSDictionary object to extract the object from.
  * @param key1 An object used as the first key into the given dictionary.
  * @param key2 An object used as the second the given dictionary.
@@ -96,6 +98,7 @@ BOOL            VALID(NSDictionary *dict, id key);
  * Extract a CGFloat value out of a dictionary with a given key.
  *
  * @discussion This function add some validity tests to extract the value without crashing if an object isn't valid.
+ *
  * @param dict The NSDictionary object to extract the object from.
  * @param key An object used as a key.
  * @return A new CGFloat value extracted from the given dictionary. If the object isn't valid returns 0 instead.
@@ -106,6 +109,7 @@ CGFloat         GET_FLOAT(NSDictionary *dict, id key);
  * Extract a NSInteger value out of a dictionary with a given key.
  *
  * @discussion This function add some validity tests to extract the value without crashing if an object isn't valid.
+ *
  * @param dict The NSDictionary object to extract the object from.
  * @param key An object used as a key.
  * @return A new NSInteger value extracted from the given dictionary. If the object isn't valid returns 0 instead.
@@ -115,7 +119,14 @@ NSInteger       GET_INTEGER(NSDictionary *dict, id key);
 /**
  * Extract a NSNumber value out of a dictionary with a given key.
  *
- * @discussion This function add some validity tests to extract the value without crashing if an object isn't valid.
+ * @discussion This function add some validity tests to extract a NSNumber value without crashing if an object isn't valid.
+ *
+ * If the object is a string the NSNumber will be generated with a NSNumberFormatterDecimalStyle.
+ *
+ * If the object already is a NSNumber then it will be simply returned.
+ *
+ * If the object is none of the above nil will be returned.
+ *
  * @param dict The NSDictionary object to extract the object from.
  * @param key An object used as a key.
  * @return A new NSNumber value extracted from the given dictionary. If the object isn't valid returns nil instead.
@@ -126,6 +137,7 @@ NSNumber *      GET_NUMBER(NSDictionary *dict, id key);
  * Extract a NSDate value out of a dictionary with a given key.
  *
  * @discussion This function add some validity tests to extract the value without crashing if an object isn't valid.
+ *
  * @param dict The NSDictionary object to extract the object from.
  * @param key An object used as a key.
  * @return A new NSDate value extracted from the given dictionary. If the object isn't valid returns nil instead.
@@ -136,6 +148,7 @@ NSDate *        GET_DATE(NSDictionary *dict, id key);
  * Extract a NSString value out of a dictionary with a given key.
  *
  * @discussion This function add some validity tests to extract the value without crashing if an object isn't valid.
+ *
  * @param dict The NSDictionary object to extract the object from.
  * @param key An object used as a key.
  * @return A new NSString value extracted from the given dictionary. If the object isn't valid returns nil instead.
