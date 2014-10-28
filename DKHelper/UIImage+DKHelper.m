@@ -11,39 +11,51 @@
 
 static Method origImageNamedMethod = nil;
 
-@implementation UIImage (Retina4)
+@implementation UIImage (DKHelper)
 
-#pragma mark - UIImage+Retina4
+#pragma mark - UIImage Initializer
 
-// original code here: https://gist.github.com/sserye/3719620
 + (void)initialize {
     origImageNamedMethod = class_getClassMethod(self, @selector(imageNamed:));
-    method_exchangeImplementations(origImageNamedMethod, class_getClassMethod(self, @selector(retina4ImageNamed:)));
+    method_exchangeImplementations(origImageNamedMethod, class_getClassMethod(self, @selector(dynamicImageNamed:)));
 }
 
-// original code here: https://gist.github.com/sserye/3719620
-+ (UIImage *)retina4ImageNamed:(NSString *)imageName {
-    NSMutableString *imageNameMutable = [imageName mutableCopy];
-    NSRange retinaAtSymbol = [imageName rangeOfString:@"@"];
-    if (retinaAtSymbol.location != NSNotFound) {
-        [imageNameMutable insertString:@"-568h" atIndex:retinaAtSymbol.location];
-    } else {
-        CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
-        if ([UIScreen mainScreen].scale == 2.f && screenHeight == 568.0f) {
-            NSRange dot = [imageName rangeOfString:@"."];
-            if (dot.location != NSNotFound)
-                [imageNameMutable insertString:@"-568h@2x" atIndex:dot.location];
-            else
-                [imageNameMutable appendString:@"-568h@2x"];
++ (UIImage *)dynamicImageNamed:(NSString *)imageName {
+
+    // only change the name if no '@2x' or '@3x' are specified
+    if ([imageName rangeOfString:@"@"].location == NSNotFound) {
+
+        CGFloat h = [UIScreen mainScreen].bounds.size.height;
+        CGFloat w = [UIScreen mainScreen].bounds.size.width;
+        CGFloat scale = [UIScreen mainScreen].scale;
+
+        // generate the current valid file extension depending on the current device screen size.
+        NSString *extension = @"";
+        if (scale == 3.f) {
+            extension = @"@3x";
+        } else if (scale == 2.f && h == 568.0f && w == 320.0f) {
+            extension = @"-568h@2x";
+        } else if (scale == 2.f && h == 667.0f && w == 375.0f) {
+            extension = @"-667h@2x";
+        } else if (scale == 2.f && h == 480.0f && w == 320.0f) {
+            extension = @"@2x";
+        }
+
+        // add the extension to the image name
+        NSRange dot = [imageName rangeOfString:@"."];
+        NSMutableString *imageNameMutable = [imageName mutableCopy];
+        if (dot.location != NSNotFound)
+            [imageNameMutable insertString:extension atIndex:dot.location];
+        else
+            [imageNameMutable appendString:extension];
+
+        // if exist returns the corresponding UIImage
+        if ([[NSBundle mainBundle] pathForResource:imageNameMutable ofType:@""]) {
+            return [UIImage dynamicImageNamed:imageNameMutable];
         }
     }
-    NSString *imagePath = [[NSBundle mainBundle] pathForResource:imageNameMutable ofType:@""];
-    if (imagePath)
-        return [UIImage retina4ImageNamed:imageNameMutable];
-    else
-        return [UIImage retina4ImageNamed:imageName];
-    
-    return nil;
+    // otherwise returns an UIImage with the original filename.
+    return [UIImage dynamicImageNamed:imageName];
 }
 
 @end

@@ -14,9 +14,9 @@
 /**
  * A categorized class of UIImage to add a bunch of helping methods.
  */
-@interface UIImage (Retina4)
+@interface UIImage (DKHelper)
 
-#pragma mark - UIImage+Retina4
+#pragma mark - UIImage Initializer
 
 /**
  * Method to override the UIImage::imageNamed: method with the retina4ImageNamed: one.
@@ -28,12 +28,17 @@
 /**
  * Returns a new UIImage object created from a filename.
  *
- * @discussion This method will automatically add the needed image suffix for the current device ("@2x", "-568h@2x" or nothing).
+ * @discussion If needed, this method will automatically add the needed image suffix for the current device:
+ * - "@2x"
+ * - "-568h@2x"
+ * - "-667h@2x"
+ * - "@3x"
+ * Important: the given filename should NOT contain any size-extension, only a name and its file type.
  *
  * @param imageName The NSString object representing the filename of the image.
  * @return An UIImage created from a given string.
  */
-+ (UIImage *)retina4ImageNamed:(NSString *)imageName;
++ (UIImage *)dynamicImageNamed:(NSString *)imageName;
 
 @end
 
