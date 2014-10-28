@@ -1,5 +1,9 @@
 # DKHelper CHANGELOG
 
+## 0.7.5
+
+- Improve UIImage class to generatea an object with a file corresponding to the current device size.
+
 ## 0.7.4
 
 - GET_NUMBER bug fix
