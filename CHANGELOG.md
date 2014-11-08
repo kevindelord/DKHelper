@@ -1,5 +1,9 @@
 # DKHelper CHANGELOG
 
+## 0.7.6
+
+- Fix UIImage initializer.
+
 ## 0.7.5
 
 - Improve UIImage class to generatea an object with a file corresponding to the current device size.

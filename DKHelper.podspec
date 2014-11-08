@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "DKHelper"
-  s.version          = "0.7.5"
+  s.version          = "0.7.6"
   s.summary          = "Bunch of categorized classes to improve your iOS development."
   s.homepage         = "https://github.com/kevindelord/DKHelper"
   s.license          = 'MIT'
