@@ -1,6 +1,6 @@
 # DKHelper CHANGELOG
 
-## 0.8
+## 0.8.0
 
 - Remove categorised class UIImage. Please now use the dedicated library: https://github.com/kevindelord/UIImage-Autoresize
 
