@@ -14,7 +14,6 @@
 #import "UIView+DKHelper.h"
 #import "UIDevice+DKHelper.h"
 #import "NSString+DKHelper.h"
-#import "UIImage+DKHelper.h"
 #import "NSObject+DKHelper.h"
 #import "NSDate+DKHelper.h"
 #import "UIColor+DKHelper.h"
