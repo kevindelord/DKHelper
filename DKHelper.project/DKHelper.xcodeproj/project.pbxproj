@@ -25,7 +25,6 @@
 		753A289D19070F53006FEF71 /* DKHelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 753A289C19070F53006FEF71 /* DKHelperTests.m */; };
 		754A7324190710F600D0D432 /* UIDevice+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 754A7318190710F600D0D432 /* UIDevice+DKHelper.m */; };
 		754A7325190710F600D0D432 /* NSDate+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 754A7319190710F600D0D432 /* NSDate+DKHelper.m */; };
-		754A7326190710F600D0D432 /* UIImage+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 754A731A190710F600D0D432 /* UIImage+DKHelper.m */; };
 		754A7327190710F600D0D432 /* NSObject+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 754A7321190710F600D0D432 /* NSObject+DKHelper.m */; };
 		754A7328190710F600D0D432 /* NSString+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 754A7322190710F600D0D432 /* NSString+DKHelper.m */; };
 		754A7329190710F600D0D432 /* UIView+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 754A7323190710F600D0D432 /* UIView+DKHelper.m */; };
@@ -76,10 +75,8 @@
 		754A7317190710F600D0D432 /* DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DKHelper.h; path = ../DKHelper/DKHelper.h; sourceTree = "<group>"; };
 		754A7318190710F600D0D432 /* UIDevice+DKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIDevice+DKHelper.m"; path = "../DKHelper/UIDevice+DKHelper.m"; sourceTree = "<group>"; };
 		754A7319190710F600D0D432 /* NSDate+DKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+DKHelper.m"; path = "../DKHelper/NSDate+DKHelper.m"; sourceTree = "<group>"; };
-		754A731A190710F600D0D432 /* UIImage+DKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+DKHelper.m"; path = "../DKHelper/UIImage+DKHelper.m"; sourceTree = "<group>"; };
 		754A731B190710F600D0D432 /* NSObject+DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+DKHelper.h"; path = "../DKHelper/NSObject+DKHelper.h"; sourceTree = "<group>"; };
 		754A731C190710F600D0D432 /* NSDate+DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+DKHelper.h"; path = "../DKHelper/NSDate+DKHelper.h"; sourceTree = "<group>"; };
-		754A731D190710F600D0D432 /* UIImage+DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+DKHelper.h"; path = "../DKHelper/UIImage+DKHelper.h"; sourceTree = "<group>"; };
 		754A731E190710F600D0D432 /* NSString+DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+DKHelper.h"; path = "../DKHelper/NSString+DKHelper.h"; sourceTree = "<group>"; };
 		754A731F190710F600D0D432 /* UIDevice+DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIDevice+DKHelper.h"; path = "../DKHelper/UIDevice+DKHelper.h"; sourceTree = "<group>"; };
 		754A7320190710F600D0D432 /* UIView+DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+DKHelper.h"; path = "../DKHelper/UIView+DKHelper.h"; sourceTree = "<group>"; };
@@ -217,8 +214,6 @@
 				7519D3A5192D3BAE00488AD1 /* NSNumber+DKHelper.m */,
 				754A731C190710F600D0D432 /* NSDate+DKHelper.h */,
 				754A7319190710F600D0D432 /* NSDate+DKHelper.m */,
-				754A731D190710F600D0D432 /* UIImage+DKHelper.h */,
-				754A731A190710F600D0D432 /* UIImage+DKHelper.m */,
 				754A731B190710F600D0D432 /* NSObject+DKHelper.h */,
 				754A7321190710F600D0D432 /* NSObject+DKHelper.m */,
 				754A731E190710F600D0D432 /* NSString+DKHelper.h */,
@@ -345,7 +340,6 @@
 				754A7328190710F600D0D432 /* NSString+DKHelper.m in Sources */,
 				7577623319D9F85200C60D9B /* DKHelper.m in Sources */,
 				7577623919DA09B000C60D9B /* NSPredicate+DKHelper.m in Sources */,
-				754A7326190710F600D0D432 /* UIImage+DKHelper.m in Sources */,
 				7577623119D9F0D200C60D9B /* NSArray+DKHelper.m in Sources */,
 				75F0AAE5191E552D00B6BDB1 /* UIImageView+DKHelper.m in Sources */,
 				753A287E19070F53006FEF71 /* main.m in Sources */,
