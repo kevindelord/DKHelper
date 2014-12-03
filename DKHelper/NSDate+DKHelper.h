@@ -206,6 +206,18 @@
  */
 + (NSString *)ISO8601StringFormat;
 
+#pragma mark - Xcode compatibility
+
+/**
+ * Returns The Gregorian Calendar Identifier as new NSString object.
+ *
+ * @discussion Depending on the Xcode version 5.1.1/6.1+ the value `NSGregorianCalendar` has been deprecated.
+ * This method verifies if the new version actually exists and return `NSCalendarIdentifierGregorian`.
+ * Otherwise return the old value.
+ * #return The Gregorian Calendar Identifier as new NSString object.
+ */
++ (NSString *)gregorianCalendarIdentifier;
+
 @end
 
 #endif
