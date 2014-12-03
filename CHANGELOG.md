@@ -1,5 +1,10 @@
 # DKHelper CHANGELOG
 
+## 0.8.1
+
+- Fix Obj-C xcode project
+- NSDate now compatible with Xcode 5.1.1
+
 ## 0.8.0
 
 - Remove categorised class UIImage. Please now use the dedicated library: https://github.com/kevindelord/UIImage-Autoresize
