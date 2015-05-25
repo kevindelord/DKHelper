@@ -17,11 +17,22 @@
 @interface NSDate (NSString)
 
 #pragma mark - NSDate+NSString
+/**
+ * Returns a new NSDate object created from a string with a specified style.
+ *
+ * @discussion The time zone GMT+0 is used.
+ *
+ * @param string The NSString object representing the date.
+ * @param dateSytle The NSDateFormatterStyle object representing the style of the date.
+ * @return A NSDate created from a given string. NULL if the date isn't valid.
+ */
++ (NSDate *)dateFromString:(NSString *)string style:(NSDateFormatterStyle)dateStyle;
 
 /**
  * Returns a new NSDate object created from a string with a specified format.
  *
  * @discussion Example of code will be [NSDate dateFromString:@"1970-01-01" format:@"yyyy-MM-dd"];
+ * @discussion The time zone GMT+0 is used.
  *
  * @param string The NSString object representing the date.
  * @param format The NSString object representing the format in which the string is formatted.
@@ -49,7 +60,9 @@
 
 /**
  * Returns a new NSDate object containing the current date of the day with a IOS8601 default format.
- * The number of hours, minutes, seconds and the GMT timezone is set to 0.
+ *
+ * @discussion The number of hours, minutes, seconds and the GMT timezone is set to 0.
+ * @discussion The time zone GMT+0 is used.
  *
  * @return A NSDate containing the current date of the day. The date format is the ISO8601 one.
  */
@@ -129,6 +142,8 @@
 
 /**
  * Returns a new NSDate object containing the same date as the current object set at midnight.
+ *
+ * @discussion The time zone GMT+0 is used.
  *
  * @return A NSDate containing a date with the hours, minutes and seconds set at 0.
  */
