@@ -11,7 +11,46 @@
 
 @implementation UIView (DKHelper)
 
-#pragma mark - UIView+RoundCorner
+#pragma mark - UIView+Load
+
++ (UIView *)loadFromNib:(NSString *)name {
+    NSArray *nibs = [NSBundle.mainBundle loadNibNamed:name owner:self options:nil];
+    return nibs.firstObject;
+}
+
+#pragma mark - UIView+Constraints
+/**
+ * creates constraints to adjust the child to match the parents dimensions and position
+ */
+- (NSArray *)matchParentConstraints {
+    if (self.superview != nil) {
+        [self setTranslatesAutoresizingMaskIntoConstraints:false];
+
+        NSLayoutConstraint *bottom = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.superview attribute:NSLayoutAttributeBottom multiplier:1 constant:0];
+        NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.superview attribute:NSLayoutAttributeTop multiplier:1 constant:0];
+        NSLayoutConstraint *left = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.superview attribute:NSLayoutAttributeLeft multiplier:1 constant:0];
+        NSLayoutConstraint *right = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.superview attribute:NSLayoutAttributeRight multiplier:1 constant:0];
+
+        NSArray *newConstraints = @[bottom, top, left, right];
+        [self.superview addConstraints:newConstraints];
+        return newConstraints;
+    }
+    return @[];
+}
+
+#pragma mark - UIView+Layer
+
++ (UIView *)verticalGradientLayer:(CGRect)rect topColor:(UIColor *)topColor bottomColor:(UIColor *)bottomColor {
+
+    UIView *gradientLayerView = [[UIView alloc] initWithFrame:rect];
+    CAGradientLayer *gradient = [CAGradientLayer new];
+    gradient.frame = gradientLayerView.bounds;
+    gradient.colors = @[(id)topColor.CGColor, (id)bottomColor.CGColor];
+    gradient.startPoint = CGPointMake(0, 0);
+    gradient.endPoint = CGPointMake(0, 1.0);
+    [gradientLayerView.layer insertSublayer:gradient atIndex:0];
+    return gradientLayerView;
+}
 
 - (void)roundCorner:(UIRectCorner)corner radius:(CGFloat)cornerRadius {
     [self roundCorner:corner radius:corner maskToBounds:NO];

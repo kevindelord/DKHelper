@@ -62,6 +62,15 @@
  */
 + (UIColor *)yellowColorWithAlpha:(CGFloat)alpha;
 
+/**
+ * Creates and returns a random color object.
+ *
+ * @discussion The alpha value is 1.0.
+ *
+ * @return A random UIColor object.
+ */
++ (UIColor *)randomColor;
+
 #pragma mark - RGB(A)
 
 /**

@@ -16,7 +16,36 @@
  */
 @interface UIView (DKHelper)
 
-#pragma mark - UIView+RoundCorner
+#pragma mark - UIView+Load
+
+/**
+ * Loads and returns a view from a nib file.
+ *
+ * @param name The name as a NSString of the nib file in the main bundle.
+ * @return If exist the loaded view; otherwise nil.
+ */
++ (UIView *)loadFromNib:(NSString *)name;
+
+#pragma mark - UIView+Constraints
+
+/**
+ * Creates and add layout constraints to adjust the receiver to match its superview dimensions and position.
+ *
+ * @return The added layout contraints. Empty array if the receiver does not have a superview.
+ */
+- (NSArray *)matchParentConstraints;
+
+#pragma mark - UIView+Layer
+
+/**
+ * Creates and returns a new vertical gradient view.
+ *
+ * @param rect The location and dimensions of the new view.
+ * @param topColor The top color of the gradient.
+ * @param bottomColor The bottom color of the gradient.
+ * @return A new UIView object with a gradient color.
+ */
++ (UIView *)verticalGradientLayer:(CGRect)rect topColor:(UIColor *)topColor bottomColor:(UIColor *)bottomColor;
 
 /**
  * Rounds the specified corner(s) of the receiver with a given radius.

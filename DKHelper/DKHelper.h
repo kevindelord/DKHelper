@@ -24,6 +24,8 @@
 #import "NSArray+DKHelper.h"
 #import "UIScreen+DKHelper.h"
 #import "NSPredicate+DKHelper.h"
+#import "UIImage+DKHelper.h"
+#import "NSBundle+DKHelper.h"
 #import "DKRegex.h"
 
 #pragma mark - AppVersion

@@ -13,6 +13,14 @@
 
 @implementation NSDate (NSString)
 
++ (NSDate *)dateFromString:(NSString *)string style:(NSDateFormatterStyle)dateStyle {
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    df.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
+    df.dateStyle = dateStyle;
+    df.locale = [NSLocale currentLocale];
+    return [df dateFromString:string];
+}
+
 + (NSDate *)dateFromString:(NSString *)string format:(NSString *)format {
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     df.dateFormat = format;
@@ -68,6 +76,20 @@
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSDate.gregorianCalendarIdentifier];
     NSDateComponents *comps = [gregorian components:NSCalendarUnitWeekday fromDate:self];
     return [[[NSDateFormatter new] standaloneWeekdaySymbols] objectAtIndex:([comps weekday] - 1)];
+}
+
+#pragma mark - Display methods
+
+- (NSString *)fullDisplayTime {
+    return [NSString stringWithFormat:@"%ld %@ - %ld:%ld", self.day, self.monthName, self.hour, self.minute];
+}
+
+- (NSString *)hourDisplayTime {
+    return [NSString stringWithFormat:@"%ld:%ld", self.hour, self.minute];
+}
+
+- (NSString *)displayableString {
+    return [NSDateFormatter localizedStringFromDate:self dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterNoStyle];
 }
 
 #pragma mark - Getter methods
