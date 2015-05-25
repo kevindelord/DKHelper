@@ -12,6 +12,7 @@
 
 #pragma mark - NSObject+Block
 
+
 - (void)performBlock:(void (^)(void))block completion:(void (^)(void))completionBlock {
     if (block != nil) {
         block();
@@ -19,7 +20,7 @@
     }
 }
 
-- (void)performBlock:(void (^)(void))block afterDelay:(NSTimeInterval)delay completion:(void (^)(void))completionBlock {
+- (void)performBlockAfterDelay:(NSTimeInterval)delay block:(void (^)(void))block completion:(void (^)(void))completionBlock {
     if (block != nil) {
         int64_t delta = (int64_t)(1.0e9 * delay);
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, delta), dispatch_get_main_queue(), ^(void){
@@ -29,7 +30,7 @@
     }
 }
 
-- (void)performBlock:(void (^)(void))block afterDelay:(NSTimeInterval)delay {
+- (void)performBlockAfterDelay:(NSTimeInterval)delay block:(void (^)(void))block {
     if (block != nil) {
         int64_t delta = (int64_t)(1.0e9 * delay);
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, delta), dispatch_get_main_queue(), block);
