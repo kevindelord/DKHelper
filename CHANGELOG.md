@@ -1,5 +1,28 @@
 # DKHelper CHANGELOG
 
+## 0.9.0
+
+- Add UIView::loadFromNib:
+- Add UIView::matchParentConstraints
+- Add UIView::verticalGradientLayer:topColor:bottomColor:
+- Add NSString::randomString:
+- Add NSString::randomNumericString:
+- Add NSString::trimWhitespaces
+- Add NSString::removeAllNewlinesAndIllegalChars
+- Add NSString::isEmail
+- Add NSString::isAlphaNumeric
+- Add NSString::isPhoneNumber
+- Add UIColor::randomColor
+- Add UIImage::scaleImage:size:
+- Add UIImage::resizedImageToScreenSize
+- Add NSBundle::entryInPListForKey:
+- Add NSDate::dateFromString:style:
+- Add NSDate::fullDisplayTime
+- Add NSDate::hourDisplayTime
+- Add NSDate::displayableString
+- Rename NSObject::performBlockAfterDelay:block:
+- Rename NSObject::performBlockAfterDelay:block:completion:
+
 ## 0.8.1
 
 - Fix Obj-C xcode project
