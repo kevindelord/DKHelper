@@ -17,6 +17,7 @@
 @interface NSDate (NSString)
 
 #pragma mark - NSDate+NSString
+
 /**
  * Returns a new NSDate object created from a string with a specified style.
  *

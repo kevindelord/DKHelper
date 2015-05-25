@@ -12,7 +12,6 @@
 
 #pragma mark - NSObject+Block
 
-
 - (void)performBlock:(void (^)(void))block completion:(void (^)(void))completionBlock {
     if (block != nil) {
         block();

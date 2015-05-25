@@ -24,7 +24,6 @@
 + (NSDate *)dateFromString:(NSString *)string format:(NSString *)format {
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     df.dateFormat = format;
-
     df.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
     return [df dateFromString:string];
 }

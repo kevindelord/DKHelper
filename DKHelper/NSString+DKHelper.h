@@ -83,14 +83,14 @@
  *
  * @discussion Method from HockeySDK (see BITHockeyHelper.m -> bit_validateEmail(NSString))
  *
- * @return TRUE if the received is valid Email address; otherwise FALSE.
+ * @return TRUE if the receiver is valid Email address; otherwise FALSE.
  */
 - (BOOL)isEmail;
 
 /**
  * Verify if the receiver is an alpha numeric string.
  *
- * @return TRUE if the received is an alpha numeric string; otherwise FALSE.
+ * @return TRUE if the receiver is an alpha numeric string; otherwise FALSE.
  */
 - (BOOL)isAlphaNumeric;
 
@@ -99,7 +99,7 @@
  *
  * @discussion A valid phone number starts yith '00' and contains between 9 and 13 characters.
  *
- * @return TRUE if the received is a valid phone number string; otherwise FALSE.
+ * @return TRUE if the receiver is a valid phone number string; otherwise FALSE.
  */
 - (BOOL)isPhoneNumber;
 
