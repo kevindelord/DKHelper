@@ -28,6 +28,15 @@
     return [UIColor r:255. g:255. b:0 a:alpha];
 }
 
++ (UIColor *)randomColor {
+    NSTimeInterval base = [NSDate timeIntervalSinceReferenceDate];
+    CGFloat randomRed = (arc4random_uniform(base) % 255);
+    CGFloat randomGreen = (arc4random_uniform(base) % 255);
+    CGFloat randomBlue = (arc4random_uniform(base) % 255);
+
+    return [UIColor r:randomRed g:randomGreen b:randomBlue];
+}
+
 #pragma mark - RGB(A)
 
 + (UIColor *)r:(CGFloat)red g:(CGFloat)green b:(CGFloat)blue {
