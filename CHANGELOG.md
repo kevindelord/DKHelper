@@ -1,6 +1,6 @@
 # DKHelper CHANGELOG
 
-## 0.9.0
+## 0.9.1
 
 - Add UIView::loadFromNib:
 - Add UIView::matchParentConstraints
