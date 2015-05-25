@@ -81,11 +81,11 @@
 #pragma mark - Display methods
 
 - (NSString *)fullDisplayTime {
-    return [NSString stringWithFormat:@"%ld %@ - %ld:%ld", cUL(self.day), self.monthName, cUL(self.hour), cUL(self.minute)];
+    return [NSString stringWithFormat:@"%d %@ - %d:%d", (int)(self.day), self.monthName, (int)(self.hour), (int)(self.minute)];
 }
 
 - (NSString *)hourDisplayTime {
-    return [NSString stringWithFormat:@"%ld:%ld", cUL(self.hour), cUL(self.minute)];
+    return [NSString stringWithFormat:@"%d:%d", (int)(self.hour), (int)(self.minute)];
 }
 
 - (NSString *)displayableString {
