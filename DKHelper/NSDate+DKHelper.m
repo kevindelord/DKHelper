@@ -70,6 +70,20 @@
     return [[[NSDateFormatter new] standaloneWeekdaySymbols] objectAtIndex:([comps weekday] - 1)];
 }
 
+#pragma mark - Display methods
+
+- (NSString *)fullDisplayTime {
+    return [NSString stringWithFormat:@"%ld %@ - %ld:%ld", self.day, self.monthName, self.hour, self.minute];
+}
+
+- (NSString *)hourDisplayTime {
+    return [NSString stringWithFormat:@"%ld:%ld", self.hour, self.minute];
+}
+
+- (NSString *)displayableString {
+    return [NSDateFormatter localizedStringFromDate:self dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterNoStyle];
+}
+
 #pragma mark - Getter methods
 
 - (NSInteger)year {

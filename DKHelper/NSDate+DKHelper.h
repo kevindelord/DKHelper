@@ -134,6 +134,29 @@
  */
 - (NSDate *)midnightDate;
 
+#pragma mark - Display methods
+
+/**
+ * Returns a string representing the current NSDate object with its day number, month name, hour and minute.
+ *
+ * @return A string representing the current NSDate object.
+ */
+- (NSString *)fullDisplayTime;
+
+/**
+ * Returns a string representing the current NSDate object with its hour and minute.
+ *
+ * @return A string representing the current NSDate object.
+ */
+- (NSString *)hourDisplayTime;
+
+/**
+ * Returns a string representing the current NSDate object using the `MediumStyle` format.
+ *
+ * @return A string representing the current NSDate object.
+ */
+- (NSString *)displayableString;
+
 #pragma mark - Adding Interval
 
 /**
