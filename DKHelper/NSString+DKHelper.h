@@ -16,6 +16,24 @@
  */
 @interface NSString (DKHelper)
 
+#pragma mark - NSString+Random
+
+/**
+ * Creates and returns a random numeric string.
+ *
+ * @param length The desired length of the generated string.
+ * @return A random numeric NSString object.
+ */
++ (NSString *)randomNumericString:(NSUInteger)length;
+
+/**
+ * Creates and returns a random alpha-numeric string.
+ *
+ * @param length The desired length of the generated string.
+ * @return A random alpha-numeric NSString object.
+ */
++ (NSString *)randomString:(NSUInteger)length;
+
 #pragma mark - NSString+NSDate
 
 /**
@@ -44,7 +62,46 @@
  */
 - (NSString *)randomizedString;
 
+/**
+ * Returns a new string made by removing from both ends of the receiver whitespace characters.
+ *
+ * @return A new string without heading and leading whitespaces.
+ */
+- (NSString *)trimWhitespaces;
+
+/**
+ * Returns a new string made by removing from both ends of the receiver any newlines and illegal characters.
+ *
+ * @return A new string without newlines and illegal characters.
+ */
+- (NSString *)removeAllNewlinesAndIllegalChars;
+
 #pragma mark - NSString+Regex
+
+/**
+ * Verify if the receiver is a valid Email address.
+ *
+ * @discussion Method from HockeySDK (see BITHockeyHelper.m -> bit_validateEmail(NSString))
+ *
+ * @return TRUE if the received is valid Email address; otherwise FALSE.
+ */
+- (BOOL)isEmail;
+
+/**
+ * Verify if the receiver is an alpha numeric string.
+ *
+ * @return TRUE if the received is an alpha numeric string; otherwise FALSE.
+ */
+- (BOOL)isAlphaNumeric;
+
+/**
+ * Verify if the receiver is a valid phone number.
+ *
+ * @discussion A valid phone number starts yith '00' and contains between 9 and 13 characters.
+ *
+ * @return TRUE if the received is a valid phone number string; otherwise FALSE.
+ */
+- (BOOL)isPhoneNumber;
 
 /**
  * Returns a new NSString object corresponding to the first occurence of a given regex pattern within the receiver's string.
