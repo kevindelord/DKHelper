@@ -5,6 +5,8 @@
 - Add NSString::strimFromDate:style
 - Add DEPRECATED NSObject::performBlock:afterDelay:completion:
 - Add DEPRECATED NSObject::performBlock:afterDelay:
+- Improve NSDate::fullDisplayTime
+- Improve NSDate::hourDisplayTime
 
 ## 0.9.1
 
