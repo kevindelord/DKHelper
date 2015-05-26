@@ -46,6 +46,16 @@
  */
 + (NSString *)stringFromDate:(NSDate *)date format:(NSString *)format;
 
+/**
+ * Returns a new NSString object created from a NSDate object with a specific style.
+ *
+ * @discussion The method use a temporary timeZone set to 0.
+ * @param date The NSDate to convert into a string. Must not be NULL.
+ * @param style The NSDateFormatterStyle value to configure the formatter.
+ * @return A NSString containing the date with the given date style. NULL if the date isn't valid.
+ */
++ (NSString *)stringFromDate:(NSDate *)date style:(NSDateFormatterStyle)style;
+
 #pragma mark - NSString+Helper
 
 /**

@@ -41,8 +41,20 @@
 
 #pragma mark - NSString+NSDate
 
++ (NSString *)stringFromDate:(NSDate *)date style:(NSDateFormatterStyle)style {
+    if (date == nil) {
+        return nil;
+    }
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    df.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
+    df.dateStyle = style;
+    return [df stringFromDate:date];
+}
+
 + (NSString *)stringFromDate:(NSDate *)date format:(NSString *)format {
-    if (!date || !format) return nil;
+    if (date == nil || format == nil) {
+        return nil;
+    }
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     df.dateFormat = format;
     df.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
