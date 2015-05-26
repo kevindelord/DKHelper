@@ -1,5 +1,11 @@
 # DKHelper CHANGELOG
 
+## 0.9.2
+
+- Add NSString::strimFromDate:style
+- Add DEPRECATED NSObject::performBlock:afterDelay:completion:
+- Add DEPRECATED NSObject::performBlock:afterDelay:
+
 ## 0.9.1
 
 - Add UIView::loadFromNib:
