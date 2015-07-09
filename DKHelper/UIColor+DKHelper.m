@@ -68,7 +68,10 @@
     CGFloat endRed = 0.0, endGreen = 0.0, endBlue = 0.0, endAlpha = 0.0;
     [baseColor getRed:&baseRed green:&baseGreen blue:&baseBlue alpha:&baseAlpha];
     [endColor getRed:&endRed green:&endGreen blue:&endBlue alpha:&endAlpha];
-    return [UIColor colorWithRed:(baseRed + ( endRed - baseRed) * percentage) green:(baseGreen + (endGreen - baseGreen) * percentage) blue:(baseBlue + (endBlue - baseBlue) * percentage) alpha:(baseAlpha + (endAlpha - baseAlpha) * percentage)];
+    return [UIColor colorWithRed:(baseRed + ( endRed - baseRed) * percentage)
+                    green:(baseGreen + (endGreen - baseGreen) * percentage)
+                    blue:(baseBlue + (endBlue - baseBlue) * percentage)
+                    alpha:(baseAlpha + (endAlpha - baseAlpha) * percentage)];
 }
 
 @end
