@@ -69,7 +69,14 @@ NSNumber *  GET_NUMBER(NSDictionary *dict, id key) {
 }
 
 NSDate *    GET_DATE(NSDictionary *dict, id key) {
-    return (VALID(dict, key) ? [NSDate dateFromISOString:dict[key]] : nil);
+    if (VALID(dict, key)) {
+        if ([dict[key] isKindOfClass:[NSDate class]]) {
+            return dict[key];
+        } else if ([dict[key] isKindOfClass:[NSString class]]) {
+            return [NSDate dateFromISOString:dict[key]];
+        }
+    }
+    return nil;
 }
 
 NSString *  GET_STRING(NSDictionary *dict, id key) {
