@@ -61,4 +61,17 @@
     return [UIColor r:((rgbValue & 0xFF0000) >> 16) g:((rgbValue & 0xFF00) >> 8) b:(rgbValue & 0xFF) a:alpha];
 }
 
+#pragma mark - Fade
+
++ (UIColor *)fadeFromBaseColor:(UIColor*)baseColor ToColor:(UIColor *)endColor withPercentage:(CGFloat) percentage {
+    CGFloat baseRed = 0.0, baseGreen = 0.0, baseBlue = 0.0, baseAlpha = 0.0;
+    CGFloat endRed = 0.0, endGreen = 0.0, endBlue = 0.0, endAlpha = 0.0;
+    [baseColor getRed:&baseRed green:&baseGreen blue:&baseBlue alpha:&baseAlpha];
+    [endColor getRed:&endRed green:&endGreen blue:&endBlue alpha:&endAlpha];
+    return [UIColor colorWithRed:(baseRed + ( endRed - baseRed) * percentage)
+                    green:(baseGreen + (endGreen - baseGreen) * percentage)
+                    blue:(baseBlue + (endBlue - baseBlue) * percentage)
+                    alpha:(baseAlpha + (endAlpha - baseAlpha) * percentage)];
+}
+
 @end
