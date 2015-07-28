@@ -1,5 +1,10 @@
 # DKHelper CHANGELOG
 
+## 0.9.3
+
+- Bug fix on GET_DATE(NSDictionary *dict, id key)
+- Add UIColor::fadeFromBaseColor:ToColor:withPercentage:
+
 ## 0.9.2
 
 - Add NSString::strimFromDate:style
