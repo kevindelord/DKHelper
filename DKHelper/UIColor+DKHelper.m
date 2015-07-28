@@ -63,7 +63,7 @@
 
 #pragma mark - Fade
 
-+ (UIColor *)fadeFromBaseColor:(UIColor*)baseColor ToColor:(UIColor *)endColor withPercentage:(CGFloat) percentage {
++ (UIColor *)fadeFromBaseColor:(UIColor*)baseColor toColor:(UIColor *)endColor withPercentage:(CGFloat) percentage {
     CGFloat baseRed = 0.0, baseGreen = 0.0, baseBlue = 0.0, baseAlpha = 0.0;
     CGFloat endRed = 0.0, endGreen = 0.0, endBlue = 0.0, endAlpha = 0.0;
     [baseColor getRed:&baseRed green:&baseGreen blue:&baseBlue alpha:&baseAlpha];

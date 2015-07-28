@@ -133,7 +133,7 @@
  * @param percentage The percentage Value for the new Color, specified as a value from 0.0 to 1.0.
  * @return Returns The color object, that is between the two given colors, by percentage.
  */
-+ (UIColor *)fadeFromBaseColor:(UIColor*)baseColor ToColor:(UIColor *)endColor withPercentage:(CGFloat) percentage;
++ (UIColor *)fadeFromBaseColor:(UIColor*)baseColor toColor:(UIColor *)endColor withPercentage:(CGFloat) percentage;
 
 @end
 
