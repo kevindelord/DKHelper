@@ -170,13 +170,7 @@
 #pragma mark - Xcode compatibility
 
 + (NSString *)gregorianCalendarIdentifier {
-    NSString *calendaridentifier = @"";
-#ifdef NSCalendarIdentifierGregorian
-    calendaridentifier = NSCalendarIdentifierGregorian;
-#else
-    calendaridentifier = NSGregorianCalendar;
-#endif
-    return calendaridentifier;
+    return NSCalendarIdentifierGregorian;
 }
 
 @end
