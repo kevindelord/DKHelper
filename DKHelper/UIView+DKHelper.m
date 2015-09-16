@@ -116,28 +116,28 @@
  * Returns the size.width of the receiver's frame.
  */
 - (CGFloat)frameWidth {
-    return self.frame.size.width;
+    return CGRectGetWidth(self.frame);
 }
 
 /**
  * Returns the height of the receiver's frame.
  */
 - (CGFloat)frameHeight {
-    return self.frame.size.height;
+    return CGRectGetHeight(self.frame);
 }
 
 /**
  * Returns the origin.x of the receiver's frame.
  */
 - (CGFloat)frameX {
-    return self.frame.origin.x;
+    return CGRectGetMinX(self.frame);
 }
 
 /**
  * Set the origin.y of the receiver's frame.
  */
 - (CGFloat)frameY {
-    return self.frame.origin.y;
+    return CGRectGetMinY(self.frame);
 }
 
 @end
