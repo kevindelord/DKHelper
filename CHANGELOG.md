@@ -1,5 +1,9 @@
 # DKHelper CHANGELOG
 
+## 0.9.4
+
+- Improvement on UIView: now use `CGRectGet` functions.
+
 ## 0.9.3
 
 - Bug fix on GET_DATE(NSDictionary *dict, id key)
