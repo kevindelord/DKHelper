@@ -255,7 +255,7 @@
  * Otherwise return the old value.
  * #return The Gregorian Calendar Identifier as new NSString object.
  */
-+ (NSString *)gregorianCalendarIdentifier;
++ (NSString *)gregorianCalendarIdentifier DEPRECATED_MSG_ATTRIBUTE("use NSCalendarIdentifierGregorian");
 
 @end
 
