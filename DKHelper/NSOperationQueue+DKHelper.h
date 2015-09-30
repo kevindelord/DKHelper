@@ -10,6 +10,14 @@
 
 @interface NSOperationQueue (Timeout)
 
+/**
+ * Wraps the specified block in an operation object and adds it to the receiver. If the given time passed the operation will get cancelled and the timeoutBlock gets called.
+ *
+ * @param block The block to execute from the operation object.
+ * @param timeout Timeout after that the operation should be cancelled
+ * @param timeoutBlock The block that gets called after the operation timed out
+ * @return The NSOperation.
+ */
 - (NSOperation *)addOperationWithBlock:(void (^)(NSOperation *operation))block timeout:(NSTimeInterval)timeout timeoutBlock:(void (^)(void))timeoutBlock;
 
 @end
