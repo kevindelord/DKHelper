@@ -26,6 +26,7 @@
 #import "NSPredicate+DKHelper.h"
 #import "UIImage+DKHelper.h"
 #import "NSBundle+DKHelper.h"
+#import "NSOperationQueue+DKHelper.h"
 #import "DKRegex.h"
 
 #pragma mark - AppVersion
