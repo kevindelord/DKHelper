@@ -1,5 +1,10 @@
 # DKHelper CHANGELOG
 
+## 0.9.5
+
+- Remove calls to gregorianCalendarIdentifier
+- Add NSOperation::addOperationWithBlock:timeout:
+
 ## 0.9.4
 
 - Improvement on UIView: now use `CGRectGet` functions.
