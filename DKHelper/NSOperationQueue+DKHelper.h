@@ -1,5 +1,5 @@
 //
-//  NSOperationQueue+Timeout.h
+//  NSOperationQueue+DKHelper.h
 //
 //
 //  Created by Pierre Rothmaler on 30/09/15.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSOperationQueue (Timeout)
+@interface NSOperationQueue (DKHelper)
 
 /**
  * Wraps the specified block in an operation object and adds it to the receiver. If the given time passed the operation will get cancelled and the timeoutBlock gets called.
