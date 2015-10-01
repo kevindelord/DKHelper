@@ -1,14 +1,14 @@
 //
-//  NSOperationQueue+Timeout.m
+//  NSOperationQueue+DKHelper.m
 //
 //
 //  Created by Pierre Rothmaler on 30/09/15.
 //  Copyright (c) 2015 Smart Mobile Factory. All rights reserved.
 //
 
-#import "NSOperationQueue+Timeout.h"
+#import "NSOperationQueue+DKHelper.h"
 
-@implementation NSOperationQueue (Timeout)
+@implementation NSOperationQueue (DKHelper)
 
 - (NSOperation *)addOperationWithBlock:(void (^)(NSOperation *operation))block timeout:(NSTimeInterval)timeout timeoutBlock:(void (^)(void))timeoutBlock {
 	NSBlockOperation *blockOperation = [[NSBlockOperation alloc] init];
