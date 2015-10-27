@@ -23,6 +23,13 @@
 + (UIImage *)scaleImage:(UIImage *)image size:(CGSize)size;
 
 /**
+ * Creates a new UIImage object that fit given size.
+ *
+ * @return A new UIImage object.
+ */
+- (UIImage *)resizedImageToSize:(CGSize)newSize;
+
+/**
  * Creates a new UIImage object that fit the current screen size.
  *
  * @return A new UIImage object.

@@ -18,20 +18,25 @@
     return newImage;
 }
 
-- (UIImage *)resizedImageToScreenSize {
+- (UIImage *)resizedImageToSize:(CGSize)newSize {
 
-    CGRect screenSize = UIScreen.mainScreen.bounds;
-    CGSize size = CGSizeMake(0, screenSize.size.height);
+    CGSize size = CGSizeMake(0, newSize.height);
     CGFloat ratio = 0.0;
 
-    if (self.size.height < screenSize.size.height) {
-        ratio = screenSize.size.height / self.size.height;
+    if (self.size.height < newSize.height) {
+        ratio = newSize.height / self.size.height;
         size.width = self.size.width * ratio;
     } else {
-        ratio = self.size.height / screenSize.size.height;
+        ratio = self.size.height / newSize.height;
         size.width = self.size.width / ratio;
     }
     return [UIImage scaleImage:self size:size];
+}
+
+- (UIImage *)resizedImageToScreenSize {
+
+    CGRect screenSize = UIScreen.mainScreen.bounds;
+    return [self resizedImageToSize:screenSize.size];
 }
 
 @end
