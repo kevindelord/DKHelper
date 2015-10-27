@@ -1,5 +1,9 @@
 # DKHelper CHANGELOG
 
+## 0.9.6
+
+- Add UIImage::resizedImageToSize:
+
 ## 0.9.5
 
 - Remove calls to gregorianCalendarIdentifier
