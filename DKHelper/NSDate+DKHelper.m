@@ -125,15 +125,33 @@
 #pragma mark - Display methods
 
 - (NSString *)fullDisplayTime {
-    return [NSString stringWithFormat:@"%ld %@ - %ld:%ld", self.day, self.monthName, self.hour, self.minute];
+	return [NSDateFormatter localizedStringFromDate:self dateStyle:NSDateFormatterLongStyle timeStyle:NSDateFormatterShortStyle];
 }
 
 - (NSString *)hourDisplayTime {
-    return [NSString stringWithFormat:@"%ld:%ld", self.hour, self.minute];
+	return [NSDateFormatter localizedStringFromDate:self dateStyle:NSDateFormatterNoStyle timeStyle:NSDateFormatterShortStyle];
 }
 
 - (NSString *)displayableString {
     return [NSDateFormatter localizedStringFromDate:self dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterNoStyle];
+}
+
+#pragma mark - Log methods
+
+- (void)logCurrentDateWithDateStyleAndAllTimeStyle:(NSDateFormatterStyle)dateStyle {
+	NSLog(@"%@", [NSDateFormatter localizedStringFromDate:self dateStyle:dateStyle timeStyle:NSDateFormatterNoStyle]);
+	NSLog(@"%@", [NSDateFormatter localizedStringFromDate:self dateStyle:dateStyle timeStyle:NSDateFormatterShortStyle]);
+	NSLog(@"%@", [NSDateFormatter localizedStringFromDate:self dateStyle:dateStyle timeStyle:NSDateFormatterMediumStyle]);
+	NSLog(@"%@", [NSDateFormatter localizedStringFromDate:self dateStyle:dateStyle timeStyle:NSDateFormatterLongStyle]);
+	NSLog(@"%@", [NSDateFormatter localizedStringFromDate:self dateStyle:dateStyle timeStyle:NSDateFormatterFullStyle]);
+}
+
+- (void)logAllFormats {
+	[self logCurrentDateWithDateStyleAndAllTimeStyle:NSDateFormatterNoStyle];
+	[self logCurrentDateWithDateStyleAndAllTimeStyle:NSDateFormatterShortStyle];
+	[self logCurrentDateWithDateStyleAndAllTimeStyle:NSDateFormatterMediumStyle];
+	[self logCurrentDateWithDateStyleAndAllTimeStyle:NSDateFormatterLongStyle];
+	[self logCurrentDateWithDateStyleAndAllTimeStyle:NSDateFormatterFullStyle];
 }
 
 #pragma mark - Getter methods

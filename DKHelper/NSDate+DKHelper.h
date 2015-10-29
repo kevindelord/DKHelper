@@ -224,25 +224,42 @@
 #pragma mark - Display methods
 
 /**
- * Returns a string representing the current NSDate object with its day number, month name, hour and minute.
+ * Returns a localized string representing the current NSDate object with its day number, month name, hour and minute.
  *
- * @return A string representing the current NSDate object.
+ * @discussion The styles used for the NSDateFormatter are `LongStyle` for the date and `ShortStyle` for the time.
+ * @return A localized string representing the current NSDate object.
  */
 - (NSString *)fullDisplayTime;
 
 /**
- * Returns a string representing the current NSDate object with its hour and minute.
+ * Returns a localized string representing the current NSDate object with its hour and minute.
  *
- * @return A string representing the current NSDate object.
+ * @discussion The styles used for the NSDateFormatter are `NoStyle` for the date and `ShortStyle` for the time.
+ * @return A localized string representing the current NSDate object.
  */
 - (NSString *)hourDisplayTime;
 
 /**
- * Returns a string representing the current NSDate object using the `MediumStyle` format.
+ * Returns a localized string representing the current NSDate object using the `MediumStyle` format.
  *
- * @return A string representing the current NSDate object.
+ * @discussion The styles used for the NSDateFormatter are `MediumStyle` for the date and `NoStyle` for the time.
+ * @return A localized string representing the current NSDate object.
  */
 - (NSString *)displayableString;
+
+#pragma mark - Log methods
+
+/**
+ * Log the receiver on the console using a NSDateFormatter object with all time styles and the given date style.
+ *
+ * @param dateStyle The dateStyle used by the NSDateFormatter to log the current receiver on the console.
+ */
+- (void)logCurrentDateWithDateStyleAndAllTimeStyle:(NSDateFormatterStyle)dateStyle;
+
+/**
+ * Log the receiver on the console using a NSDateFormatter object with all date and time styles.
+ */
+- (void)logAllFormats;
 
 #pragma mark - Adding Interval
 
