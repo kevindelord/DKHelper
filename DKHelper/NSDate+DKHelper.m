@@ -81,7 +81,7 @@
 }
 
 + (NSDate *)currentDayDate {
-    NSCalendar* gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSDate.gregorianCalendarIdentifier];
+    NSCalendar* gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     unsigned int unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitTimeZone;
     NSDateComponents* dateComponents = [gregorian components:unitFlags fromDate:[NSDate date]];
     dateComponents.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
@@ -92,7 +92,7 @@
 }
 
 - (NSDate *)midnightDate {
-    NSCalendar* gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSDate.gregorianCalendarIdentifier];
+    NSCalendar* gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     unsigned int unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitTimeZone;
     NSDateComponents* dateComponents = [gregorian components:unitFlags fromDate:self];
     dateComponents.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
@@ -111,13 +111,13 @@
 }
 
 - (NSString *)monthName {
-    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSDate.gregorianCalendarIdentifier];
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     NSDateComponents *comps = [gregorian components:NSCalendarUnitMonth fromDate:self];
     return [[[NSDateFormatter new] standaloneMonthSymbols] objectAtIndex:([comps month] - 1)];
 }
 
 - (NSString *)dayName {
-    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSDate.gregorianCalendarIdentifier];
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     NSDateComponents *comps = [gregorian components:NSCalendarUnitWeekday fromDate:self];
     return [[[NSDateFormatter new] standaloneWeekdaySymbols] objectAtIndex:([comps weekday] - 1)];
 }
@@ -232,13 +232,7 @@
 #pragma mark - Xcode compatibility
 
 + (NSString *)gregorianCalendarIdentifier {
-    NSString *calendaridentifier = @"";
-#ifdef NSCalendarIdentifierGregorian
-    calendaridentifier = NSCalendarIdentifierGregorian;
-#else
-    calendaridentifier = NSGregorianCalendar;
-#endif
-    return calendaridentifier;
+    return NSCalendarIdentifierGregorian;
 }
 
 @end

@@ -1,6 +1,32 @@
 # DKHelper CHANGELOG
 
-## 0.9.0
+## 0.9.6
+
+- Add UIImage::resizedImageToSize:
+
+## 0.9.5
+
+- Remove calls to gregorianCalendarIdentifier
+- Add NSOperation::addOperationWithBlock:timeout:
+
+## 0.9.4
+
+- Improvement on UIView: now use `CGRectGet` functions.
+
+## 0.9.3
+
+- Bug fix on GET_DATE(NSDictionary *dict, id key)
+- Add UIColor::fadeFromBaseColor:ToColor:withPercentage:
+
+## 0.9.2
+
+- Add NSString::strimFromDate:style
+- Add DEPRECATED NSObject::performBlock:afterDelay:completion:
+- Add DEPRECATED NSObject::performBlock:afterDelay:
+- Improve NSDate::fullDisplayTime
+- Improve NSDate::hourDisplayTime
+
+## 0.9.1
 
 - Add UIView::loadFromNib:
 - Add UIView::matchParentConstraints

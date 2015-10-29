@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7511F6DE19DABB3C00C29B75 /* DKRegex.m in Sources */ = {isa = PBXBuildFile; fileRef = 7511F6DD19DABB3C00C29B75 /* DKRegex.m */; };
 		7519D3A6192D3BAE00488AD1 /* NSNumber+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7519D3A5192D3BAE00488AD1 /* NSNumber+DKHelper.m */; };
+		7530C31F1BBD2C0B008512C6 /* NSOperationQueue+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7530C31E1BBD2C0B008512C6 /* NSOperationQueue+DKHelper.m */; settings = {ASSET_TAGS = (); }; };
 		753A287219070F52006FEF71 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 753A287119070F52006FEF71 /* Foundation.framework */; };
 		753A287419070F52006FEF71 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 753A287319070F52006FEF71 /* CoreGraphics.framework */; };
 		753A287619070F53006FEF71 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 753A287519070F53006FEF71 /* UIKit.framework */; };
@@ -57,6 +58,8 @@
 		7511F6DD19DABB3C00C29B75 /* DKRegex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DKRegex.m; path = ../DKHelper/DKRegex.m; sourceTree = "<group>"; };
 		7519D3A4192D3BAE00488AD1 /* NSNumber+DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSNumber+DKHelper.h"; path = "../DKHelper/NSNumber+DKHelper.h"; sourceTree = "<group>"; };
 		7519D3A5192D3BAE00488AD1 /* NSNumber+DKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSNumber+DKHelper.m"; path = "../DKHelper/NSNumber+DKHelper.m"; sourceTree = "<group>"; };
+		7530C31D1BBD2C0B008512C6 /* NSOperationQueue+DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSOperationQueue+DKHelper.h"; path = "../DKHelper/NSOperationQueue+DKHelper.h"; sourceTree = "<group>"; };
+		7530C31E1BBD2C0B008512C6 /* NSOperationQueue+DKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSOperationQueue+DKHelper.m"; path = "../DKHelper/NSOperationQueue+DKHelper.m"; sourceTree = "<group>"; };
 		753A286E19070F52006FEF71 /* DKHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DKHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		753A287119070F52006FEF71 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		753A287319070F52006FEF71 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -210,6 +213,8 @@
 		754A7316190710E500D0D432 /* DKHelper */ = {
 			isa = PBXGroup;
 			children = (
+				7530C31D1BBD2C0B008512C6 /* NSOperationQueue+DKHelper.h */,
+				7530C31E1BBD2C0B008512C6 /* NSOperationQueue+DKHelper.m */,
 				754A7317190710F600D0D432 /* DKHelper.h */,
 				7577623219D9F85200C60D9B /* DKHelper.m */,
 				75F0AAE3191E552D00B6BDB1 /* UIImageView+DKHelper.h */,
@@ -365,6 +370,7 @@
 				7577623619D9FFFA00C60D9B /* UIScreen+DKHelper.m in Sources */,
 				753A288219070F53006FEF71 /* DKAppDelegate.m in Sources */,
 				754A7327190710F600D0D432 /* NSObject+DKHelper.m in Sources */,
+				7530C31F1BBD2C0B008512C6 /* NSOperationQueue+DKHelper.m in Sources */,
 				754A7325190710F600D0D432 /* NSDate+DKHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -492,13 +498,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DKHelper/DKHelper-Prefix.pch";
 				INFOPLIST_FILE = "DKHelper/DKHelper-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kevindelord.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -507,13 +513,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DKHelper/DKHelper-Prefix.pch";
 				INFOPLIST_FILE = "DKHelper/DKHelper-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kevindelord.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

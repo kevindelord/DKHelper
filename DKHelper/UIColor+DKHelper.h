@@ -122,6 +122,19 @@
  */
 + (UIColor *)colorFromHexString:(NSString *)hexString;
 
+/**
+ * Creates and returns a color that is between the two given colors, by a given percentage.
+ *
+ * @discussion The method will generate a range of colors (range between @baseColor and @endColor), and will return the object by the given @percentage.
+ * @discussion It is possible to pass Values (@percentage) that are not in the specified range, by passing a Value like this the returned color object is out of the color-range.
+ *
+ * @param baseColor The color object, that specifies the beginning of the range.
+ * @param endColor The color object, that specifies the end of the range.
+ * @param percentage The percentage Value for the new Color, specified as a value from 0.0 to 1.0.
+ * @return Returns The color object, that is between the two given colors, by percentage.
+ */
++ (UIColor *)fadeFromBaseColor:(UIColor*)baseColor toColor:(UIColor *)endColor withPercentage:(CGFloat) percentage;
+
 @end
 
 #endif
