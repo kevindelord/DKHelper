@@ -9,12 +9,56 @@
 #import "NSDate+DKHelper.h"
 #import "DKHelper.h"
 
+@implementation NSDate (DKHelper)
+
+#pragma mark - Comparison
+
+- (BOOL)isOlderOrEqualThan:(NSDateComponents *)dateComponent {
+	// Check if the selected date is older or equal to the given parameter.
+	NSDate *veryOldDate = [[NSCalendar currentCalendar] dateByAddingComponents:dateComponent toDate:[NSDate date] options:0];
+	NSComparisonResult result = [self compare:veryOldDate];
+	return (result == NSOrderedAscending || result == NSOrderedSame);
+}
+
+- (BOOL)isOlderOrEqualThan:(NSInteger)years months:(NSInteger)months days:(NSInteger)days hours:(NSInteger)hours minutes:(NSInteger)minutes seconds:(NSInteger)seconds {
+	NSDateComponents *dateComponent = [NSDateComponents new];
+	dateComponent.year = -(years);
+	dateComponent.month = -(months);
+	dateComponent.day = -(days);
+	dateComponent.hour = -(hours);
+	dateComponent.minute = -(minutes);
+	dateComponent.second = -(seconds);
+	return [self isOlderOrEqualThan:dateComponent];
+}
+
+- (BOOL)isOlderOrEqualThanYearInterval:(NSInteger)years {
+	return [self isOlderOrEqualThan:years months:0 days:0 hours:0 minutes:0 seconds:0];
+}
+
+- (BOOL)isOlderOrEqualThanMonthInterval:(NSInteger)months {
+	return [self isOlderOrEqualThan:0 months:months days:0 hours:0 minutes:0 seconds:0];
+}
+
+- (BOOL)isOlderOrEqualThanDayInterval:(NSInteger)days {
+	return [self isOlderOrEqualThan:0 months:0 days:days hours:0 minutes:0 seconds:0];
+}
+
+- (BOOL)isOlderOrEqualThanHourInterval:(NSInteger)hours {
+	return [self isOlderOrEqualThan:0 months:0 days:0 hours:hours minutes:0 seconds:0];
+}
+
+- (BOOL)isOlderOrEqualThanMinuteInterval:(NSInteger)minutes {
+	return [self isOlderOrEqualThan:0 months:0 days:0 hours:0 minutes:minutes seconds:0];
+}
+
+- (BOOL)isOlderOrEqualThanSecondInterval:(NSInteger)seconds {
+	return [self isOlderOrEqualThan:0 months:0 days:0 hours:0 minutes:0 seconds:seconds];
+}
+
 #pragma mark - NSDate+NSString
 
-@implementation NSDate (NSString)
-
 + (NSDate *)dateFromString:(NSString *)string style:(NSDateFormatterStyle)dateStyle {
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    NSDateFormatter *df = [NSDateFormatter new];
     df.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
     df.dateStyle = dateStyle;
     df.locale = [NSLocale currentLocale];
@@ -22,7 +66,7 @@
 }
 
 + (NSDate *)dateFromString:(NSString *)string format:(NSString *)format {
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    NSDateFormatter *df = [NSDateFormatter new];
     df.dateFormat = format;
     df.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
     return [df dateFromString:string];
@@ -42,7 +86,7 @@
     NSDateComponents* dateComponents = [gregorian components:unitFlags fromDate:[NSDate date]];
     dateComponents.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
     [dateComponents setMinute:0];
-    [dateComponents setSecond:0];
+    [dateComponents setSecond:[[NSTimeZone defaultTimeZone] secondsFromGMT]];
     [dateComponents setHour:0];
     return [gregorian dateFromComponents:dateComponents];
 }
@@ -53,7 +97,7 @@
     NSDateComponents* dateComponents = [gregorian components:unitFlags fromDate:self];
     dateComponents.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
     [dateComponents setMinute:0];
-    [dateComponents setSecond:0];
+	[dateComponents setSecond:0];
     [dateComponents setHour:0];
     return [gregorian dateFromComponents:dateComponents];
 }
@@ -127,7 +171,7 @@
 #pragma mark - Adding Interval
 
 - (NSDate *)dateByAddingIntervalsWithYear:(NSInteger)years months:(NSInteger)months days:(NSInteger)days hours:(NSInteger)hours minutes:(NSInteger)minutes seconds:(NSInteger)seconds {
-    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+    NSDateComponents *dateComponents = [NSDateComponents new];
     [dateComponents setYear:years];
     [dateComponents setMonth:months];
     [dateComponents setDay:days];
