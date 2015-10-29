@@ -4,13 +4,13 @@
 
 This version fixes crashes in the `performBlock` functions and add many helpers for the NSBundle and NSDate classes.
 
-### NSBundle
+#### NSBundle
 
 + (NSString *)stringEntryInPListForKey:(NSString *)key;
 + (BOOL)booleanEntryInPListForKey:(NSString *)key;
 + (NSNumber *)numberEntryInPListForKey:(NSString *)key;
 
-### NSDate
+#### NSDate
 
 - (void)logCurrentDateWithDateStyleAndAllTimeStyle:(NSDateFormatterStyle)dateStyle;
 - (void)logAllFormats;
@@ -23,7 +23,7 @@ This version fixes crashes in the `performBlock` functions and add many helpers 
 - (BOOL)isOlderOrEqualThanMinuteInterval:(NSInteger)minutes;
 - (BOOL)isOlderOrEqualThanSecondInterval:(NSInteger)seconds;
 
-### NSObject
+#### NSObject
 
 - Nullable block parameters
 - Crash fixes
