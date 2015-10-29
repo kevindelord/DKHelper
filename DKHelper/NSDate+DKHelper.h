@@ -14,7 +14,78 @@
 /**
  * A categorized class of NSDate to add a bunch of helping methods.
  */
-@interface NSDate (NSString)
+@interface NSDate (DKHelper)
+
+#pragma mark - Comparison
+
+/**
+ * Check whether the date receiver is older or equal than the current date time updated with new components.
+ *
+ * @param dateComponent The NSDateComponents object used to update the current date time.
+ * @return TRUE if the receiver is older or equal than the given parameter; FALSE otherwise.
+ */
+- (BOOL)isOlderOrEqualThan:(NSDateComponents *)dateComponent;
+
+/**
+ * Check whether the date receiver is older or equal than the given parameters.
+ *
+ * @param years The number of years.
+ * @param months The number of months.
+ * @param days The number of days.
+ * @param hours The number of hours.
+ * @param minutes The number of minutes.
+ * @param seconds The number of seconds.
+ * @return TRUE if the receiver is older or equal than the given parameters; FALSE otherwise.
+ */
+- (BOOL)isOlderOrEqualThan:(NSInteger)years months:(NSInteger)months days:(NSInteger)days hours:(NSInteger)hours minutes:(NSInteger)minutes seconds:(NSInteger)seconds;
+
+/**
+ * Check whether the date receiver is older or equal than n years.
+ *
+ * @param year The number of years.
+ * @return TRUE if the receiver is older or equal than the given parameter; FALSE otherwise.
+ */
+- (BOOL)isOlderOrEqualThanYearInterval:(NSInteger)year;
+
+/**
+ * Check whether the date receiver is older or equal than n months.
+ *
+ * @param months The number of months.
+ * @return TRUE if the receiver is older or equal than the given parameter; FALSE otherwise.
+ */
+- (BOOL)isOlderOrEqualThanMonthInterval:(NSInteger)month;
+
+/**
+ * Check whether the date receiver is older or equal than n days.
+ *
+ * @param days The number of days.
+ * @return TRUE if the receiver is older or equal than the given parameter; FALSE otherwise.
+ */
+- (BOOL)isOlderOrEqualThanDayInterval:(NSInteger)days;
+
+/**
+ * Check whether the date receiver is older or equal than n hours.
+ *
+ * @param hours The number of hours.
+ * @return TRUE if the receiver is older or equal than the given parameter; FALSE otherwise.
+ */
+- (BOOL)isOlderOrEqualThanHourInterval:(NSInteger)hours;
+
+/**
+ * Check whether the date receiver is older or equal than n minutes.
+ *
+ * @param minutes The number of minutes.
+ * @return TRUE if the receiver is older or equal than the given parameter; FALSE otherwise.
+ */
+- (BOOL)isOlderOrEqualThanMinuteInterval:(NSInteger)minutes;
+
+/**
+ * Check whether the date receiver is older or equal than n seconds.
+ *
+ * @param seconds The number of seconds.
+ * @return TRUE if the receiver is older or equal than the given parameter; FALSE otherwise.
+ */
+- (BOOL)isOlderOrEqualThanSecondInterval:(NSInteger)seconds;
 
 #pragma mark - NSDate+NSString
 
@@ -153,25 +224,42 @@
 #pragma mark - Display methods
 
 /**
- * Returns a string representing the current NSDate object with its day number, month name, hour and minute.
+ * Returns a localized string representing the current NSDate object with its day number, month name, hour and minute.
  *
- * @return A string representing the current NSDate object.
+ * @discussion The styles used for the NSDateFormatter are `LongStyle` for the date and `ShortStyle` for the time.
+ * @return A localized string representing the current NSDate object.
  */
 - (NSString *)fullDisplayTime;
 
 /**
- * Returns a string representing the current NSDate object with its hour and minute.
+ * Returns a localized string representing the current NSDate object with its hour and minute.
  *
- * @return A string representing the current NSDate object.
+ * @discussion The styles used for the NSDateFormatter are `NoStyle` for the date and `ShortStyle` for the time.
+ * @return A localized string representing the current NSDate object.
  */
 - (NSString *)hourDisplayTime;
 
 /**
- * Returns a string representing the current NSDate object using the `MediumStyle` format.
+ * Returns a localized string representing the current NSDate object using the `MediumStyle` format.
  *
- * @return A string representing the current NSDate object.
+ * @discussion The styles used for the NSDateFormatter are `MediumStyle` for the date and `NoStyle` for the time.
+ * @return A localized string representing the current NSDate object.
  */
 - (NSString *)displayableString;
+
+#pragma mark - Log methods
+
+/**
+ * Log the receiver on the console using a NSDateFormatter object with all time styles and the given date style.
+ *
+ * @param dateStyle The dateStyle used by the NSDateFormatter to log the current receiver on the console.
+ */
+- (void)logCurrentDateWithDateStyleAndAllTimeStyle:(NSDateFormatterStyle)dateStyle;
+
+/**
+ * Log the receiver on the console using a NSDateFormatter object with all date and time styles.
+ */
+- (void)logAllFormats;
 
 #pragma mark - Adding Interval
 

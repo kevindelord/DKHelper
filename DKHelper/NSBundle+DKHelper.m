@@ -19,4 +19,18 @@
     return value;
 }
 
++ (NSString *)stringEntryInPListForKey:(NSString *)key {
+	return [self entryInPListForKey:key];
+}
+
++ (BOOL)booleanEntryInPListForKey:(NSString *)key {
+	return [[self entryInPListForKey:key] boolValue];
+}
+
++ (NSNumber *)numberEntryInPListForKey:(NSString *)key {
+	NSNumberFormatter *formatter = [NSNumberFormatter new];
+	formatter.numberStyle = NSNumberFormatterDecimalStyle;
+	return [formatter numberFromString:[self stringEntryInPListForKey:key]];
+}
+
 @end

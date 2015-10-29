@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.backgroundView roundCorner:(UIRectCornerAllCorners) radius:self.backgroundView.frame.size.width];
+    [self.backgroundView roundCorner:(UIRectCornerAllCorners) radius:self.backgroundView.frameWidth];
     self.versionLabel.text = DK_APP_VERSION;
 }
 

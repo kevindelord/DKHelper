@@ -298,7 +298,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = DK;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = DK;
 				TargetAttributes = {
 					753A288E19070F53006FEF71 = {

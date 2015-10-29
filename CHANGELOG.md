@@ -1,5 +1,33 @@
 # DKHelper CHANGELOG
 
+## 1.0.0
+
+This version fixes crashes in the `performBlock` functions and add many helpers for the NSBundle and NSDate classes.
+
+#### NSBundle
+
++ (NSString *)stringEntryInPListForKey:(NSString *)key;
++ (BOOL)booleanEntryInPListForKey:(NSString *)key;
++ (NSNumber *)numberEntryInPListForKey:(NSString *)key;
+
+#### NSDate
+
+- (void)logCurrentDateWithDateStyleAndAllTimeStyle:(NSDateFormatterStyle)dateStyle;
+- (void)logAllFormats;
+- (BOOL)isOlderOrEqualThan:(NSDateComponents *)dateComponent;
+- (BOOL)isOlderOrEqualThan:(NSInteger)years months:(NSInteger)months days:(NSInteger)days hours:(NSInteger)
+- (BOOL)isOlderOrEqualThanYearInterval:(NSInteger)year;
+- (BOOL)isOlderOrEqualThanMonthInterval:(NSInteger)month;
+- (BOOL)isOlderOrEqualThanDayInterval:(NSInteger)days;
+- (BOOL)isOlderOrEqualThanHourInterval:(NSInteger)hours;
+- (BOOL)isOlderOrEqualThanMinuteInterval:(NSInteger)minutes;
+- (BOOL)isOlderOrEqualThanSecondInterval:(NSInteger)seconds;
+
+#### NSObject
+
+- Nullable block parameters
+- Crash fixes
+
 ## 0.9.6
 
 - Add UIImage::resizedImageToSize:
