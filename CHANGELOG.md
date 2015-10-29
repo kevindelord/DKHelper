@@ -1,5 +1,11 @@
 # DKHelper CHANGELOG
 
+## 1.0.0
+
+### Breaking
+
+### Enhancements
+
 ## 0.9.6
 
 - Add UIImage::resizedImageToSize:
