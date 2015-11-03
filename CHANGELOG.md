@@ -1,5 +1,11 @@
 # DKHelper CHANGELOG
 
+## xxx
+
+- NSString: add randomString function and improve swift compatibility
+- Test project in Swift
+- UIColor: colorFromHexString now returns nil if parameter is nil
+
 ## 1.0.0
 
 This version fixes crashes in the `performBlock` functions and add many helpers for the NSBundle and NSDate classes.
