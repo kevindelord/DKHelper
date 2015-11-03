@@ -98,6 +98,13 @@
 - (BOOL)isEmail;
 
 /**
+ * Verify if the receiver is a numeric string.
+ *
+ * @return TRUE if the receiver is a numeric string; otherwise FALSE.
+ */
+- (BOOL)isNumeric;
+
+/**
  * Verify if the receiver is an alpha numeric string.
  *
  * @return TRUE if the receiver is an alpha numeric string; otherwise FALSE.
