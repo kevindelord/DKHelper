@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		752BB6D71BE8D4A6001B8A25 /* UIColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752BB6D61BE8D4A6001B8A25 /* UIColorTests.swift */; };
 		753298641BE8C7BF00FD8252 /* CGRect+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 753298411BE8C7BF00FD8252 /* CGRect+DKHelper.m */; };
 		753298651BE8C7BF00FD8252 /* CGRect+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 753298411BE8C7BF00FD8252 /* CGRect+DKHelper.m */; };
 		753298661BE8C7BF00FD8252 /* CGSize+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 753298431BE8C7BF00FD8252 /* CGSize+DKHelper.m */; };
@@ -62,6 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		752BB6D61BE8D4A6001B8A25 /* UIColorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorTests.swift; sourceTree = "<group>"; };
 		753298401BE8C7BF00FD8252 /* CGRect+DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CGRect+DKHelper.h"; path = "../DKHelper/CGRect+DKHelper.h"; sourceTree = "<group>"; };
 		753298411BE8C7BF00FD8252 /* CGRect+DKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CGRect+DKHelper.m"; path = "../DKHelper/CGRect+DKHelper.m"; sourceTree = "<group>"; };
 		753298421BE8C7BF00FD8252 /* CGSize+DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CGSize+DKHelper.h"; path = "../DKHelper/CGSize+DKHelper.h"; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				75D172191BE8C62500AE890C /* DKHelperTests.swift */,
+				752BB6D61BE8D4A6001B8A25 /* UIColorTests.swift */,
 				75D1721B1BE8C62500AE890C /* Info.plist */,
 			);
 			path = DKHelperTests;
@@ -368,6 +371,7 @@
 				753298871BE8C7BF00FD8252 /* UIView+DKHelper.m in Sources */,
 				753298711BE8C7BF00FD8252 /* NSDate+DKHelper.m in Sources */,
 				7532986B1BE8C7BF00FD8252 /* DKRegex.m in Sources */,
+				752BB6D71BE8D4A6001B8A25 /* UIColorTests.swift in Sources */,
 				753298751BE8C7BF00FD8252 /* NSObject+DKHelper.m in Sources */,
 				7532986D1BE8C7BF00FD8252 /* NSArray+DKHelper.m in Sources */,
 			);
@@ -523,7 +527,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = delord.me.DKHelperTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "DKHelper/DKHelper-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DKHelper.app/DKHelper";
 			};
 			name = Debug;
