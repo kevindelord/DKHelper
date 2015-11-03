@@ -15,7 +15,7 @@ class DKViewController					: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		self.backgroundView?.roundCorner(UIRectCorner.AllCorners, radius: self.backgroundView?.frameWidth() ?? 0, maskToBounds: true)
+		self.backgroundView?.roundCorner(UIRectCorner.AllCorners, radius: (self.backgroundView?.frameWidth() ?? 0), maskToBounds: true)
 		self.versionLabel?.text = appVersion()
 	}
 }
