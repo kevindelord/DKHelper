@@ -22,16 +22,18 @@ class UIColorTests: XCTestCase {
 		var wrongAlpha : CGFloat = -1
 	}
 
-	private func testRGBColor(color: UIColor, expectedResults: RGBResults) {
+	private func testRGBColor(color: UIColor?, expectedResults: RGBResults) {
 		var red : CGFloat = -1
 		var green : CGFloat = -1
 		var blue : CGFloat = -1
 		var alpha : CGFloat = -1
 
-		color.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+		// Check optional
+		XCTAssertNotNil(color)
+
+		color?.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
 
 		// expected
-		XCTAssertNotNil(color)
 		XCTAssertEqual(red, expectedResults.red)
 		XCTAssertEqual(green, expectedResults.green)
 		XCTAssertEqual(blue, expectedResults.blue)
@@ -211,11 +213,6 @@ extension UIColorTests {
 
 extension UIColorTests {
 
-	func test_ShouldCreateColorFromNilHEXString() {
-
-		XCTAssertNil(UIColor(fromHexString: nil))
-	}
-
 	func test_ShouldCreateColorFromHEXString() {
 
 		let results = UIColorTests.RGBResults(red: 1, green: 0, blue: 1, alpha: 1, wrongRed: 3, wrongGreen: 25, wrongBlue: 133, wrongAlpha: 0.4)
@@ -226,29 +223,23 @@ extension UIColorTests {
 
 		let results = UIColorTests.RGBResults(red: 0, green: 1, blue: 0, alpha: 1, wrongRed: 3, wrongGreen: 25, wrongBlue: 133, wrongAlpha: 0.4)
 		self.testRGBColor(UIColor(fromHexString: "00FF00"), expectedResults: results)
+
 	}
 
 	func test_ShouldCreateColorFromEmptyHEXString() {
 
-		let results = UIColorTests.RGBResults(red: 0, green: 0, blue: 0, alpha: 1, wrongRed: 3, wrongGreen: 25, wrongBlue: 0.1, wrongAlpha: 0.4)
-		self.testRGBColor(UIColor(fromHexString: ""), expectedResults: results)
+		XCTAssertNil(UIColor(fromHexString: ""))
 	}
 
 	func test_ShouldCreateColorFromInvalidHEXString() {
 
-		let results = UIColorTests.RGBResults(red: 0, green: 0, blue: 0, alpha: 1, wrongRed: 3, wrongGreen: 25, wrongBlue: 0.1, wrongAlpha: 0.4)
-		self.testRGBColor(UIColor(fromHexString: "zrtyzrty"), expectedResults: results)
+		XCTAssertNil(UIColor(fromHexString: "zrtyzrty"))
 	}
 }
 
 // MARK: - Color From HEX String With Alpha
 
 extension UIColorTests {
-
-	func test_ShouldCreateColorFromNilHEXStringWithAlpha() {
-
-		XCTAssertNil(UIColor(fromHexString: nil, alpha: 1))
-	}
 
 	func test_ShouldCreateColorFromHEXStringWithAlpha() {
 
@@ -264,14 +255,12 @@ extension UIColorTests {
 
 	func test_ShouldCreateColorFromEmptyHEXStringWithinvalidAlpha() {
 
-		let results = UIColorTests.RGBResults(red: 0, green: 0, blue: 0, alpha: 0, wrongRed: 3, wrongGreen: 25, wrongBlue: 0.1, wrongAlpha: 0.4)
-		self.testRGBColor(UIColor(fromHexString: "", alpha: -1), expectedResults: results)
+		XCTAssertNil(UIColor(fromHexString: "", alpha: -1))
 	}
 
 	func test_ShouldCreateColorFromInvalidHEXStringWithinvalidAlpha() {
 
-		let results = UIColorTests.RGBResults(red: 0, green: 0, blue: 0, alpha: 1, wrongRed: 3, wrongGreen: 25, wrongBlue: 0.1, wrongAlpha: 0.4)
-		self.testRGBColor(UIColor(fromHexString: "zrtyzrty", alpha: 124), expectedResults: results)
+		XCTAssertNil(UIColor(fromHexString: "zrtyzrty", alpha: 124))
 	}
 }
 

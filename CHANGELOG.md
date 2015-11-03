@@ -2,9 +2,13 @@
 
 ## xxx
 
-- NSString: add randomString function and improve swift compatibility
+- NSString: add randomString function
 - Test project in Swift
 - UIColor: colorFromHexString now returns nil if parameter is nil
+
+### Improve swift compatibility
+- UIColor
+- NSString
 
 ## 1.0.0
 

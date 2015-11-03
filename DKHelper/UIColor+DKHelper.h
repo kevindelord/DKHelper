@@ -27,7 +27,7 @@
  * @param alpha The opacity value of the color object, specified as a value from 0.0 to 1.0.
  * @return A red UIColor object.
  */
-+ (UIColor *)redColorWithAlpha:(CGFloat)alpha;
++ (instancetype _Nonnull)redColorWithAlpha:(CGFloat)alpha;
 
 /**
  * Creates and returns a green color object using the specified opacity.
@@ -38,7 +38,7 @@
  * @param alpha The opacity value of the color object, specified as a value from 0.0 to 1.0.
  * @return A green UIColor object.
  */
-+ (UIColor *)greenColorWithAlpha:(CGFloat)alpha;
++ (instancetype _Nonnull)greenColorWithAlpha:(CGFloat)alpha;
 
 /**
  * Creates and returns a blue color object using the specified opacity.
@@ -49,7 +49,7 @@
  * @param alpha The opacity value of the color object, specified as a value from 0.0 to 1.0.
  * @return A blue UIColor object.
  */
-+ (UIColor *)blueColorWithAlpha:(CGFloat)alpha;
++ (instancetype _Nonnull)blueColorWithAlpha:(CGFloat)alpha;
 
 /**
  * Creates and returns a yellow color object using the specified opacity.
@@ -60,7 +60,7 @@
  * @param alpha The opacity value of the color object, specified as a value from 0.0 to 1.0.
  * @return A yellow UIColor object.
  */
-+ (UIColor *)yellowColorWithAlpha:(CGFloat)alpha;
++ (instancetype _Nonnull)yellowColorWithAlpha:(CGFloat)alpha;
 
 /**
  * Creates and returns a random color object.
@@ -69,7 +69,7 @@
  *
  * @return A random UIColor object.
  */
-+ (UIColor *)randomColor;
++ (instancetype _Nonnull)randomColor;
 
 #pragma mark - RGB(A)
 
@@ -85,7 +85,7 @@
  * @param blue The blue component of the color object, specified as a value from 0.0 to 255.0.
  * @return Returns the color object.
  */
-+ (UIColor *)r:(CGFloat)red g:(CGFloat)green b:(CGFloat)blue;
++ (instancetype _Nonnull)r:(CGFloat)red g:(CGFloat)green b:(CGFloat)blue;
 
 /**
  * Creates and returns a color object using the specified opacity and RGBA component values.
@@ -99,28 +99,28 @@
  * @param alpha The opacity value of the color object, specified as a value from 0.0 to 1.0.
  * @return Returns the color object.
  */
-+ (UIColor *)r:(CGFloat)red g:(CGFloat)green b:(CGFloat)blue a:(CGFloat)alpha;
++ (instancetype _Nonnull)r:(CGFloat)red g:(CGFloat)green b:(CGFloat)blue a:(CGFloat)alpha;
 
 #pragma mark - Hexa
 
 /**
  * Creates and returns a color object using the given hexadecimal and alpha values.
  *
- * @param hexString The hexadecimal value as a string; must not be nil.
+ * @param hexString The hexadecimal value as a string; must be valid and not nil.
  * @param alpha The opacity value of the color object, specified as a value from 0.0 to 1.0.
- * @return Returns the color object; or nil if `hexString` is nil.
+ * @return Returns the color object; or nil if `hexString` is invalid.
  */
-+ (UIColor *)colorFromHexString:(NSString *)hexString alpha:(CGFloat)alpha;
++ (instancetype _Nullable)colorFromHexString:(NSString * _Nonnull)hexString alpha:(CGFloat)alpha;
 
 /**
  * Creates and returns a color object using the given hexadecimal value as a NSString.
  *
  * @discussion The alpha is set by default to 1.0.
  *
- * @param hexString The hexadecimal value as a string; must not be nil.
- * @return Returns the color object; or nil if `hexString` is nil.
+ * @param hexString The hexadecimal value as a string; must be valid and not nil.
+ * @return Returns the color object; or nil if `hexString` is invalid.
  */
-+ (UIColor *)colorFromHexString:(NSString *)hexString;
++ (instancetype _Nullable)colorFromHexString:(NSString * _Nonnull)hexString;
 
 #pragma mark - Fade
 
@@ -135,7 +135,7 @@
  * @param percentage The percentage Value for the new Color, specified as a value from 0.0 to 1.0.
  * @return Returns the color object, that is between the two given colors, by percentage.
  */
-+ (UIColor *)fadeFromBaseColor:(UIColor*)baseColor toColor:(UIColor *)endColor withPercentage:(CGFloat)percentage;
++ (instancetype _Nonnull)fadeFromBaseColor:(UIColor * _Nonnull)baseColor toColor:(UIColor * _Nonnull)endColor withPercentage:(CGFloat)percentage;
 
 @end
 
