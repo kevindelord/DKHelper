@@ -9,6 +9,8 @@
 #ifndef DKHelper_CGRect_h__
 #define DKHelper_CGRect_h__
 
+#import <UIKit/UIKit.h>
+
 /**
  * Returns a Boolean value indicating whether a frame is inside a container.
  *

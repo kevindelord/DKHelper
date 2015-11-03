@@ -9,6 +9,8 @@
 #ifndef DKHelper_CGSize_h__
 #define DKHelper_CGSize_h__
 
+#import <UIKit/UIKit.h>
+
 /**
  * Returns a new CGSize structure corresponding to a size adjusted into a CGRect container.
  *
