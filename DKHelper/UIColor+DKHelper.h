@@ -83,7 +83,7 @@
  * @param red The red component of the color object, specified as a value from 0.0 to 255.0.
  * @param green The green component of the color object, specified as a value from 0.0 to 255.0.
  * @param blue The blue component of the color object, specified as a value from 0.0 to 255.0.
- * @return Returns The color object.
+ * @return Returns the color object.
  */
 + (UIColor *)r:(CGFloat)red g:(CGFloat)green b:(CGFloat)blue;
 
@@ -97,7 +97,7 @@
  * @param green The green component of the color object, specified as a value from 0.0 to 255.0.
  * @param blue The blue component of the color object, specified as a value from 0.0 to 255.0.
  * @param alpha The opacity value of the color object, specified as a value from 0.0 to 1.0.
- * @return Returns The color object.
+ * @return Returns the color object.
  */
 + (UIColor *)r:(CGFloat)red g:(CGFloat)green b:(CGFloat)blue a:(CGFloat)alpha;
 
@@ -106,21 +106,23 @@
 /**
  * Creates and returns a color object using the given hexadecimal and alpha values.
  *
- * @param hexString The hexadecimal value as a string.
+ * @param hexString The hexadecimal value as a string; must not be nil.
  * @param alpha The opacity value of the color object, specified as a value from 0.0 to 1.0.
- * @return Returns The color object.
+ * @return Returns the color object; or nil if `hexString` is nil.
  */
 + (UIColor *)colorFromHexString:(NSString *)hexString alpha:(CGFloat)alpha;
 
 /**
  * Creates and returns a color object using the given hexadecimal value as a NSString.
  *
- * @discussion The alpha is set by default to 1.0
+ * @discussion The alpha is set by default to 1.0.
  *
- * @param hexString The hexadecimal value as a string.
- * @return Returns The color object.
+ * @param hexString The hexadecimal value as a string; must not be nil.
+ * @return Returns the color object; or nil if `hexString` is nil.
  */
 + (UIColor *)colorFromHexString:(NSString *)hexString;
+
+#pragma mark - Fade
 
 /**
  * Creates and returns a color that is between the two given colors, by a given percentage.
@@ -131,9 +133,9 @@
  * @param baseColor The color object, that specifies the beginning of the range.
  * @param endColor The color object, that specifies the end of the range.
  * @param percentage The percentage Value for the new Color, specified as a value from 0.0 to 1.0.
- * @return Returns The color object, that is between the two given colors, by percentage.
+ * @return Returns the color object, that is between the two given colors, by percentage.
  */
-+ (UIColor *)fadeFromBaseColor:(UIColor*)baseColor toColor:(UIColor *)endColor withPercentage:(CGFloat) percentage;
++ (UIColor *)fadeFromBaseColor:(UIColor*)baseColor toColor:(UIColor *)endColor withPercentage:(CGFloat)percentage;
 
 @end
 
