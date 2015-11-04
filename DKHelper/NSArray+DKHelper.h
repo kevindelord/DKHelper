@@ -23,7 +23,7 @@
  * @discussion The extensions are: .tif, .tiff, .gif, .jpeg, .jpg, .png, .pjpeg
  * @return A new array object containing the extensions.
  */
-+ (NSArray *)imageFileExtensions;
++ (instancetype _Nonnull)imageFileExtensions;
 
 /**
  * Return an array of the most common audio file extensions.
@@ -31,7 +31,7 @@
  * @discussion The extensions are: .mp3, .mp2, .wma, .aac, .m4a, .mp4, .m4p
  * @return A new array object containing the extensions.
  */
-+ (NSArray *)audioFileExtensions;
++ (instancetype _Nonnull)audioFileExtensions;
 
 /**
  * Return an array of the most common video file extensions.
@@ -39,6 +39,6 @@
  * @discussion The extensions are: .avi, .flv, .wmv, .mp4, .mov, .mpg, .divx, .asf
  * @return A new array object containing the extensions.
  */
-+ (NSArray *)videoFileExtensions;
++ (instancetype _Nonnull)videoFileExtensions;
 
 @end
