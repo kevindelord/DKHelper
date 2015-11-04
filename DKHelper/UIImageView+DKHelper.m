@@ -10,11 +10,11 @@
 
 @implementation UIImageView (DKHelper)
 
-- (instancetype)initWithImageNamed:(NSString *)imageName {
+- (instancetype _Nonnull)initWithImageNamed:(NSString * _Nonnull)imageName {
     return [self initWithImage:[UIImage imageNamed:imageName]];
 }
 
-- (instancetype)initWithFrame:(CGRect)frame image:(UIImage *)image {
+- (instancetype _Nonnull)initWithFrame:(CGRect)frame image:(UIImage * _Nonnull)image {
     self = [super initWithFrame:frame];
     if (self) {
         self.image = image;
@@ -22,7 +22,7 @@
     return self;
 }
 
-- (instancetype)initWithFrame:(CGRect)frame imageNamed:(NSString *)imageName {
+- (instancetype _Nonnull)initWithFrame:(CGRect)frame imageNamed:(NSString * _Nonnull)imageName {
     self = [super initWithFrame:frame];
     if (self) {
         self.image = [UIImage imageNamed:imageName];

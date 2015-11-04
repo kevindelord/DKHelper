@@ -10,7 +10,7 @@
 
 @implementation UIImage (DKHelper)
 
-+ (UIImage *)scaleImage:(UIImage *)image size:(CGSize)size {
++ (UIImage * _Null_unspecified)scaleImage:(UIImage * _Nonnull)image size:(CGSize)size {
     UIGraphicsBeginImageContext(size);
     [image drawInRect:CGRectMake(0,0,size.width,size.height)];
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
@@ -18,7 +18,7 @@
     return newImage;
 }
 
-- (UIImage *)resizedImageToSize:(CGSize)newSize {
+- (UIImage * _Null_unspecified)resizedImageToSize:(CGSize)newSize {
 
     CGSize size = CGSizeMake(0, newSize.height);
     CGFloat ratio = 0.0;
@@ -33,7 +33,7 @@
     return [UIImage scaleImage:self size:size];
 }
 
-- (UIImage *)resizedImageToScreenSize {
+- (UIImage * _Null_unspecified)resizedImageToScreenSize {
 
     CGRect screenSize = UIScreen.mainScreen.bounds;
     return [self resizedImageToSize:screenSize.size];
