@@ -24,7 +24,7 @@
  * @param name The name as a NSString of the nib file in the main bundle.
  * @return If exist the loaded view; otherwise nil.
  */
-+ (UIView *)loadFromNib:(NSString *)name;
++ (instancetype _Nullable)loadFromNib:(NSString * _Nonnull)name;
 
 #pragma mark - UIView+Constraints
 
@@ -33,7 +33,7 @@
  *
  * @return The added layout contraints. Empty array if the receiver does not have a superview.
  */
-- (NSArray *)matchParentConstraints;
+- (NSArray * _Nonnull)matchParentConstraints;
 
 #pragma mark - UIView+Layer
 
@@ -45,7 +45,7 @@
  * @param bottomColor The bottom color of the gradient.
  * @return A new UIView object with a gradient color.
  */
-+ (UIView *)verticalGradientLayer:(CGRect)rect topColor:(UIColor *)topColor bottomColor:(UIColor *)bottomColor;
++ (UIView * _Nonnull)verticalGradientLayer:(CGRect)rect topColor:(UIColor * _Nonnull)topColor bottomColor:(UIColor * _Nonnull)bottomColor;
 
 /**
  * Rounds the specified corner(s) of the receiver with a given radius.

@@ -13,7 +13,7 @@
 
 #pragma mark - UIView+Load
 
-+ (UIView *)loadFromNib:(NSString *)name {
++ (instancetype _Nullable)loadFromNib:(NSString * _Nonnull)name {
     NSArray *nibs = [NSBundle.mainBundle loadNibNamed:name owner:self options:nil];
     return nibs.firstObject;
 }
@@ -22,7 +22,7 @@
 /**
  * creates constraints to adjust the child to match the parents dimensions and position
  */
-- (NSArray *)matchParentConstraints {
+- (NSArray * _Nonnull)matchParentConstraints {
     if (self.superview != nil) {
         [self setTranslatesAutoresizingMaskIntoConstraints:false];
 
@@ -40,7 +40,7 @@
 
 #pragma mark - UIView+Layer
 
-+ (UIView *)verticalGradientLayer:(CGRect)rect topColor:(UIColor *)topColor bottomColor:(UIColor *)bottomColor {
++ (UIView * _Nonnull)verticalGradientLayer:(CGRect)rect topColor:(UIColor * _Nonnull)topColor bottomColor:(UIColor * _Nonnull)bottomColor {
 
     UIView *gradientLayerView = [[UIView alloc] initWithFrame:rect];
     CAGradientLayer *gradient = [CAGradientLayer new];
