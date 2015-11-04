@@ -10,11 +10,11 @@
 
 @implementation DKRegex
 
-+ (NSString *)fileExtension {
++ (NSString * _Nonnull)fileExtension {
     return @".[0-9a-zA-Z]+$";
 }
 
-+ (NSString *)filenameAndExtension {
++ (NSString * _Nonnull)filenameAndExtension {
     return @"[0-9a-zA-Z]+.[0-9a-zA-Z]+$";
 }
 
