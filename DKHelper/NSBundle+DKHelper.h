@@ -19,7 +19,7 @@
  * @param key A key in the receiver's property list.
  * @return Returns the value associated with key in the receiver's property list (Info.plist). The localized value of a key is returned when one is available.
  */
-+ (id)entryInPListForKey:(NSString *)key;
++ (id _Nonnull)entryInPListForKey:(NSString * _Nonnull)key;
 
 /**
  * Returns the value related to the given key in the receiver's information property list.
@@ -30,7 +30,7 @@
  * @param key A key in the receiver's property list.
  * @return Returns a NSString value associated with key in the receiver's property list (Info.plist). The localized value of a key is returned when one is available.
  */
-+ (NSString *)stringEntryInPListForKey:(NSString *)key;
++ (NSString * _Nonnull)stringEntryInPListForKey:(NSString * _Nonnull)key;
 
 /**
  * Returns the value related to the given key in the receiver's information property list.
@@ -41,7 +41,7 @@
  * @param key A key in the receiver's property list.
  * @return Returns a BOOL value associated with key in the receiver's property list (Info.plist). The localized value of a key is returned when one is available.
  */
-+ (BOOL)booleanEntryInPListForKey:(NSString *)key;
++ (BOOL)booleanEntryInPListForKey:(NSString * _Nonnull)key;
 
 /**
  * Returns the value related to the given key in the receiver's information property list.
@@ -52,6 +52,6 @@
  * @param key A key in the receiver's property list.
  * @return Returns a NSNumber value associated with key in the receiver's property list (Info.plist). The localized value of a key is returned when one is available.
  */
-+ (NSNumber *)numberEntryInPListForKey:(NSString *)key;
++ (NSNumber * _Nonnull)numberEntryInPListForKey:(NSString * _Nonnull)key;
 
 @end
