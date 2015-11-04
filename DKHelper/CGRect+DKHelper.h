@@ -14,11 +14,24 @@
 /**
  * Returns a Boolean value indicating whether a frame is inside a container.
  *
- * @param frame The frame
- * @param container The container in which the frame is supposed to be.
+ * @param frame The original CGRect frame structure.
+ * @param container The CGRect container in which the frame is supposed to be.
  * @return YES if the frame is inside the given container.
  */
-BOOL    CGRectInsideContainer(CGRect frame, CGRect container);
+BOOL CGRectInsideContainer(CGRect frame, CGRect container);
+
+/**
+ * Returns a CGRect structure that set a receiver inside a container.
+ *
+ * @discussion The size of the receiver is not changed. Just the origin is updated to fit
+ * the frame into the container. In case the height or width are bigger than the container's,
+ * the frame is aligned to the right and bottom of the container. Otherwise it is aligned left and top.
+ *
+ * @param frame The original CGRect structure.
+ * @param container The CGRect container in which the frame is supposed to be.
+ * @return A new CGRect structure with updated values.
+ */
+CGRect CGRectSetInsideContainer(CGRect frame, CGRect container);
 
 /**
  * Creates and returns a CGRect structure from a receiver object and a new width.
@@ -27,7 +40,7 @@ BOOL    CGRectInsideContainer(CGRect frame, CGRect container);
  * @param width A CGFloat value indicating the new width value.
  * @return A new CGRect structure with updated values.
  */
-CGRect  CGRectSetWidth(CGRect rect, CGFloat width);
+CGRect CGRectSetWidth(CGRect rect, CGFloat width);
 
 /**
  * Creates and returns a CGRect structure from a receiver object and a new height.
@@ -36,7 +49,7 @@ CGRect  CGRectSetWidth(CGRect rect, CGFloat width);
  * @param width A CGFloat value indicating the new height value.
  * @return A new CGRect structure with updated values.
  */
-CGRect  CGRectSetHeight(CGRect rect, CGFloat height);
+CGRect CGRectSetHeight(CGRect rect, CGFloat height);
 
 /**
  * Creates and returns a CGRect structure from a receiver object and a new x position.
@@ -45,7 +58,7 @@ CGRect  CGRectSetHeight(CGRect rect, CGFloat height);
  * @param width A CGFloat value indicating the new x position value.
  * @return A new CGRect structure with updated values.
  */
-CGRect  CGRectSetX(CGRect rect, CGFloat x);
+CGRect CGRectSetX(CGRect rect, CGFloat x);
 
 /**
  * Creates and returns a CGRect structure from a receiver object and a new y position.
@@ -54,7 +67,7 @@ CGRect  CGRectSetX(CGRect rect, CGFloat x);
  * @param width A CGFloat value indicating the new y position value.
  * @return A new CGRect structure with updated values.
  */
-CGRect  CGRectSetY(CGRect rect, CGFloat y);
+CGRect CGRectSetY(CGRect rect, CGFloat y);
 
 /**
  * Creates and returns a CGRect structure from a receiver object and a new size.
@@ -63,7 +76,7 @@ CGRect  CGRectSetY(CGRect rect, CGFloat y);
  * @param width A CGSize value indicating the new size value.
  * @return A new CGRect structure with updated values.
  */
-CGRect  CGRectSetSize(CGRect rect, CGSize size);
+CGRect CGRectSetSize(CGRect rect, CGSize size);
 
 /**
  * Creates and returns a CGRect structure from a receiver object and a new origin.
@@ -72,6 +85,6 @@ CGRect  CGRectSetSize(CGRect rect, CGSize size);
  * @param width A CGPoint value indicating the new origin value.
  * @return A new CGRect structure with updated values.
  */
-CGRect  CGRectSetOrigin(CGRect rect, CGPoint origin);
+CGRect CGRectSetOrigin(CGRect rect, CGPoint origin);
 
 #endif
