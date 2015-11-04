@@ -23,7 +23,7 @@
  *
  * @return A NSString object representing the currency value of the receiver.
  */
-- (NSString *)currencyStringValue;
+- (NSString * _Nullable)currencyStringValue;
 
 @end
 
