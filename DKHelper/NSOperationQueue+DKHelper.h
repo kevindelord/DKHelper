@@ -20,6 +20,6 @@
  * @param timeoutBlock The block that gets called after the operation timed out
  * @return The NSOperation.
  */
-- (NSOperation *)addOperationWithBlock:(void (^)(NSOperation *operation))block timeout:(NSTimeInterval)timeout timeoutBlock:(void (^)(void))timeoutBlock;
+- (NSOperation * _Nullable)addOperationWithBlock:(nullable void (^)(NSOperation * _Nullable operation))block timeout:(NSTimeInterval)timeout timeoutBlock:(nullable void (^)(void))timeoutBlock;
 
 @end
