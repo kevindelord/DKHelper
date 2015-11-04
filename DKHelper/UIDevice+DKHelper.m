@@ -13,7 +13,7 @@
 
 #pragma mark - UIDevice+Model
 
-+ (NSString *)platform{
++ (NSString * _Nonnull)platform{
     size_t size;
     sysctlbyname("hw.machine", NULL, &size, NULL, 0);
     char *machine = malloc(size);
@@ -23,7 +23,7 @@
     return platform;
 }
 
-+ (NSString *)platformString {
++ (NSString * _Nonnull)platformString {
     NSString *platform = [UIDevice platform];
     
     if ([platform isEqualToString:@"iPhone1,1"])    return @"iPhone 2G";
@@ -112,29 +112,25 @@
     return [currentModel hasPrefix:@"iPad"];
 }
 
-+ (CGFloat)iOS7Delta {
-    return (([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0 ) ? 20 : 0);
-}
-
 #pragma mark - System Version
 
-+ (BOOL)systemVersionEqualTo:(NSString *)version {
++ (BOOL)systemVersionEqualTo:(NSString * _Nonnull)version {
     return ([[[UIDevice currentDevice] systemVersion] compare:version options:NSNumericSearch] == NSOrderedSame);
 }
 
-+ (BOOL)systemVersionGreaterThan:(NSString *)version {
++ (BOOL)systemVersionGreaterThan:(NSString * _Nonnull)version {
     return ([[[UIDevice currentDevice] systemVersion] compare:version options:NSNumericSearch] == NSOrderedDescending);
 }
 
-+ (BOOL)systemVersionGreaterThanOrEqualTo:(NSString *)version {
++ (BOOL)systemVersionGreaterThanOrEqualTo:(NSString * _Nonnull)version {
     return ([[[UIDevice currentDevice] systemVersion] compare:version options:NSNumericSearch] != NSOrderedAscending);
 }
 
-+ (BOOL)systemVersionLessThan:(NSString *)version {
++ (BOOL)systemVersionLessThan:(NSString * _Nonnull)version {
     return ([[[UIDevice currentDevice] systemVersion] compare:version options:NSNumericSearch] == NSOrderedAscending);
 }
 
-+ (BOOL)systemVersionLessThanOrEqualTo:(NSString *)version {
++ (BOOL)systemVersionLessThanOrEqualTo:(NSString * _Nonnull)version {
     return ([[[UIDevice currentDevice] systemVersion] compare:version options:NSNumericSearch] != NSOrderedDescending);
 }
 

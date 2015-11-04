@@ -31,7 +31,7 @@
  *
  * @return The system name of the current device
  */
-+ (NSString *)platform;
++ (NSString * _Nonnull)platform;
 
 /**
  * Returns a NSString describing the current device.
@@ -40,7 +40,7 @@
  *
  * @return A string describing the current device with a user-friendly name.
  */
-+ (NSString *)platformString;
++ (NSString * _Nonnull)platformString;
 
 /**
  * Returns a Boolean value indicating whether the current device is a slow one or not.
@@ -58,37 +58,32 @@
  */
 + (BOOL)isIPad;
 
-/**
- * Return 20px if the system version is superior or equal to 7.0.
- */
-+ (CGFloat)iOS7Delta;
-
 #pragma mark - System Version
 
 /**
  * Return true if the system version is equal to the given parameter.
  */
-+ (BOOL)systemVersionEqualTo:(NSString *)version;
++ (BOOL)systemVersionEqualTo:(NSString * _Nonnull)version;
 
 /**
  * Return true if the system version is greater than the given parameter.
  */
-+ (BOOL)systemVersionGreaterThan:(NSString *)version;
++ (BOOL)systemVersionGreaterThan:(NSString * _Nonnull)version;
 
 /**
  * Return true if the system version is greater or equal to the given parameter.
  */
-+ (BOOL)systemVersionGreaterThanOrEqualTo:(NSString *)version;
++ (BOOL)systemVersionGreaterThanOrEqualTo:(NSString * _Nonnull)version;
 
 /**
  * Return true if the system version is less than the given parameter.
  */
-+ (BOOL)systemVersionLessThan:(NSString *)version;
++ (BOOL)systemVersionLessThan:(NSString * _Nonnull)version;
 
 /**
  * Return true if the system version is less than or equal to the given parameter.
  */
-+ (BOOL)systemVersionLessThanOrEqualTo:(NSString *)version;
++ (BOOL)systemVersionLessThanOrEqualTo:(NSString * _Nonnull)version;
 
 @end
 
