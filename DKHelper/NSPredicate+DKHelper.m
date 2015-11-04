@@ -10,18 +10,26 @@
 
 @implementation NSPredicate (DKHelper)
 
-- (NSPredicate *)OR:(NSPredicate *)predicate {
-    if (!predicate) {
+- (NSPredicate * _Nonnull)OR:(NSPredicate * _Nullable)predicate {
+	if (predicate == nil) {
         return self;
     }
     return [NSCompoundPredicate orPredicateWithSubpredicates:@[self, predicate]];
 }
 
-- (NSPredicate *)AND:(NSPredicate *)predicate {
-    if (!predicate) {
+- (NSPredicate * _Nonnull)AND:(NSPredicate * _Nullable)predicate {
+    if (predicate == nil) {
         return self;
     }
     return [NSCompoundPredicate andPredicateWithSubpredicates:@[self, predicate]];
 }
 
 @end
+
+NSPredicate * _Nonnull OR_PREDICATE(NSPredicate * _Nonnull a, NSPredicate * _Nonnull b) {
+	return (a ? [a OR:b] : b);
+}
+
+NSPredicate * _Nonnull AND_PREDICATE(NSPredicate * _Nonnull a, NSPredicate * _Nonnull b) {
+	return (a ? [a AND:b] : b);
+}
