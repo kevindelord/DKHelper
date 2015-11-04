@@ -10,18 +10,18 @@
 
 #pragma mark - AppVersion
 
-NSString *  appVersion() {
+NSString * _Nonnull appVersion() {
     NSDictionary *info = [[NSBundle mainBundle] infoDictionary];
     return [NSString stringWithFormat:@"Version %@ (%@)", info[@"CFBundleShortVersionString"], info[@"CFBundleVersion"]];
 }
 
 #pragma mark - Math
 
-CGFloat     degreesToRadians(CGFloat degrees) {
+CGFloat degreesToRadians(CGFloat degrees) {
     return ((degrees * M_PI) / 180.0);
 }
 
-CGFloat     radiansToDegrees(CGFloat radians) {
+CGFloat radiansToDegrees(CGFloat radians) {
     return ((radians * 180.0) / M_PI);
 }
 
@@ -32,34 +32,36 @@ id          OBJECT_FOR_KEYS(NSDictionary *dict, id key1, id key2) {
 }
 
 id          OBJECT(NSDictionary *dict, id key) {
-    return (VALID(dict, key) ? dict[key] : nil);
+	return (VALID(dict, key) ? dict[key] : nil);
 }
 
 BOOL        VALID(NSDictionary *dict, id key) {
-    return (dict && dict[key] && ![dict[key] isEqual:[NSNull null]]);
+    return (key != nil && [key isEqual:[NSNull null]] == false &&
+			dict != nil && dict[key] != nil && [dict[key] isEqual:[NSNull null]] == false);
 }
 
 #pragma mark - Localization
 
-NSString *  L(NSString *key) {
+NSString * _Nonnull L(NSString * _Nonnull key) {
     return NSLocalizedString(key, nil);
 }
 
 #pragma mark - Getters
 
-CGFloat     GET_FLOAT(NSDictionary *dict, id key) {
+CGFloat GET_FLOAT(NSDictionary * _Nullable dict, id _Nullable key) {
     return (VALID(dict, key) ? [dict[key] floatValue] : 0.);
 }
 
-NSInteger  GET_INTEGER(NSDictionary *dict, id key) {
+NSInteger GET_INTEGER(NSDictionary * _Nullable dict, id _Nullable key) {
     return (VALID(dict, key) ? [dict[key] integerValue] : 0);
 }
 
-NSNumber *  GET_NUMBER(NSDictionary *dict, id key) {
+NSNumber * _Nullable GET_NUMBER(NSDictionary * _Nullable dict, id _Nullable key) {
     id obj = OBJECT(dict, key);
     if (obj && [obj isKindOfClass:[NSString class]]) {
         NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
         [f setNumberStyle:NSNumberFormatterDecimalStyle];
+		[f setLocale: [NSLocale localeWithLocaleIdentifier:@"en_US"]];
         return [f numberFromString:(NSString *)obj];
 
     } else if (obj && [obj isKindOfClass:[NSNumber class]]) {
@@ -68,7 +70,7 @@ NSNumber *  GET_NUMBER(NSDictionary *dict, id key) {
     return nil;
 }
 
-NSDate *    GET_DATE(NSDictionary *dict, id key) {
+NSDate * _Nullable GET_DATE(NSDictionary * _Nullable dict, id key) {
     if (VALID(dict, key)) {
         if ([dict[key] isKindOfClass:[NSDate class]]) {
             return dict[key];
@@ -79,27 +81,27 @@ NSDate *    GET_DATE(NSDictionary *dict, id key) {
     return nil;
 }
 
-NSString *  GET_STRING(NSDictionary *dict, id key) {
+NSString * _Nullable GET_STRING(NSDictionary * _Nullable dict, id key) {
     return ( VALID(dict, key) ? ( ![dict[key] isEqualToString:@""] ? dict[key] : nil ) : nil);
 }
 
 #pragma mark - Numbers
 
-CGFloat     MINMAX(CGFloat value, CGFloat min, CGFloat max) {
+CGFloat MINMAX(CGFloat value, CGFloat min, CGFloat max) {
     return ((value <= min) ? min : (value >= max) ? (max) : value);
 }
 
-long            cL(NSInteger v) {
+long cL(NSInteger v) {
     return (long)(v);
 }
 
-unsigned long   cUL(NSUInteger v) {
+unsigned long cUL(NSUInteger v) {
     return (unsigned long)(v);
 }
 
 #pragma mark - DKLog
 
-void        DKLog(BOOL verbose, NSString *format, ...) {
+void DKLog(BOOL verbose, NSString * _Nonnull format, ...) {
 #if defined (DEBUG)
     if (verbose) {
         va_list args;
@@ -112,14 +114,3 @@ void        DKLog(BOOL verbose, NSString *format, ...) {
     // do nothing
 #endif
 }
-
-#pragma mark - Predicate
-
-NSPredicate *   OR_PREDICATE(NSPredicate *a, NSPredicate *b) {
-    return (a ? [a OR:b] : b);
-}
-
-NSPredicate *   AND_PREDICATE(NSPredicate *a, NSPredicate *b) {
-    return (a ? [a AND:b] : b);
-}
-

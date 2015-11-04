@@ -37,4 +37,278 @@ class DKHelperTests: XCTestCase {
 //            // Put the code you want to measure the time of here.
 //        }
     }
+
+	func test_ShouldGetAnAppVersion() {
+		let version = appVersion()
+		XCTAssertNotNil(version)
+		XCTAssert(version.characters.count > 0)
+	}
 }
+
+// MARK: - Maths
+
+extension DKHelperTests {
+
+	func test_ShouldConvertDegreesToRadian() {
+		XCTAssertEqual(Double(round(100000 * degreesToRadians(20)) / 100000), 0.34907)
+		XCTAssertEqual(Double(round(100000 * degreesToRadians(-400)) / 100000), -6.98132)
+		XCTAssertEqual(Double(round(100000 * degreesToRadians(360)) / 100000), 6.28319)
+	}
+
+	func test_ShouldConvertRadianToDegrees() {
+		XCTAssertEqual(Double(round(100 * radiansToDegrees(20)) / 100), 1145.92)
+		XCTAssertEqual(Double(round(10 * radiansToDegrees(-400)) / 10), -22918.3)
+		XCTAssertEqual(Double(round(10 * radiansToDegrees(360)) / 10), 20626.5)
+	}
+
+	func test_ShouldTestBothMathFunctionTogether() {
+		XCTAssertEqual(radiansToDegrees(degreesToRadians(20)), 20)
+		XCTAssertEqual(radiansToDegrees(degreesToRadians(100)), 100)
+	}
+}
+
+// MARK: - Numbers
+
+extension DKHelperTests {
+
+	func test_ShouldReturnCorrectMinValue() {
+		XCTAssertEqual(MINMAX(20, 30, 100), 30)
+	}
+
+	func test_ShouldReturnCorrectEqualMinValue() {
+		XCTAssertEqual(MINMAX(20, 20, 100), 20)
+	}
+
+	func test_ShouldReturnCorrectMaxValue() {
+		XCTAssertEqual(MINMAX(200, 30, 100), 100)
+	}
+
+	func test_ShouldReturnCorrectEqualMaxValue() {
+		XCTAssertEqual(MINMAX(100, 30, 100), 100)
+	}
+
+	func test_ShouldReturnCorrectOriginalValue() {
+		XCTAssertEqual(MINMAX(20, 10, 100), 20)
+	}
+
+	func test_LongCast() {
+		XCTAssertEqual(cL(4), 4)
+	}
+
+	func test_UnsignedLongCast() {
+		XCTAssertEqual(cUL(4), 4)
+	}
+}
+
+// MARK: - Object verification
+
+extension DKHelperTests {
+
+	// MARK: VALID
+
+	func test_ShouldVerifyValidValue() {
+		let dict = ["test":4]
+		XCTAssert(VALID(dict, "test"))
+	}
+
+	func test_ShouldVerifyNilOnInvalidDict() {
+		XCTAssertFalse(VALID(nil, "test"))
+	}
+
+	func test_ShouldVerifyNilOnInvalidKey() {
+		let dict = ["test":4]
+		XCTAssertFalse(VALID(dict, nil))
+	}
+
+	func test_ShouldVerifyNilOnNSNullKey() {
+		let dict = ["test":4]
+		XCTAssertFalse(VALID(dict, NSNull()))
+	}
+
+	func test_ShouldVerifyNilOnNSNullValue() {
+		let dict = ["test":NSNull()]
+		XCTAssertFalse(VALID(dict, "test"))
+	}
+
+	// MARK: OBJECT
+
+	func test_ShouldReturnValidValue() {
+		let dict = ["test":4]
+		XCTAssertEqual(OBJECT(dict, "test") as? Int, 4)
+	}
+
+	func test_ShouldReturnNilOnInvalidDict() {
+		XCTAssertNil(OBJECT(nil, "test"))
+	}
+
+	func test_ShouldReturnNilOnNilKey() {
+		let dict = ["test":4]
+		XCTAssertNil(OBJECT(dict, nil))
+	}
+
+	func test_ShouldReturnNilOnInvalidKey() {
+		let dict = ["test":4]
+		XCTAssert(OBJECT(dict, 3) == nil)
+	}
+
+	func test_ShouldReturnNilOnNSNullKey() {
+		let dict = ["test":4]
+		XCTAssertNil(OBJECT(dict, NSNull()))
+	}
+
+	func test_ShouldReturnNilOnNSNullValue() {
+		let dict = ["test":NSNull()]
+		XCTAssert(OBJECT(dict, "test") == nil)
+	}
+
+	// MARK: OBJECT_FOR_KEYS
+
+	func test_ShouldReturnSecondValidValue() {
+		let dict = ["first":["second":4]]
+		XCTAssertEqual(OBJECT_FOR_KEYS(dict, "first", "second") as? Int, 4)
+	}
+
+	func test_ShouldReturnNilOnInvalidDictForKeys() {
+		XCTAssertNil(OBJECT_FOR_KEYS(nil, "first", "second"))
+	}
+
+	func test_ShouldReturnNilOnFirstNilKey() {
+		let dict = ["first":["second":4]]
+		XCTAssertNil(OBJECT_FOR_KEYS(dict, nil, "second"))
+	}
+
+	func test_ShouldReturnNilOnSecondNilKey() {
+		let dict = ["first":["second":4]]
+		XCTAssert(OBJECT_FOR_KEYS(dict, "first", nil) == nil)
+	}
+
+	func test_ShouldReturnNilOnSecondInvalidKey() {
+		let dict = ["first":["second":4]]
+		XCTAssert(OBJECT_FOR_KEYS(dict, "first", "third") == nil)
+	}
+
+	func test_ShouldReturnNilOnFirstInvalidKey() {
+		let dict = ["first":["second":4]]
+		XCTAssert(OBJECT_FOR_KEYS(dict, "third", "first") == nil)
+	}
+
+	func test_ShouldReturnNilOnSecondNSNullKey() {
+		let dict = ["first":["second":4]]
+		XCTAssert(OBJECT_FOR_KEYS(dict, "first", NSNull()) == nil)
+	}
+
+	func test_ShouldReturnNilOnSecondNSNullValue() {
+		let dict = ["first":["second":NSNull()]]
+		XCTAssert(OBJECT_FOR_KEYS(dict, "first", "second") == nil)
+	}
+
+	func test_ShouldReturnNilOnFirstNSNullValue() {
+		let dict = ["first":NSNull()]
+		XCTAssert(OBJECT_FOR_KEYS(dict, "first", "second") == nil)
+	}
+}
+
+// MARK: - Getters
+
+extension DKHelperTests {
+
+	// MARK: FLOAT
+
+	func test_ShouldReturnFloatValue() {
+		let dict = ["test":4.0]
+		XCTAssert(GET_FLOAT(dict, "test") == 4.0)
+	}
+
+	func test_ShouldReturnFloatZeroOnInvalidDict() {
+		XCTAssert(GET_FLOAT(nil, "test") == 0.0)
+	}
+
+	func test_ShouldReturnFloatZeroOnInvalidKey() {
+		let dict = ["test":4.0]
+		XCTAssert(GET_FLOAT(dict, nil) == 0.0)
+	}
+
+	// MARK: INT
+
+	func test_ShouldReturnIntValue() {
+		let dict = ["test":4.0]
+		XCTAssert(GET_INTEGER(dict, "test") == 4)
+	}
+
+	func test_ShouldReturnIntZeroOnInvalidDict() {
+		XCTAssert(GET_INTEGER(nil, "test") == 0)
+	}
+
+	func test_ShouldReturnIntZeroOnInvalidKey() {
+		let dict = ["test":4.0]
+		XCTAssert(GET_INTEGER(dict, nil) == 0)
+	}
+
+	// MARK: NSNUMBER
+
+	func test_ShouldReturnNumberFromDict() {
+		let dict = ["test":4.0]
+		XCTAssert(GET_NUMBER(dict, "test") == 4)
+	}
+
+	func test_ShouldReturnNumberFromStringDict() {
+		let dict = ["test":"4"]
+		XCTAssert(GET_NUMBER(dict, "test") == 4)
+	}
+
+	func test_ShouldReturnNumberFromStringWithCommaDict() {
+		let dict = ["test":"4,0"]
+		XCTAssert(GET_NUMBER(dict, "test") == nil)
+	}
+
+	func test_ShouldReturnNumberFromStringWithPointDict() {
+		let dict = ["test":"4.0"]
+		XCTAssert(GET_NUMBER(dict, "test") == 4)
+	}
+
+	func test_ShouldReturnDecimalNumberFromStringWithPointDict() {
+		let dict = ["test":"4.4"]
+		XCTAssert(GET_NUMBER(dict, "test") == 4.4)
+	}
+
+	func test_ShouldReturnBigDecimalNumberFromStringWithPointDict() {
+		let dict = ["test":"1234567.4678"]
+		XCTAssert(GET_NUMBER(dict, "test") == 1234567.4678)
+	}
+
+	func test_ShouldReturnNilFromInvalidString() {
+		let dict = ["test":"abdc"]
+		XCTAssert(GET_NUMBER(dict, "test") == nil)
+	}
+
+	func test_ShouldReturnNilNumberFromNilDict() {
+		XCTAssertNil(GET_NUMBER(nil, "test"))
+	}
+}
+
+/**
+* Extract a NSDate value out of a dictionary with a given key.
+*
+* @discussion This function add some validity tests to extract the value without crashing if an object isn't valid.
+*
+* @param dict The NSDictionary object to extract the object from.
+* @param key An object used as a key.
+* @return A new NSDate value extracted from the given dictionary. If the object isn't valid returns nil instead.
+*/
+//NSDate * _Nullable GET_DATE(NSDictionary * _Nullable dict, id _Nullable key);
+
+/**
+* Extract a NSString value out of a dictionary with a given key.
+*
+* @discussion This function add some validity tests to extract the value without crashing if an object isn't valid.
+*
+* @param dict The NSDictionary object to extract the object from.
+* @param key An object used as a key.
+* @return A new NSString value extracted from the given dictionary. If the object isn't valid returns nil instead.
+*/
+//NSString * _Nullable GET_STRING(NSDictionary * _Nullable dict, id _Nullable key);
+
+// TODO:
+//
+//void DKLog(BOOL verbose, NSString * _Nonnull format, ...);
+//NSString * _Nonnull L(NSString * _Nonnull key);
