@@ -57,7 +57,7 @@
 
 #pragma mark - NSDate+NSString
 
-+ (NSDate * _Nullable)dateFromString:(NSString * _Nonnull)string style:(NSDateFormatterStyle)dateStyle {
++ (instancetype _Nullable)dateFromString:(NSString * _Nonnull)string style:(NSDateFormatterStyle)dateStyle {
     NSDateFormatter *df = [NSDateFormatter new];
     df.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
     df.dateStyle = dateStyle;
@@ -65,18 +65,18 @@
     return [df dateFromString:string];
 }
 
-+ (NSDate * _Nullable)dateFromString:(NSString * _Nonnull)string format:(NSString * _Nonnull)format {
++ (instancetype _Nullable)dateFromString:(NSString * _Nonnull)string format:(NSString * _Nonnull)format {
     NSDateFormatter *df = [NSDateFormatter new];
     df.dateFormat = format;
     df.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
     return [df dateFromString:string];
 }
 
-+ (NSDate * _Nullable)dateFromISOString:(NSString * _Nonnull)string {
++ (instancetype _Nullable)dateFromISOString:(NSString * _Nonnull)string {
     return [NSDate dateFromString:string format:NSDate.ISO8601StringFormat];
 }
 
-+ (NSDate * _Nullable)dateFromDayString:(NSString * _Nonnull)string {
++ (instancetype _Nullable)dateFromDayString:(NSString * _Nonnull)string {
     return [NSDate dateFromString:[NSString stringWithFormat:@"%@T00:00:00Z", string] format:NSDate.ISO8601StringFormat];
 }
 
@@ -164,7 +164,7 @@
     return [[calendar components:NSCalendarUnitSecond fromDate:self] second];
 }
 
-+ (NSDate * _Nullable)currentDayDate {
++ (instancetype _Nullable)currentDayDate {
 	NSCalendar* gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
 	unsigned int unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitTimeZone;
 	NSDateComponents* dateComponents = [gregorian components:unitFlags fromDate:[NSDate date]];
@@ -175,7 +175,7 @@
 	return [gregorian dateFromComponents:dateComponents];
 }
 
-- (NSDate * _Nullable)midnightDate {
+- (instancetype _Nullable)midnightDate {
 	NSCalendar* gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
 	unsigned int unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitTimeZone;
 	NSDateComponents* dateComponents = [gregorian components:unitFlags fromDate:self];
@@ -188,7 +188,7 @@
 
 #pragma mark - Adding Interval
 
-- (NSDate * _Nullable)dateByAddingIntervalsWithYear:(NSInteger)years months:(NSInteger)months days:(NSInteger)days hours:(NSInteger)hours minutes:(NSInteger)minutes seconds:(NSInteger)seconds {
+- (instancetype _Nullable)dateByAddingIntervalsWithYear:(NSInteger)years months:(NSInteger)months days:(NSInteger)days hours:(NSInteger)hours minutes:(NSInteger)minutes seconds:(NSInteger)seconds {
     NSDateComponents *dateComponents = [NSDateComponents new];
     [dateComponents setYear:years];
     [dateComponents setMonth:months];
@@ -199,27 +199,27 @@
     return [[NSCalendar currentCalendar] dateByAddingComponents:dateComponents toDate:self options:0];
 }
 
-- (NSDate * _Nullable)dateByAddingYearInterval:(NSInteger)yearInterval {
+- (instancetype _Nullable)dateByAddingYearInterval:(NSInteger)yearInterval {
     return [self dateByAddingIntervalsWithYear:yearInterval months:0 days:0 hours:0 minutes:0 seconds:0];
 }
 
-- (NSDate * _Nullable)dateByAddingMonthInterval:(NSInteger)monthInterval {
+- (instancetype _Nullable)dateByAddingMonthInterval:(NSInteger)monthInterval {
     return [self dateByAddingIntervalsWithYear:0 months:monthInterval days:0 hours:0 minutes:0 seconds:0];
 }
 
-- (NSDate * _Nullable)dateByAddingDayInterval:(NSInteger)dayInterval {
+- (instancetype _Nullable)dateByAddingDayInterval:(NSInteger)dayInterval {
     return [self dateByAddingIntervalsWithYear:0 months:0 days:dayInterval hours:0 minutes:0 seconds:0];
 }
 
-- (NSDate * _Nullable)dateByAddingHourInterval:(NSInteger)hourInterval {
+- (instancetype _Nullable)dateByAddingHourInterval:(NSInteger)hourInterval {
     return [self dateByAddingIntervalsWithYear:0 months:0 days:0 hours:hourInterval minutes:0 seconds:0];
 }
 
-- (NSDate * _Nullable)dateByAddingMinuteInterval:(NSInteger)minuteInterval {
+- (instancetype _Nullable)dateByAddingMinuteInterval:(NSInteger)minuteInterval {
     return [self dateByAddingIntervalsWithYear:0 months:0 days:0 hours:0 minutes:minuteInterval seconds:0];
 }
 
-- (NSDate * _Nullable)dateByAddingSecondInterval:(NSInteger)secondInterval {
+- (instancetype _Nullable)dateByAddingSecondInterval:(NSInteger)secondInterval {
     return [self dateByAddingIntervalsWithYear:0 months:0 days:0 hours:0 minutes:0 seconds:secondInterval];
 }
 

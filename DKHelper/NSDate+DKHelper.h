@@ -98,7 +98,7 @@
  * @param dateSytle The NSDateFormatterStyle object representing the style of the date.
  * @return A NSDate created from a given string. NULL if the date isn't valid.
  */
-+ (NSDate * _Nullable)dateFromString:(NSString * _Nonnull)string style:(NSDateFormatterStyle)dateStyle;
++ (instancetype _Nullable)dateFromString:(NSString * _Nonnull)string style:(NSDateFormatterStyle)dateStyle;
 
 /**
  * Returns a new NSDate object created from a string with a specified format.
@@ -110,7 +110,7 @@
  * @param format The NSString object representing the format in which the string is formatted.
  * @return A NSDate created from a given string. NULL if the date isn't valid.
  */
-+ (NSDate * _Nullable)dateFromString:(NSString * _Nonnull)string format:(NSString * _Nonnull)format;
++ (instancetype _Nullable)dateFromString:(NSString * _Nonnull)string format:(NSString * _Nonnull)format;
 
 /**
  * Returns a new NSDate object created from a string.
@@ -120,7 +120,7 @@
  * @param string The NSString object representing the date.
  * @return A NSDate created from a given string. NULL if the date isn't valid.
  */
-+ (NSDate * _Nullable)dateFromISOString:(NSString * _Nonnull)string;
++ (instancetype _Nullable)dateFromISOString:(NSString * _Nonnull)string;
 
 /**
  * Returns a new NSDate object created from a string with a default format.
@@ -128,7 +128,7 @@
  * @param string The NSString object representing the date. The string must be formated like @"yyyy-MM-dd"
  * @return A NSDate created with the ISO8601 format. NULL if the date isn't valid.
  */
-+ (NSDate * _Nullable)dateFromDayString:(NSString * _Nonnull)string;
++ (instancetype _Nullable)dateFromDayString:(NSString * _Nonnull)string;
 
 /**
  * Returns a new NSString object created from the receiver's date.
@@ -195,7 +195,7 @@
  *
  * @return A NSDate containing a date with the hours, minutes and seconds set at 0.
  */
-- (NSDate * _Nullable)midnightDate;
+- (instancetype _Nullable)midnightDate;
 
 /**
  * Returns a new NSDate object containing the current date of the day with a IOS8601 default format.
@@ -205,7 +205,7 @@
  *
  * @return A NSDate containing the current date of the day. The date format is the ISO8601 one.
  */
-+ (NSDate * _Nullable)currentDayDate;
++ (instancetype _Nullable)currentDayDate;
 
 #pragma mark - Display methods
 
@@ -274,7 +274,7 @@
  * @param seconds The number of second units.
  * @return A NSDate set with new date components from the receiver's date.
  */
-- (NSDate * _Nullable)dateByAddingIntervalsWithYear:(NSInteger)years months:(NSInteger)months days:(NSInteger)days hours:(NSInteger)hours minutes:(NSInteger)minutes seconds:(NSInteger)seconds;
+- (instancetype _Nullable)dateByAddingIntervalsWithYear:(NSInteger)years months:(NSInteger)months days:(NSInteger)days hours:(NSInteger)hours minutes:(NSInteger)minutes seconds:(NSInteger)seconds;
 
 /**
  * Returns a new NSDate object with n years interval from the receiver's.
@@ -282,7 +282,7 @@
  * @param yearInterval The number of year units.
  * @return A NSDate set with n years from the receiver's date.
  */
-- (NSDate * _Nullable)dateByAddingYearInterval:(NSInteger)yearInterval;
+- (instancetype _Nullable)dateByAddingYearInterval:(NSInteger)yearInterval;
 
 /**
  * Returns a new NSDate object with n months interval from the receiver's.
@@ -290,7 +290,7 @@
  * @param monthInterval The number of month units.
  * @return A NSDate set with n months from the receiver's date.
  */
-- (NSDate * _Nullable)dateByAddingMonthInterval:(NSInteger)monthInterval;
+- (instancetype _Nullable)dateByAddingMonthInterval:(NSInteger)monthInterval;
 
 /**
  * Returns a new NSDate object with n days interval from the receiver's.
@@ -298,7 +298,7 @@
  * @param dayInterval The number of day units.
  * @return A NSDate set with n days from the receiver's date.
  */
-- (NSDate * _Nullable)dateByAddingDayInterval:(NSInteger)dayInterval;
+- (instancetype _Nullable)dateByAddingDayInterval:(NSInteger)dayInterval;
 
 /**
  * Returns a new NSDate object with n hours interval from the receiver's.
@@ -306,7 +306,7 @@
  * @param hourInterval The number of hour units.
  * @return A NSDate set with n hours from the receiver's date.
  */
-- (NSDate * _Nullable)dateByAddingHourInterval:(NSInteger)hourInterval;
+- (instancetype _Nullable)dateByAddingHourInterval:(NSInteger)hourInterval;
 
 /**
  * Returns a new NSDate object with n minutes interval from the receiver's.
@@ -314,7 +314,7 @@
  * @param minuteInterval The number of minute units.
  * @return A NSDate set with n minutes from the receiver's date.
  */
-- (NSDate * _Nullable)dateByAddingMinuteInterval:(NSInteger)minuteInterval;
+- (instancetype _Nullable)dateByAddingMinuteInterval:(NSInteger)minuteInterval;
 
 /**
  * Returns a new NSDate object with n seconds interval from the receiver's.
@@ -322,7 +322,7 @@
  * @param secondInterval The number of second units.
  * @return A NSDate set with n seconds from the receiver's date.
  */
-- (NSDate * _Nullable)dateByAddingSecondInterval:(NSInteger)secondInterval;
+- (instancetype _Nullable)dateByAddingSecondInterval:(NSInteger)secondInterval;
 
 #pragma mark - ISO formats
 
