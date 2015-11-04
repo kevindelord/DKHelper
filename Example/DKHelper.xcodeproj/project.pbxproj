@@ -44,6 +44,7 @@
 		753298851BE8C7BF00FD8252 /* UIScreen+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 753298611BE8C7BF00FD8252 /* UIScreen+DKHelper.m */; };
 		753298861BE8C7BF00FD8252 /* UIView+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 753298631BE8C7BF00FD8252 /* UIView+DKHelper.m */; };
 		753298871BE8C7BF00FD8252 /* UIView+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 753298631BE8C7BF00FD8252 /* UIView+DKHelper.m */; };
+		756CC00C1BEA0304003FBDC8 /* CGRectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756CC00B1BEA0304003FBDC8 /* CGRectTests.swift */; };
 		75C5B81B1BE8FD7F001B46BA /* NSStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C5B81A1BE8FD7F001B46BA /* NSStringTests.swift */; };
 		75D172051BE8C62500AE890C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D172041BE8C62500AE890C /* AppDelegate.swift */; };
 		75D172071BE8C62500AE890C /* DKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D172061BE8C62500AE890C /* DKViewController.swift */; };
@@ -102,6 +103,7 @@
 		753298621BE8C7BF00FD8252 /* UIView+DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+DKHelper.h"; path = "../DKHelper/UIView+DKHelper.h"; sourceTree = "<group>"; };
 		753298631BE8C7BF00FD8252 /* UIView+DKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+DKHelper.m"; path = "../DKHelper/UIView+DKHelper.m"; sourceTree = "<group>"; };
 		7532988B1BE8C81D00FD8252 /* DKHelper-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DKHelper-Bridging-Header.h"; sourceTree = "<group>"; };
+		756CC00B1BEA0304003FBDC8 /* CGRectTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectTests.swift; sourceTree = "<group>"; };
 		75C5B81A1BE8FD7F001B46BA /* NSStringTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSStringTests.swift; sourceTree = "<group>"; };
 		75D172011BE8C62500AE890C /* DKHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DKHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75D172041BE8C62500AE890C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 				75D172191BE8C62500AE890C /* DKHelperTests.swift */,
 				752BB6D61BE8D4A6001B8A25 /* UIColorTests.swift */,
 				75C5B81A1BE8FD7F001B46BA /* NSStringTests.swift */,
+				756CC00B1BEA0304003FBDC8 /* CGRectTests.swift */,
 				75D1721B1BE8C62500AE890C /* Info.plist */,
 			);
 			path = DKHelperTests;
@@ -372,6 +375,7 @@
 				753298731BE8C7BF00FD8252 /* NSNumber+DKHelper.m in Sources */,
 				7532987D1BE8C7BF00FD8252 /* UIColor+DKHelper.m in Sources */,
 				75D1721A1BE8C62500AE890C /* DKHelperTests.swift in Sources */,
+				756CC00C1BEA0304003FBDC8 /* CGRectTests.swift in Sources */,
 				753298871BE8C7BF00FD8252 /* UIView+DKHelper.m in Sources */,
 				753298711BE8C7BF00FD8252 /* NSDate+DKHelper.m in Sources */,
 				7532986B1BE8C7BF00FD8252 /* DKRegex.m in Sources */,
