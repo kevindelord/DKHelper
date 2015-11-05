@@ -25,12 +25,16 @@
 /**
  * Creates a new UIImage object that fit given size.
  *
+ * @discussion The ratio of the receiver is kept.
+ *
  * @return A new UIImage object.
  */
 - (UIImage * _Null_unspecified)resizedImageToSize:(CGSize)newSize;
 
 /**
  * Creates a new UIImage object that fit the current screen size.
+ *
+ * @discussion The ratio of the receiver is kept.
  *
  * @return A new UIImage object.
  */

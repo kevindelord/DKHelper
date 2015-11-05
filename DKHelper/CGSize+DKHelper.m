@@ -8,25 +8,41 @@
 
 #import "CGSize+DKHelper.h"
 
-CGSize CGSizeAdjustToCGRect(CGSize size, CGRect rect) {
+CGSize CGSizeFitToCGSize(CGSize size, CGSize container) {
     CGFloat w = size.width;
     CGFloat h = size.height;
 
-    if (w > rect.size.width) {
-        h = h / (w / rect.size.width);
-        w = rect.size.width;
+    if (w > container.width) {
+        h = h / (w / container.width);
+        w = container.width;
     }
-    if (h > rect.size.height) {
-        w = w / (h / rect.size.height);
-        h = rect.size.height;
+    if (h > container.height) {
+        w = w / (h / container.height);
+        h = container.height;
     }
     return CGSizeMake(w, h);
 }
 
-CGSize CGSizeAdjustToCGSize(CGSize size, CGSize rSize) {
-    CGFloat w = size.width / rSize.width;
-    CGFloat h = rSize.height * w;
-    w *= rSize.width;
+CGSize CGSizeAdjustToCGSize(CGSize size, CGSize container) {
+
+	CGFloat w = size.width;
+	CGFloat h = size.height;
+
+	if (w < container.width) {
+		h = h * (container.width / w);
+		w = container.width;
+	} else if (w > container.width) {
+		h = h / (w / container.width);
+		w = container.width;
+	}
+
+	if (h < container.height) {
+		w = w * (container.height / h);
+		h = container.height;
+	} else if (h > container.height) {
+		w = w / (h / container.height);
+		h = container.height;
+	}
 
     return CGSizeMake(w, h);
 }

@@ -11,6 +11,12 @@ import XCTest
 
 class CGRectTests: XCTestCase {
 
+	private func checkFrameValues(frame: CGRect, x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat) {
+		XCTAssertEqual(CGRectGetHeight(frame), height)
+		XCTAssertEqual(CGRectGetWidth(frame), width)
+		XCTAssertEqual(CGRectGetMinY(frame), y)
+		XCTAssertEqual(CGRectGetMinX(frame), x)
+	}
 }
 
 // MARK: - CGRectInsideContainer
@@ -45,13 +51,6 @@ extension CGRectTests {
 // MARK: - CGRectSetInsideContainer
 
 extension CGRectTests {
-
-	private func checkFrameValues(frame: CGRect, x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat) {
-		XCTAssertEqual(CGRectGetHeight(frame), height)
-		XCTAssertEqual(CGRectGetWidth(frame), width)
-		XCTAssertEqual(CGRectGetMinY(frame), y)
-		XCTAssertEqual(CGRectGetMinX(frame), x)
-	}
 
 	func test_ShouldSetFrameInsideContainerLeft() {
 		var frame = CGRect(x: -20, y: 50, width: 50, height: 50)

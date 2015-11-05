@@ -7,6 +7,7 @@
 //
 
 #import "UIImage+DKHelper.h"
+#import "CGSize+DKHelper.h"
 
 @implementation UIImage (DKHelper)
 
@@ -20,17 +21,8 @@
 
 - (UIImage * _Null_unspecified)resizedImageToSize:(CGSize)newSize {
 
-    CGSize size = CGSizeMake(0, newSize.height);
-    CGFloat ratio = 0.0;
-
-    if (self.size.height < newSize.height) {
-        ratio = newSize.height / self.size.height;
-        size.width = self.size.width * ratio;
-    } else {
-        ratio = self.size.height / newSize.height;
-        size.width = self.size.width / ratio;
-    }
-    return [UIImage scaleImage:self size:size];
+    CGSize adjustedSize = CGSizeAdjustToCGSize(self.size, newSize);
+    return [UIImage scaleImage:self size:adjustedSize];
 }
 
 - (UIImage * _Null_unspecified)resizedImageToScreenSize {

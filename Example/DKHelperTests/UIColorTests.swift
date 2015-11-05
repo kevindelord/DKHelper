@@ -123,7 +123,7 @@ extension UIColorTests {
 
 		let color = UIColor.randomColor()
 		color.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
-		XCTAssert(red != 0 && green != 0 && blue != 0)
+		XCTAssert((red == 0 && green == 0 && blue == 0) == false)
 	}
 
 	func test_ShouldCreateDifferentRandomColors() {

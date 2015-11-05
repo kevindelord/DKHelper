@@ -140,4 +140,20 @@
     return [self substringWithRange:[match rangeAtIndex:0]];
 }
 
+- (instancetype _Nullable)lastOccuranceForPattern:(NSString * _Nonnull)pattern {
+	NSRange searchedRange = NSMakeRange(0, [self length]);
+	NSError * error = nil;
+
+	NSRegularExpression* regex = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:&error];
+	if ([regex numberOfMatchesInString:self options:0 range:searchedRange] <= 0) {
+		return nil;
+	}
+	NSArray *matches = [regex matchesInString:self options:0 range:searchedRange];
+	if (matches.count == 0) {
+		return nil;
+	}
+	NSLog(@"%@", matches);
+	return [self substringWithRange:[[matches objectAtIndex:matches.count -1] rangeAtIndex:0]];
+}
+
 @end
