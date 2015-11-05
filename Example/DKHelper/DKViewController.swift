@@ -17,5 +17,10 @@ class DKViewController					: UIViewController {
 		super.viewDidLoad()
 		self.backgroundView?.roundCorner(UIRectCorner.AllCorners, radius: (self.backgroundView?.frameWidth() ?? 0), maskToBounds: true)
 		self.versionLabel?.text = appVersion()
+
+		let str : NSString = "dr_ferfr.gt"
+		print(str.lastOccuranceForPattern("[.]+[0-9a-zA-Z]+$"))
+		print(str.lastOccuranceForPattern(DKRegex.fileExtension()))
+
 	}
 }

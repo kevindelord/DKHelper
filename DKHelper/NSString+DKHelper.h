@@ -128,6 +128,14 @@
  */
 - (instancetype _Nullable)firstOccuranceForPattern:(NSString * _Nonnull)pattern;
 
+/**
+ * Returns a new NSString object corresponding to the last occurence of a given regex pattern within the receiver's string.
+ *
+ * @param pattern A NSString value representing a regular expression to search with.
+ * @return A NSString representing the last occurence. nil if there is no match.
+ */
+- (instancetype _Nullable)lastOccuranceForPattern:(NSString * _Nonnull)pattern;
+
 @end
 
 #endif

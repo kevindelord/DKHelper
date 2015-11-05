@@ -262,7 +262,7 @@ extension NSStringTests {
 
 	func test_ShouldFindOnlyFirstOccurenceForPatternInString() {
 		let str = "SuperTestSuper_est"
-		let occurence = str.firstOccuranceForPattern("er[A-Z]*es")
+		let occurence = str.firstOccuranceForPattern("er[_A-Z]*es")
 		XCTAssertNotNil(occurence)
 		XCTAssertEqual(occurence, "erTes")
 	}
@@ -270,6 +270,38 @@ extension NSStringTests {
 	func test_ShouldReturnNilIfNoOccurenceFound() {
 		let str = "SuperTestSuper_est"
 		let occurence = str.firstOccuranceForPattern("[0-9]")
+		XCTAssertNil(occurence)
+	}
+}
+
+// MARK: - Regex::Last Occurence For Pattern
+
+extension NSStringTests {
+
+	func test_ShouldFindLastOccurenceForPatternInString() {
+		let str = "SuperTest"
+		let occurence = str.lastOccuranceForPattern("upe+.*es")
+		XCTAssertNotNil(occurence)
+		XCTAssertEqual(occurence, "uperTes")
+	}
+
+	func test_ShouldFindOnlyOneLastOccurenceForPatternInString() {
+		let str = "SuperTestSuper_est"
+		let occurence = str.lastOccuranceForPattern("upe+.*es")
+		XCTAssertNotNil(occurence)
+		XCTAssertEqual(occurence, "uperTestSuper_es")
+	}
+
+	func test_ShouldFindOnlyLastOccurenceForPatternInString() {
+		let str = "SuperTestSuper_est"
+		let occurence = str.lastOccuranceForPattern("er[_A-Z]*es")
+		XCTAssertNotNil(occurence)
+		XCTAssertEqual(occurence, "er_es")
+	}
+
+	func test_ShouldReturnNilIfNoLastOccurenceFound() {
+		let str = "SuperTestSuper_est"
+		let occurence = str.lastOccuranceForPattern("[0-9]")
 		XCTAssertNil(occurence)
 	}
 }

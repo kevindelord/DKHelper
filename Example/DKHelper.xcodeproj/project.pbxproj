@@ -48,6 +48,8 @@
 		7562520E1BEB504400A31234 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7562520C1BEB504400A31234 /* Localizable.strings */; };
 		756CC00C1BEA0304003FBDC8 /* CGRectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756CC00B1BEA0304003FBDC8 /* CGRectTests.swift */; };
 		75C5B81B1BE8FD7F001B46BA /* NSStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C5B81A1BE8FD7F001B46BA /* NSStringTests.swift */; };
+		75D011EF1BEB80FE003C6E9A /* NSArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D011EE1BEB80FE003C6E9A /* NSArrayTests.swift */; };
+		75D011F11BEB82B4003C6E9A /* DKRegexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D011F01BEB82B4003C6E9A /* DKRegexTests.swift */; };
 		75D172051BE8C62500AE890C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D172041BE8C62500AE890C /* AppDelegate.swift */; };
 		75D172071BE8C62500AE890C /* DKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D172061BE8C62500AE890C /* DKViewController.swift */; };
 		75D1720A1BE8C62500AE890C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75D172081BE8C62500AE890C /* Main.storyboard */; };
@@ -108,6 +110,8 @@
 		7562520C1BEB504400A31234 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		756CC00B1BEA0304003FBDC8 /* CGRectTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectTests.swift; sourceTree = "<group>"; };
 		75C5B81A1BE8FD7F001B46BA /* NSStringTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSStringTests.swift; sourceTree = "<group>"; };
+		75D011EE1BEB80FE003C6E9A /* NSArrayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSArrayTests.swift; sourceTree = "<group>"; };
+		75D011F01BEB82B4003C6E9A /* DKRegexTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKRegexTests.swift; sourceTree = "<group>"; };
 		75D172011BE8C62500AE890C /* DKHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DKHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75D172041BE8C62500AE890C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75D172061BE8C62500AE890C /* DKViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKViewController.swift; sourceTree = "<group>"; };
@@ -229,6 +233,8 @@
 			children = (
 				75D172191BE8C62500AE890C /* DKHelperTests.swift */,
 				752BB6D61BE8D4A6001B8A25 /* UIColorTests.swift */,
+				75D011F01BEB82B4003C6E9A /* DKRegexTests.swift */,
+				75D011EE1BEB80FE003C6E9A /* NSArrayTests.swift */,
 				75C5B81A1BE8FD7F001B46BA /* NSStringTests.swift */,
 				756CC00B1BEA0304003FBDC8 /* CGRectTests.swift */,
 				75D1721B1BE8C62500AE890C /* Info.plist */,
@@ -374,6 +380,7 @@
 				75C5B81B1BE8FD7F001B46BA /* NSStringTests.swift in Sources */,
 				753298651BE8C7BF00FD8252 /* CGRect+DKHelper.m in Sources */,
 				7532986F1BE8C7BF00FD8252 /* NSBundle+DKHelper.m in Sources */,
+				75D011EF1BEB80FE003C6E9A /* NSArrayTests.swift in Sources */,
 				753298791BE8C7BF00FD8252 /* NSPredicate+DKHelper.m in Sources */,
 				753298851BE8C7BF00FD8252 /* UIScreen+DKHelper.m in Sources */,
 				753298831BE8C7BF00FD8252 /* UIImageView+DKHelper.m in Sources */,
@@ -383,6 +390,7 @@
 				75D1721A1BE8C62500AE890C /* DKHelperTests.swift in Sources */,
 				756CC00C1BEA0304003FBDC8 /* CGRectTests.swift in Sources */,
 				753298871BE8C7BF00FD8252 /* UIView+DKHelper.m in Sources */,
+				75D011F11BEB82B4003C6E9A /* DKRegexTests.swift in Sources */,
 				753298711BE8C7BF00FD8252 /* NSDate+DKHelper.m in Sources */,
 				7532986B1BE8C7BF00FD8252 /* DKRegex.m in Sources */,
 				752BB6D71BE8D4A6001B8A25 /* UIColorTests.swift in Sources */,
