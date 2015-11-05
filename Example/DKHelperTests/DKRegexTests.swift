@@ -11,6 +11,12 @@ import XCTest
 
 class DKRegexTests: XCTestCase {
 
+}
+
+// MARK: - File Extension
+
+extension DKRegexTests {
+
 	func test_ShouldReturnFileExtensionRegex() {
 		let regex = DKRegex.fileExtension();
 		XCTAssertNotNil(regex)
@@ -31,6 +37,11 @@ class DKRegexTests: XCTestCase {
 		let str : NSString = ""
 		XCTAssert(str.lastOccuranceForPattern(DKRegex.fileExtension()) == nil)
 	}
+}
+
+// MARK: - Filename and Extension
+
+extension DKRegexTests {
 
 	func test_ShouldReturnFilenameAndExtensionRegex() {
 		let regex = DKRegex.filenameAndExtension();
@@ -62,5 +73,4 @@ class DKRegexTests: XCTestCase {
 		let str : NSString = "test.super.zip"
 		XCTAssert(str.lastOccuranceForPattern(DKRegex.filenameAndExtension()) == "super.zip")
 	}
-
 }
