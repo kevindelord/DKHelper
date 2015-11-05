@@ -21,7 +21,7 @@
 - CGRect: add `CGRectSetInsideContainer` function.
 - CGRect: fix minor bugs by using standard CGRectGet functions.
 - DKRegex: improve file extension.
-
+- NSBundle: `numberEntryInPListForKey` now uses the `en_US` locale.
 
 ## 1.0.0
 
