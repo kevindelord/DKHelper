@@ -45,6 +45,23 @@ class DKHelperTests: XCTestCase {
 	}
 }
 
+// MARK: - Localization
+
+extension DKHelperTests {
+
+	func test_ShouldReturnLocalizedText() {
+		let txt = L("WELCOME_TEXT")
+		XCTAssertNotNil(txt)
+		XCTAssertEqual(txt, "Awesome Text For Unit Testing")
+	}
+
+	func test_ShouldReturnKeyWhenValueNotFound() {
+		let txt = L("WELCOME_TEXT_WRONG")
+		XCTAssertNotNil(txt)
+		XCTAssertEqual(txt, "WELCOME_TEXT_WRONG")
+	}
+}
+
 // MARK: - Maths
 
 extension DKHelperTests {

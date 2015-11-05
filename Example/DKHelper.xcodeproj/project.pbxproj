@@ -44,6 +44,8 @@
 		753298851BE8C7BF00FD8252 /* UIScreen+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 753298611BE8C7BF00FD8252 /* UIScreen+DKHelper.m */; };
 		753298861BE8C7BF00FD8252 /* UIView+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 753298631BE8C7BF00FD8252 /* UIView+DKHelper.m */; };
 		753298871BE8C7BF00FD8252 /* UIView+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 753298631BE8C7BF00FD8252 /* UIView+DKHelper.m */; };
+		7562520D1BEB504400A31234 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7562520C1BEB504400A31234 /* Localizable.strings */; };
+		7562520E1BEB504400A31234 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7562520C1BEB504400A31234 /* Localizable.strings */; };
 		756CC00C1BEA0304003FBDC8 /* CGRectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756CC00B1BEA0304003FBDC8 /* CGRectTests.swift */; };
 		75C5B81B1BE8FD7F001B46BA /* NSStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C5B81A1BE8FD7F001B46BA /* NSStringTests.swift */; };
 		75D172051BE8C62500AE890C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D172041BE8C62500AE890C /* AppDelegate.swift */; };
@@ -103,6 +105,7 @@
 		753298621BE8C7BF00FD8252 /* UIView+DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+DKHelper.h"; path = "../DKHelper/UIView+DKHelper.h"; sourceTree = "<group>"; };
 		753298631BE8C7BF00FD8252 /* UIView+DKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+DKHelper.m"; path = "../DKHelper/UIView+DKHelper.m"; sourceTree = "<group>"; };
 		7532988B1BE8C81D00FD8252 /* DKHelper-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DKHelper-Bridging-Header.h"; sourceTree = "<group>"; };
+		7562520C1BEB504400A31234 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		756CC00B1BEA0304003FBDC8 /* CGRectTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectTests.swift; sourceTree = "<group>"; };
 		75C5B81A1BE8FD7F001B46BA /* NSStringTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSStringTests.swift; sourceTree = "<group>"; };
 		75D172011BE8C62500AE890C /* DKHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DKHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,6 +189,7 @@
 				75D1720B1BE8C62500AE890C /* Assets.xcassets */,
 				75D1720D1BE8C62500AE890C /* LaunchScreen.storyboard */,
 				75D172101BE8C62500AE890C /* Info.plist */,
+				7562520C1BEB504400A31234 /* Localizable.strings */,
 			);
 			name = Resources;
 			path = DKHelper;
@@ -314,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75D1720F1BE8C62500AE890C /* LaunchScreen.storyboard in Resources */,
+				7562520D1BEB504400A31234 /* Localizable.strings in Resources */,
 				75D1720C1BE8C62500AE890C /* Assets.xcassets in Resources */,
 				75D1720A1BE8C62500AE890C /* Main.storyboard in Resources */,
 			);
@@ -323,6 +328,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7562520E1BEB504400A31234 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
