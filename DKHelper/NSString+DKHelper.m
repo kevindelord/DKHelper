@@ -152,7 +152,6 @@
 	if (matches.count == 0) {
 		return nil;
 	}
-	NSLog(@"%@", matches);
 	return [self substringWithRange:[[matches objectAtIndex:matches.count -1] rangeAtIndex:0]];
 }
 

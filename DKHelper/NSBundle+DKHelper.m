@@ -30,6 +30,7 @@
 + (NSNumber * _Nonnull)numberEntryInPListForKey:(NSString * _Nonnull)key {
 	NSNumberFormatter *formatter = [NSNumberFormatter new];
 	formatter.numberStyle = NSNumberFormatterDecimalStyle;
+	formatter.locale = [NSLocale localeWithLocaleIdentifier:@"en_US"];
 	return [formatter numberFromString:[self stringEntryInPListForKey:key]];
 }
 
