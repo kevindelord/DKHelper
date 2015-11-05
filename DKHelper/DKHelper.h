@@ -123,7 +123,7 @@ NSInteger GET_INTEGER(NSDictionary * _Nullable dict, id _Nullable key);
  *
  * @discussion This function add some validity tests to extract a NSNumber value without crashing if an object isn't valid.
  *
- * If the object is a string the NSNumber will be generated with a NSNumberFormatterDecimalStyle and a locale set to `en_US`.
+ * If the object is a NSString the NSNumber will be generated with a NSNumberFormatterDecimalStyle and a locale set to `en_US`.
  *
  * If the object already is a NSNumber then it will be simply returned.
  *
@@ -139,6 +139,12 @@ NSNumber * _Nullable GET_NUMBER(NSDictionary * _Nullable dict, id _Nullable key)
  * Extract a NSDate value out of a dictionary with a given key.
  *
  * @discussion This function add some validity tests to extract the value without crashing if an object isn't valid.
+ * 
+ * If the object is a NSString the NSDate will be generated using the `NSDate.ISO8601StringFormat` format.
+ *
+ * If the object already is a NSDate then it will be simply returned.
+ *
+ * If the object is none of the above nil will be returned.
  *
  * @param dict The NSDictionary object to extract the object from.
  * @param key An object used as a key.
@@ -150,6 +156,8 @@ NSDate * _Nullable GET_DATE(NSDictionary * _Nullable dict, id _Nullable key);
  * Extract a NSString value out of a dictionary with a given key.
  *
  * @discussion This function add some validity tests to extract the value without crashing if an object isn't valid.
+ *
+ * If the object is an empty string object, nil will be returned.
  *
  * @param dict The NSDictionary object to extract the object from.
  * @param key An object used as a key.

@@ -82,7 +82,7 @@ NSDate * _Nullable GET_DATE(NSDictionary * _Nullable dict, id key) {
 }
 
 NSString * _Nullable GET_STRING(NSDictionary * _Nullable dict, id key) {
-    return ( VALID(dict, key) ? ( ![dict[key] isEqualToString:@""] ? dict[key] : nil ) : nil);
+    return ( VALID(dict, key) ? ( [dict[key] isEqualToString:@""] == false ? dict[key] : nil ) : nil);
 }
 
 #pragma mark - Numbers

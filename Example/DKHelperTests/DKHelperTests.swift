@@ -284,29 +284,63 @@ extension DKHelperTests {
 	func test_ShouldReturnNilNumberFromNilDict() {
 		XCTAssertNil(GET_NUMBER(nil, "test"))
 	}
+
+	// MARK: NSDATE
+
+	func test_ShouldReturnValidDate() {
+		let date = NSDate()
+		let dict = ["test":date]
+		XCTAssert(GET_DATE(dict, "test") === date)
+		XCTAssert(GET_DATE(dict, "test") == date)
+	}
+
+	func test_ShouldReturnDateFromString() {
+		let date = NSDate()
+		let dict = ["test":NSString(fromDate: date, format: NSDate.ISO8601StringFormat())]
+		XCTAssertEqual(GET_DATE(dict, "test")?.stringValue(), date.stringValue())
+	}
+
+	func test_ShouldReturnNilFromInvalidDict() {
+		XCTAssert(GET_DATE(nil, "test") == nil)
+	}
+
+	func test_ShouldReturnNilFromInvalidKey() {
+		let dict = ["test":NSDate()]
+		XCTAssert(GET_DATE(dict, nil) == nil)
+	}
+
+	func test_ShouldReturnNilFromWrongKey() {
+		let date = NSDate()
+		let dict = ["test":date]
+		XCTAssert(GET_DATE(dict, "second") == nil)
+	}
+
+	// MARK: NSSTRING
+
+	func test_ShouldReturnValidString() {
+		let dict = ["test":"value"]
+		XCTAssert(GET_STRING(dict, "test") == "value")
+	}
+
+	func test_ShouldReturnNilOnEmptyStringObject() {
+		let dict = ["test":""]
+		XCTAssert(GET_STRING(dict, "test") == nil)
+	}
+
+	func test_ShouldReturnNilStringFromInvalidDict() {
+		XCTAssert(GET_STRING(nil, "test") == nil)
+	}
+
+	func test_ShouldReturnNilStringFromInvalidKey() {
+		let dict = ["test":NSDate()]
+		XCTAssert(GET_STRING(dict, nil) == nil)
+	}
+
+	func test_ShouldReturnNilStringFromWrongKey() {
+		let dict = ["test":NSDate()]
+		XCTAssert(GET_STRING(dict, "second") == nil)
+	}
 }
-
-/**
-* Extract a NSDate value out of a dictionary with a given key.
-*
-* @discussion This function add some validity tests to extract the value without crashing if an object isn't valid.
-*
-* @param dict The NSDictionary object to extract the object from.
-* @param key An object used as a key.
-* @return A new NSDate value extracted from the given dictionary. If the object isn't valid returns nil instead.
-*/
-//NSDate * _Nullable GET_DATE(NSDictionary * _Nullable dict, id _Nullable key);
-
-/**
-* Extract a NSString value out of a dictionary with a given key.
-*
-* @discussion This function add some validity tests to extract the value without crashing if an object isn't valid.
-*
-* @param dict The NSDictionary object to extract the object from.
-* @param key An object used as a key.
-* @return A new NSString value extracted from the given dictionary. If the object isn't valid returns nil instead.
-*/
-//NSString * _Nullable GET_STRING(NSDictionary * _Nullable dict, id _Nullable key);
 
 // TODO:
 //
