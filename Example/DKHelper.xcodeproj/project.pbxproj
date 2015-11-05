@@ -48,6 +48,7 @@
 		7562520D1BEB504400A31234 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7562520C1BEB504400A31234 /* Localizable.strings */; };
 		7562520E1BEB504400A31234 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7562520C1BEB504400A31234 /* Localizable.strings */; };
 		756CC00C1BEA0304003FBDC8 /* CGRectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756CC00B1BEA0304003FBDC8 /* CGRectTests.swift */; };
+		759A46811BEBD14400FFAB39 /* UIViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759A46801BEBD14400FFAB39 /* UIViewTests.swift */; };
 		75C5B81B1BE8FD7F001B46BA /* NSStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C5B81A1BE8FD7F001B46BA /* NSStringTests.swift */; };
 		75D011EF1BEB80FE003C6E9A /* NSArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D011EE1BEB80FE003C6E9A /* NSArrayTests.swift */; };
 		75D011F11BEB82B4003C6E9A /* DKRegexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D011F01BEB82B4003C6E9A /* DKRegexTests.swift */; };
@@ -114,6 +115,7 @@
 		756001061BEBC2E200E0605C /* NSBundleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSBundleTests.swift; sourceTree = "<group>"; };
 		7562520C1BEB504400A31234 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		756CC00B1BEA0304003FBDC8 /* CGRectTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectTests.swift; sourceTree = "<group>"; };
+		759A46801BEBD14400FFAB39 /* UIViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewTests.swift; sourceTree = "<group>"; };
 		75C5B81A1BE8FD7F001B46BA /* NSStringTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSStringTests.swift; sourceTree = "<group>"; };
 		75D011EE1BEB80FE003C6E9A /* NSArrayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSArrayTests.swift; sourceTree = "<group>"; };
 		75D011F01BEB82B4003C6E9A /* DKRegexTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKRegexTests.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 		7532983D1BE8C7AA00FD8252 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				759A467E1BEBD09700FFAB39 /* Not Tested */,
 				753298401BE8C7BF00FD8252 /* CGRect+DKHelper.h */,
 				753298411BE8C7BF00FD8252 /* CGRect+DKHelper.m */,
 				753298421BE8C7BF00FD8252 /* CGSize+DKHelper.h */,
@@ -165,30 +168,14 @@
 				753298491BE8C7BF00FD8252 /* NSArray+DKHelper.m */,
 				7532984A1BE8C7BF00FD8252 /* NSBundle+DKHelper.h */,
 				7532984B1BE8C7BF00FD8252 /* NSBundle+DKHelper.m */,
-				7532984C1BE8C7BF00FD8252 /* NSDate+DKHelper.h */,
-				7532984D1BE8C7BF00FD8252 /* NSDate+DKHelper.m */,
 				7532984E1BE8C7BF00FD8252 /* NSNumber+DKHelper.h */,
 				7532984F1BE8C7BF00FD8252 /* NSNumber+DKHelper.m */,
-				753298501BE8C7BF00FD8252 /* NSObject+DKHelper.h */,
-				753298511BE8C7BF00FD8252 /* NSObject+DKHelper.m */,
-				753298521BE8C7BF00FD8252 /* NSOperationQueue+DKHelper.h */,
-				753298531BE8C7BF00FD8252 /* NSOperationQueue+DKHelper.m */,
-				753298541BE8C7BF00FD8252 /* NSPredicate+DKHelper.h */,
-				753298551BE8C7BF00FD8252 /* NSPredicate+DKHelper.m */,
 				753298561BE8C7BF00FD8252 /* NSString+DKHelper.h */,
 				753298571BE8C7BF00FD8252 /* NSString+DKHelper.m */,
 				753298581BE8C7BF00FD8252 /* UIColor+DKHelper.h */,
 				753298591BE8C7BF00FD8252 /* UIColor+DKHelper.m */,
-				7532985A1BE8C7BF00FD8252 /* UIDevice+DKHelper.h */,
-				7532985B1BE8C7BF00FD8252 /* UIDevice+DKHelper.m */,
 				7532985C1BE8C7BF00FD8252 /* UIImage+DKHelper.h */,
 				7532985D1BE8C7BF00FD8252 /* UIImage+DKHelper.m */,
-				7532985E1BE8C7BF00FD8252 /* UIImageView+DKHelper.h */,
-				7532985F1BE8C7BF00FD8252 /* UIImageView+DKHelper.m */,
-				753298601BE8C7BF00FD8252 /* UIScreen+DKHelper.h */,
-				753298611BE8C7BF00FD8252 /* UIScreen+DKHelper.m */,
-				753298621BE8C7BF00FD8252 /* UIView+DKHelper.h */,
-				753298631BE8C7BF00FD8252 /* UIView+DKHelper.m */,
 			);
 			name = Sources;
 			sourceTree = "<group>";
@@ -205,6 +192,29 @@
 			);
 			name = Resources;
 			path = DKHelper;
+			sourceTree = "<group>";
+		};
+		759A467E1BEBD09700FFAB39 /* Not Tested */ = {
+			isa = PBXGroup;
+			children = (
+				7532984C1BE8C7BF00FD8252 /* NSDate+DKHelper.h */,
+				7532984D1BE8C7BF00FD8252 /* NSDate+DKHelper.m */,
+				753298501BE8C7BF00FD8252 /* NSObject+DKHelper.h */,
+				753298511BE8C7BF00FD8252 /* NSObject+DKHelper.m */,
+				753298521BE8C7BF00FD8252 /* NSOperationQueue+DKHelper.h */,
+				753298531BE8C7BF00FD8252 /* NSOperationQueue+DKHelper.m */,
+				753298541BE8C7BF00FD8252 /* NSPredicate+DKHelper.h */,
+				753298551BE8C7BF00FD8252 /* NSPredicate+DKHelper.m */,
+				7532985A1BE8C7BF00FD8252 /* UIDevice+DKHelper.h */,
+				7532985B1BE8C7BF00FD8252 /* UIDevice+DKHelper.m */,
+				7532985E1BE8C7BF00FD8252 /* UIImageView+DKHelper.h */,
+				7532985F1BE8C7BF00FD8252 /* UIImageView+DKHelper.m */,
+				753298601BE8C7BF00FD8252 /* UIScreen+DKHelper.h */,
+				753298611BE8C7BF00FD8252 /* UIScreen+DKHelper.m */,
+				753298621BE8C7BF00FD8252 /* UIView+DKHelper.h */,
+				753298631BE8C7BF00FD8252 /* UIView+DKHelper.m */,
+			);
+			name = "Not Tested";
 			sourceTree = "<group>";
 		};
 		75D171F81BE8C62500AE890C = {
@@ -248,6 +258,7 @@
 				75C5B81A1BE8FD7F001B46BA /* NSStringTests.swift */,
 				75D011F61BEBAFDB003C6E9A /* UIImageTests.swift */,
 				756CC00B1BEA0304003FBDC8 /* CGRectTests.swift */,
+				759A46801BEBD14400FFAB39 /* UIViewTests.swift */,
 				75D011F41BEB95A1003C6E9A /* CGSizeTests.swift */,
 				75D1721B1BE8C62500AE890C /* Info.plist */,
 			);
@@ -392,6 +403,7 @@
 				753298671BE8C7BF00FD8252 /* CGSize+DKHelper.m in Sources */,
 				75C5B81B1BE8FD7F001B46BA /* NSStringTests.swift in Sources */,
 				753298651BE8C7BF00FD8252 /* CGRect+DKHelper.m in Sources */,
+				759A46811BEBD14400FFAB39 /* UIViewTests.swift in Sources */,
 				7532986F1BE8C7BF00FD8252 /* NSBundle+DKHelper.m in Sources */,
 				75D011F71BEBAFDB003C6E9A /* UIImageTests.swift in Sources */,
 				75D011EF1BEB80FE003C6E9A /* NSArrayTests.swift in Sources */,
