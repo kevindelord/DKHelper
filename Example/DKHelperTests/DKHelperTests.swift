@@ -362,4 +362,3 @@ extension DKHelperTests {
 // TODO:
 //
 //void DKLog(BOOL verbose, NSString * _Nonnull format, ...);
-//NSString * _Nonnull L(NSString * _Nonnull key);
