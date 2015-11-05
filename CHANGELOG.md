@@ -2,6 +2,13 @@
 
 ## xxx
 
+### Breaking
+
+- CGSize: `CGSizeAdjustToCGRect` has be changed to `CGSizeAdjustToCGRect`.
+- CGSize: The logic behind `CGSizeAdjustToCGSize` has been mergely improved.
+
+### Enhancements
+
 - Improve swift compatibility for all classes and functions!
 - The test project is now coded in Swift.
 - NSString: add `randomString` function.
