@@ -7,11 +7,14 @@
 - NSString: add `randomString` function.
 - NSString: add `isNumeric` property.
 - NSString: `isAlpaNumeric`, `isEmail`, `isPhoneNumber` are now properties.
+- NSString: add `lastOccuranceForPattern` function.
 - UIColor: `colorFromHexString` now returns nil if parameter is nil.
 - DKHelper: `VALID` also returns nil if the key is nil or an instance of NSNull.
 - DKHelper: `GET_NUMBER` now use the `en_US` locale to convert a string into a date object.
 - CGRect: add `CGRectSetInsideContainer` function.
 - CGRect: fix minor bugs by using standard CGRectGet functions.
+- DKRegex: improve file extension.
+
 
 ## 1.0.0
 
