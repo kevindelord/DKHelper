@@ -34,19 +34,19 @@
 /**
  * Return a string describing the current version of the application including the build number.
  */
-NSString *      appVersion();
+NSString * _Nonnull appVersion();
 
 #pragma mark - Math
 
 /**
  * Convert degrees to radians.
  */
-CGFloat         degreesToRadians(CGFloat degrees);
+CGFloat degreesToRadians(CGFloat degrees);
 
 /**
  * Convert radians to degrees.
  */
-CGFloat         radiansToDegrees(CGFloat radians);
+CGFloat radiansToDegrees(CGFloat radians);
 
 #pragma mark - Localization
 
@@ -58,7 +58,7 @@ CGFloat         radiansToDegrees(CGFloat radians);
  * @param key The key as a string referencing the localized entity.
  * @return The localized string of the key.
  */
-NSString *      L(NSString *key);
+NSString * _Nonnull L(NSString * _Nonnull key);
 
 #pragma mark - Object verification
 
@@ -70,7 +70,7 @@ NSString *      L(NSString *key);
  * @return If valid the object for key from the dictionary. Returns nil otherwise.
  * @see BOOL VALID(NSDictionary *dict, id key);
  */
-id              OBJECT(NSDictionary *dict, id key);
+id _Nullable OBJECT(NSDictionary * _Nullable dict, id _Nullable key);
 
 /**
  * Get an object from a second level dictionary.
@@ -83,16 +83,16 @@ id              OBJECT(NSDictionary *dict, id key);
  * @return If valid the second level object for the keys from the dictionary. Returns nil otherwise.
  * @see BOOL VALID(NSDictionary *dict, id key);
  */
-id              OBJECT_FOR_KEYS(NSDictionary *dict, id key1, id key2);
+id _Nullable OBJECT_FOR_KEYS(NSDictionary * _Nullable dict, id _Nullable key1, id _Nullable key2);
 
 /**
  * Check the validity of an object inside a dictionary.
  *
  * @param dict A NSDictionary object.
  * @param key An object used as a key into the given dictionary.
- * @return True if the dictionary and if the object for key exist and are different from NSNull. Returns false otherwise.
+ * @return True if the dictionary if valid, the key and the value valid and different from NSNull. Returns false otherwise.
  */
-BOOL            VALID(NSDictionary *dict, id key);
+BOOL VALID(NSDictionary * _Nullable dict, id _Nullable key);
 
 #pragma mark - Getters
 
@@ -105,7 +105,7 @@ BOOL            VALID(NSDictionary *dict, id key);
  * @param key An object used as a key.
  * @return A new CGFloat value extracted from the given dictionary. If the object isn't valid returns 0 instead.
  */
-CGFloat         GET_FLOAT(NSDictionary *dict, id key);
+CGFloat GET_FLOAT(NSDictionary * _Nullable dict, id _Nullable key);
 
 /**
  * Extract a NSInteger value out of a dictionary with a given key.
@@ -116,14 +116,14 @@ CGFloat         GET_FLOAT(NSDictionary *dict, id key);
  * @param key An object used as a key.
  * @return A new NSInteger value extracted from the given dictionary. If the object isn't valid returns 0 instead.
  */
-NSInteger       GET_INTEGER(NSDictionary *dict, id key);
+NSInteger GET_INTEGER(NSDictionary * _Nullable dict, id _Nullable key);
 
 /**
  * Extract a NSNumber value out of a dictionary with a given key.
  *
  * @discussion This function add some validity tests to extract a NSNumber value without crashing if an object isn't valid.
  *
- * If the object is a string the NSNumber will be generated with a NSNumberFormatterDecimalStyle.
+ * If the object is a NSString the NSNumber will be generated with a NSNumberFormatterDecimalStyle and a locale set to `en_US`.
  *
  * If the object already is a NSNumber then it will be simply returned.
  *
@@ -133,33 +133,41 @@ NSInteger       GET_INTEGER(NSDictionary *dict, id key);
  * @param key An object used as a key.
  * @return A new NSNumber value extracted from the given dictionary. If the object isn't valid returns nil instead.
  */
-NSNumber *      GET_NUMBER(NSDictionary *dict, id key);
+NSNumber * _Nullable GET_NUMBER(NSDictionary * _Nullable dict, id _Nullable key);
 
 /**
  * Extract a NSDate value out of a dictionary with a given key.
  *
  * @discussion This function add some validity tests to extract the value without crashing if an object isn't valid.
+ * 
+ * If the object is a NSString the NSDate will be generated using the `NSDate.ISO8601StringFormat` format.
+ *
+ * If the object already is a NSDate then it will be simply returned.
+ *
+ * If the object is none of the above nil will be returned.
  *
  * @param dict The NSDictionary object to extract the object from.
  * @param key An object used as a key.
  * @return A new NSDate value extracted from the given dictionary. If the object isn't valid returns nil instead.
  */
-NSDate *        GET_DATE(NSDictionary *dict, id key);
+NSDate * _Nullable GET_DATE(NSDictionary * _Nullable dict, id _Nullable key);
 
 /**
  * Extract a NSString value out of a dictionary with a given key.
  *
  * @discussion This function add some validity tests to extract the value without crashing if an object isn't valid.
  *
+ * If the object is an empty string object, nil will be returned.
+ *
  * @param dict The NSDictionary object to extract the object from.
  * @param key An object used as a key.
  * @return A new NSString value extracted from the given dictionary. If the object isn't valid returns nil instead.
  */
-NSString *      GET_STRING(NSDictionary *dict, id key);
+NSString * _Nullable GET_STRING(NSDictionary * _Nullable dict, id _Nullable key);
 
 #pragma mark - DKLog
 
-void            DKLog(BOOL verbose, NSString *format, ...);
+void DKLog(BOOL verbose, NSString * _Nonnull format, ...);
 
 #pragma mark - Numbers
 
@@ -171,37 +179,17 @@ void            DKLog(BOOL verbose, NSString *format, ...);
  * @param min A CGFloat value corresponding to the maximal 'max' value.
  * @return A CGFloat value corresponding to the value if it is in between the min/max limits. Otherwise returns either the minimal or maximal value.
  */
-CGFloat         MINMAX(CGFloat value, CGFloat min, CGFloat max);
+CGFloat MINMAX(CGFloat value, CGFloat min, CGFloat max);
 
 /**
  * Cast an 'int' value as a 'long' type.
  */
-long            cL(NSInteger v);
+long cL(NSInteger v);
 
 /**
  * Cast an 'int' value as a 'unsigned long' type.
  */
-unsigned long   cUL(NSUInteger v);
-
-#pragma mark - Predicate
-
-/**
- * Create and return a 'OR' predicate out of two given predicates.
- *
- * @param a A NSPredicate object. If nil will be ignored.
- * @param b A NSPredicate object. If nil will be ignored.
- * @return A new NSPredicate object created from the parameters one with a 'OR' statement. Could return nil if both parameters are.
- */
-NSPredicate *   OR_PREDICATE(NSPredicate *a, NSPredicate *b);
-
-/**
- * Create and return a 'AND' predicate out of two given predicates.
- *
- * @param a A NSPredicate object. If nil will be ignored.
- * @param b A NSPredicate object. If nil will be ignored.
- * @return A new NSPredicate object created from the parameters one with a 'AND' statement. Could return nil if both parameters are.
- */
-NSPredicate *   AND_PREDICATE(NSPredicate *a, NSPredicate *b);
+unsigned long cUL(NSUInteger v);
 
 #pragma mark - Preprocessor Defines
 

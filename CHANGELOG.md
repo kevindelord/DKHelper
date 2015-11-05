@@ -2,13 +2,16 @@
 
 ## xxx
 
-- NSString: add randomString function
-- Test project in Swift
-- UIColor: colorFromHexString now returns nil if parameter is nil
+- NSString: add randomString function.
+- The test project is now coded in Swift.
+- UIColor: colorFromHexString now returns nil if parameter is nil.
+- DKHelper:VALID also returns nil if the key is nil or an instance of NSNull.
+- DKHelper:GET_NUMBER now use the `en_US` locale to convert a string into a date object.
 
 ### Improve swift compatibility
 - UIColor
 - NSString
+- DKHelper functions
 
 ## 1.0.0
 
