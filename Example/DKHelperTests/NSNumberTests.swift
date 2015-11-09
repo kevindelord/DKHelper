@@ -13,6 +13,10 @@ class NSNumberTests: XCTestCase {
 
 	func test_ShouldAddCurrencyToNumber() {
 		let nbr : NSNumber = 400
-		XCTAssertEqual(nbr.currencyStringValue(), "400,00 €")
+		if (NSLocale.currentLocale().localeIdentifier == "en_US") {
+			XCTAssertEqual(nbr.currencyStringValue(), "$400.00")
+		} else {
+			XCTAssertEqual(nbr.currencyStringValue(), "400,00 €")
+		}
 	}
 }

@@ -26,6 +26,7 @@
 - NSBundle: `numberEntryInPListForKey` now uses the `en_US` locale.
 - UIView: `matchParentConstraints` now returns an array of `NSLayoutConstraints`.
 - UIView: `loadFromNib` avoid crash when invalid nib name.
+- UIScreen: Fix `is55InchScreen` function.
 
 ## 1.0.0
 
