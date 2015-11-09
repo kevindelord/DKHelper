@@ -49,6 +49,10 @@
 		7562520E1BEB504400A31234 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7562520C1BEB504400A31234 /* Localizable.strings */; };
 		756CC00C1BEA0304003FBDC8 /* CGRectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756CC00B1BEA0304003FBDC8 /* CGRectTests.swift */; };
 		759A46811BEBD14400FFAB39 /* UIViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759A46801BEBD14400FFAB39 /* UIViewTests.swift */; };
+		75B8D4961BF0F087008930B1 /* DKViewTest.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75B8D4951BF0F087008930B1 /* DKViewTest.xib */; };
+		75B8D4981BF0F095008930B1 /* DKViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B8D4971BF0F095008930B1 /* DKViewTest.swift */; };
+		75B8D4991BF0F128008930B1 /* DKViewTest.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75B8D4951BF0F087008930B1 /* DKViewTest.xib */; };
+		75B8D49A1BF0F128008930B1 /* DKViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B8D4971BF0F095008930B1 /* DKViewTest.swift */; };
 		75C5B81B1BE8FD7F001B46BA /* NSStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C5B81A1BE8FD7F001B46BA /* NSStringTests.swift */; };
 		75D011EF1BEB80FE003C6E9A /* NSArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D011EE1BEB80FE003C6E9A /* NSArrayTests.swift */; };
 		75D011F11BEB82B4003C6E9A /* DKRegexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D011F01BEB82B4003C6E9A /* DKRegexTests.swift */; };
@@ -116,6 +120,8 @@
 		7562520C1BEB504400A31234 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		756CC00B1BEA0304003FBDC8 /* CGRectTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectTests.swift; sourceTree = "<group>"; };
 		759A46801BEBD14400FFAB39 /* UIViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewTests.swift; sourceTree = "<group>"; };
+		75B8D4951BF0F087008930B1 /* DKViewTest.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DKViewTest.xib; path = Resources/DKViewTest.xib; sourceTree = "<group>"; };
+		75B8D4971BF0F095008930B1 /* DKViewTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DKViewTest.swift; path = Resources/DKViewTest.swift; sourceTree = "<group>"; };
 		75C5B81A1BE8FD7F001B46BA /* NSStringTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSStringTests.swift; sourceTree = "<group>"; };
 		75D011EE1BEB80FE003C6E9A /* NSArrayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSArrayTests.swift; sourceTree = "<group>"; };
 		75D011F01BEB82B4003C6E9A /* DKRegexTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKRegexTests.swift; sourceTree = "<group>"; };
@@ -217,6 +223,15 @@
 			name = "Not Tested";
 			sourceTree = "<group>";
 		};
+		75B8D4941BF0EF54008930B1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				75B8D4951BF0F087008930B1 /* DKViewTest.xib */,
+				75B8D4971BF0F095008930B1 /* DKViewTest.swift */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		75D171F81BE8C62500AE890C = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +264,7 @@
 		75D172181BE8C62500AE890C /* DKHelperTests */ = {
 			isa = PBXGroup;
 			children = (
+				75B8D4941BF0EF54008930B1 /* Resources */,
 				75D172191BE8C62500AE890C /* DKHelperTests.swift */,
 				752BB6D61BE8D4A6001B8A25 /* UIColorTests.swift */,
 				75D011F01BEB82B4003C6E9A /* DKRegexTests.swift */,
@@ -347,6 +363,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75D1720F1BE8C62500AE890C /* LaunchScreen.storyboard in Resources */,
+				75B8D4991BF0F128008930B1 /* DKViewTest.xib in Resources */,
 				7562520D1BEB504400A31234 /* Localizable.strings in Resources */,
 				75D1720C1BE8C62500AE890C /* Assets.xcassets in Resources */,
 				75D1720A1BE8C62500AE890C /* Main.storyboard in Resources */,
@@ -358,6 +375,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7562520E1BEB504400A31234 /* Localizable.strings in Resources */,
+				75B8D4961BF0F087008930B1 /* DKViewTest.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,6 +395,7 @@
 				7532986E1BE8C7BF00FD8252 /* NSBundle+DKHelper.m in Sources */,
 				753298841BE8C7BF00FD8252 /* UIScreen+DKHelper.m in Sources */,
 				753298801BE8C7BF00FD8252 /* UIImage+DKHelper.m in Sources */,
+				75B8D49A1BF0F128008930B1 /* DKViewTest.swift in Sources */,
 				7532987E1BE8C7BF00FD8252 /* UIDevice+DKHelper.m in Sources */,
 				75D172051BE8C62500AE890C /* AppDelegate.swift in Sources */,
 				753298861BE8C7BF00FD8252 /* UIView+DKHelper.m in Sources */,
@@ -410,6 +429,7 @@
 				753298791BE8C7BF00FD8252 /* NSPredicate+DKHelper.m in Sources */,
 				753298851BE8C7BF00FD8252 /* UIScreen+DKHelper.m in Sources */,
 				753298831BE8C7BF00FD8252 /* UIImageView+DKHelper.m in Sources */,
+				75B8D4981BF0F095008930B1 /* DKViewTest.swift in Sources */,
 				753298811BE8C7BF00FD8252 /* UIImage+DKHelper.m in Sources */,
 				753298731BE8C7BF00FD8252 /* NSNumber+DKHelper.m in Sources */,
 				7532987D1BE8C7BF00FD8252 /* UIColor+DKHelper.m in Sources */,

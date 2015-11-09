@@ -13,6 +13,23 @@ class UIViewTests: XCTestCase {
 
 }
 
+
+// MARK: - Load From Nib
+
+extension UIViewTests {
+
+	func test_ShouldReturnNilWhenLoadinFromInvalidNib() {
+		let view = UIView.loadFromNib("uiview")
+		XCTAssertNil(view)
+	}
+
+	func test_ShouldReturnValidViewFromNib() {
+		let view = UIView.loadFromNib("DKViewTest")
+		XCTAssertNotNil(view)
+		XCTAssert(view is DKHelper.DKViewTest == true)
+	}
+}
+
 // MARK: - Vertical Gradient Layer
 
 extension UIViewTests {
