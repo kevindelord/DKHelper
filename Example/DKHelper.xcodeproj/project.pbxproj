@@ -184,6 +184,8 @@
 				753298591BE8C7BF00FD8252 /* UIColor+DKHelper.m */,
 				7532985C1BE8C7BF00FD8252 /* UIImage+DKHelper.h */,
 				7532985D1BE8C7BF00FD8252 /* UIImage+DKHelper.m */,
+				753298601BE8C7BF00FD8252 /* UIScreen+DKHelper.h */,
+				753298611BE8C7BF00FD8252 /* UIScreen+DKHelper.m */,
 				753298621BE8C7BF00FD8252 /* UIView+DKHelper.h */,
 				753298631BE8C7BF00FD8252 /* UIView+DKHelper.m */,
 			);
@@ -219,8 +221,6 @@
 				7532985B1BE8C7BF00FD8252 /* UIDevice+DKHelper.m */,
 				7532985E1BE8C7BF00FD8252 /* UIImageView+DKHelper.h */,
 				7532985F1BE8C7BF00FD8252 /* UIImageView+DKHelper.m */,
-				753298601BE8C7BF00FD8252 /* UIScreen+DKHelper.h */,
-				753298611BE8C7BF00FD8252 /* UIScreen+DKHelper.m */,
 			);
 			name = "Not Tested";
 			sourceTree = "<group>";
