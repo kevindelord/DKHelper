@@ -24,6 +24,7 @@
 - CGRect: fix minor bugs by using standard CGRectGet functions.
 - DKRegex: improve file extension.
 - NSBundle: `numberEntryInPListForKey` now uses the `en_US` locale.
+- UIView: `matchParentConstraints` now returns an array of `NSLayoutConstraints`.
 
 ## 1.0.0
 
