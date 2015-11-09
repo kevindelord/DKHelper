@@ -22,7 +22,7 @@
 /**
  * creates constraints to adjust the child to match the parents dimensions and position
  */
-- (NSArray * _Nonnull)matchParentConstraints {
+- (NSArray<NSLayoutConstraint *> * _Nonnull)matchParentConstraints {
     if (self.superview != nil) {
         [self setTranslatesAutoresizingMaskIntoConstraints:false];
 

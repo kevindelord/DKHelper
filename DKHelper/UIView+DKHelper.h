@@ -33,7 +33,7 @@
  *
  * @return The added layout contraints. Empty array if the receiver does not have a superview.
  */
-- (NSArray * _Nonnull)matchParentConstraints;
+- (NSArray<NSLayoutConstraint *> * _Nonnull)matchParentConstraints;
 
 #pragma mark - UIView+Layer
 
