@@ -6,6 +6,8 @@
 
 - CGSize: `CGSizeAdjustToCGRect` has be changed to `CGSizeAdjustToCGRect`.
 - CGSize: The logic behind `CGSizeAdjustToCGSize` has been mergely improved.
+- Function `iOS7Delta` has been removed.
+- UIView: Getters and setters for receiver's frame are now attributes and no longer functions.
 
 ### Enhancements
 
@@ -22,6 +24,8 @@
 - CGRect: fix minor bugs by using standard CGRectGet functions.
 - DKRegex: improve file extension.
 - NSBundle: `numberEntryInPListForKey` now uses the `en_US` locale.
+- UIView: `matchParentConstraints` now returns an array of `NSLayoutConstraints`.
+- UIView: `loadFromNib` avoid crash when invalid nib name.
 
 ## 1.0.0
 
