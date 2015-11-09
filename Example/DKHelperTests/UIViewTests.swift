@@ -19,34 +19,34 @@ extension UIViewTests {
 
 	func test_ShouldReturnWidth() {
 		let view = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
-		XCTAssertEqual(view.frameWidth(), 200)
+		XCTAssertEqual(view.frameWidth, 200)
 	}
 
 	func test_ShouldReturnHeight() {
 		let view = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
-		XCTAssertEqual(view.frameHeight(), 200)
+		XCTAssertEqual(view.frameHeight, 200)
 	}
 
 	func test_ShouldReturnX() {
 		let view = UIView(frame: CGRect(x: 10, y: 0, width: 200, height: 200))
-		XCTAssertEqual(view.frameX(), 10)
+		XCTAssertEqual(view.frameX, 10)
 	}
 
 	func test_ShouldReturnY() {
 		let view = UIView(frame: CGRect(x: 10, y: -20, width: 200, height: 200))
-		XCTAssertEqual(view.frameY(), -20)
+		XCTAssertEqual(view.frameY, -20)
 	}
 
 	func test_ShouldReturnOrigin() {
 		let view = UIView(frame: CGRect(x: 10, y: -20, width: 200, height: 200))
-		XCTAssertEqual(view.frameOrigin().x, 10)
-		XCTAssertEqual(view.frameOrigin().y, -20)
+		XCTAssertEqual(view.frameOrigin.x, 10)
+		XCTAssertEqual(view.frameOrigin.y, -20)
 	}
 
 	func test_ShouldReturnSize() {
 		let view = UIView(frame: CGRect(x: 10, y: -20, width: 200, height: 200))
-		XCTAssertEqual(view.frameSize().width, 200)
-		XCTAssertEqual(view.frameSize().height, 200)
+		XCTAssertEqual(view.frameSize.width, 200)
+		XCTAssertEqual(view.frameSize.height, 200)
 	}
 }
 
@@ -55,35 +55,40 @@ extension UIViewTests {
 extension UIViewTests {
 
 	func test_ShouldSetWidth() {
-		var view = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+		let view = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
 		view.frameWidth = 100
-		XCTAssertEqual(view.frameWidth(), 200)
+		XCTAssertEqual(view.frameWidth, 100)
 	}
 
 	func test_ShouldSetHeight() {
 		let view = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
-		XCTAssertEqual(view.frameHeight(), 200)
+		view.frameHeight = 100
+		XCTAssertEqual(view.frameHeight, 100)
 	}
 
 	func test_ShouldSetX() {
 		let view = UIView(frame: CGRect(x: 10, y: 0, width: 200, height: 200))
-		XCTAssertEqual(view.frameX(), 10)
+		view.frameX = 100
+		XCTAssertEqual(view.frameX, 100)
 	}
 
 	func test_ShouldSetY() {
 		let view = UIView(frame: CGRect(x: 10, y: -20, width: 200, height: 200))
-		XCTAssertEqual(view.frameY(), -20)
+		view.frameY = 100
+		XCTAssertEqual(view.frameY, 100)
 	}
 
 	func test_ShouldSetOrigin() {
 		let view = UIView(frame: CGRect(x: 10, y: -20, width: 200, height: 200))
-		XCTAssertEqual(view.frameOrigin().x, 10)
-		XCTAssertEqual(view.frameOrigin().y, -20)
+		view.frameOrigin = CGPoint(x: 100, y: 21)
+		XCTAssertEqual(view.frameOrigin.x, 100)
+		XCTAssertEqual(view.frameOrigin.y, 21)
 	}
 
 	func test_ShouldSetSize() {
 		let view = UIView(frame: CGRect(x: 10, y: -20, width: 200, height: 200))
-		XCTAssertEqual(view.frameSize().width, 200)
-		XCTAssertEqual(view.frameSize().height, 200)
+		view.frameSize = CGSize(width: 30, height: 31)
+		XCTAssertEqual(view.frameSize.width, 30)
+		XCTAssertEqual(view.frameSize.height, 31)
 	}
 }
