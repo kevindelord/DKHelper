@@ -11,19 +11,19 @@
 @implementation UIScreen (DKHelper)
 
 + (BOOL)is35InchScreen {
-    return ([UIScreen mainScreen].bounds.size.height == 480. && [UIScreen mainScreen].bounds.size.width == 320.);
+    return (CGRectGetHeight([UIScreen mainScreen].bounds) == 480. && CGRectGetWidth([UIScreen mainScreen].bounds) == 320.);
 }
 
 + (BOOL)is4InchScreen {
-    return ([UIScreen mainScreen].bounds.size.height == 568. && [UIScreen mainScreen].bounds.size.width == 320.);
+    return (CGRectGetHeight([UIScreen mainScreen].bounds) == 568. && CGRectGetWidth([UIScreen mainScreen].bounds) == 320.);
 }
 
 + (BOOL)is47InchScreen {
-    return ([UIScreen mainScreen].bounds.size.height == 667. && [UIScreen mainScreen].bounds.size.width == 375.);
+    return (CGRectGetHeight([UIScreen mainScreen].bounds) == 667. && CGRectGetWidth([UIScreen mainScreen].bounds) == 375.);
 }
 
 + (BOOL)is55InchScreen {
-    return ([UIScreen mainScreen].bounds.size.height == 960. && [UIScreen mainScreen].bounds.size.width == 540.);
+    return (CGRectGetHeight([UIScreen mainScreen].bounds) == 736. && CGRectGetWidth([UIScreen mainScreen].bounds) == 414.);
 }
 
 @end
