@@ -14,8 +14,12 @@
 #pragma mark - UIView+Load
 
 + (instancetype _Nullable)loadFromNib:(NSString * _Nonnull)name {
-    NSArray *nibs = [NSBundle.mainBundle loadNibNamed:name owner:self options:nil];
-    return nibs.firstObject;
+	if ([NSBundle.mainBundle URLForResource:name withExtension:@".xib"] != nil ||
+		[NSBundle.mainBundle URLForResource:name withExtension:@".nib"] != nil) {
+		NSArray *nibs = [NSBundle.mainBundle loadNibNamed:name owner:nil options:nil];
+		return nibs.firstObject;
+	}
+	return nil;
 }
 
 #pragma mark - UIView+Constraints
