@@ -13,6 +13,133 @@ class UIViewTests: XCTestCase {
 
 }
 
+// MARK: - Vertical Gradient Layer
+
+extension UIViewTests {
+
+	func test_ShouldCreateVerticalGradientLayerWithCorrectFrame() {
+		let frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+		let view = UIView.verticalGradientLayer(frame, topColor: UIColor.greenColor(), bottomColor: UIColor.blueColorWithAlpha(0.3))
+		XCTAssertNotNil(view)
+		XCTAssertNotNil(view.layer)
+		XCTAssertEqual(view.frame, frame)
+	}
+
+	func test_ShouldCreateGradientWithValidColors() {
+		let frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+		let view = UIView.verticalGradientLayer(frame, topColor: UIColor.greenColor(), bottomColor: UIColor.blueColorWithAlpha(0.3))
+
+		XCTAssertEqual(view.layer.sublayers?.first is CAGradientLayer, true)
+		let gradientLayer = view.layer.sublayers?.first as? CAGradientLayer
+		let colors = gradientLayer?.colors as? [CGColorRef]
+		XCTAssertNotNil(colors)
+		XCTAssertEqual(colors?.count, 2)
+		XCTAssert(CGColorEqualToColor(colors?.first, UIColor.greenColor().CGColor) == true)
+		XCTAssert(CGColorEqualToColor(colors?.last, UIColor.blueColorWithAlpha(0.3).CGColor) == true)
+	}
+
+	func test_ShouldCreateGradientWithValidStartAndEndPoints() {
+		let frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+		let view = UIView.verticalGradientLayer(frame, topColor: UIColor.greenColor(), bottomColor: UIColor.blueColorWithAlpha(0.3))
+
+		XCTAssertEqual(view.layer.sublayers?.first is CAGradientLayer, true)
+		let gradientLayer = view.layer.sublayers?.first as? CAGradientLayer
+		XCTAssertEqual(gradientLayer?.startPoint, CGPoint(x: 0, y: 0))
+		XCTAssertEqual(gradientLayer?.endPoint, CGPoint(x: 0, y: 1))
+	}
+}
+
+// MARK: - UIView+Constraints
+
+extension UIViewTests {
+
+	func test_ShouldNotMatchParentWhenSuperViewIsNil() {
+		let view = UIView(frame: CGRect(x: 10, y: 30, width: 10, height: 70))
+		// check there are no constraint
+		XCTAssertEqual(view.constraints.count, 0)
+		let constraints = view.matchParentConstraints()
+		// check there are more constraint
+		XCTAssertEqual(view.constraints.count, 0)
+		XCTAssertEqual(constraints.count, 0)
+	}
+
+	func test_ShouldMatchParentConstraints() {
+		let superview = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+		let view = UIView(frame: CGRect(x: 10, y: 30, width: 10, height: 70))
+		// check there are no constraint
+		XCTAssertEqual(superview.constraints.count, 0)
+		XCTAssertEqual(view.constraints.count, 0)
+		superview.addSubview(view)
+		view.matchParentConstraints()
+		// check there are more constraint
+		XCTAssertEqual(superview.constraints.count, 4)
+		XCTAssertEqual(view.constraints.count, 0)
+	}
+
+	func test_ShouldMatchParentViewWithValidBottomConstraints() {
+		let superview = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+		let view = UIView(frame: CGRect(x: 10, y: 30, width: 10, height: 70))
+		// check there are no constraint
+		superview.addSubview(view)
+		let constraints = view.matchParentConstraints()
+
+		// verify bottom constraint
+		for constraint in constraints {
+			for attribute in [NSLayoutAttribute.Bottom, NSLayoutAttribute.Top, NSLayoutAttribute.Left, NSLayoutAttribute.Right]
+				where (attribute == constraint.firstAttribute) {
+					XCTAssertEqual(constraint.firstItem as? UIView, view)
+					XCTAssertEqual(constraint.relation, NSLayoutRelation.Equal)
+					XCTAssertEqual(constraint.secondItem as? UIView, superview)
+					XCTAssertEqual(constraint.multiplier, 1.0)
+					XCTAssertEqual(constraint.constant, 0)
+					XCTAssertEqual(constraint.firstAttribute, attribute)
+					XCTAssertEqual(constraint.secondAttribute, attribute)
+			}
+		}
+	}
+}
+
+// MARK: - RoundCorner
+
+extension UIViewTests {
+
+	func test_ShouldRoundCornerWithRadiusAndMaskToBounds() {
+		let view = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+		// there is no mask
+		XCTAssertNil(view.layer.mask)
+		view.roundCorner(UIRectCorner.AllCorners, radius: 10, maskToBounds: true)
+		// verify new mask's validity
+		XCTAssertNotNil(view.layer.mask)
+		XCTAssertEqual(view.layer.mask?.bounds, CGRect(x: 0, y: 0, width: 200, height: 200))
+		XCTAssertNotNil((view.layer.mask as? CAShapeLayer)?.path)
+		XCTAssert(((view.layer.mask as? CAShapeLayer)?.masksToBounds ?? false) == true)
+	}
+
+	func test_ShouldRoundCornerWithRadiusAndWithoutMaskToBounds() {
+		let view = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+		// there is no mask
+		XCTAssertNil(view.layer.mask)
+		view.roundCorner(UIRectCorner.AllCorners, radius: 10, maskToBounds: false)
+		// verify new mask's validity
+		XCTAssertNotNil(view.layer.mask)
+		XCTAssertEqual(view.layer.mask?.bounds, CGRect(x: 0, y: 0, width: 200, height: 200))
+		XCTAssertNotNil((view.layer.mask as? CAShapeLayer)?.path)
+		XCTAssert(((view.layer.mask as? CAShapeLayer)?.masksToBounds ?? true) == false)
+	}
+
+	func test_ShouldRoundCornerWithRadius() {
+		let view = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+		// there is no mask
+		XCTAssertNil(view.layer.mask)
+		view.roundCorner(UIRectCorner.AllCorners, radius: 10)
+		// verify new mask's validity
+		XCTAssertNotNil(view.layer.mask)
+		XCTAssertEqual(view.layer.mask?.bounds, CGRect(x: 0, y: 0, width: 200, height: 200))
+		XCTAssertNotNil((view.layer.mask as? CAShapeLayer)?.path)
+		XCTAssert(((view.layer.mask as? CAShapeLayer)?.masksToBounds ?? true) == false)
+	}
+}
+
 // MARK: - Frame Getter
 
 extension UIViewTests {
