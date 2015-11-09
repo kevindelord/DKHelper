@@ -25,6 +25,7 @@
 - DKRegex: improve file extension.
 - NSBundle: `numberEntryInPListForKey` now uses the `en_US` locale.
 - UIView: `matchParentConstraints` now returns an array of `NSLayoutConstraints`.
+- UIView: `loadFromNib` avoid crash when invalid nib name.
 
 ## 1.0.0
 
