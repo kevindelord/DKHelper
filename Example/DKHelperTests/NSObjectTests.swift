@@ -72,28 +72,106 @@ extension NSObjectTests {
 
 // MARK: - Perform Block In Background
 
-/**
-* Performs a code block on a background thread.
-*
-* @param block A block object containing the code to execute. This block takes no parameters and has no return value.
-*/
-//- (void)performBlockInBackground:(nullable void (^)(void))block;
-
 extension NSObjectTests {
 
+	func test_ShouldPerformBlockInBackground() {
+		let expectation = expectationWithDescription("execute block in background")
+		self.performBlockInBackground() {
+			XCTAssert(NSThread.isMainThread() == false)
+			expectation.fulfill()
+		}
+		waitForExpectationsWithTimeout(2) { error in
+			XCTAssert(true, "didn't crash")
+		}
+	}
+
+	func test_ShouldNotPerformNilBlockInBackground() {
+		let expectation = expectationWithDescription("should not crash")
+		self.performBlockInBackground(nil)
+		expectation.fulfill()
+		waitForExpectationsWithTimeout(2) { error in
+			XCTAssert(true, "didn't crash")
+		}
+	}
 }
 
 // MARK: - Perform Block In Background With Completion Block
 
-/**
-* Performs a code block on a background thread and call a completion block when it's done.
-*
-* @param block A block object containing the code to execute. This block takes no parameters and has no return value.
-* @param completionBlock A block object containing the code to execute. This block takes no parameters and has no return value. It will be called after the main block has been executed.
-*/
-//- (void)performBlockInBackground:(nullable void (^)(void))block completion:(nullable void (^)(void))completionBlock;
-
 extension NSObjectTests {
+
+	func test_ShouldPerformBlockInBackgroundWithCompletion() {
+		// backgroundBlock: ON
+		// completionBlock: ON
+		let expectation = expectationWithDescription("execute block in background")
+		self.performBlockInBackground({ () -> Void in
+			XCTAssert(NSThread.isMainThread() == false)
+
+			}) { () -> Void in
+				XCTAssert(NSThread.isMainThread() == true)
+				expectation.fulfill()
+		}
+		waitForExpectationsWithTimeout(2) { error in
+			XCTAssert(true, "didn't crash")
+		}
+	}
+
+	func test_ShouldPerformBackroundBlockBeforeCompletionBlock() {
+		// backgroundBlock: ON
+		// completionBlock: ON
+		let expectation = expectationWithDescription("execute block in background")
+		var count = 0
+		self.performBlockInBackground({ () -> Void in
+			XCTAssert(NSThread.isMainThread() == false)
+			XCTAssert(count == 0)
+			count += 1
+
+			}) { () -> Void in
+				XCTAssert(NSThread.isMainThread() == true)
+				XCTAssert(count == 1)
+				expectation.fulfill()
+		}
+		waitForExpectationsWithTimeout(2) { error in
+			XCTAssert(true, "didn't crash")
+		}
+	}
+
+	func test_ShouldPerformNilBlockInBackgroundWithCompletion() {
+		// backgroundBlock: OFF
+		// completionBlock: ON
+		let expectation = expectationWithDescription("should not crash")
+		self.performBlockInBackground(nil) { () -> Void in
+			XCTAssert(NSThread.isMainThread() == true)
+			expectation.fulfill()
+		}
+		waitForExpectationsWithTimeout(2) { error in
+			XCTAssert(true, "didn't crash")
+		}
+	}
+
+	func test_ShouldPerformBlockInBackgroundWithNilCompletion() {
+		// backgroundBlock: ON
+		// completionBlock: OFF
+		let expectation = expectationWithDescription("should not crash")
+		self.performBlockInBackground({ () -> Void in
+			XCTAssert(NSThread.isMainThread() == false)
+			expectation.fulfill()
+			}, completion: nil)
+
+		waitForExpectationsWithTimeout(2) { error in
+			XCTAssert(true, "didn't crash")
+		}
+	}
+
+	func test_ShouldNotPerformNilBlockInBackgroundWithNilCompletion() {
+		// backgroundBlock: OFF
+		// completionBlock: OFF
+		let expectation = expectationWithDescription("should not crash")
+		self.performBlockInBackground(nil, completion: nil)
+		expectation.fulfill()
+		waitForExpectationsWithTimeout(2) { error in
+			XCTAssert(true, "didn't crash")
+		}
+	}
 
 }
 
