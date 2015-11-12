@@ -55,20 +55,29 @@
 + (NSString * _Nonnull)platformNameFromString:(NSString * _Nonnull)platform;
 
 /**
+ * Returns a Boolean value indicating whether the device related to the given platform is a slow or not.
+ *
+ * @discussion iPod 4G, iPhone 4S, iPad 2, the first iPad Minis and older are considered as slow devices.
+ *
+ * @return YES if the related device is a slow one.
+ */
++ (BOOL)isSlowDeviceForPlatform:(NSString * _Nonnull)platform;
+
+/**
  * Returns a Boolean value indicating whether the current device is a slow one or not.
  *
  * @discussion iPod 4G, iPhone 4S, iPad 2, the first iPad Minis and older are considered as slow devices.
  *
  * @return YES if the current device is a slow one.
  */
-+ (BOOL)isSlowDevice;
+@property (nonatomic) BOOL isSlowDevice;
 
 /**
  * Returns a Boolean value indicating whether the current device is an iPad or not.
  *
  * @return YES if the current device is an iPad.
  */
-+ (BOOL)isIPad;
+@property (nonatomic) BOOL isIPad;
 
 #pragma mark - System Version
 

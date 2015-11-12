@@ -11,6 +11,8 @@
 
 @implementation UIDevice (Model)
 
+@dynamic isIPad, isSlowDevice;
+
 #pragma mark - UIDevice+Model
 
 + (NSString * _Nonnull)currentPlatform{
@@ -107,43 +109,42 @@
 	return platform;
 }
 
-+ (BOOL)isSlowDevice {
-    NSArray * forbiddenPlatforms = [NSArray arrayWithObjects:
-                                    @"iPhone1,1", // iPhone 1G
-                                    @"iPhone1,2", // iPhone 3G
-                                    @"iPhone2,1", // iPhone 3GS
-                                    @"iPhone3,1", // iPhone 4
++ (BOOL)isSlowDeviceForPlatform:(NSString * _Nonnull)platform {
+	NSArray * slowPlatforms = [NSArray arrayWithObjects:
+									@"iPhone1,1", // iPhone 1G
+									@"iPhone1,2", // iPhone 3G
+									@"iPhone2,1", // iPhone 3GS
+									@"iPhone3,1", // iPhone 4
 									@"iPhone3,2", // iPhone 4
-                                    @"iPhone3,3", // Verizon iPhone 4
-                                    @"iPhone4,1", // iPhone 4S
+									@"iPhone3,3", // Verizon iPhone 4
+									@"iPhone4,1", // iPhone 4S
 
-                                    @"iPod1,1", // iPod Touch
-                                    @"iPod2,1", // iPod Touch 2G
-                                    @"iPod3,1", // iPod Touch 3G
-                                    @"iPod4,1", // iPod Touch 4G
+									@"iPod1,1", // iPod Touch
+									@"iPod2,1", // iPod Touch 2G
+									@"iPod3,1", // iPod Touch 3G
+									@"iPod4,1", // iPod Touch 4G
 
-                                    @"iPad1,1", // iPad 1
-                                    @"iPad2,1", // iPad 2 (WiFi)
-                                    @"iPad2,2", // iPad 2 (GSM)
-                                    @"iPad2,3", // iPad 2 (CDMA)
-                                    @"iPad2,4", // iPad 2 (WiFi)
+									@"iPad1,1", // iPad 1
+									@"iPad2,1", // iPad 2 (WiFi)
+									@"iPad2,2", // iPad 2 (GSM)
+									@"iPad2,3", // iPad 2 (CDMA)
+									@"iPad2,4", // iPad 2 (WiFi)
 
 									@"iPad2,5", // iPad Mini (WiFi)
 									@"iPad2,6", // iPad Mini (GSM)
 									@"iPad2,7", // iPad Mini (GSM+CDMA)
-                                    nil];
-    
-    NSString *currentPlatform = [UIDevice currentPlatform];
-    for (NSString *platform in forbiddenPlatforms) {
-        if ([platform isEqualToString:currentPlatform])
-            return YES;
-    }
-    return NO;
+									nil];
+
+	return [slowPlatforms containsObject:platform];
 }
 
-+ (BOOL)isIPad {
-    NSString *currentModel = [UIDevice currentDevice].model;
-    return [currentModel hasPrefix:@"iPad"];
+- (BOOL)isSlowDevice {
+    NSString *currentPlatform = [UIDevice currentPlatform];
+	return [UIDevice isSlowDeviceForPlatform:currentPlatform];
+}
+
+- (BOOL)isIPad {
+    return [self.model hasPrefix:@"iPad"];
 }
 
 #pragma mark - System Version
