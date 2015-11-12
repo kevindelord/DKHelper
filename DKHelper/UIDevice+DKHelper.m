@@ -33,14 +33,14 @@
 + (NSString * _Nonnull)platformNameFromString:(NSString * _Nonnull)platform {
 
 	// Apple TV
-	if ([platform isEqualToString:@"AppleTV2,1"])      return @"Apple TV 2G";
-	if ([platform isEqualToString:@"AppleTV3,1"])      return @"Apple TV 3G";
-	if ([platform isEqualToString:@"AppleTV3,2"])      return @"Apple TV 3G";
-	if ([platform isEqualToString:@"AppleTV5,3"])      return @"Apple TV 4G";
+	if ([platform isEqualToString:@"AppleTV2,1"])   return @"Apple TV 2G";
+	if ([platform isEqualToString:@"AppleTV3,1"])   return @"Apple TV 3G";
+	if ([platform isEqualToString:@"AppleTV3,2"])   return @"Apple TV 3G";
+	if ([platform isEqualToString:@"AppleTV5,3"])   return @"Apple TV 4G";
 
 	// Apple Watch
-	if ([platform isEqualToString:@"Watch1,1"])      return @"Apple Watch";
-	if ([platform isEqualToString:@"Watch1,2"])      return @"Apple Watch";
+	if ([platform isEqualToString:@"Watch1,1"])     return @"Apple Watch";
+	if ([platform isEqualToString:@"Watch1,2"])     return @"Apple Watch";
 
 	// iPhone
 	if ([platform isEqualToString:@"iPhone1,1"])    return @"iPhone";
