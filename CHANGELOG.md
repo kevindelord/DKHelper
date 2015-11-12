@@ -8,6 +8,7 @@
 - CGSize: The logic behind `CGSizeAdjustToCGSize` has been mergely improved.
 - Function `iOS7Delta` has been removed.
 - UIView: Getters and setters for receiver's frame are now attributes and no longer functions.
+- NSObject: Remove deprecated functions `performBlock:afterDelay:completion:` and `performBlock:afterDelay`.
 
 ### Enhancements
 
