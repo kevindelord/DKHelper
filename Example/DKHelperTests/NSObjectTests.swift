@@ -21,6 +21,7 @@ extension NSObjectTests {
 		let startDate = NSDate()
 		let expectation = expectationWithDescription("execute block after delay")
 		self.performBlockAfterDelay(2) {
+			XCTAssert(NSThread.isMainThread() == true)
 			XCTAssert(startDate.isOlderOrEqualThanSecondInterval(3) == false)
 			XCTAssert(startDate.isOlderOrEqualThanSecondInterval(2) == true)
 			XCTAssert(startDate.isOlderOrEqualThanSecondInterval(1) == true)
@@ -41,10 +42,11 @@ extension NSObjectTests {
 		}
 	}
 
-	func test_ShouldPerforlBlockAfterInvalidDelay() {
+	func test_ShouldPerformBlockAfterInvalidDelay() {
 		let startDate = NSDate()
 		let expectation = expectationWithDescription("execute block after delay")
 		self.performBlockAfterDelay(-2) {
+			XCTAssert(NSThread.isMainThread() == true)
 			XCTAssert(startDate.isOlderOrEqualThanSecondInterval(3) == false)
 			XCTAssert(startDate.isOlderOrEqualThanSecondInterval(2) == false)
 			XCTAssert(startDate.isOlderOrEqualThanSecondInterval(1) == false)
@@ -57,10 +59,11 @@ extension NSObjectTests {
 		}
 	}
 
-	func test_ShouldPerforlBlockAfterZeroDelay() {
+	func test_ShouldPerformBlockAfterZeroDelay() {
 		let startDate = NSDate()
 		let expectation = expectationWithDescription("execute block after delay")
 		self.performBlockAfterDelay(0) {
+			XCTAssert(NSThread.isMainThread() == true)
 			XCTAssert(startDate.stringValue() == NSDate().stringValue())
 			expectation.fulfill()
 		}
@@ -172,34 +175,232 @@ extension NSObjectTests {
 			XCTAssert(true, "didn't crash")
 		}
 	}
-
 }
 
 // MARK: - Perform Block After Delay With Completion Block
 
-/**
-* Performs a code block after a given delay and call a completion block when it's done.
-*
-* @param delay The amount of time (measured in seconds) to wait before beginning the animations. Specify a value of 0 to begin the animations immediately.
-* @param block A block object containing the code to execute. This block takes no parameters and has no return value.
-* @param completionBlock A block object containing the code to execute. This block takes no parameters and has no return value. It will be called after the main block has been executed.
-*/
-//- (void)performBlockAfterDelay:(NSTimeInterval)delay block:(nullable void (^)(void))block completion:(nullable void (^)(void))completionBlock;
 
 extension NSObjectTests {
 
+	func test_ShouldPerformBlockAfterDelayWithCompletion() {
+		// mainBlock: ON
+		// completionBlock: ON
+
+		let startDate = NSDate()
+		let expectation = expectationWithDescription("execute block after delay")
+		self.performBlockAfterDelay(2, block: { () -> Void in
+			XCTAssert(NSThread.isMainThread() == true)
+			XCTAssert(startDate.isOlderOrEqualThanSecondInterval(3) == false)
+			XCTAssert(startDate.isOlderOrEqualThanSecondInterval(2) == true)
+			XCTAssert(startDate.isOlderOrEqualThanSecondInterval(1) == true)
+			XCTAssert(startDate.isOlderOrEqualThanMinuteInterval(2) == false)
+
+			}) { () -> Void in
+				XCTAssert(NSThread.isMainThread() == true)
+				XCTAssert(startDate.isOlderOrEqualThanSecondInterval(3) == false)
+				XCTAssert(startDate.isOlderOrEqualThanSecondInterval(2) == true)
+				XCTAssert(startDate.isOlderOrEqualThanSecondInterval(1) == true)
+				XCTAssert(startDate.isOlderOrEqualThanMinuteInterval(2) == false)
+
+				expectation.fulfill()
+		}
+
+		waitForExpectationsWithTimeout(5) { error in
+			XCTAssert(true, "didn't crash")
+		}
+	}
+
+	// TODO HERE.
+
+	func test_ShouldNotPerformNilBlockAfterDelayWithCompletion() {
+		// mainBlock: OFF
+		// completionBlock: ON
+		let startDate = NSDate()
+		let expectation = expectationWithDescription("execute block after delay")
+		self.performBlockAfterDelay(2, block: nil) { () -> Void in
+
+			XCTAssert(NSThread.isMainThread() == true)
+			XCTAssert(startDate.isOlderOrEqualThanSecondInterval(3) == false)
+			XCTAssert(startDate.isOlderOrEqualThanSecondInterval(2) == true)
+			XCTAssert(startDate.isOlderOrEqualThanSecondInterval(1) == true)
+			XCTAssert(startDate.isOlderOrEqualThanMinuteInterval(2) == false)
+
+			expectation.fulfill()
+		}
+
+		waitForExpectationsWithTimeout(5) { error in
+			XCTAssert(true, "didn't crash")
+		}
+	}
+
+	func test_ShouldPerformBlockAfterInvalidDelayWithCompletion() {
+		// mainBlock: ON
+		// completionBlock: ON
+		let startDate = NSDate()
+		let expectation = expectationWithDescription("execute block after delay")
+		self.performBlockAfterDelay(-2, block: { () -> Void in
+
+			XCTAssert(NSThread.isMainThread() == true)
+			XCTAssert(startDate.isOlderOrEqualThanSecondInterval(3) == false)
+			XCTAssert(startDate.isOlderOrEqualThanSecondInterval(2) == false)
+			XCTAssert(startDate.isOlderOrEqualThanSecondInterval(1) == false)
+			XCTAssert(startDate.isOlderOrEqualThanMinuteInterval(2) == false)
+			XCTAssert(startDate.stringValue() == NSDate().stringValue())
+
+			}) { () -> Void in
+
+				XCTAssert(NSThread.isMainThread() == true)
+				XCTAssert(startDate.isOlderOrEqualThanSecondInterval(3) == false)
+				XCTAssert(startDate.isOlderOrEqualThanSecondInterval(2) == false)
+				XCTAssert(startDate.isOlderOrEqualThanSecondInterval(1) == false)
+				XCTAssert(startDate.isOlderOrEqualThanMinuteInterval(2) == false)
+
+				expectation.fulfill()
+		}
+
+		waitForExpectationsWithTimeout(5) { error in
+			XCTAssert(true, "didn't crash")
+		}
+	}
+
+	func test_ShouldPerformBlockAfterDelayWithNilCompletion() {
+		// mainBlock: ON
+		// completionBlock: OFF
+		let startDate = NSDate()
+		let expectation = expectationWithDescription("should not crash")
+		self.performBlockAfterDelay(2, block: { () -> Void in
+			XCTAssert(NSThread.isMainThread() == true)
+			XCTAssert(startDate.isOlderOrEqualThanSecondInterval(3) == false)
+			XCTAssert(startDate.isOlderOrEqualThanSecondInterval(2) == true)
+			XCTAssert(startDate.isOlderOrEqualThanSecondInterval(1) == true)
+			XCTAssert(startDate.isOlderOrEqualThanMinuteInterval(2) == false)
+
+			expectation.fulfill()
+			}, completion: nil)
+
+		waitForExpectationsWithTimeout(2) { error in
+			XCTAssert(true, "didn't crash")
+		}
+	}
+
+	func test_ShouldPerformBlockAfterZeroDelayWithCompletion() {
+		// mainBlock: ON
+		// completionBlock: ON
+		let startDate = NSDate()
+		let expectation = expectationWithDescription("execute block after delay")
+		self.performBlockAfterDelay(0, block: { () -> Void in
+
+			XCTAssert(NSThread.isMainThread() == true)
+			XCTAssert(startDate.stringValue() == NSDate().stringValue())
+
+			}) { () -> Void in
+
+				XCTAssert(NSThread.isMainThread() == true)
+				XCTAssert(startDate.stringValue() == NSDate().stringValue())
+				expectation.fulfill()
+
+		}
+		waitForExpectationsWithTimeout(5) { error in
+			XCTAssert(true, "didn't crash")
+		}
+	}
+
+	func test_ShouldPerformBlockAfterDelayAndBeforeCompletionBlock() {
+		// mainBlock: ON
+		// completionBlock: ON
+		let expectation = expectationWithDescription("execute block in background")
+		var count = 0
+		self.performBlockAfterDelay(2, block: { () -> Void in
+			XCTAssert(NSThread.isMainThread() == true)
+			XCTAssert(count == 0)
+			count += 1
+
+			}) { () -> Void in
+				XCTAssert(NSThread.isMainThread() == true)
+				XCTAssert(count == 1)
+				expectation.fulfill()
+		}
+		waitForExpectationsWithTimeout(3) { error in
+			XCTAssert(true, "didn't crash")
+		}
+	}
 }
 
 // MARK: - Perform Block With Completion Block
 
-/**
-* Performs a code block and call a completion block when it's done.
-*
-* @param block A block object containing the code to execute. This block takes no parameters and has no return value.
-* @param completionBlock A block object containing the code to execute. This block takes no parameters and has no return value. It will be called after the main block has been executed.
-*/
-//- (void)performBlock:(nullable void (^)(void))block completion:(nullable void (^)(void))completionBlock;
-
 extension NSObjectTests {
 
+	func test_ShouldPerformBlockWithCompletion() {
+		// mainBlock: ON
+		// completionBlock: ON
+		let expectation = expectationWithDescription("execute block in background")
+		self.performBlock({ () -> Void in
+			XCTAssert(NSThread.isMainThread() == true)
+
+			}) { () -> Void in
+				XCTAssert(NSThread.isMainThread() == true)
+				expectation.fulfill()
+		}
+		waitForExpectationsWithTimeout(2) { error in
+			XCTAssert(true, "didn't crash")
+		}
+	}
+
+	func test_ShouldPerformBlockBeforeCompletionBlock() {
+		// mainBlock: ON
+		// completionBlock: ON
+		let expectation = expectationWithDescription("execute block in background")
+		var count = 0
+		self.performBlock({ () -> Void in
+			XCTAssert(NSThread.isMainThread() == true)
+			XCTAssert(count == 0)
+			count += 1
+
+			}) { () -> Void in
+				XCTAssert(NSThread.isMainThread() == true)
+				XCTAssert(count == 1)
+				expectation.fulfill()
+		}
+		waitForExpectationsWithTimeout(2) { error in
+			XCTAssert(true, "didn't crash")
+		}
+	}
+
+	func test_ShouldPerformNilBlockWithCompletion() {
+		// mainBlock: OFF
+		// completionBlock: ON
+		let expectation = expectationWithDescription("should not crash")
+		self.performBlock(nil) { () -> Void in
+			XCTAssert(NSThread.isMainThread() == true)
+			expectation.fulfill()
+		}
+		waitForExpectationsWithTimeout(2) { error in
+			XCTAssert(true, "didn't crash")
+		}
+	}
+
+	func test_ShouldPerformBlockWithNilCompletion() {
+		// mainBlock: ON
+		// completionBlock: OFF
+		let expectation = expectationWithDescription("should not crash")
+		self.performBlock({ () -> Void in
+			XCTAssert(NSThread.isMainThread() == true)
+			expectation.fulfill()
+			}, completion: nil)
+
+		waitForExpectationsWithTimeout(2) { error in
+			XCTAssert(true, "didn't crash")
+		}
+	}
+
+	func test_ShouldNotPerformNilBlockWithNilCompletion() {
+		// mainBlock: OFF
+		// completionBlock: OFF
+		let expectation = expectationWithDescription("should not crash")
+		self.performBlock(nil, completion: nil)
+		expectation.fulfill()
+		waitForExpectationsWithTimeout(2) { error in
+			XCTAssert(true, "didn't crash")
+		}
+	}
 }
