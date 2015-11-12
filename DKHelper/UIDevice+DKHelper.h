@@ -25,13 +25,13 @@
 #pragma mark - UIDevice+Model
 
 /**
- * Returns the device name as a NSString.
+ * Returns the current device name as a NSString.
  *
  * @discussion Example @"iPhone5,3" for @"iPhone 5c (GSM+CDMA)"
  *
- * @return The system name of the current device
+ * @return The system name of the current device.
  */
-+ (NSString * _Nonnull)platform;
++ (NSString * _Nonnull)currentPlatform;
 
 /**
  * Returns a NSString describing the current device.

@@ -13,7 +13,7 @@
 
 #pragma mark - UIDevice+Model
 
-+ (NSString * _Nonnull)platform{
++ (NSString * _Nonnull)currentPlatform{
     size_t size;
     sysctlbyname("hw.machine", NULL, &size, NULL, 0);
     char *machine = malloc(size);
@@ -24,7 +24,7 @@
 }
 
 + (NSString * _Nonnull)currentPlatformName {
-	NSString *platformString = [UIDevice platform];
+	NSString *platformString = [UIDevice currentPlatform];
 	return [self platformNameFromString:platformString];
 }
 
@@ -133,7 +133,7 @@
 									@"iPad2,7", // iPad Mini (GSM+CDMA)
                                     nil];
     
-    NSString *currentPlatform = [UIDevice platform];
+    NSString *currentPlatform = [UIDevice currentPlatform];
     for (NSString *platform in forbiddenPlatforms) {
         if ([platform isEqualToString:currentPlatform])
             return YES;
