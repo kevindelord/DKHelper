@@ -15,29 +15,59 @@ class NSObjectTests: XCTestCase {
 
 // MARK: - Perform Block After Delay
 
-/**
-* Performs a code block after a given delay.
-*
-* @param delay The amount of time (measured in seconds) to wait before beginning the animations. Specify a value of 0 to begin the animations immediately.
-* @param block A block object containing the code to execute. This block takes no parameters and has no return value.
-*/
-//- (void)performBlockAfterDelay:(NSTimeInterval)delay block:(nullable void (^)(void))block;
-
 extension NSObjectTests {
 
 	func test_ShouldPerformBlockAfterDelay() {
-
-		
+		let startDate = NSDate()
+		let expectation = expectationWithDescription("execute block after delay")
+		self.performBlockAfterDelay(2) {
+			XCTAssert(startDate.isOlderOrEqualThanSecondInterval(3) == false)
+			XCTAssert(startDate.isOlderOrEqualThanSecondInterval(2) == true)
+			XCTAssert(startDate.isOlderOrEqualThanSecondInterval(1) == true)
+			XCTAssert(startDate.isOlderOrEqualThanMinuteInterval(2) == false)
+			expectation.fulfill()
+		}
+		waitForExpectationsWithTimeout(5) { error in
+			XCTAssert(true, "didn't crash")
+		}
 	}
 
 	func test_ShouldNotPerformNilBlockAfterDelay() {
-
+		let expectation = expectationWithDescription("should not crash")
+		self.performBlockAfterDelay(2, block: nil)
+		expectation.fulfill()
+		waitForExpectationsWithTimeout(5) { error in
+			XCTAssert(true, "didn't crash")
+		}
 	}
 
 	func test_ShouldPerforlBlockAfterInvalidDelay() {
-
+		let startDate = NSDate()
+		let expectation = expectationWithDescription("execute block after delay")
+		self.performBlockAfterDelay(-2) {
+			XCTAssert(startDate.isOlderOrEqualThanSecondInterval(3) == false)
+			XCTAssert(startDate.isOlderOrEqualThanSecondInterval(2) == false)
+			XCTAssert(startDate.isOlderOrEqualThanSecondInterval(1) == false)
+			XCTAssert(startDate.isOlderOrEqualThanMinuteInterval(2) == false)
+			XCTAssert(startDate.stringValue() == NSDate().stringValue())
+			expectation.fulfill()
+		}
+		waitForExpectationsWithTimeout(5) { error in
+			XCTAssert(true, "didn't crash")
+		}
 	}
 
+	func test_ShouldPerforlBlockAfterZeroDelay() {
+		let startDate = NSDate()
+		let expectation = expectationWithDescription("execute block after delay")
+		self.performBlockAfterDelay(0) {
+			XCTAssert(startDate.stringValue() == NSDate().stringValue())
+			expectation.fulfill()
+		}
+		waitForExpectationsWithTimeout(5) { error in
+			XCTAssert(true, "didn't crash")
+		}
+	}
 }
 
 // MARK: - Perform Block In Background
