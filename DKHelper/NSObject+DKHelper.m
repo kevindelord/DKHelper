@@ -15,9 +15,9 @@
 - (void)performBlock:(nullable void (^)(void))block completion:(nullable void (^)(void))completionBlock {
 	if (block != nil) {
 		block();
-		if (completionBlock != nil) {
-			completionBlock();
-		}
+	}
+	if (completionBlock != nil) {
+		completionBlock();
 	}
 }
 

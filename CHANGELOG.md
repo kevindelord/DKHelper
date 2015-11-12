@@ -27,6 +27,7 @@
 - UIView: `matchParentConstraints` now returns an array of `NSLayoutConstraints`.
 - UIView: `loadFromNib` avoid crash when invalid nib name.
 - UIScreen: Fix `is55InchScreen` function.
+- NSObject: Function `performBlock:completion:` will now execute the completion block even if the main block is `nil`.
 
 ## 1.0.0
 
