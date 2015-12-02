@@ -11,27 +11,45 @@ import XCTest
 
 class NSOperationQueueTests: XCTestCase {
 
+	var operationQueue : NSOperationQueue?
+
 }
 
 // MARK: - add Operation With Block Timeout Timeout Block
 
 extension NSOperationQueueTests {
 
-	func test_addOperationWithBlock() {
+	override func setUp() {
+		self.operationQueue = NSOperationQueue()
+	}
 
-		let operationQueue = NSOperationQueue()
+	func test_objectCreation() {
 
-		operationQueue.addOperationWithBlock({ (operation) in
+		XCTAssertNil(operationQueue?.addOperationWithBlock(nil, timeout: 0.1, timeoutBlock: {}))
+		XCTAssertNil(operationQueue?.addOperationWithBlock({ (operation) in }, timeout: 0.1, timeoutBlock: nil))
+		XCTAssertNotNil(operationQueue?.addOperationWithBlock({ (operation) in }, timeout: 0.1, timeoutBlock: {}))
+
+	}
+
+	func test_addOperationWithBlockTimeoutTimeoutBlock() {
+
+		operationQueue?.addOperationWithBlock({ (operation) in
 			XCTAssertNotNil(operation)
 			}, timeout: 1.0, timeoutBlock: {
 				XCTFail()
 		})
 
-		operationQueue.addOperationWithBlock({ (operation) in
+		let failExpectation = self.expectationWithDescription("timeout")
+
+		operationQueue?.addOperationWithBlock({ (operation) in
 			NSThread.sleepForTimeInterval(2.0)
 			XCTFail()
-			}, timeout: 1.0, timeoutBlock: {
+			failExpectation.fulfill()
+			}, timeout: 0.1, timeoutBlock: {
 				XCTAssert(true)
+				failExpectation.fulfill()
 		})
+
+		self.waitForExpectationsWithTimeout(0.5, handler: nil)
 	}
 }
