@@ -176,9 +176,39 @@ extension NSStringTests {
 		XCTAssert(email.isNumeric == false)
 	}
 
+	func test_ShouldVerifyValidNegativeIntegerString() {
+		let email = "-4356789"
+		XCTAssert(email.isNumeric == true)
+	}
+
 	func test_ShouldVerifyValidIntegerString() {
 		let email = "4356789"
 		XCTAssert(email.isNumeric == true)
+	}
+
+	func test_ShouldVerifyValidNegativeDecimalString() {
+		let email = "-34.2476"
+		XCTAssert(email.isNumeric == true)
+	}
+
+	func test_ShouldNotVerifyValidNegativeDecimalStringWithNoAfterZeroValue() {
+		let email = "-34."
+		XCTAssert(email.isNumeric == false)
+	}
+
+	func test_ShouldVerifyValidNegativeZero() {
+		let email = "-0"
+		XCTAssert(email.isNumeric == true)
+	}
+
+	func test_ShouldVerifyValidZero() {
+		let email = "0"
+		XCTAssert(email.isNumeric == true)
+	}
+
+	func test_ShouldNotVerifyInvalidNegativeDecimalString() {
+		let email = "-34.24-76"
+		XCTAssert(email.isNumeric == false)
 	}
 
 	func test_ShouldVerifyValidDecimalString() {
@@ -223,6 +253,11 @@ extension NSStringTests {
 
 	func test_ShouldVerifyInvalidAlphaNumeric() {
 		let email = "44@maein.fr"
+		XCTAssert(email.isAlphaNumeric == false)
+	}
+
+	func test_ShouldVerifyInvalidAlphaNumericWithUnderscore() {
+		let email = "446_7"
 		XCTAssert(email.isAlphaNumeric == false)
 	}
 
