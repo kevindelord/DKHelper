@@ -9,6 +9,9 @@
 - Function `iOS7Delta` has been removed.
 - UIView: Getters and setters for receiver's frame are now attributes and no longer functions.
 - NSObject: Remove deprecated functions `performBlock:afterDelay:completion:` and `performBlock:afterDelay`.
+- UIDevice: Function `platform` has been renamed `currentPlatform`.
+- UIDevice: Function `platformString` has been renamed `currentPlatformName`.
+- UIDevice: Functions `isSlowDevice` and `isIPad` are now properties.
 
 ### Enhancements
 
@@ -29,6 +32,9 @@
 - UIView: `loadFromNib` avoid crash when invalid nib name.
 - UIScreen: Fix `is55InchScreen` function.
 - NSObject: Function `performBlock:completion:` will now execute the completion block even if the main block is `nil`.
+- UIDevice: Add function `platformNameFromString:`.
+- UIDevice: Add function `isSlowDeviceForPlatform:`.
+
 
 ## 1.0.0
 
