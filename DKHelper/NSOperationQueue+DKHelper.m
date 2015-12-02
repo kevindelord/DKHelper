@@ -12,6 +12,10 @@
 
 - (NSOperation * _Nullable)addOperationWithBlock:(nullable void (^)(NSOperation * _Nullable operation))block timeout:(NSTimeInterval)timeout timeoutBlock:(nullable void (^)(void))timeoutBlock {
 
+	if (block == nil || timeoutBlock == nil) {
+		return nil;
+	}
+
 	NSBlockOperation *blockOperation = [[NSBlockOperation alloc] init];
 	NSBlockOperation __weak *weakOperation = blockOperation;
 
