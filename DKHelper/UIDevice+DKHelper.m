@@ -7,6 +7,7 @@
 //
 
 #import "UIDevice+DKHelper.h"
+#import "NSString+DKHelper.h"
 #import <sys/sysctl.h>
 
 @implementation UIDevice (Model)
@@ -150,22 +151,37 @@
 #pragma mark - System Version
 
 + (BOOL)systemVersionEqualTo:(NSString * _Nonnull)version {
+	if (version.isNumeric == false) {
+		return false;
+	}
     return ([[[UIDevice currentDevice] systemVersion] compare:version options:NSNumericSearch] == NSOrderedSame);
 }
 
 + (BOOL)systemVersionGreaterThan:(NSString * _Nonnull)version {
+	if (version.isNumeric == false) {
+		return false;
+	}
     return ([[[UIDevice currentDevice] systemVersion] compare:version options:NSNumericSearch] == NSOrderedDescending);
 }
 
 + (BOOL)systemVersionGreaterThanOrEqualTo:(NSString * _Nonnull)version {
+	if (version.isNumeric == false) {
+		return false;
+	}
     return ([[[UIDevice currentDevice] systemVersion] compare:version options:NSNumericSearch] != NSOrderedAscending);
 }
 
 + (BOOL)systemVersionLessThan:(NSString * _Nonnull)version {
+	if (version.isNumeric == false) {
+		return false;
+	}
     return ([[[UIDevice currentDevice] systemVersion] compare:version options:NSNumericSearch] == NSOrderedAscending);
 }
 
 + (BOOL)systemVersionLessThanOrEqualTo:(NSString * _Nonnull)version {
+	if (version.isNumeric == false) {
+		return false;
+	}
     return ([[[UIDevice currentDevice] systemVersion] compare:version options:NSNumericSearch] != NSOrderedDescending);
 }
 

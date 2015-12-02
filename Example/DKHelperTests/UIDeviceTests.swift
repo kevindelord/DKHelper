@@ -116,14 +116,107 @@ extension UIDeviceTests {
 	}
 }
 
-// MARK: -
+// MARK: - System Version ==
 
 extension UIDeviceTests {
 
+	func test_SystemVersionIsEqualToCurrentVersion() {
+		let currentVersion = UIDevice.currentDevice().systemVersion
+		XCTAssert(UIDevice.systemVersionEqualTo(currentVersion) == true)
+	}
+
+	func test_SystemVersionIsNotEqualToWrongVersion() {
+		XCTAssert(UIDevice.systemVersionEqualTo("9.92") == false)
+	}
+
+	func test_SystemVersionIsNotEqualToFakeVersion() {
+		XCTAssert(UIDevice.systemVersionEqualTo("uyergfiyegr") == false)
+	}
 }
 
-// MARK: -
+// MARK: - System Version >
 
 extension UIDeviceTests {
 
+	func test_SystemVersionIsGreaterThanSmallVersion() {
+		XCTAssert(UIDevice.systemVersionGreaterThan("1.34") == true)
+	}
+
+	func test_SystemVersionIsNotGreaterThanCurrentVersion() {
+		let currentVersion = UIDevice.currentDevice().systemVersion
+		XCTAssert(UIDevice.systemVersionGreaterThan(currentVersion) == false)
+	}
+
+	func test_SystemVersionIsNotGreaterThanFakeVersion() {
+		XCTAssert(UIDevice.systemVersionGreaterThan("uyergfiyegr") == false)
+	}
+
+	func test_SystemVersionIsNotGreaterThanBigVersion() {
+		XCTAssert(UIDevice.systemVersionGreaterThan("100.3") == false)
+	}
+}
+
+// MARK: - System Version >=
+
+extension UIDeviceTests {
+
+	func test_SystemVersionIsGreaterThanOrEqualToSmallVersion() {
+		XCTAssert(UIDevice.systemVersionGreaterThanOrEqualTo("1.34") == true)
+	}
+
+	func test_SystemVersionIsGreaterThanOrEqualToCurrentVersion() {
+		let currentVersion = UIDevice.currentDevice().systemVersion
+		XCTAssert(UIDevice.systemVersionGreaterThanOrEqualTo(currentVersion) == true)
+	}
+
+	func test_SystemVersionIsNotGreaterThanOrEqualToCurrentVersion() {
+		XCTAssert(UIDevice.systemVersionGreaterThanOrEqualTo("uyergfiyegr") == false)
+	}
+
+	func test_SystemVersionIsNotGreaterOrEqualToThanBigVersion() {
+		XCTAssert(UIDevice.systemVersionGreaterThanOrEqualTo("100.3") == false)
+	}
+}
+
+
+// MARK: - System Version <
+
+extension UIDeviceTests {
+
+	func test_SystemVersionIsNotLessThanBigVersion() {
+		XCTAssert(UIDevice.systemVersionLessThan("100.34") == true)
+	}
+
+	func test_SystemVersionIsNotLessThanCurrentVersion() {
+		let currentVersion = UIDevice.currentDevice().systemVersion
+		XCTAssert(UIDevice.systemVersionLessThan(currentVersion) == false)
+	}
+
+	func test_SystemVersionIsNotLessThanFakeVersion() {
+		XCTAssert(UIDevice.systemVersionLessThan("uyergfiyegr") == false)
+	}
+
+	func test_SystemVersionIsNotLessThanSmallVersion() {
+		XCTAssert(UIDevice.systemVersionLessThan("1.3") == false)
+	}
+}
+
+extension UIDeviceTests {
+
+	func test_SystemVersionIsNotLessThanOrEqualToBigVersion() {
+		XCTAssert(UIDevice.systemVersionLessThanOrEqualTo("100.34") == true)
+	}
+
+	func test_SystemVersionIsLessThanOrEqualToCurrentVersion() {
+		let currentVersion = UIDevice.currentDevice().systemVersion
+		XCTAssert(UIDevice.systemVersionLessThanOrEqualTo(currentVersion) == true)
+	}
+
+	func test_SystemVersionIsNotLessThanOrEqualToFakeVersion() {
+		XCTAssert(UIDevice.systemVersionLessThanOrEqualTo("uyergfiyegr") == false)
+	}
+
+	func test_SystemVersionIsNotLessThanOrEqualToSmallVersion() {
+		XCTAssert(UIDevice.systemVersionLessThanOrEqualTo("1.3") == false)
+	}
 }
