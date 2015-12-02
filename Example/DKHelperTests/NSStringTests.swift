@@ -142,6 +142,41 @@ extension NSStringTests {
 	}
 }
 
+// MARK: - NSString+NSDate With Style
+
+extension NSStringTests {
+
+	func test_ShouldCreateAStringFromDateWithNoStyle() {
+		let date = (NSDate(fromDayString: "1991-01-19") ?? NSDate())
+		let string = NSString(fromDate: date, style: NSDateFormatterStyle.NoStyle)
+		XCTAssert(string == "")
+	}
+
+	func test_ShouldCreateAStringFromDateWithShortStyle() {
+		let date = (NSDate(fromDayString: "1991-01-19") ?? NSDate())
+		let string = NSString(fromDate: date, style: NSDateFormatterStyle.ShortStyle)
+		XCTAssertEqual(string, "19.01.91")
+	}
+
+	func test_ShouldCreateAStringFromDateWithMediumStyle() {
+		let date = (NSDate(fromDayString: "1991-01-19") ?? NSDate())
+		let string = NSString(fromDate: date, style: NSDateFormatterStyle.MediumStyle)
+		XCTAssertEqual(string, "19.01.1991")
+	}
+
+	func test_ShouldCreateAStringFromDateWithLongStyle() {
+		let date = (NSDate(fromDayString: "1991-01-19") ?? NSDate())
+		let string = NSString(fromDate: date, style: NSDateFormatterStyle.LongStyle)
+		XCTAssertEqual(string, "19. Januar 1991")
+	}
+
+	func test_ShouldCreateAStringFromDateWithFullStyle() {
+		let date = (NSDate(fromDayString: "1991-01-19") ?? NSDate())
+		let string = NSString(fromDate: date, style: NSDateFormatterStyle.FullStyle)
+		XCTAssert(string == "Samstag, 19. Januar 1991")
+	}
+}
+
 // MARK: - Regex::Email
 
 extension NSStringTests {
@@ -176,9 +211,39 @@ extension NSStringTests {
 		XCTAssert(email.isNumeric == false)
 	}
 
+	func test_ShouldVerifyValidNegativeIntegerString() {
+		let email = "-4356789"
+		XCTAssert(email.isNumeric == true)
+	}
+
 	func test_ShouldVerifyValidIntegerString() {
 		let email = "4356789"
 		XCTAssert(email.isNumeric == true)
+	}
+
+	func test_ShouldVerifyValidNegativeDecimalString() {
+		let email = "-34.2476"
+		XCTAssert(email.isNumeric == true)
+	}
+
+	func test_ShouldNotVerifyValidNegativeDecimalStringWithNoAfterZeroValue() {
+		let email = "-34."
+		XCTAssert(email.isNumeric == false)
+	}
+
+	func test_ShouldVerifyValidNegativeZero() {
+		let email = "-0"
+		XCTAssert(email.isNumeric == true)
+	}
+
+	func test_ShouldVerifyValidZero() {
+		let email = "0"
+		XCTAssert(email.isNumeric == true)
+	}
+
+	func test_ShouldNotVerifyInvalidNegativeDecimalString() {
+		let email = "-34.24-76"
+		XCTAssert(email.isNumeric == false)
 	}
 
 	func test_ShouldVerifyValidDecimalString() {
@@ -223,6 +288,11 @@ extension NSStringTests {
 
 	func test_ShouldVerifyInvalidAlphaNumeric() {
 		let email = "44@maein.fr"
+		XCTAssert(email.isAlphaNumeric == false)
+	}
+
+	func test_ShouldVerifyInvalidAlphaNumericWithUnderscore() {
+		let email = "446_7"
 		XCTAssert(email.isAlphaNumeric == false)
 	}
 

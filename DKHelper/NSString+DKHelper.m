@@ -111,13 +111,13 @@
 }
 
 - (BOOL)isNumeric {
-	NSString *regex = @"^[0-9]+[.]?[0-9]*$";
+	NSString *regex = @"^[-]*[0-9]+(.[0-9]+)?$";
 	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
 	return [predicate evaluateWithObject:self];
 }
 
 - (BOOL)isAlphaNumeric {
-    NSString *regex = @"[A-Z0-9a-z_]+";
+    NSString *regex = @"[A-Z0-9a-z]+";
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
     return [predicate evaluateWithObject:self];
 }
@@ -149,9 +149,6 @@
 		return nil;
 	}
 	NSArray *matches = [regex matchesInString:self options:0 range:searchedRange];
-	if (matches.count == 0) {
-		return nil;
-	}
 	return [self substringWithRange:[[matches objectAtIndex:matches.count -1] rangeAtIndex:0]];
 }
 
