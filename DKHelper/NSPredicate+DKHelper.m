@@ -26,10 +26,10 @@
 
 @end
 
-NSPredicate * _Nonnull OR_PREDICATE(NSPredicate * _Nonnull a, NSPredicate * _Nonnull b) {
-	return (a ? [a OR:b] : b);
+NSPredicate * _Nullable OR_PREDICATE(NSPredicate * _Nullable a, NSPredicate * _Nullable b) {
+	return (a != nil ? [a OR:b] : b);
 }
 
-NSPredicate * _Nonnull AND_PREDICATE(NSPredicate * _Nonnull a, NSPredicate * _Nonnull b) {
-	return (a ? [a AND:b] : b);
+NSPredicate * _Nullable AND_PREDICATE(NSPredicate * _Nullable a, NSPredicate * _Nullable b) {
+	return (a != nil ? [a AND:b] : b);
 }

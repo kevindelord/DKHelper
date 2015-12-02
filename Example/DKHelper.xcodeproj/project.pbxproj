@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		752363FA1C0F0BE300229994 /* NSPredicateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752363F81C0F0BE300229994 /* NSPredicateTests.swift */; };
 		752BB6D71BE8D4A6001B8A25 /* UIColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752BB6D61BE8D4A6001B8A25 /* UIColorTests.swift */; };
 		753298641BE8C7BF00FD8252 /* CGRect+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 753298411BE8C7BF00FD8252 /* CGRect+DKHelper.m */; };
 		753298651BE8C7BF00FD8252 /* CGRect+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 753298411BE8C7BF00FD8252 /* CGRect+DKHelper.m */; };
@@ -83,6 +84,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		752363F81C0F0BE300229994 /* NSPredicateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSPredicateTests.swift; sourceTree = "<group>"; };
 		752BB6D61BE8D4A6001B8A25 /* UIColorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorTests.swift; sourceTree = "<group>"; };
 		753298401BE8C7BF00FD8252 /* CGRect+DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CGRect+DKHelper.h"; path = "../DKHelper/CGRect+DKHelper.h"; sourceTree = "<group>"; };
 		753298411BE8C7BF00FD8252 /* CGRect+DKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CGRect+DKHelper.m"; path = "../DKHelper/CGRect+DKHelper.m"; sourceTree = "<group>"; };
@@ -275,8 +277,6 @@
 			isa = PBXGroup;
 			children = (
 				75B8D4941BF0EF54008930B1 /* Resources */,
-				756CC00B1BEA0304003FBDC8 /* CGRectTests.swift */,
-				75D011F41BEB95A1003C6E9A /* CGSizeTests.swift */,
 				75D172191BE8C62500AE890C /* DKHelperTests.swift */,
 				75D011F01BEB82B4003C6E9A /* DKRegexTests.swift */,
 				75D011EE1BEB80FE003C6E9A /* NSArrayTests.swift */,
@@ -284,14 +284,13 @@
 				75D011F21BEB945B003C6E9A /* NSNumberTests.swift */,
 				75D99BE51BF1F1E60078DA40 /* NSObjectTests.swift */,
 				8FF6C7621BFE310A00D06245 /* NSOperationQueueTests.swift */,
+				752363F81C0F0BE300229994 /* NSPredicateTests.swift */,
 				75C5B81A1BE8FD7F001B46BA /* NSStringTests.swift */,
 				752BB6D61BE8D4A6001B8A25 /* UIColorTests.swift */,
 				75D011F61BEBAFDB003C6E9A /* UIImageTests.swift */,
 				756CC00B1BEA0304003FBDC8 /* CGRectTests.swift */,
-				759A46801BEBD14400FFAB39 /* UIViewTests.swift */,
 				75D011F41BEB95A1003C6E9A /* CGSizeTests.swift */,
 				75E397221BF4E26900791AEB /* UIDeviceTests.swift */,
-				75B8D49B1BF0F59E008930B1 /* UIScreenTests.swift */,
 				75B8D49D1BF10541008930B1 /* UIImageViewTests.swift */,
 				75B8D49B1BF0F59E008930B1 /* UIScreenTests.swift */,
 				759A46801BEBD14400FFAB39 /* UIViewTests.swift */,
@@ -459,6 +458,7 @@
 				8FF6C7641BFE310A00D06245 /* NSOperationQueueTests.swift in Sources */,
 				756CC00C1BEA0304003FBDC8 /* CGRectTests.swift in Sources */,
 				753298871BE8C7BF00FD8252 /* UIView+DKHelper.m in Sources */,
+				752363FA1C0F0BE300229994 /* NSPredicateTests.swift in Sources */,
 				75D011F51BEB95A1003C6E9A /* CGSizeTests.swift in Sources */,
 				75D011F11BEB82B4003C6E9A /* DKRegexTests.swift in Sources */,
 				75D011F31BEB945B003C6E9A /* NSNumberTests.swift in Sources */,

@@ -149,7 +149,9 @@
 		return nil;
 	}
 	NSArray *matches = [regex matchesInString:self options:0 range:searchedRange];
-	return [self substringWithRange:[[matches objectAtIndex:matches.count -1] rangeAtIndex:0]];
+	NSTextCheckingResult *match = [matches objectAtIndex:matches.count - 1];
+	NSRange range = [match rangeAtIndex:0];
+	return [self substringWithRange:range];
 }
 
 @end

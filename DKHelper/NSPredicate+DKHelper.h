@@ -38,7 +38,7 @@
  * @param b A NSPredicate object. If nil will be ignored.
  * @return A new NSPredicate object created from the parameters one with a 'OR' statement. Could return nil if both parameters are.
  */
-NSPredicate * _Nonnull OR_PREDICATE(NSPredicate * _Nonnull a, NSPredicate * _Nonnull b);
+NSPredicate * _Nullable OR_PREDICATE(NSPredicate * _Nullable a, NSPredicate * _Nullable b);
 
 /**
  * Create and return a 'AND' predicate out of two given predicates.
@@ -47,4 +47,4 @@ NSPredicate * _Nonnull OR_PREDICATE(NSPredicate * _Nonnull a, NSPredicate * _Non
  * @param b A NSPredicate object. If nil will be ignored.
  * @return A new NSPredicate object created from the parameters one with a 'AND' statement. Could return nil if both parameters are.
  */
-NSPredicate * _Nonnull AND_PREDICATE(NSPredicate * _Nonnull a, NSPredicate * _Nonnull b);
+NSPredicate * _Nullable AND_PREDICATE(NSPredicate * _Nullable a, NSPredicate * _Nullable b);
