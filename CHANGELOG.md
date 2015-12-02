@@ -34,7 +34,7 @@
 - NSObject: Function `performBlock:completion:` will now execute the completion block even if the main block is `nil`.
 - UIDevice: Add function `platformNameFromString:`.
 - UIDevice: Add function `isSlowDeviceForPlatform:`.
-
+- NSPredicate: Swift support of the functions improved.
 
 ## 1.0.0
 
