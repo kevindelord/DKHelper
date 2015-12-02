@@ -183,6 +183,8 @@
 				7532984A1BE8C7BF00FD8252 /* NSBundle+DKHelper.h */,
 				7532984B1BE8C7BF00FD8252 /* NSBundle+DKHelper.m */,
 				7532984E1BE8C7BF00FD8252 /* NSNumber+DKHelper.h */,
+				7532985A1BE8C7BF00FD8252 /* UIDevice+DKHelper.h */,
+				7532985B1BE8C7BF00FD8252 /* UIDevice+DKHelper.m */,
 				7532984F1BE8C7BF00FD8252 /* NSNumber+DKHelper.m */,
 				753298501BE8C7BF00FD8252 /* NSObject+DKHelper.h */,
 				753298511BE8C7BF00FD8252 /* NSObject+DKHelper.m */,
@@ -225,8 +227,6 @@
 				753298531BE8C7BF00FD8252 /* NSOperationQueue+DKHelper.m */,
 				753298541BE8C7BF00FD8252 /* NSPredicate+DKHelper.h */,
 				753298551BE8C7BF00FD8252 /* NSPredicate+DKHelper.m */,
-				7532985A1BE8C7BF00FD8252 /* UIDevice+DKHelper.h */,
-				7532985B1BE8C7BF00FD8252 /* UIDevice+DKHelper.m */,
 			);
 			name = "Not Tested";
 			sourceTree = "<group>";
