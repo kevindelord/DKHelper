@@ -111,7 +111,7 @@
 }
 
 - (BOOL)isNumeric {
-	NSString *regex = @"[0-9]+";
+	NSString *regex = @"^[0-9]+[.]?[0-9]*$";
 	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
 	return [predicate evaluateWithObject:self];
 }

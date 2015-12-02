@@ -171,6 +171,26 @@ extension NSStringTests {
 
 extension NSStringTests {
 
+	func test_ShouldNotVerifyWrongIntegerString() {
+		let email = "4356789a"
+		XCTAssert(email.isNumeric == false)
+	}
+
+	func test_ShouldVerifyValidIntegerString() {
+		let email = "4356789"
+		XCTAssert(email.isNumeric == true)
+	}
+
+	func test_ShouldVerifyValidDecimalString() {
+		let email = "34.2476"
+		XCTAssert(email.isNumeric == true)
+	}
+
+	func test_ShouldNotValidWrongDecimalString() {
+		let email = "34.247.316"
+		XCTAssert(email.isNumeric == false)
+	}
+
 	func test_ShouldVerifyValidNumeric() {
 		let email = "4356789"
 		XCTAssert(email.isNumeric == true)
