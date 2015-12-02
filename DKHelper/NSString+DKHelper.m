@@ -149,9 +149,6 @@
 		return nil;
 	}
 	NSArray *matches = [regex matchesInString:self options:0 range:searchedRange];
-	if (matches.count == 0) {
-		return nil;
-	}
 	return [self substringWithRange:[[matches objectAtIndex:matches.count -1] rangeAtIndex:0]];
 }
 

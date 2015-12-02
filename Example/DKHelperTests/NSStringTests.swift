@@ -142,6 +142,41 @@ extension NSStringTests {
 	}
 }
 
+// MARK: - NSString+NSDate With Style
+
+extension NSStringTests {
+
+	func test_ShouldCreateAStringFromDateWithNoStyle() {
+		let date = (NSDate(fromDayString: "1991-01-19") ?? NSDate())
+		let string = NSString(fromDate: date, style: NSDateFormatterStyle.NoStyle)
+		XCTAssert(string == "")
+	}
+
+	func test_ShouldCreateAStringFromDateWithShortStyle() {
+		let date = (NSDate(fromDayString: "1991-01-19") ?? NSDate())
+		let string = NSString(fromDate: date, style: NSDateFormatterStyle.ShortStyle)
+		XCTAssertEqual(string, "19.01.91")
+	}
+
+	func test_ShouldCreateAStringFromDateWithMediumStyle() {
+		let date = (NSDate(fromDayString: "1991-01-19") ?? NSDate())
+		let string = NSString(fromDate: date, style: NSDateFormatterStyle.MediumStyle)
+		XCTAssertEqual(string, "19.01.1991")
+	}
+
+	func test_ShouldCreateAStringFromDateWithLongStyle() {
+		let date = (NSDate(fromDayString: "1991-01-19") ?? NSDate())
+		let string = NSString(fromDate: date, style: NSDateFormatterStyle.LongStyle)
+		XCTAssertEqual(string, "19. Januar 1991")
+	}
+
+	func test_ShouldCreateAStringFromDateWithFullStyle() {
+		let date = (NSDate(fromDayString: "1991-01-19") ?? NSDate())
+		let string = NSString(fromDate: date, style: NSDateFormatterStyle.FullStyle)
+		XCTAssert(string == "Samstag, 19. Januar 1991")
+	}
+}
+
 // MARK: - Regex::Email
 
 extension NSStringTests {
