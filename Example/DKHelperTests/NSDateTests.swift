@@ -191,8 +191,8 @@ extension NSDateTests {
 		XCTAssertNotNil(date)
 		XCTAssertNotNil(dayName)
 		XCTAssertNotNil(monthName)
-		XCTAssertEqual(dayName, "Freitag", "expect english localization")
-		XCTAssertEqual(monthName, "Dezember", "expect english localization")
+		XCTAssertEqual(dayName, "Freitag", "expect german localization")
+		XCTAssertEqual(monthName, "Dezember", "expect german localization")
 	}
 
 	func testShouldReturnValidAndCorrectDateDisplayStrings() {
@@ -204,8 +204,77 @@ extension NSDateTests {
 		XCTAssertNotNil(fullDisplayString)
 		XCTAssertNotNil(hourDisplayString)
 		XCTAssertNotNil(displayString)
-		XCTAssertEqual(fullDisplayString, "4. Dezember 2015 um 15:27")
-		XCTAssertEqual(hourDisplayString, "15:27")
-		XCTAssertEqual(displayString, "04.12.2015")
+		XCTAssertEqual(fullDisplayString, "4. Dezember 2015 um 15:27", "expect german localization")
+		XCTAssertEqual(hourDisplayString, "15:27", "expect german localization")
+		XCTAssertEqual(displayString, "04.12.2015", "expect german localization")
+	}
+}
+
+// MARK: - Date by adding Interval
+
+extension NSDateTests {
+
+	func testShouldReturnDateByAddingInterval() {
+		let date 			= NSDate(fromString: "04.12.2015 - 14:27:11", format: "dd.MM.yyyy - HH:mm:ss")
+		let possibleResult 	= NSDate(fromString: "04.12.2017 - 20:00:00", format: "dd.MM.yyyy - HH:mm:ss")
+		let result = date?.dateByAddingIntervalsWithYear(1, months: 12, days: 0, hours: 5, minutes: 32, seconds: 49)
+
+		XCTAssertNotNil(date)
+		XCTAssertNotNil(possibleResult)
+		XCTAssertNotNil(result)
+		XCTAssertEqual(possibleResult?.year(), result?.year())
+		XCTAssertEqual(possibleResult?.month(), result?.month())
+		XCTAssertEqual(possibleResult?.day(), result?.day())
+		XCTAssertEqual(possibleResult?.hour(), result?.hour())
+		XCTAssertEqual(possibleResult?.second(), result?.minute())
+		XCTAssertEqual(possibleResult?.second(), result?.second())
+	}
+
+	func testShouldReturnValidDateByAddingYear() {
+		if let date = today?.dateByAddingYearInterval(1) {
+			XCTAssertEqual(today?.laterDate(date), date)
+		} else {
+			XCTFail()
+		}
+	}
+
+	func testShouldReturnValidDateByAddingMonth() {
+		if let date = today?.dateByAddingMonthInterval(1) {
+			XCTAssertEqual(today?.laterDate(date), date)
+		} else {
+			XCTFail()
+		}
+	}
+
+	func testShouldReturnValidDateByAddingDay() {
+		if let date = today?.dateByAddingDayInterval(1) {
+			XCTAssertEqual(today?.laterDate(date), date)
+		} else {
+			XCTFail()
+		}
+	}
+
+	func testShouldReturnValidDateByAddingHour() {
+		if let date = today?.dateByAddingHourInterval(1) {
+			XCTAssertEqual(today?.laterDate(date), date)
+		} else {
+			XCTFail()
+		}
+	}
+
+	func testShouldReturnValidDateByAddingMinute() {
+		if let date = today?.dateByAddingMinuteInterval(1) {
+			XCTAssertEqual(today?.laterDate(date), date)
+		} else {
+			XCTFail()
+		}
+	}
+
+	func testShouldReturnValidDateByAddingSecond() {
+		if let date = today?.dateByAddingSecondInterval(1) {
+			XCTAssertEqual(today?.laterDate(date), date)
+		} else {
+			XCTFail()
+		}
 	}
 }
