@@ -278,3 +278,15 @@ extension NSDateTests {
 		}
 	}
 }
+
+// MARK: - ISO Format
+
+extension NSDateTests {
+
+	func testShouldReturnValidAndCorrectISOStringFromDate() {
+		let date = NSDate(fromString: "04.12.2015 - 14:27:11", format: "dd.MM.yyyy - HH:mm:ss")
+		let isoString = date?.ISO8601StringValue()
+		XCTAssertNotNil(isoString)
+		XCTAssertEqual(isoString, "2015-12-04T14:27:11Z")
+	}
+}
