@@ -97,7 +97,7 @@ extension NSDateTests {
 extension NSDateTests {
 
 	func testShouldReturnValidAndCorrectDate() {
-		let date = NSDate(fromString: "Dec 24, 1992", style: .MediumStyle)
+		let date = NSDate(fromString: "24.12.1992", style: .MediumStyle)
 		XCTAssertNotNil(date)
 		XCTAssertEqual(date?.year(), 1992)
 		XCTAssertEqual(date?.day(), 24)
@@ -143,7 +143,7 @@ extension NSDateTests {
 	}
 }
 
-// MARK: - getting Date Components
+// MARK: - Getting Date Components
 
 extension NSDateTests {
 
@@ -177,5 +177,35 @@ extension NSDateTests {
 		XCTAssertEqual(date?.hour(), 1, "expect Time Zone GMT+1")
 		XCTAssertEqual(date?.minute(), 0)
 		XCTAssertEqual(date?.second(), 0)
+	}
+}
+
+// MARK: - Date dispaly Strings
+
+extension NSDateTests {
+
+	func testShouldReturnValidAndCorrectDateComponentNaming() {
+		let date = NSDate(fromString: "04.12.2015", format: "dd.MM.yyyy")
+		let dayName = date?.dayName()
+		let monthName = date?.monthName()
+		XCTAssertNotNil(date)
+		XCTAssertNotNil(dayName)
+		XCTAssertNotNil(monthName)
+		XCTAssertEqual(dayName, "Freitag", "expect english localization")
+		XCTAssertEqual(monthName, "Dezember", "expect english localization")
+	}
+
+	func testShouldReturnValidAndCorrectDateDisplayStrings() {
+		let date = NSDate(fromString: "04.12.2015 - 14:27:11", format: "dd.MM.yyyy - HH:mm:ss")
+		let fullDisplayString = date?.fullDisplayTime()
+		let hourDisplayString = date?.hourDisplayTime()
+		let displayString = date?.displayableString()
+		XCTAssertNotNil(date)
+		XCTAssertNotNil(fullDisplayString)
+		XCTAssertNotNil(hourDisplayString)
+		XCTAssertNotNil(displayString)
+		XCTAssertEqual(fullDisplayString, "4. Dezember 2015 um 15:27")
+		XCTAssertEqual(hourDisplayString, "15:27")
+		XCTAssertEqual(displayString, "04.12.2015")
 	}
 }
