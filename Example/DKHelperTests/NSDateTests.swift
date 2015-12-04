@@ -142,3 +142,40 @@ extension NSDateTests {
 		}
 	}
 }
+
+// MARK: - getting Date Components
+
+extension NSDateTests {
+
+	func testShouldReturnDatesComponents() {
+		let date = NSDate(timeIntervalSince1970: 0)
+		XCTAssertEqual(date.year(), 1970)
+		XCTAssertEqual(date.day(), 1)
+		XCTAssertEqual(date.month(), 1)
+		XCTAssertEqual(date.hour(), 1, "expect Time Zone GMT+1")
+		XCTAssertEqual(date.minute(), 0)
+		XCTAssertEqual(date.second(), 0)
+	}
+
+	func testShouldReturnTodaysMidnightDate() {
+		let date = today?.midnightDate()
+		XCTAssertNotNil(date)
+		XCTAssertEqual(date?.year(), today?.year())
+		XCTAssertEqual(date?.day(), today?.day())
+		XCTAssertEqual(date?.month(), today?.month())
+		XCTAssertEqual(date?.hour(), 1, "expect Time Zone GMT+1")
+		XCTAssertEqual(date?.minute(), 0)
+		XCTAssertEqual(date?.second(), 0)
+	}
+
+	func testShouldReturnTodaysDayDate() {
+		let date = NSDate.currentDayDate()
+		XCTAssertNotNil(date)
+		XCTAssertEqual(date?.year(), today?.year())
+		XCTAssertEqual(date?.day(), today?.day())
+		XCTAssertEqual(date?.month(), today?.month())
+		XCTAssertEqual(date?.hour(), 1, "expect Time Zone GMT+1")
+		XCTAssertEqual(date?.minute(), 0)
+		XCTAssertEqual(date?.second(), 0)
+	}
+}
