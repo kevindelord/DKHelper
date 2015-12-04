@@ -18,7 +18,7 @@ class DKRegexTests: XCTestCase {
 extension DKRegexTests {
 
 	func test_ShouldReturnFileExtensionRegex() {
-		let regex = DKRegex.fileExtension();
+		let regex = DKRegex.fileExtension()
 		XCTAssertNotNil(regex)
 		XCTAssert(regex.characters.count > 0)
 	}
