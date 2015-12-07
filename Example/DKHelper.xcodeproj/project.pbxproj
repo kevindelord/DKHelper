@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		281327011C1197EC00614EDB /* NSDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281327001C1197EC00614EDB /* NSDateTests.swift */; };
 		752363FA1C0F0BE300229994 /* NSPredicateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752363F81C0F0BE300229994 /* NSPredicateTests.swift */; };
 		752BB6D71BE8D4A6001B8A25 /* UIColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752BB6D61BE8D4A6001B8A25 /* UIColorTests.swift */; };
 		753298641BE8C7BF00FD8252 /* CGRect+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 753298411BE8C7BF00FD8252 /* CGRect+DKHelper.m */; };
@@ -84,6 +85,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		281327001C1197EC00614EDB /* NSDateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateTests.swift; sourceTree = "<group>"; };
 		752363F81C0F0BE300229994 /* NSPredicateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSPredicateTests.swift; sourceTree = "<group>"; };
 		752BB6D61BE8D4A6001B8A25 /* UIColorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorTests.swift; sourceTree = "<group>"; };
 		753298401BE8C7BF00FD8252 /* CGRect+DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CGRect+DKHelper.h"; path = "../DKHelper/CGRect+DKHelper.h"; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 				75B8D49D1BF10541008930B1 /* UIImageViewTests.swift */,
 				75B8D49B1BF0F59E008930B1 /* UIScreenTests.swift */,
 				759A46801BEBD14400FFAB39 /* UIViewTests.swift */,
+				281327001C1197EC00614EDB /* NSDateTests.swift */,
 				75D1721B1BE8C62500AE890C /* Info.plist */,
 			);
 			path = DKHelperTests;
@@ -464,6 +467,7 @@
 				75D011F31BEB945B003C6E9A /* NSNumberTests.swift in Sources */,
 				753298711BE8C7BF00FD8252 /* NSDate+DKHelper.m in Sources */,
 				7532986B1BE8C7BF00FD8252 /* DKRegex.m in Sources */,
+				281327011C1197EC00614EDB /* NSDateTests.swift in Sources */,
 				75B8D49C1BF0F59E008930B1 /* UIScreenTests.swift in Sources */,
 				752BB6D71BE8D4A6001B8A25 /* UIColorTests.swift in Sources */,
 				753298751BE8C7BF00FD8252 /* NSObject+DKHelper.m in Sources */,

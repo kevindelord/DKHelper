@@ -170,7 +170,7 @@
 	NSDateComponents* dateComponents = [gregorian components:unitFlags fromDate:[NSDate date]];
 	dateComponents.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
 	[dateComponents setMinute:0];
-	[dateComponents setSecond:[[NSTimeZone defaultTimeZone] secondsFromGMT]];
+	[dateComponents setSecond:0];
 	[dateComponents setHour:0];
 	return [gregorian dateFromComponents:dateComponents];
 }
