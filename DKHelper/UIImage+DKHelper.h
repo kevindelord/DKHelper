@@ -20,20 +20,24 @@
  * @param size The desired image size.
  * @return A new UIImage object.
  */
-+ (UIImage *)scaleImage:(UIImage *)image size:(CGSize)size;
++ (UIImage * _Null_unspecified)scaleImage:(UIImage * _Nonnull)image size:(CGSize)size;
 
 /**
  * Creates a new UIImage object that fit given size.
  *
+ * @discussion The ratio of the receiver is kept.
+ *
  * @return A new UIImage object.
  */
-- (UIImage *)resizedImageToSize:(CGSize)newSize;
+- (UIImage * _Null_unspecified)resizedImageToSize:(CGSize)newSize;
 
 /**
  * Creates a new UIImage object that fit the current screen size.
  *
+ * @discussion The ratio of the receiver is kept.
+ *
  * @return A new UIImage object.
  */
-- (UIImage *)resizedImageToScreenSize;
+- (UIImage * _Null_unspecified)resizedImageToScreenSize;
 
 @end

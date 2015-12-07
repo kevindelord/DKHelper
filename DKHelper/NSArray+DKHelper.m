@@ -10,15 +10,15 @@
 
 @implementation NSArray (DKHelper)
 
-+ (NSArray *)imageFileExtensions {
++ (instancetype _Nonnull)imageFileExtensions {
     return @[@".tif", @".tiff", @".gif", @".jpeg", @".jpg", @".png", @".pjpeg"];
 }
 
-+ (NSArray *)audioFileExtensions {
++ (instancetype _Nonnull)audioFileExtensions {
     return @[@".mp3", @".mp2", @".wma", @".aac", @".m4a", @".mp4", @".m4p"];
 }
 
-+ (NSArray *)videoFileExtensions {
++ (instancetype _Nonnull)videoFileExtensions {
     return @[@".avi", @".flv", @".wmv", @".mp4", @".mov", @".mpg", @".divx", @".asf"];
 }
 

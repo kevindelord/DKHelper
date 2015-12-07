@@ -13,16 +13,20 @@
 
 #pragma mark - UIView+Load
 
-+ (UIView *)loadFromNib:(NSString *)name {
-    NSArray *nibs = [NSBundle.mainBundle loadNibNamed:name owner:self options:nil];
-    return nibs.firstObject;
++ (instancetype _Nullable)loadFromNib:(NSString * _Nonnull)name {
+	if ([NSBundle.mainBundle URLForResource:name withExtension:@".xib"] != nil ||
+		[NSBundle.mainBundle URLForResource:name withExtension:@".nib"] != nil) {
+		NSArray *nibs = [NSBundle.mainBundle loadNibNamed:name owner:nil options:nil];
+		return nibs.firstObject;
+	}
+	return nil;
 }
 
 #pragma mark - UIView+Constraints
 /**
  * creates constraints to adjust the child to match the parents dimensions and position
  */
-- (NSArray *)matchParentConstraints {
+- (NSArray<NSLayoutConstraint *> * _Nonnull)matchParentConstraints {
     if (self.superview != nil) {
         [self setTranslatesAutoresizingMaskIntoConstraints:false];
 
@@ -40,7 +44,7 @@
 
 #pragma mark - UIView+Layer
 
-+ (UIView *)verticalGradientLayer:(CGRect)rect topColor:(UIColor *)topColor bottomColor:(UIColor *)bottomColor {
++ (UIView * _Nonnull)verticalGradientLayer:(CGRect)rect topColor:(UIColor * _Nonnull)topColor bottomColor:(UIColor * _Nonnull)bottomColor {
 
     UIView *gradientLayerView = [[UIView alloc] initWithFrame:rect];
     CAGradientLayer *gradient = [CAGradientLayer new];

@@ -9,6 +9,8 @@
 #ifndef DKHelper_NSNumber_h__
 #define DKHelper_NSNumber_h__
 
+#import <Foundation/Foundation.h>
+
 /**
  * A categorized class of NSNumber to add a bunch of helping methods.
  */
@@ -21,7 +23,7 @@
  *
  * @return A NSString object representing the currency value of the receiver.
  */
-- (NSString *)currencyStringValue;
+- (NSString * _Nullable)currencyStringValue;
 
 @end
 

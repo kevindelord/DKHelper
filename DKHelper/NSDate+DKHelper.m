@@ -13,7 +13,7 @@
 
 #pragma mark - Comparison
 
-- (BOOL)isOlderOrEqualThan:(NSDateComponents *)dateComponent {
+- (BOOL)isOlderOrEqualThan:(NSDateComponents * _Nonnull)dateComponent {
 	// Check if the selected date is older or equal to the given parameter.
 	NSDate *veryOldDate = [[NSCalendar currentCalendar] dateByAddingComponents:dateComponent toDate:[NSDate date] options:0];
 	NSComparisonResult result = [self compare:veryOldDate];
@@ -57,7 +57,7 @@
 
 #pragma mark - NSDate+NSString
 
-+ (NSDate *)dateFromString:(NSString *)string style:(NSDateFormatterStyle)dateStyle {
++ (instancetype _Nullable)dateFromString:(NSString * _Nonnull)string style:(NSDateFormatterStyle)dateStyle {
     NSDateFormatter *df = [NSDateFormatter new];
     df.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
     df.dateStyle = dateStyle;
@@ -65,74 +65,52 @@
     return [df dateFromString:string];
 }
 
-+ (NSDate *)dateFromString:(NSString *)string format:(NSString *)format {
++ (instancetype _Nullable)dateFromString:(NSString * _Nonnull)string format:(NSString * _Nonnull)format {
     NSDateFormatter *df = [NSDateFormatter new];
     df.dateFormat = format;
     df.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
     return [df dateFromString:string];
 }
 
-+ (NSDate *)dateFromISOString:(NSString *)string {
++ (instancetype _Nullable)dateFromISOString:(NSString * _Nonnull)string {
     return [NSDate dateFromString:string format:NSDate.ISO8601StringFormat];
 }
 
-+ (NSDate *)dateFromDayString:(NSString *)string {
++ (instancetype _Nullable)dateFromDayString:(NSString * _Nonnull)string {
     return [NSDate dateFromString:[NSString stringWithFormat:@"%@T00:00:00Z", string] format:NSDate.ISO8601StringFormat];
 }
 
-+ (NSDate *)currentDayDate {
-    NSCalendar* gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-    unsigned int unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitTimeZone;
-    NSDateComponents* dateComponents = [gregorian components:unitFlags fromDate:[NSDate date]];
-    dateComponents.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
-    [dateComponents setMinute:0];
-    [dateComponents setSecond:[[NSTimeZone defaultTimeZone] secondsFromGMT]];
-    [dateComponents setHour:0];
-    return [gregorian dateFromComponents:dateComponents];
-}
-
-- (NSDate *)midnightDate {
-    NSCalendar* gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-    unsigned int unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitTimeZone;
-    NSDateComponents* dateComponents = [gregorian components:unitFlags fromDate:self];
-    dateComponents.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
-    [dateComponents setMinute:0];
-	[dateComponents setSecond:0];
-    [dateComponents setHour:0];
-    return [gregorian dateFromComponents:dateComponents];
-}
-
-- (NSString *)stringValue {
+- (NSString * _Nonnull)stringValue {
     return [NSString stringWithFormat:@"%@", self];
 }
 
-- (NSString *)ISO8601StringValue {
+- (NSString * _Nonnull)ISO8601StringValue {
     return [NSString stringFromDate:self format:NSDate.ISO8601StringFormat];
 }
 
-- (NSString *)monthName {
+#pragma mark - Display methods
+
+- (NSString * _Nonnull)monthName {
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     NSDateComponents *comps = [gregorian components:NSCalendarUnitMonth fromDate:self];
     return [[[NSDateFormatter new] standaloneMonthSymbols] objectAtIndex:([comps month] - 1)];
 }
 
-- (NSString *)dayName {
+- (NSString * _Nonnull)dayName {
     NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     NSDateComponents *comps = [gregorian components:NSCalendarUnitWeekday fromDate:self];
     return [[[NSDateFormatter new] standaloneWeekdaySymbols] objectAtIndex:([comps weekday] - 1)];
 }
 
-#pragma mark - Display methods
-
-- (NSString *)fullDisplayTime {
+- (NSString * _Nonnull)fullDisplayTime {
 	return [NSDateFormatter localizedStringFromDate:self dateStyle:NSDateFormatterLongStyle timeStyle:NSDateFormatterShortStyle];
 }
 
-- (NSString *)hourDisplayTime {
+- (NSString * _Nonnull)hourDisplayTime {
 	return [NSDateFormatter localizedStringFromDate:self dateStyle:NSDateFormatterNoStyle timeStyle:NSDateFormatterShortStyle];
 }
 
-- (NSString *)displayableString {
+- (NSString * _Nonnull)displayableString {
     return [NSDateFormatter localizedStringFromDate:self dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterNoStyle];
 }
 
@@ -186,9 +164,31 @@
     return [[calendar components:NSCalendarUnitSecond fromDate:self] second];
 }
 
++ (instancetype _Nullable)currentDayDate {
+	NSCalendar* gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+	unsigned int unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitTimeZone;
+	NSDateComponents* dateComponents = [gregorian components:unitFlags fromDate:[NSDate date]];
+	dateComponents.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
+	[dateComponents setMinute:0];
+	[dateComponents setSecond:0];
+	[dateComponents setHour:0];
+	return [gregorian dateFromComponents:dateComponents];
+}
+
+- (instancetype _Nullable)midnightDate {
+	NSCalendar* gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+	unsigned int unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitTimeZone;
+	NSDateComponents* dateComponents = [gregorian components:unitFlags fromDate:self];
+	dateComponents.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
+	[dateComponents setMinute:0];
+	[dateComponents setSecond:0];
+	[dateComponents setHour:0];
+	return [gregorian dateFromComponents:dateComponents];
+}
+
 #pragma mark - Adding Interval
 
-- (NSDate *)dateByAddingIntervalsWithYear:(NSInteger)years months:(NSInteger)months days:(NSInteger)days hours:(NSInteger)hours minutes:(NSInteger)minutes seconds:(NSInteger)seconds {
+- (instancetype _Nullable)dateByAddingIntervalsWithYear:(NSInteger)years months:(NSInteger)months days:(NSInteger)days hours:(NSInteger)hours minutes:(NSInteger)minutes seconds:(NSInteger)seconds {
     NSDateComponents *dateComponents = [NSDateComponents new];
     [dateComponents setYear:years];
     [dateComponents setMonth:months];
@@ -199,39 +199,39 @@
     return [[NSCalendar currentCalendar] dateByAddingComponents:dateComponents toDate:self options:0];
 }
 
-- (NSDate *)dateByAddingYearInterval:(NSInteger)yearInterval {
+- (instancetype _Nullable)dateByAddingYearInterval:(NSInteger)yearInterval {
     return [self dateByAddingIntervalsWithYear:yearInterval months:0 days:0 hours:0 minutes:0 seconds:0];
 }
 
-- (NSDate *)dateByAddingMonthInterval:(NSInteger)monthInterval {
+- (instancetype _Nullable)dateByAddingMonthInterval:(NSInteger)monthInterval {
     return [self dateByAddingIntervalsWithYear:0 months:monthInterval days:0 hours:0 minutes:0 seconds:0];
 }
 
-- (NSDate *)dateByAddingDayInterval:(NSInteger)dayInterval {
+- (instancetype _Nullable)dateByAddingDayInterval:(NSInteger)dayInterval {
     return [self dateByAddingIntervalsWithYear:0 months:0 days:dayInterval hours:0 minutes:0 seconds:0];
 }
 
-- (NSDate *)dateByAddingHourInterval:(NSInteger)hourInterval {
+- (instancetype _Nullable)dateByAddingHourInterval:(NSInteger)hourInterval {
     return [self dateByAddingIntervalsWithYear:0 months:0 days:0 hours:hourInterval minutes:0 seconds:0];
 }
 
-- (NSDate *)dateByAddingMinuteInterval:(NSInteger)minuteInterval {
+- (instancetype _Nullable)dateByAddingMinuteInterval:(NSInteger)minuteInterval {
     return [self dateByAddingIntervalsWithYear:0 months:0 days:0 hours:0 minutes:minuteInterval seconds:0];
 }
 
-- (NSDate *)dateByAddingSecondInterval:(NSInteger)secondInterval {
+- (instancetype _Nullable)dateByAddingSecondInterval:(NSInteger)secondInterval {
     return [self dateByAddingIntervalsWithYear:0 months:0 days:0 hours:0 minutes:0 seconds:secondInterval];
 }
 
 #pragma mark - ISO formats
 
-+ (NSString *)ISO8601StringFormat {
++ (NSString * _Nonnull)ISO8601StringFormat {
     return @"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'";
 }
 
 #pragma mark - Xcode compatibility
 
-+ (NSString *)gregorianCalendarIdentifier {
++ (NSString * _Nonnull)gregorianCalendarIdentifier {
     return NSCalendarIdentifierGregorian;
 }
 

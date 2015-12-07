@@ -24,7 +24,7 @@
  * @param name The name as a NSString of the nib file in the main bundle.
  * @return If exist the loaded view; otherwise nil.
  */
-+ (UIView *)loadFromNib:(NSString *)name;
++ (instancetype _Nullable)loadFromNib:(NSString * _Nonnull)name;
 
 #pragma mark - UIView+Constraints
 
@@ -33,7 +33,7 @@
  *
  * @return The added layout contraints. Empty array if the receiver does not have a superview.
  */
-- (NSArray *)matchParentConstraints;
+- (NSArray<NSLayoutConstraint *> * _Nonnull)matchParentConstraints;
 
 #pragma mark - UIView+Layer
 
@@ -45,7 +45,7 @@
  * @param bottomColor The bottom color of the gradient.
  * @return A new UIView object with a gradient color.
  */
-+ (UIView *)verticalGradientLayer:(CGRect)rect topColor:(UIColor *)topColor bottomColor:(UIColor *)bottomColor;
++ (UIView * _Nonnull)verticalGradientLayer:(CGRect)rect topColor:(UIColor * _Nonnull)topColor bottomColor:(UIColor * _Nonnull)bottomColor;
 
 /**
  * Rounds the specified corner(s) of the receiver with a given radius.
@@ -66,81 +66,37 @@
  */
 - (void)roundCorner:(UIRectCorner)corner radius:(CGFloat)cornerRadius maskToBounds:(BOOL)maskToBounds;
 
-#pragma mark - CGRect Methods (Setter)
+#pragma mark - CGRect Methods
 
 /**
- * Set the origin of the receiver's frame.
- *
- * @param origin The new CGPoint value.
+ * Origin of the receiver's frame in CGPoint.
  */
-- (void)setFrameOrigin:(CGPoint)origin;
+@property (nonatomic) CGPoint frameOrigin;
 
 /**
- * Set the size of the receiver's frame.
- *
- * @param size The new CGSize value.
+ * Size of the receiver's frame in CGSize.
  */
-- (void)setFrameSize:(CGSize)size;
-
-/**
- * Set the size.width of the receiver's frame.
- *
- * @param width The new CGFloat value.
- */
-- (void)setFrameWidth:(CGFloat)width;
-
-/**
- * Set the height of the receiver's frame.
- *
- * @param height The new CGFloat value.
- */
-- (void)setFrameHeight:(CGFloat)height;
-
-/**
- * Set the origin.x of the receiver's frame.
- *
- * @param x The new CGFloat value.
- */
-- (void)setFrameX:(CGFloat)x;
-
-/**
- * Set the origin.y of the receiver's frame.
- *
- * @param y The new CGFloat value.
- */
-- (void)setFrameY:(CGFloat)y;
-
-#pragma mark - CGRect Methods (Getter)
-
-/**
- * Returns the origin value of the receiver's frame.
- */
-- (CGPoint)frameOrigin;
-
-/**
- * Returns the size value of the receiver's frame.
- */
-- (CGSize)frameSize;
+@property (nonatomic) CGSize frameSize;
 
 /**
  * Returns the size.width of the receiver's frame.
  */
-- (CGFloat)frameWidth;
+@property (nonatomic) CGFloat frameWidth;
 
 /**
- * Returns the height of the receiver's frame.
+ * Height of the receiver's frame in CGFloat.
  */
-- (CGFloat)frameHeight;
+@property (nonatomic) CGFloat frameHeight;
 
 /**
- * Returns the origin.x of the receiver's frame.
+ * X origin of the receiver's frame in CGFloat.
  */
-- (CGFloat)frameX;
+@property (nonatomic) CGFloat frameX;
 
 /**
- * Set the origin.y of the receiver's frame.
+ * Y origin of the receiver's frame in CGFloat.
  */
-- (CGFloat)frameY;
+@property (nonatomic) CGFloat frameY;
 
 @end
 

@@ -22,7 +22,7 @@
  * @param imageName The name of the file. If this is the first time the image is being loaded, the method looks for an image with the specified name in the application’s main bundle.
  * @return The initialiazed receiver.
  */
-- (instancetype)initWithImageNamed:(NSString *)imageName;
+- (instancetype _Nonnull)initWithImageNamed:(NSString * _Nonnull)imageName;
 
 /**
  * Initializes the receiver with a frame and an image.
@@ -31,7 +31,7 @@
  * @param image An image containing the source data.
  * @return The initialiazed receiver.
  */
-- (instancetype)initWithFrame:(CGRect)frame image:(UIImage *)image;
+- (instancetype _Nonnull)initWithFrame:(CGRect)frame image:(UIImage * _Nonnull)image;
 
 /**
  * Initializes the receiver with a frame and an image name.
@@ -40,7 +40,7 @@
  * @param imageName The name of the file. If this is the first time the image is being loaded, the method looks for an image with the specified name in the application’s main bundle.
  * @return The initialiazed receiver.
  */
-- (instancetype)initWithFrame:(CGRect)frame imageNamed:(NSString *)imageName;
+- (instancetype _Nonnull)initWithFrame:(CGRect)frame imageNamed:(NSString * _Nonnull)imageName;
 
 @end
 

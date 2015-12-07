@@ -1,0 +1,8 @@
+/* 
+  Localizable.strings
+  DKHelper
+
+  Created by kevin delord on 05/11/15.
+  Copyright © 2015 Kevin Delord. All rights reserved.
+*/
+"WELCOME_TEXT" = "Awesome Text For Unit Testing";

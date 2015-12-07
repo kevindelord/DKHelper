@@ -24,7 +24,7 @@
  * @param dateComponent The NSDateComponents object used to update the current date time.
  * @return TRUE if the receiver is older or equal than the given parameter; FALSE otherwise.
  */
-- (BOOL)isOlderOrEqualThan:(NSDateComponents *)dateComponent;
+- (BOOL)isOlderOrEqualThan:(NSDateComponents * _Nonnull)dateComponent;
 
 /**
  * Check whether the date receiver is older or equal than the given parameters.
@@ -98,7 +98,7 @@
  * @param dateSytle The NSDateFormatterStyle object representing the style of the date.
  * @return A NSDate created from a given string. NULL if the date isn't valid.
  */
-+ (NSDate *)dateFromString:(NSString *)string style:(NSDateFormatterStyle)dateStyle;
++ (instancetype _Nullable)dateFromString:(NSString * _Nonnull)string style:(NSDateFormatterStyle)dateStyle;
 
 /**
  * Returns a new NSDate object created from a string with a specified format.
@@ -110,7 +110,7 @@
  * @param format The NSString object representing the format in which the string is formatted.
  * @return A NSDate created from a given string. NULL if the date isn't valid.
  */
-+ (NSDate *)dateFromString:(NSString *)string format:(NSString *)format;
++ (instancetype _Nullable)dateFromString:(NSString * _Nonnull)string format:(NSString * _Nonnull)format;
 
 /**
  * Returns a new NSDate object created from a string.
@@ -120,7 +120,7 @@
  * @param string The NSString object representing the date.
  * @return A NSDate created from a given string. NULL if the date isn't valid.
  */
-+ (NSDate *)dateFromISOString:(NSString *)string;
++ (instancetype _Nullable)dateFromISOString:(NSString * _Nonnull)string;
 
 /**
  * Returns a new NSDate object created from a string with a default format.
@@ -128,17 +128,21 @@
  * @param string The NSString object representing the date. The string must be formated like @"yyyy-MM-dd"
  * @return A NSDate created with the ISO8601 format. NULL if the date isn't valid.
  */
-+ (NSDate *)dateFromDayString:(NSString *)string;
++ (instancetype _Nullable)dateFromDayString:(NSString * _Nonnull)string;
 
 /**
- * Returns a new NSDate object containing the current date of the day with a IOS8601 default format.
+ * Returns a new NSString object created from the receiver's date.
  *
- * @discussion The number of hours, minutes, seconds and the GMT timezone is set to 0.
- * @discussion The time zone GMT+0 is used.
- *
- * @return A NSDate containing the current date of the day. The date format is the ISO8601 one.
+ * @return A NSString containing the date as a string of the receiver.
  */
-+ (NSDate *)currentDayDate;
+- (NSString * _Nonnull)stringValue;
+
+/**
+ * Returns a new NSString object created from the receiver's date with the ISO8601 format.
+ *
+ * @return A ISO8601 formatted NSString containing the receiver's date.
+ */
+- (NSString * _Nonnull)ISO8601StringValue;
 
 #pragma mark - Getter Methods
 
@@ -185,43 +189,39 @@
 - (NSInteger)second;
 
 /**
- * Returns a new NSString object created from the receiver's date.
- *
- * @return A NSString containing the date as a string of the receiver.
- */
-- (NSString *)stringValue;
-
-/**
- * Returns a new NSString object created from the receiver's date with the ISO8601 format.
- *
- * @return A ISO8601 formatted NSString containing the receiver's date.
- */
-- (NSString *)ISO8601StringValue;
-
-/**
- * Returns a new NSString object containing the name of the month of the receiver.
- *
- * @return A NSString containing the month name of the receiver. The string is localized with the current NSLocale.
- */
-- (NSString *)monthName;
-
-/**
- * Returns a new NSString object containing the name of the day of the receiver.
- *
- * @return A NSString containing the day name of the receiver. The string is localized with the current NSLocale.
- */
-- (NSString *)dayName;
-
-/**
  * Returns a new NSDate object containing the same date as the current object set at midnight.
  *
  * @discussion The time zone GMT+0 is used.
  *
  * @return A NSDate containing a date with the hours, minutes and seconds set at 0.
  */
-- (NSDate *)midnightDate;
+- (instancetype _Nullable)midnightDate;
+
+/**
+ * Returns a new NSDate object containing the current date of the day with a IOS8601 default format.
+ *
+ * @discussion The number of hours, minutes, seconds and the GMT timezone is set to 0.
+ * @discussion The time zone GMT+0 is used.
+ *
+ * @return A NSDate containing the current date of the day. The date format is the ISO8601 one.
+ */
++ (instancetype _Nullable)currentDayDate;
 
 #pragma mark - Display methods
+
+/**
+ * Returns a new NSString object containing the name of the month of the receiver.
+ *
+ * @return A NSString containing the month name of the receiver. The string is localized with the current NSLocale.
+ */
+- (NSString * _Nonnull)monthName;
+
+/**
+ * Returns a new NSString object containing the name of the day of the receiver.
+ *
+ * @return A NSString containing the day name of the receiver. The string is localized with the current NSLocale.
+ */
+- (NSString * _Nonnull)dayName;
 
 /**
  * Returns a localized string representing the current NSDate object with its day number, month name, hour and minute.
@@ -229,7 +229,7 @@
  * @discussion The styles used for the NSDateFormatter are `LongStyle` for the date and `ShortStyle` for the time.
  * @return A localized string representing the current NSDate object.
  */
-- (NSString *)fullDisplayTime;
+- (NSString * _Nonnull)fullDisplayTime;
 
 /**
  * Returns a localized string representing the current NSDate object with its hour and minute.
@@ -237,7 +237,7 @@
  * @discussion The styles used for the NSDateFormatter are `NoStyle` for the date and `ShortStyle` for the time.
  * @return A localized string representing the current NSDate object.
  */
-- (NSString *)hourDisplayTime;
+- (NSString * _Nonnull)hourDisplayTime;
 
 /**
  * Returns a localized string representing the current NSDate object using the `MediumStyle` format.
@@ -245,7 +245,7 @@
  * @discussion The styles used for the NSDateFormatter are `MediumStyle` for the date and `NoStyle` for the time.
  * @return A localized string representing the current NSDate object.
  */
-- (NSString *)displayableString;
+- (NSString * _Nonnull)displayableString;
 
 #pragma mark - Log methods
 
@@ -274,7 +274,7 @@
  * @param seconds The number of second units.
  * @return A NSDate set with new date components from the receiver's date.
  */
-- (NSDate *)dateByAddingIntervalsWithYear:(NSInteger)years months:(NSInteger)months days:(NSInteger)days hours:(NSInteger)hours minutes:(NSInteger)minutes seconds:(NSInteger)seconds;
+- (instancetype _Nullable)dateByAddingIntervalsWithYear:(NSInteger)years months:(NSInteger)months days:(NSInteger)days hours:(NSInteger)hours minutes:(NSInteger)minutes seconds:(NSInteger)seconds;
 
 /**
  * Returns a new NSDate object with n years interval from the receiver's.
@@ -282,7 +282,7 @@
  * @param yearInterval The number of year units.
  * @return A NSDate set with n years from the receiver's date.
  */
-- (NSDate *)dateByAddingYearInterval:(NSInteger)yearInterval;
+- (instancetype _Nullable)dateByAddingYearInterval:(NSInteger)yearInterval;
 
 /**
  * Returns a new NSDate object with n months interval from the receiver's.
@@ -290,7 +290,7 @@
  * @param monthInterval The number of month units.
  * @return A NSDate set with n months from the receiver's date.
  */
-- (NSDate *)dateByAddingMonthInterval:(NSInteger)monthInterval;
+- (instancetype _Nullable)dateByAddingMonthInterval:(NSInteger)monthInterval;
 
 /**
  * Returns a new NSDate object with n days interval from the receiver's.
@@ -298,7 +298,7 @@
  * @param dayInterval The number of day units.
  * @return A NSDate set with n days from the receiver's date.
  */
-- (NSDate *)dateByAddingDayInterval:(NSInteger)dayInterval;
+- (instancetype _Nullable)dateByAddingDayInterval:(NSInteger)dayInterval;
 
 /**
  * Returns a new NSDate object with n hours interval from the receiver's.
@@ -306,7 +306,7 @@
  * @param hourInterval The number of hour units.
  * @return A NSDate set with n hours from the receiver's date.
  */
-- (NSDate *)dateByAddingHourInterval:(NSInteger)hourInterval;
+- (instancetype _Nullable)dateByAddingHourInterval:(NSInteger)hourInterval;
 
 /**
  * Returns a new NSDate object with n minutes interval from the receiver's.
@@ -314,7 +314,7 @@
  * @param minuteInterval The number of minute units.
  * @return A NSDate set with n minutes from the receiver's date.
  */
-- (NSDate *)dateByAddingMinuteInterval:(NSInteger)minuteInterval;
+- (instancetype _Nullable)dateByAddingMinuteInterval:(NSInteger)minuteInterval;
 
 /**
  * Returns a new NSDate object with n seconds interval from the receiver's.
@@ -322,7 +322,7 @@
  * @param secondInterval The number of second units.
  * @return A NSDate set with n seconds from the receiver's date.
  */
-- (NSDate *)dateByAddingSecondInterval:(NSInteger)secondInterval;
+- (instancetype _Nullable)dateByAddingSecondInterval:(NSInteger)secondInterval;
 
 #pragma mark - ISO formats
 
@@ -331,7 +331,7 @@
  *
  * @return A NSString object corresponding to the default ISO 8601 date format.
  */
-+ (NSString *)ISO8601StringFormat;
++ (NSString * _Nonnull)ISO8601StringFormat;
 
 #pragma mark - Xcode compatibility
 
@@ -343,7 +343,7 @@
  * Otherwise return the old value.
  * #return The Gregorian Calendar Identifier as new NSString object.
  */
-+ (NSString *)gregorianCalendarIdentifier DEPRECATED_MSG_ATTRIBUTE("use NSCalendarIdentifierGregorian");
++ (NSString * _Nonnull)gregorianCalendarIdentifier DEPRECATED_MSG_ATTRIBUTE("use NSCalendarIdentifierGregorian");
 
 @end
 

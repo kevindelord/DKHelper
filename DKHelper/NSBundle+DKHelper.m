@@ -19,17 +19,18 @@
     return value;
 }
 
-+ (NSString *)stringEntryInPListForKey:(NSString *)key {
++ (NSString * _Nonnull)stringEntryInPListForKey:(NSString * _Nonnull)key {
 	return [self entryInPListForKey:key];
 }
 
-+ (BOOL)booleanEntryInPListForKey:(NSString *)key {
++ (BOOL)booleanEntryInPListForKey:(NSString * _Nonnull)key {
 	return [[self entryInPListForKey:key] boolValue];
 }
 
-+ (NSNumber *)numberEntryInPListForKey:(NSString *)key {
++ (NSNumber * _Nonnull)numberEntryInPListForKey:(NSString * _Nonnull)key {
 	NSNumberFormatter *formatter = [NSNumberFormatter new];
 	formatter.numberStyle = NSNumberFormatterDecimalStyle;
+	formatter.locale = [NSLocale localeWithLocaleIdentifier:@"en_US"];
 	return [formatter numberFromString:[self stringEntryInPListForKey:key]];
 }
 

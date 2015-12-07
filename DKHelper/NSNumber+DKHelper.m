@@ -10,7 +10,7 @@
 
 @implementation NSNumber (DKHelper)
 
-- (NSString *)currencyStringValue {
+- (NSString * _Nullable)currencyStringValue {
     NSNumberFormatter *formatter = [NSNumberFormatter new];
     [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
     return [formatter stringFromNumber:self];

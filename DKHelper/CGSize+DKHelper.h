@@ -9,26 +9,31 @@
 #ifndef DKHelper_CGSize_h__
 #define DKHelper_CGSize_h__
 
+#import <UIKit/UIKit.h>
+
 /**
- * Returns a new CGSize structure corresponding to a size adjusted into a CGRect container.
+ * Returns a new CGSize structure corresponding to a `big` size adjusted to fit into a `smaller` CGSize container.
  *
  * @discussion The ratio of the original size is conserved.
+ * The receiver has to be bigger than the container; otherwise nothing happen.
  *
  * @param size The size to adjust
- * @param rect The container's frame into which the given frame has to be adjusted.
+ * @param container The container's size into which the given size needs to fit.
  * @return A new CGSize structure.
  */
-CGSize CGSizeAdjustToCGRect(CGSize size, CGRect rect);
+CGSize CGSizeFitToCGSize(CGSize size, CGSize container);
 
 /**
  * Returns a new CGSize structure corresponding to a size adjusted to another CGSize value.
  *
  * @discussion The ratio of the original size is conserved.
  *
+ * If the size is bigger then the container, it gets smaller; otherwise bigger.
+ *
  * @param size The size to adjust
- * @param rSize The destination size for which the original size has to be adjusted.
+ * @param container The container's size into which the given size needs to be adjusted.
  * @return A new CGSize structure.
  */
-CGSize CGSizeAdjustToCGSize(CGSize size, CGSize rSize);
+CGSize CGSizeAdjustToCGSize(CGSize size, CGSize container);
 
 #endif

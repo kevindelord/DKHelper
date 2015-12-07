@@ -15,9 +15,9 @@
 - (void)performBlock:(nullable void (^)(void))block completion:(nullable void (^)(void))completionBlock {
 	if (block != nil) {
 		block();
-		if (completionBlock != nil) {
-			completionBlock();
-		}
+	}
+	if (completionBlock != nil) {
+		completionBlock();
 	}
 }
 
@@ -51,6 +51,7 @@
 	}
 
 }
+
 - (void)performBlockInBackground:(nullable void (^)(void))block completion:(nullable void (^)(void))completionBlock {
 
 	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, (unsigned long)NULL), ^(void) {
@@ -63,30 +64,6 @@
 			dispatch_async(dispatch_get_main_queue(), completionBlock);
 		}
 	});
-}
-
-#pragma mark - Deprecated
-
-- (void)performBlock:(nullable void (^)(void))block afterDelay:(NSTimeInterval)delay completion:(nullable void (^)(void))completionBlock {
-
-	int64_t delta = (int64_t)(1.0e9 * delay);
-	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, delta), dispatch_get_main_queue(), ^(void){
-
-		if (block != nil) {
-			block();
-		}
-
-		if (completionBlock != nil) {
-			completionBlock();
-		}
-	});
-}
-
-- (void)performBlock:(nullable void (^)(void))block afterDelay:(NSTimeInterval)delay {
-	if (block != nil) {
-		int64_t delta = (int64_t)(1.0e9 * delay);
-		dispatch_after(dispatch_time(DISPATCH_TIME_NOW, delta), dispatch_get_main_queue(), block);
-	}
 }
 
 @end

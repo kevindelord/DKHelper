@@ -16,11 +16,11 @@
 /**
  * Returns a regex as a NSString object to get a file's extension.
  */
-+ (NSString *)fileExtension;
++ (NSString * _Nonnull)fileExtension;
 
 /**
  * Returns a regex as a NSString object to get a file's name and extension.
  */
-+ (NSString *)filenameAndExtension;
++ (NSString * _Nonnull)filenameAndExtension;
 
 @end

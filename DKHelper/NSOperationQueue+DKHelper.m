@@ -10,18 +10,25 @@
 
 @implementation NSOperationQueue (DKHelper)
 
-- (NSOperation *)addOperationWithBlock:(void (^)(NSOperation *operation))block timeout:(NSTimeInterval)timeout timeoutBlock:(void (^)(void))timeoutBlock {
+- (NSOperation * _Nullable)addOperationWithBlock:(nullable void (^)(NSOperation * _Nullable operation))block timeout:(NSTimeInterval)timeout timeoutBlock:(nullable void (^)(void))timeoutBlock {
+
+	if (block == nil || timeoutBlock == nil) {
+		return nil;
+	}
+
 	NSBlockOperation *blockOperation = [[NSBlockOperation alloc] init];
 	NSBlockOperation __weak *weakOperation = blockOperation;
 
 	[blockOperation addExecutionBlock:^{
-		block(weakOperation);
+		if (block != nil) {
+			block(weakOperation);
+		}
 	}];
 
 	[self addOperation:blockOperation];
 
 	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(timeout * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-		if (weakOperation && ![weakOperation isFinished]) {
+		if (weakOperation != nil && [weakOperation isFinished] == false) {
 			[weakOperation cancel];
 			if (timeoutBlock) {
 				timeoutBlock();

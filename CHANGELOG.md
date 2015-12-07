@@ -1,5 +1,42 @@
 # DKHelper CHANGELOG
 
+## 2.0.0
+
+### Breaking
+
+- CGSize: `CGSizeAdjustToCGRect` has be changed to `CGSizeAdjustToCGRect`.
+- CGSize: The logic behind `CGSizeAdjustToCGSize` has been mergely improved.
+- Function `iOS7Delta` has been removed.
+- UIView: Getters and setters for receiver's frame are now attributes and no longer functions.
+- NSObject: Remove deprecated functions `performBlock:afterDelay:completion:` and `performBlock:afterDelay`.
+- UIDevice: Function `platform` has been renamed `currentPlatform`.
+- UIDevice: Function `platformString` has been renamed `currentPlatformName`.
+- UIDevice: Functions `isSlowDevice` and `isIPad` are now properties.
+
+### Enhancements
+
+- NSDate: fix minor Timezone Bug in `currentDayDate`
+- Improve swift compatibility for all classes and functions!
+- The test project is now coded in Swift.
+- NSString: add `randomString` function.
+- NSString: add `isNumeric` property.
+- NSString: `isAlpaNumeric`, `isEmail`, `isPhoneNumber` are now properties.
+- NSString: add `lastOccuranceForPattern` function.
+- UIColor: `colorFromHexString` now returns nil if parameter is nil.
+- DKHelper: `VALID` also returns nil if the key is nil or an instance of NSNull.
+- DKHelper: `GET_NUMBER` now use the `en_US` locale to convert a string into a date object.
+- CGRect: add `CGRectSetInsideContainer` function.
+- CGRect: fix minor bugs by using standard CGRectGet functions.
+- DKRegex: improve file extension.
+- NSBundle: `numberEntryInPListForKey` now uses the `en_US` locale.
+- UIView: `matchParentConstraints` now returns an array of `NSLayoutConstraints`.
+- UIView: `loadFromNib` avoid crash when invalid nib name.
+- UIScreen: Fix `is55InchScreen` function.
+- NSObject: Function `performBlock:completion:` will now execute the completion block even if the main block is `nil`.
+- UIDevice: Add function `platformNameFromString:`.
+- UIDevice: Add function `isSlowDeviceForPlatform:`.
+- NSPredicate: Swift support of the functions improved.
+
 ## 1.0.0
 
 This version fixes crashes in the `performBlock` functions and add many helpers for the NSBundle and NSDate classes.

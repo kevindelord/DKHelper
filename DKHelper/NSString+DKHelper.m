@@ -11,9 +11,11 @@
 
 @implementation NSString (DKHelper)
 
+@dynamic isEmail, isAlphaNumeric, isNumeric, isPhoneNumber;
+
 #pragma mark - NSString+Random
 
-+ (NSString *)randomNumericString:(NSUInteger)length {
++ (instancetype _Nonnull)randomNumericString:(NSUInteger)length {
 
     NSString *letters = @"0123456789";
     NSTimeInterval base = [NSDate timeIntervalSinceReferenceDate];
@@ -26,7 +28,7 @@
     return randomString;
 }
 
-+ (NSString *)randomString:(NSUInteger)length {
++ (instancetype _Nonnull)randomString:(NSUInteger)length {
 
     NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     NSTimeInterval base = [NSDate timeIntervalSinceReferenceDate];
@@ -39,22 +41,22 @@
     return randomString;
 }
 
++ (instancetype _Nonnull)randomString {
+	NSTimeInterval base = [NSDate timeIntervalSinceReferenceDate];
+	NSUInteger length = MINMAX((arc4random_uniform(base) % 100), 1, 100);
+	return [NSString randomString:length];
+}
+
 #pragma mark - NSString+NSDate
 
-+ (NSString *)stringFromDate:(NSDate *)date style:(NSDateFormatterStyle)style {
-    if (date == nil) {
-        return nil;
-    }
++ (instancetype _Nonnull)stringFromDate:(NSDate * _Nonnull)date style:(NSDateFormatterStyle)style {
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     df.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
     df.dateStyle = style;
     return [df stringFromDate:date];
 }
 
-+ (NSString *)stringFromDate:(NSDate *)date format:(NSString *)format {
-    if (date == nil || format == nil) {
-        return nil;
-    }
++ (instancetype _Nonnull)stringFromDate:(NSDate * _Nonnull)date format:(NSString * _Nonnull)format {
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     df.dateFormat = format;
     df.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
@@ -63,7 +65,7 @@
 
 #pragma mark - NSString+Helper
 
-- (NSString *)randomizedString {
+- (instancetype _Nonnull)randomizedString {
 
     srandom((unsigned int)time(NULL));
 
@@ -79,7 +81,7 @@
     return result;
 }
 
-- (NSString *)removeDuplicateCharacters {
+- (instancetype _Nonnull)removeDuplicatedCharacters {
     NSMutableSet *seenCharacters = [NSMutableSet set];
     NSMutableString *result = [NSMutableString string];
     [self enumerateSubstringsInRange:NSMakeRange(0, self.length) options:NSStringEnumerationByComposedCharacterSequences usingBlock:^(NSString *substring, NSRange substringRange, NSRange enclosingRange, BOOL *stop) {
@@ -91,11 +93,11 @@
     return result;
 }
 
-- (NSString *)trimWhitespaces {
+- (instancetype _Nonnull)trimWhitespaces {
     return [self stringByTrimmingCharactersInSet:NSCharacterSet.whitespaceCharacterSet];
 }
 
-- (NSString *)removeAllNewlinesAndIllegalChars {
+- (instancetype _Nonnull)removeAllNewlinesAndIllegalChars {
     return [self stringByTrimmingCharactersInSet:NSCharacterSet.whitespaceAndNewlineCharacterSet];
 }
 
@@ -108,8 +110,14 @@
     return [predicate evaluateWithObject:self];
 }
 
+- (BOOL)isNumeric {
+	NSString *regex = @"^[-]*[0-9]+(.[0-9]+)?$";
+	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
+	return [predicate evaluateWithObject:self];
+}
+
 - (BOOL)isAlphaNumeric {
-    NSString *regex = @"[A-Z0-9a-z_]*";
+    NSString *regex = @"[A-Z0-9a-z]+";
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
     return [predicate evaluateWithObject:self];
 }
@@ -120,15 +128,30 @@
     return [predicate evaluateWithObject:self];
 }
 
-- (NSString *)firstOccuranceForPattern:(NSString *)pattern {
+- (instancetype _Nullable)firstOccuranceForPattern:(NSString * _Nonnull)pattern {
     NSRange searchedRange = NSMakeRange(0, [self length]);
-    NSError  *error = nil;
+    NSError * error = nil;
 
     NSRegularExpression* regex = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:&error];
     NSTextCheckingResult *match = [regex firstMatchInString:self options:0 range:searchedRange];
-    if (match.numberOfRanges == 0)
+	if (match.numberOfRanges == 0) {
         return nil;
+	}
     return [self substringWithRange:[match rangeAtIndex:0]];
+}
+
+- (instancetype _Nullable)lastOccuranceForPattern:(NSString * _Nonnull)pattern {
+	NSRange searchedRange = NSMakeRange(0, [self length]);
+	NSError * error = nil;
+
+	NSRegularExpression* regex = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:&error];
+	if ([regex numberOfMatchesInString:self options:0 range:searchedRange] <= 0) {
+		return nil;
+	}
+	NSArray *matches = [regex matchesInString:self options:0 range:searchedRange];
+	NSTextCheckingResult *match = [matches objectAtIndex:matches.count - 1];
+	NSRange range = [match rangeAtIndex:0];
+	return [self substringWithRange:range];
 }
 
 @end
