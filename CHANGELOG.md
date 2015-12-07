@@ -15,6 +15,7 @@
 
 ### Enhancements
 
+- NSDate: fix minor Timezone Bug in `currentDayDate`
 - Improve swift compatibility for all classes and functions!
 - The test project is now coded in Swift.
 - NSString: add `randomString` function.
