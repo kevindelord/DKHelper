@@ -73,6 +73,15 @@ extension NSDateTests {
 		}
 	}
 
+	func testShouldCheckIfTodayIsNotOlderThenEarlierHour() {
+		if let today = self.today {
+			let result = today.isOlderOrEqualThanHourInterval(366)
+			XCTAssertFalse(result)
+		} else {
+			XCTFail()
+		}
+	}
+
 	func testShouldCheckIfTodayIsNotOlderThenEarlierMinute() {
 		if let today = self.today {
 			let result = today.isOlderOrEqualThanDayInterval(1)
