@@ -24,7 +24,7 @@ extension NSDateTests {
 		self.today = NSDate()
 	}
 
-	func testShouldCheckIfTodayIsEqualToToday() {
+	func test_ShouldCheckIfTodayIsEqualToToday() {
 		if let today = self.today {
 			let date = NSDateComponents()
 			date.day = 0
@@ -37,7 +37,7 @@ extension NSDateTests {
 		}
 	}
 
-	func testShouldCheckIfTodayIsNotOlderThenEarlierYear() {
+	func test_ShouldCheckIfTodayIsNotOlderThenEarlierYear() {
 		if let today = self.today {
 			let result = today.isOlderOrEqualThan(10, months: 0, days: 0, hours: 0, minutes: 0, seconds: 0)
 			XCTAssertFalse(result)
@@ -46,7 +46,7 @@ extension NSDateTests {
 		}
 	}
 
-	func testShouldCheckIfTodayIsOlderThenLaterYear() {
+	func test_ShouldCheckIfTodayIsOlderThenLaterYear() {
 		if let today = self.today {
 			let result = today.isOlderOrEqualThanYearInterval(-2)
 			XCTAssertTrue(result)
@@ -55,7 +55,7 @@ extension NSDateTests {
 		}
 	}
 
-	func testShouldCheckIfTodayIsOlderThenLaterMonth() {
+	func test_ShouldCheckIfTodayIsOlderThenLaterMonth() {
 		if let today = self.today {
 			let result = today.isOlderOrEqualThanMonthInterval(-12)
 			XCTAssertTrue(result)
@@ -64,7 +64,7 @@ extension NSDateTests {
 		}
 	}
 
-	func testShouldCheckIfTodayIsNotOlderThenEarlierDay() {
+	func test_ShouldCheckIfTodayIsNotOlderThenEarlierDay() {
 		if let today = self.today {
 			let result = today.isOlderOrEqualThanDayInterval(366)
 			XCTAssertFalse(result)
@@ -73,7 +73,7 @@ extension NSDateTests {
 		}
 	}
 
-	func testShouldCheckIfTodayIsNotOlderThenEarlierHour() {
+	func test_ShouldCheckIfTodayIsNotOlderThenEarlierHour() {
 		if let today = self.today {
 			let result = today.isOlderOrEqualThanHourInterval(366)
 			XCTAssertFalse(result)
@@ -82,7 +82,7 @@ extension NSDateTests {
 		}
 	}
 
-	func testShouldCheckIfTodayIsNotOlderThenEarlierMinute() {
+	func test_ShouldCheckIfTodayIsNotOlderThenEarlierMinute() {
 		if let today = self.today {
 			let result = today.isOlderOrEqualThanDayInterval(1)
 			XCTAssertFalse(result)
@@ -91,7 +91,7 @@ extension NSDateTests {
 		}
 	}
 
-	func testShouldCheckIfTodayIsOlderThenLaterSecond() {
+	func test_ShouldCheckIfTodayIsOlderThenLaterSecond() {
 		if let today = self.today {
 			let result = today.isOlderOrEqualThanSecondInterval(-1)
 			XCTAssertTrue(result)
@@ -105,7 +105,7 @@ extension NSDateTests {
 
 extension NSDateTests {
 
-	func testShouldReturnValidAndCorrectDate() {
+	func test_ShouldReturnValidAndCorrectDate() {
 		let date = NSDate(fromString: "24.12.1992", style: .MediumStyle)
 		XCTAssertNotNil(date)
 		XCTAssertEqual(date?.year(), 1992)
@@ -113,12 +113,21 @@ extension NSDateTests {
 		XCTAssertEqual(date?.month(), 12)
 	}
 
-	func testShouldReturnNilDate() {
+	func test_ShouldReturnInValidDate() {
+		let date = NSDate(fromString: "Dec 24, 1992", style: .MediumStyle)
+		let dateByFormat = NSDate(fromString: "24.12.1992", format: "yyyy.MM.dd")
+		let dateByString = NSDate(fromString: "ab.cd.efgh", format: "dd.MM.yyyy")
+		XCTAssertNil(date, "expect German Region")
+		XCTAssertNil(dateByFormat)
+		XCTAssertNil(dateByString)
+	}
+
+	func test_ShouldReturnNilDate() {
 		let date = NSDate(fromString: "Dec 24, 1992", style: .FullStyle)
 		XCTAssertNil(date)
 	}
 
-	func testShouldReturnValidAndCorrectDateWithStringFormat() {
+	func test_ShouldReturnValidAndCorrectDateWithStringFormat() {
 		let date = NSDate(fromString: "24.12.1992", format: "dd.MM.yyyy")
 		XCTAssertNotNil(date)
 		XCTAssertEqual(date?.year(), 1992)
@@ -126,7 +135,7 @@ extension NSDateTests {
 		XCTAssertEqual(date?.month(), 12)
 	}
 
-	func testShouldReturnValidTodayDate() {
+	func test_ShouldReturnValidTodayDate() {
 		if let today = self.today {
 			let date = NSDate(fromISOString: today.ISO8601StringValue())
 			XCTAssertNotNil(date)
@@ -156,7 +165,7 @@ extension NSDateTests {
 
 extension NSDateTests {
 
-	func testShouldReturnDatesComponents() {
+	func test_ShouldReturnDatesComponents() {
 		let date = NSDate(timeIntervalSince1970: 0)
 		XCTAssertEqual(date.year(), 1970)
 		XCTAssertEqual(date.day(), 1)
@@ -166,7 +175,7 @@ extension NSDateTests {
 		XCTAssertEqual(date.second(), 0)
 	}
 
-	func testShouldReturnTodaysMidnightDate() {
+	func test_ShouldReturnTodaysMidnightDate() {
 		let date = today?.midnightDate()
 		XCTAssertNotNil(date)
 		XCTAssertEqual(date?.year(), today?.year())
@@ -177,7 +186,7 @@ extension NSDateTests {
 		XCTAssertEqual(date?.second(), 0)
 	}
 
-	func testShouldReturnTodaysDayDate() {
+	func test_ShouldReturnTodaysDayDate() {
 		let date = NSDate.currentDayDate()
 		XCTAssertNotNil(date)
 		XCTAssertEqual(date?.year(), today?.year())
@@ -193,7 +202,7 @@ extension NSDateTests {
 
 extension NSDateTests {
 
-	func testShouldReturnValidAndCorrectDateComponentNaming() {
+	func test_ShouldReturnValidAndCorrectDateComponentNaming() {
 		let date = NSDate(fromString: "04.12.2015", format: "dd.MM.yyyy")
 		let dayName = date?.dayName()
 		let monthName = date?.monthName()
@@ -204,7 +213,7 @@ extension NSDateTests {
 		XCTAssertEqual(monthName, "Dezember", "expect german localization")
 	}
 
-	func testShouldReturnValidAndCorrectDateDisplayStrings() {
+	func test_ShouldReturnValidAndCorrectDateDisplayStrings() {
 		let date = NSDate(fromString: "04.12.2015 - 14:27:11", format: "dd.MM.yyyy - HH:mm:ss")
 		let fullDisplayString = date?.fullDisplayTime()
 		let hourDisplayString = date?.hourDisplayTime()
@@ -223,7 +232,7 @@ extension NSDateTests {
 
 extension NSDateTests {
 
-	func testShouldReturnDateByAddingInterval() {
+	func test_ShouldReturnDateByAddingInterval() {
 		let date 			= NSDate(fromString: "04.12.2015 - 14:27:11", format: "dd.MM.yyyy - HH:mm:ss")
 		let possibleResult 	= NSDate(fromString: "04.12.2017 - 20:00:00", format: "dd.MM.yyyy - HH:mm:ss")
 		let result = date?.dateByAddingIntervalsWithYear(1, months: 12, days: 0, hours: 5, minutes: 32, seconds: 49)
@@ -239,49 +248,67 @@ extension NSDateTests {
 		XCTAssertEqual(possibleResult?.second(), result?.second())
 	}
 
-	func testShouldReturnValidDateByAddingYear() {
-		if let date = today?.dateByAddingYearInterval(1) {
-			XCTAssertEqual(today?.laterDate(date), date)
+	func test_ShouldReturnValidDateByAddingYear() {
+		if let
+			today = self.today,
+			date = today.dateByAddingYearInterval(1) {
+				XCTAssertEqual(today.laterDate(date), date)
+				XCTAssertEqual(abs(today.year() - date.year()), 1)
 		} else {
 			XCTFail()
 		}
 	}
 
-	func testShouldReturnValidDateByAddingMonth() {
-		if let date = today?.dateByAddingMonthInterval(1) {
-			XCTAssertEqual(today?.laterDate(date), date)
+	func test_ShouldReturnValidDateByAddingMonth() {
+		if let
+			today = NSDate(fromString: "04.11.2015 - 14:27:11", format: "dd.MM.yyyy - HH:mm:ss"),
+			date = today.dateByAddingMonthInterval(1) {
+				XCTAssertEqual(today.laterDate(date), date)
+				XCTAssertEqual(abs(today.month() - date.month()), 1)
 		} else {
 			XCTFail()
 		}
 	}
 
-	func testShouldReturnValidDateByAddingDay() {
-		if let date = today?.dateByAddingDayInterval(1) {
-			XCTAssertEqual(today?.laterDate(date), date)
+	func test_ShouldReturnValidDateByAddingDay() {
+		if let
+			today = NSDate(fromString: "04.11.2015 - 14:27:11", format: "dd.MM.yyyy - HH:mm:ss"),
+			date = today.dateByAddingDayInterval(-1) {
+				XCTAssertEqual(today.earlierDate(date), date)
+				XCTAssertEqual(abs(today.day() - date.day()), 1)
 		} else {
 			XCTFail()
 		}
 	}
 
-	func testShouldReturnValidDateByAddingHour() {
-		if let date = today?.dateByAddingHourInterval(1) {
-			XCTAssertEqual(today?.laterDate(date), date)
+	func test_ShouldReturnValidDateByAddingHour() {
+		if let
+			today = NSDate(fromString: "04.11.2015 - 14:27:11", format: "dd.MM.yyyy - HH:mm:ss"),
+			date = today.dateByAddingHourInterval(24) {
+				XCTAssertEqual(today.laterDate(date), date)
+				XCTAssertEqual(abs(today.hour() - date.hour()), 0)
+				XCTAssertEqual(abs(today.day() - date.day()), 1)
 		} else {
 			XCTFail()
 		}
 	}
 
-	func testShouldReturnValidDateByAddingMinute() {
-		if let date = today?.dateByAddingMinuteInterval(1) {
-			XCTAssertEqual(today?.laterDate(date), date)
+	func test_ShouldReturnValidDateByAddingMinute() {
+		if let
+			today = NSDate(fromString: "04.11.2015 - 14:27:11", format: "dd.MM.yyyy - HH:mm:ss"),
+			date = today.dateByAddingMinuteInterval(-1) {
+				XCTAssertEqual(today.earlierDate(date), date)
+				XCTAssertEqual(abs(today.minute() - date.minute()), 1)
 		} else {
 			XCTFail()
 		}
 	}
 
-	func testShouldReturnValidDateByAddingSecond() {
-		if let date = today?.dateByAddingSecondInterval(1) {
-			XCTAssertEqual(today?.laterDate(date), date)
+	func test_ShouldReturnValidDateByAddingSecond() {
+		if let
+			today = NSDate(fromString: "04.11.2015 - 14:27:11", format: "dd.MM.yyyy - HH:mm:ss"),
+			date = today.dateByAddingSecondInterval(1) {
+				XCTAssertEqual(today.laterDate(date), date)
 		} else {
 			XCTFail()
 		}
@@ -292,7 +319,7 @@ extension NSDateTests {
 
 extension NSDateTests {
 
-	func testShouldReturnValidAndCorrectISOStringFromDate() {
+	func test_ShouldReturnValidAndCorrectISOStringFromDate() {
 		let date = NSDate(fromString: "04.12.2015 - 14:27:11", format: "dd.MM.yyyy - HH:mm:ss")
 		let isoString = date?.ISO8601StringValue()
 		XCTAssertNotNil(isoString)
