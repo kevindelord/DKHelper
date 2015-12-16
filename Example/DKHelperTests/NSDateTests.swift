@@ -113,7 +113,7 @@ extension NSDateTests {
 		XCTAssertEqual(date?.month(), 12)
 	}
 
-	func test_ShouldReturnInValidDate() {
+	func test_ShouldReturnInvalidDate() {
 		let date = NSDate(fromString: "Dec 24, 1992", style: .MediumStyle)
 		let dateByFormat = NSDate(fromString: "24.12.1992", format: "yyyy.MM.dd")
 		let dateByString = NSDate(fromString: "ab.cd.efgh", format: "dd.MM.yyyy")
@@ -209,8 +209,13 @@ extension NSDateTests {
 		XCTAssertNotNil(date)
 		XCTAssertNotNil(dayName)
 		XCTAssertNotNil(monthName)
-		XCTAssertEqual(dayName, "Freitag", "expect german localization")
-		XCTAssertEqual(monthName, "Dezember", "expect german localization")
+		if (NSLocale.currentLocale().localeIdentifier.hasPrefix("en") == true) {
+			XCTAssertEqual(dayName, "Friday", "expect english localization")
+			XCTAssertEqual(monthName, "December", "expect english localization")
+		} else if (NSLocale.currentLocale().localeIdentifier.hasPrefix("de") == true) {
+			XCTAssertEqual(dayName, "Freitag", "expect german localization")
+			XCTAssertEqual(monthName, "Dezember", "expect german localization")
+		}
 	}
 
 	func test_ShouldReturnValidAndCorrectDateDisplayStrings() {
@@ -222,9 +227,32 @@ extension NSDateTests {
 		XCTAssertNotNil(fullDisplayString)
 		XCTAssertNotNil(hourDisplayString)
 		XCTAssertNotNil(displayString)
-		XCTAssertEqual(fullDisplayString, "4. Dezember 2015 um 15:27", "expect german localization")
-		XCTAssertEqual(hourDisplayString, "15:27", "expect german localization")
-		XCTAssertEqual(displayString, "04.12.2015", "expect german localization")
+		if (NSLocale.currentLocale().localeIdentifier.hasPrefix("de") == true) {
+			XCTAssertEqual(fullDisplayString, "4. Dezember 2015 um 15:27", "expect german localization")
+			XCTAssertEqual(hourDisplayString, "15:27", "expect german localization")
+			XCTAssertEqual(displayString, "04.12.2015", "expect german localization")
+		} else if (NSLocale.currentLocale().localeIdentifier.hasPrefix("en") == true) {
+			XCTAssertEqual(fullDisplayString, "December 4, 2015 at 3:27 PM", "expect english localization")
+			XCTAssertEqual(hourDisplayString, "3:27 PM", "expect english localization")
+			XCTAssertEqual(displayString, "Dec 4, 2015", "expect english localization")
+		}
+	}
+}
+
+// MARK: - Log methods
+
+extension NSDateTests {
+
+	func test_ShouldLogAllFormat() {
+		let date = NSDate()
+		date.logAllFormats()
+		XCTAssert(true)
+	}
+
+	func test_ShouldLogOneFormat() {
+		let date = NSDate()
+		date.logCurrentDateWithDateStyleAndAllTimeStyle(.FullStyle)
+		XCTAssert(true)
 	}
 }
 
