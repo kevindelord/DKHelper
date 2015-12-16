@@ -229,10 +229,4 @@
     return @"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'";
 }
 
-#pragma mark - Xcode compatibility
-
-+ (NSString * _Nonnull)gregorianCalendarIdentifier {
-    return NSCalendarIdentifierGregorian;
-}
-
 @end
