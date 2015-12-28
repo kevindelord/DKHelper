@@ -27,6 +27,13 @@
 - (void)performBlockAfterDelay:(NSTimeInterval)delay block:(nullable void (^)(void))block;
 
 /**
+ * Performs a code block on the main thread.
+ *
+ * @param block A block object containing the code to execute. This block takes no parameters and has no return value. It will be executed on the main thread.
+ */
+- (void)performBlockInMainThread:(nullable void (^)(void))block;
+
+/**
  * Performs a code block on a background thread.
  *
  * @param block A block object containing the code to execute. This block takes no parameters and has no return value. It will be executed on a background thread.
