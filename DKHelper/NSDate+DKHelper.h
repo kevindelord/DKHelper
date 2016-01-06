@@ -92,7 +92,7 @@
 /**
  * Returns a new NSDate object created from a string with a specified style.
  *
- * @discussion The time zone GMT+0 is used.
+ * @discussion The system time zone is used.
  *
  * @param string The NSString object representing the date.
  * @param dateSytle The NSDateFormatterStyle object representing the style of the date.
@@ -104,7 +104,7 @@
  * Returns a new NSDate object created from a string with a specified format.
  *
  * @discussion Example of code will be [NSDate dateFromString:@"1970-01-01" format:@"yyyy-MM-dd"];
- * @discussion The time zone GMT+0 is used.
+ * @discussion The system time zone is used.
  *
  * @param string The NSString object representing the date.
  * @param format The NSString object representing the format in which the string is formatted.

@@ -57,19 +57,20 @@
 
 #pragma mark - NSDate+NSString
 
-+ (instancetype _Nullable)dateFromString:(NSString * _Nonnull)string style:(NSDateFormatterStyle)dateStyle {
-    NSDateFormatter *df = [NSDateFormatter new];
-    df.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
-    df.dateStyle = dateStyle;
-    df.locale = [NSLocale currentLocale];
-    return [df dateFromString:string];
++ (instancetype _Nullable)dateFromString:(NSString * _Nonnull)string style:(NSDateFormatterStyle)style {
+	NSDateFormatter *df = [NSDateFormatter new];
+	df.timeZone = [NSTimeZone systemTimeZone];
+	df.dateStyle = style;
+	df.timeStyle = style;
+	df.locale = [NSLocale currentLocale];
+	return [df dateFromString:string];
 }
 
 + (instancetype _Nullable)dateFromString:(NSString * _Nonnull)string format:(NSString * _Nonnull)format {
-    NSDateFormatter *df = [NSDateFormatter new];
-    df.dateFormat = format;
-    df.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
-    return [df dateFromString:string];
+	NSDateFormatter *df = [NSDateFormatter new];
+	df.dateFormat = format;
+	df.timeZone = [NSTimeZone systemTimeZone];
+	return [df dateFromString:string];
 }
 
 + (instancetype _Nullable)dateFromISOString:(NSString * _Nonnull)string {
