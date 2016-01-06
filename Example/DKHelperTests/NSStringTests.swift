@@ -155,25 +155,41 @@ extension NSStringTests {
 	func test_ShouldCreateAStringFromDateWithShortStyle() {
 		let date = (NSDate(fromDayString: "1991-01-19") ?? NSDate())
 		let string = NSString(fromDate: date, style: NSDateFormatterStyle.ShortStyle)
-		XCTAssertEqual(string, "19.01.91")
+		if (NSLocale.currentLocale().localeIdentifier.hasPrefix("en_DE") == true) {
+			XCTAssertEqual(string, "19/01/91")
+		} else {
+			XCTAssertEqual(string, "1/19/91")
+		}
 	}
 
 	func test_ShouldCreateAStringFromDateWithMediumStyle() {
 		let date = (NSDate(fromDayString: "1991-01-19") ?? NSDate())
 		let string = NSString(fromDate: date, style: NSDateFormatterStyle.MediumStyle)
-		XCTAssertEqual(string, "19.01.1991")
+		if (NSLocale.currentLocale().localeIdentifier.hasPrefix("en_DE") == true) {
+			XCTAssertEqual(string, "19 Jan 1991")
+		} else {
+			XCTAssertEqual(string, "Jan 19, 1991")
+		}
 	}
 
 	func test_ShouldCreateAStringFromDateWithLongStyle() {
 		let date = (NSDate(fromDayString: "1991-01-19") ?? NSDate())
 		let string = NSString(fromDate: date, style: NSDateFormatterStyle.LongStyle)
-		XCTAssertEqual(string, "19. Januar 1991")
+		if (NSLocale.currentLocale().localeIdentifier.hasPrefix("en_DE") == true) {
+			XCTAssertEqual(string, "19 January 1991")
+		} else {
+			XCTAssertEqual(string, "January 19, 1991")
+		}
 	}
 
 	func test_ShouldCreateAStringFromDateWithFullStyle() {
 		let date = (NSDate(fromDayString: "1991-01-19") ?? NSDate())
 		let string = NSString(fromDate: date, style: NSDateFormatterStyle.FullStyle)
-		XCTAssert(string == "Samstag, 19. Januar 1991")
+		if (NSLocale.currentLocale().localeIdentifier.hasPrefix("en_DE") == true) {
+			XCTAssertEqual(string, "Saturday 19 January 1991")
+		} else {
+			XCTAssertEqual(string, "Saturday, January 19, 1991")
+		}
 	}
 }
 

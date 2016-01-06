@@ -106,10 +106,15 @@ extension NSDateTests {
 extension NSDateTests {
 
 	func test_ShouldReturnValidAndCorrectDate() {
-		let date = NSDate(fromString: "24.12.1992", style: .MediumStyle)
+		var string = "Dec 6, 1992, 2:59:10 PM" // en_US
+		if (NSLocale.currentLocale().localeIdentifier == "en_DE") {
+			string = "06 Dec 1992 14:35:32"
+		}
+
+		let date = NSDate(fromString: string, style: .MediumStyle)
 		XCTAssertNotNil(date)
 		XCTAssertEqual(date?.year(), 1992)
-		XCTAssertEqual(date?.day(), 24)
+		XCTAssertEqual(date?.day(), 6)
 		XCTAssertEqual(date?.month(), 12)
 	}
 
@@ -219,7 +224,7 @@ extension NSDateTests {
 	}
 
 	func test_ShouldReturnValidAndCorrectDateDisplayStrings() {
-		let date = NSDate(fromString: "04.12.2015 - 14:27:11", format: "dd.MM.yyyy - HH:mm:ss")
+		let date = NSDate(fromString: "04.12.2015 - 15:27:11", format: "dd.MM.yyyy - HH:mm:ss")
 		let fullDisplayString = date?.fullDisplayTime()
 		let hourDisplayString = date?.hourDisplayTime()
 		let displayString = date?.displayableString()
@@ -227,10 +232,15 @@ extension NSDateTests {
 		XCTAssertNotNil(fullDisplayString)
 		XCTAssertNotNil(hourDisplayString)
 		XCTAssertNotNil(displayString)
+
 		if (NSLocale.currentLocale().localeIdentifier.hasPrefix("de") == true) {
 			XCTAssertEqual(fullDisplayString, "4. Dezember 2015 um 15:27", "expect german localization")
 			XCTAssertEqual(hourDisplayString, "15:27", "expect german localization")
 			XCTAssertEqual(displayString, "04.12.2015", "expect german localization")
+		} else if (NSLocale.currentLocale().localeIdentifier.hasPrefix("en_DE") == true) {
+			XCTAssertEqual(fullDisplayString, "4 December 2015 at 15:27", "expect english localization with german region")
+			XCTAssertEqual(hourDisplayString, "15:27", "expect english localization with german region")
+			XCTAssertEqual(displayString, "04 Dec 2015", "expect english localization with german region")
 		} else if (NSLocale.currentLocale().localeIdentifier.hasPrefix("en") == true) {
 			XCTAssertEqual(fullDisplayString, "December 4, 2015 at 3:27 PM", "expect english localization")
 			XCTAssertEqual(hourDisplayString, "3:27 PM", "expect english localization")
