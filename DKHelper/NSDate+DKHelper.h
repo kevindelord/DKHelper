@@ -92,7 +92,7 @@
 /**
  * Returns a new NSDate object created from a string with a specified style.
  *
- * @discussion The time zone GMT+0 is used.
+ * @discussion The system time zone is used.
  *
  * @param string The NSString object representing the date.
  * @param dateSytle The NSDateFormatterStyle object representing the style of the date.
@@ -104,7 +104,7 @@
  * Returns a new NSDate object created from a string with a specified format.
  *
  * @discussion Example of code will be [NSDate dateFromString:@"1970-01-01" format:@"yyyy-MM-dd"];
- * @discussion The time zone GMT+0 is used.
+ * @discussion The system time zone is used.
  *
  * @param string The NSString object representing the date.
  * @param format The NSString object representing the format in which the string is formatted.
@@ -332,18 +332,6 @@
  * @return A NSString object corresponding to the default ISO 8601 date format.
  */
 + (NSString * _Nonnull)ISO8601StringFormat;
-
-#pragma mark - Xcode compatibility
-
-/**
- * Returns The Gregorian Calendar Identifier as new NSString object.
- *
- * @discussion Depending on the Xcode version 5.1.1/6.1+ the value `NSGregorianCalendar` has been deprecated.
- * This method verifies if the new version actually exists and return `NSCalendarIdentifierGregorian`.
- * Otherwise return the old value.
- * #return The Gregorian Calendar Identifier as new NSString object.
- */
-+ (NSString * _Nonnull)gregorianCalendarIdentifier DEPRECATED_MSG_ATTRIBUTE("use NSCalendarIdentifierGregorian");
 
 @end
 

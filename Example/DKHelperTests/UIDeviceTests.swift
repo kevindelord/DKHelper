@@ -22,7 +22,6 @@ extension UIDeviceTests {
 	func test_ShouldReturnCurrentPlatform() {
 		let platform = UIDevice.currentPlatform()
 		XCTAssert(platform.characters.count > 0)
-		print(platform)
 	}
 }
 
@@ -35,7 +34,6 @@ extension UIDeviceTests {
 		let platformName = UIDevice.currentPlatformName()
 		XCTAssert(platformName.characters.count > 0)
 		XCTAssert(platformName != platform)
-		print(platformName)
 	}
 
 }
