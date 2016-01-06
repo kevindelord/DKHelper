@@ -109,6 +109,8 @@ extension NSDateTests {
 		var string = "Dec 6, 1992, 2:59:10 PM" // en_US
 		if (NSLocale.currentLocale().localeIdentifier == "en_DE") {
 			string = "06 Dec 1992 14:35:32"
+		} else if (NSLocale.currentLocale().localeIdentifier == "de_DE") {
+			string = "06.12.1992, 14:35:32"
 		}
 
 		let date = NSDate(fromString: string, style: .MediumStyle)

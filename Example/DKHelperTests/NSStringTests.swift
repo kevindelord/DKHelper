@@ -157,6 +157,8 @@ extension NSStringTests {
 		let string = NSString(fromDate: date, style: NSDateFormatterStyle.ShortStyle)
 		if (NSLocale.currentLocale().localeIdentifier.hasPrefix("en_DE") == true) {
 			XCTAssertEqual(string, "19/01/91")
+		} else if (NSLocale.currentLocale().localeIdentifier.hasPrefix("de_DE") == true) {
+			XCTAssertEqual(string, "19.01.91")
 		} else {
 			XCTAssertEqual(string, "1/19/91")
 		}
@@ -167,6 +169,8 @@ extension NSStringTests {
 		let string = NSString(fromDate: date, style: NSDateFormatterStyle.MediumStyle)
 		if (NSLocale.currentLocale().localeIdentifier.hasPrefix("en_DE") == true) {
 			XCTAssertEqual(string, "19 Jan 1991")
+		} else if (NSLocale.currentLocale().localeIdentifier.hasPrefix("de_DE") == true) {
+			XCTAssertEqual(string, "19.01.1991")
 		} else {
 			XCTAssertEqual(string, "Jan 19, 1991")
 		}
@@ -177,6 +181,8 @@ extension NSStringTests {
 		let string = NSString(fromDate: date, style: NSDateFormatterStyle.LongStyle)
 		if (NSLocale.currentLocale().localeIdentifier.hasPrefix("en_DE") == true) {
 			XCTAssertEqual(string, "19 January 1991")
+		} else if (NSLocale.currentLocale().localeIdentifier.hasPrefix("de_DE") == true) {
+			XCTAssertEqual(string, "19. Januar 1991")
 		} else {
 			XCTAssertEqual(string, "January 19, 1991")
 		}
@@ -187,6 +193,8 @@ extension NSStringTests {
 		let string = NSString(fromDate: date, style: NSDateFormatterStyle.FullStyle)
 		if (NSLocale.currentLocale().localeIdentifier.hasPrefix("en_DE") == true) {
 			XCTAssertEqual(string, "Saturday 19 January 1991")
+		} else if (NSLocale.currentLocale().localeIdentifier.hasPrefix("de_DE") == true) {
+			XCTAssertEqual(string, "Samstag, 19. Januar 1991")
 		} else {
 			XCTAssertEqual(string, "Saturday, January 19, 1991")
 		}
