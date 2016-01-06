@@ -175,7 +175,6 @@
 		7532983D1BE8C7AA00FD8252 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				759A467E1BEBD09700FFAB39 /* Not Tested */,
 				753298401BE8C7BF00FD8252 /* CGRect+DKHelper.h */,
 				753298411BE8C7BF00FD8252 /* CGRect+DKHelper.m */,
 				753298421BE8C7BF00FD8252 /* CGSize+DKHelper.h */,
@@ -184,6 +183,8 @@
 				753298451BE8C7BF00FD8252 /* DKHelper.m */,
 				753298461BE8C7BF00FD8252 /* DKRegex.h */,
 				753298471BE8C7BF00FD8252 /* DKRegex.m */,
+				7532984C1BE8C7BF00FD8252 /* NSDate+DKHelper.h */,
+				7532984D1BE8C7BF00FD8252 /* NSDate+DKHelper.m */,
 				753298521BE8C7BF00FD8252 /* NSOperationQueue+DKHelper.h */,
 				753298531BE8C7BF00FD8252 /* NSOperationQueue+DKHelper.m */,
 				753298541BE8C7BF00FD8252 /* NSPredicate+DKHelper.h */,
@@ -226,15 +227,6 @@
 			);
 			name = Resources;
 			path = DKHelper;
-			sourceTree = "<group>";
-		};
-		759A467E1BEBD09700FFAB39 /* Not Tested */ = {
-			isa = PBXGroup;
-			children = (
-				7532984C1BE8C7BF00FD8252 /* NSDate+DKHelper.h */,
-				7532984D1BE8C7BF00FD8252 /* NSDate+DKHelper.m */,
-			);
-			name = "Not Tested";
 			sourceTree = "<group>";
 		};
 		75B8D4941BF0EF54008930B1 /* Resources */ = {
@@ -621,6 +613,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = DKHelperTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = delord.me.DKHelperTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -635,6 +628,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = DKHelperTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = delord.me.DKHelperTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

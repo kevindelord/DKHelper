@@ -25,31 +25,30 @@ extension NSOperationQueueTests {
 
 	func test_objectCreation() {
 
-		XCTAssertNil(operationQueue?.addOperationWithBlock(nil, timeout: 0.1, timeoutBlock: {}))
-		XCTAssertNil(operationQueue?.addOperationWithBlock({ (operation) in }, timeout: 0.1, timeoutBlock: nil))
-		XCTAssertNotNil(operationQueue?.addOperationWithBlock({ (operation) in }, timeout: 0.1, timeoutBlock: {}))
-
+		XCTAssertNil(self.operationQueue?.addOperationWithBlock(nil, timeout: 0.1, timeoutBlock: {}))
+		XCTAssertNil(self.operationQueue?.addOperationWithBlock({ (operation) in }, timeout: 0.1, timeoutBlock: nil))
+		XCTAssertNotNil(self.operationQueue?.addOperationWithBlock({ (operation) in }, timeout: 0.1, timeoutBlock: {}))
 	}
 
 	func test_addOperationWithBlockTimeoutTimeoutBlock() {
 
-		operationQueue?.addOperationWithBlock({ (operation) in
+		self.operationQueue?.addOperationWithBlock({ (operation) in
 			XCTAssertNotNil(operation)
 			}, timeout: 1.0, timeoutBlock: {
 				XCTFail()
 		})
 
-		let failExpectation = self.expectationWithDescription("timeout")
+		weak var failExpectation = self.expectationWithDescription("timeout")
 
-		operationQueue?.addOperationWithBlock({ (operation) in
+		self.operationQueue?.addOperationWithBlock({ (operation) in
 			NSThread.sleepForTimeInterval(2.0)
 			XCTFail()
-			failExpectation.fulfill()
+			failExpectation?.fulfill()
 			}, timeout: 0.1, timeoutBlock: {
 				XCTAssert(true)
-				failExpectation.fulfill()
+				failExpectation?.fulfill()
 		})
 
-		self.waitForExpectationsWithTimeout(0.5, handler: nil)
+		self.waitForExpectationsWithTimeout(0.5) { (error) -> Void in }
 	}
 }

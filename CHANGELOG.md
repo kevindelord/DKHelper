@@ -1,5 +1,15 @@
 # DKHelper CHANGELOG
 
+## 2.1.0
+
+- NSDate: `dateFromString` functions now use the system time zone.
+- NSDate: remove `gregorianCalendarIdentifier` deprecated function.
+- NSObject: add `performBlockInMainThread` function.
+- NSString: add `stringFromDate:format:timeZone:` function.
+- NSString: add `stringFromDate:style:timeZone:` function.
+
+This version also fix some unit tests.
+
 ## 2.0.0
 
 ### Breaking
