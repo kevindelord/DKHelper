@@ -39,15 +39,15 @@ extension NSOperationQueueTests {
 				XCTFail()
 		})
 
-		let failExpectation = self.expectationWithDescription("timeout")
+		weak var failExpectation = self.expectationWithDescription("timeout")
 
 		operationQueue?.addOperationWithBlock({ (operation) in
 			NSThread.sleepForTimeInterval(2.0)
 			XCTFail()
-			failExpectation.fulfill()
+			failExpectation?.fulfill()
 			}, timeout: 0.1, timeoutBlock: {
 				XCTAssert(true)
-				failExpectation.fulfill()
+				failExpectation?.fulfill()
 		})
 
 		self.waitForExpectationsWithTimeout(0.5, handler: nil)
