@@ -43,13 +43,20 @@
 	}
 }
 
+- (void)performBlockInMainThread:(void (^)(void))block {
+	if (block != nil) {
+		dispatch_async(dispatch_get_main_queue(), ^(void) {
+			block();
+		});
+	}
+}
+
 - (void)performBlockInBackground:(nullable void (^)(void))block {
 	if (block != nil) {
 		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, (unsigned long)NULL), ^(void) {
 			block();
 		});
 	}
-
 }
 
 - (void)performBlockInBackground:(nullable void (^)(void))block completion:(nullable void (^)(void))completionBlock {
@@ -61,7 +68,7 @@
 		}
 
 		if (completionBlock != nil) {
-			dispatch_async(dispatch_get_main_queue(), completionBlock);
+			[self performBlockInMainThread:completionBlock];
 		}
 	});
 }

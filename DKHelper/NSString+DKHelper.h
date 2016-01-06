@@ -45,9 +45,8 @@
 #pragma mark - NSString+NSDate
 
 /**
- * Returns a new NSString object created from a NSDate object with a specific format.
+ * Returns a new NSString object created from a NSDate object with a specific format. Note: The system time zone is used for the convertion.
  *
- * @discussion The method use a temporary timeZone set to 0.
  * @param date The NSDate to convert into a string. Must not be NULL.
  * @param format The NSString object representing the format in which the date is formatted. Must not be NULL.
  * @return A NSString containing the date with the given date format. NULL if the date or the format isn't valid.
@@ -55,14 +54,32 @@
 + (instancetype _Nonnull)stringFromDate:(NSDate * _Nonnull)date format:(NSString * _Nonnull)format;
 
 /**
- * Returns a new NSString object created from a NSDate object with a specific style.
+ * Returns a new NSString object created from a NSDate object with a specific format.
  *
- * @discussion The method use a temporary timeZone set to 0.
+ * @param date The NSDate to convert into a string. Must not be NULL.
+ * @param format The NSString object representing the format in which the date is formatted. Must not be NULL.
+ * @param timezone The NSTimeZone to use for the convertion. Must no be NULL
+ * @return A NSString containing the date with the given date format. NULL if the date or the format isn't valid.
+ */
++ (instancetype _Nonnull)stringFromDate:(NSDate * _Nonnull)date format:(NSString * _Nonnull)format timeZone:(NSTimeZone * _Nonnull)timeZone;
+/**
+ * Returns a new NSString object created from a NSDate object with a specific style. Note: The system time zone is used for the convertion.
+ *
  * @param date The NSDate to convert into a string. Must not be NULL.
  * @param style The NSDateFormatterStyle value to configure the formatter.
  * @return A NSString containing the date with the given date style. NULL if the date isn't valid.
  */
 + (instancetype _Nonnull)stringFromDate:(NSDate * _Nonnull)date style:(NSDateFormatterStyle)style;
+
+/**
+ * Returns a new NSString object created from a NSDate object with a specific style.
+ *
+ * @param date The NSDate to convert into a string. Must not be NULL.
+ * @param style The NSDateFormatterStyle value to configure the formatter.
+ * @param timezone The NSTimeZone to use for the convertion. Must no be NULL
+ * @return A NSString containing the date with the given date style. NULL if the date isn't valid.
+ */
++ (instancetype _Nonnull)stringFromDate:(NSDate * _Nonnull)date style:(NSDateFormatterStyle)style timeZone:(NSTimeZone * _Nonnull)timeZone;
 
 #pragma mark - NSString+Helper
 

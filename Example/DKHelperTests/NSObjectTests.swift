@@ -98,6 +98,30 @@ extension NSObjectTests {
 	}
 }
 
+// MARK: - Perform Block In Main Thread
+
+extension NSObjectTests {
+	
+	func test_ShouldPerformBlockInMainThread() {
+		let expectation = expectationWithDescription("execute block in main thread")
+		self.performBlockInMainThread { () -> Void in
+			XCTAssert(NSThread.isMainThread() == true)
+			expectation.fulfill()
+		}
+		waitForExpectationsWithTimeout(2) { error in
+			XCTAssert(true, "didn't crash")
+		}
+	}
+	func test_ShouldNotPerformNilBlockInMainThread() {
+		let expectation = expectationWithDescription("should not crash")
+		self.performBlockInMainThread(nil)
+		expectation.fulfill()
+		waitForExpectationsWithTimeout(2) { error in
+			XCTAssert(true, "didn't crash")
+		}
+	}
+}
+
 // MARK: - Perform Block In Background With Completion Block
 
 extension NSObjectTests {

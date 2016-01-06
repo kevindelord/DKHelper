@@ -50,17 +50,25 @@
 #pragma mark - NSString+NSDate
 
 + (instancetype _Nonnull)stringFromDate:(NSDate * _Nonnull)date style:(NSDateFormatterStyle)style {
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    df.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
-    df.dateStyle = style;
-    return [df stringFromDate:date];
+	return [self stringFromDate:date style:style timeZone:[NSTimeZone systemTimeZone]];
+}
+
++ (instancetype _Nonnull)stringFromDate:(NSDate * _Nonnull)date style:(NSDateFormatterStyle)style timeZone:(NSTimeZone * _Nonnull)timeZone {
+	NSDateFormatter *df = [[NSDateFormatter alloc] init];
+	df.timeZone = timeZone;
+	df.dateStyle = style;
+	return [df stringFromDate:date];
 }
 
 + (instancetype _Nonnull)stringFromDate:(NSDate * _Nonnull)date format:(NSString * _Nonnull)format {
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    df.dateFormat = format;
-    df.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
-    return [df stringFromDate:date];
+    return [self stringFromDate:date format:format timeZone:[NSTimeZone systemTimeZone]];
+}
+
++ (instancetype _Nonnull)stringFromDate:(NSDate * _Nonnull)date format:(NSString * _Nonnull)format timeZone:(NSTimeZone * _Nonnull)timeZone {
+	NSDateFormatter *df = [[NSDateFormatter alloc] init];
+	df.dateFormat = format;
+	df.timeZone = timeZone;
+	return [df stringFromDate:date];
 }
 
 #pragma mark - NSString+Helper
