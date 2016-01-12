@@ -168,7 +168,7 @@ NSDate * _Nullable GET_DATE(NSDictionary * _Nullable dict, id _Nullable key);
  * @param format the format of the given date
  * @return A new NSDate value extracted from the given dictionary. If the object isn't valid returns nil instead.
  */
-NSDate * _Nullable GET_DATE_F(NSDictionary * _Nullable dict, id _Nullable key, NSString* _Nullable format);
+NSDate * _Nullable GET_DATE_FORMAT(NSDictionary * _Nullable dict, id _Nullable key, NSString* _Nullable format);
 
 /**
  * Extract a NSString value out of a dictionary with a given key.
