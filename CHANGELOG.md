@@ -1,5 +1,9 @@
 # DKHelper CHANGELOG
 
+## 2.1.1
+
+- NSDate: add `GET_DATE_FORMAT` function.
+
 ## 2.1.0
 
 - NSDate: `dateFromString` functions now use the system time zone.
