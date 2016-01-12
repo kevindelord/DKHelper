@@ -341,10 +341,32 @@ extension DKHelperTests {
 		XCTAssert(GET_DATE_FORMAT(dict, "test", "xyz") == date)
 	}
 
-	func test_ShouldReturnDateFromStringWithFormat() {
+	func test_ShouldReturnDateFromStringWithISOFormat() {
 		let date = NSDate()
 		let dict = ["test":NSString(fromDate: date, format: NSDate.ISO8601StringFormat())]
 		XCTAssertEqual(GET_DATE_FORMAT(dict, "test", NSDate.ISO8601StringFormat())?.stringValue(), date.stringValue())
+	}
+
+	func test_ShouldReturnDateFromStringWithISOFormatWithZ() {
+		let date = NSDate()
+		let dict = ["test":NSString(fromDate: date, format: "yyyy'-'MM'-'dd'T'HH':'mm':'ssZ")]
+		XCTAssertEqual(GET_DATE_FORMAT(dict, "test", "yyyy'-'MM'-'dd'T'HH':'mm':'ssZ")?.stringValue(), date.stringValue())
+	}
+
+	func test_ShouldReturnDateFromStringWithISODateFormat() {
+		let date = NSDate()
+		let dict = ["test":NSString(fromDate: date, format: "yyyy'-'MM'-'dd")]
+		let receivedFormat = GET_DATE_FORMAT(dict, "test", "yyyy'-'MM'-'dd")
+		XCTAssertEqual(date.day(), receivedFormat?.day())
+		XCTAssertEqual(date.month(), receivedFormat?.month())
+		XCTAssertEqual(date.year(), receivedFormat?.year())
+	}
+
+	func test_ShouldReturnNilFromWrongISODateFormat() {
+		let date = NSDate()
+		let dict = ["test":NSString(fromDate: date, format: "yyyy'-'MM'-'dd'T'HH':'mm':'ssZ")]
+		let receivedFormat = GET_DATE_FORMAT(dict, "test", "yyyy'-'MM'-'dd")
+		XCTAssertNil(receivedFormat)
 	}
 
 	func test_ShouldReturnNilFromInvalidDictWithFormat() {
