@@ -332,6 +332,58 @@ extension DKHelperTests {
 		XCTAssert(GET_DATE(dict, "second") == nil)
 	}
 
+	//MARK: DateFormat
+
+	func test_ShouldReturnValidDateWithFormat() {
+		let date = NSDate()
+		let dict = ["test":date]
+		XCTAssert(GET_DATE_FORMAT(dict, "test", "xyz") === date)
+		XCTAssert(GET_DATE_FORMAT(dict, "test", "xyz") == date)
+	}
+
+	func test_ShouldReturnDateFromStringWithISOFormat() {
+		let date = NSDate()
+		let dict = ["test":NSString(fromDate: date, format: NSDate.ISO8601StringFormat())]
+		XCTAssertEqual(GET_DATE_FORMAT(dict, "test", NSDate.ISO8601StringFormat())?.stringValue(), date.stringValue())
+	}
+
+	func test_ShouldReturnDateFromStringWithISOFormatWithZ() {
+		let date = NSDate()
+		let dict = ["test":NSString(fromDate: date, format: "yyyy'-'MM'-'dd'T'HH':'mm':'ssZ")]
+		XCTAssertEqual(GET_DATE_FORMAT(dict, "test", "yyyy'-'MM'-'dd'T'HH':'mm':'ssZ")?.stringValue(), date.stringValue())
+	}
+
+	func test_ShouldReturnDateFromStringWithISODateFormat() {
+		let date = NSDate()
+		let dict = ["test":NSString(fromDate: date, format: "yyyy'-'MM'-'dd")]
+		let receivedFormat = GET_DATE_FORMAT(dict, "test", "yyyy'-'MM'-'dd")
+		XCTAssertEqual(date.day(), receivedFormat?.day())
+		XCTAssertEqual(date.month(), receivedFormat?.month())
+		XCTAssertEqual(date.year(), receivedFormat?.year())
+	}
+
+	func test_ShouldReturnNilFromWrongISODateFormat() {
+		let date = NSDate()
+		let dict = ["test":NSString(fromDate: date, format: "yyyy'-'MM'-'dd'T'HH':'mm':'ssZ")]
+		let receivedFormat = GET_DATE_FORMAT(dict, "test", "yyyy'-'MM'-'dd")
+		XCTAssertNil(receivedFormat)
+	}
+
+	func test_ShouldReturnNilFromInvalidDictWithFormat() {
+		XCTAssert(GET_DATE_FORMAT(nil, "test", NSDate.ISO8601StringFormat()) == nil)
+	}
+
+	func test_ShouldReturnNilFromInvalidKeyWithFormat() {
+		let dict = ["test":NSDate()]
+		XCTAssert(GET_DATE_FORMAT(dict, nil, NSDate.ISO8601StringFormat()) == nil)
+	}
+
+	func test_ShouldReturnNilFromWrongKeyWithFormat() {
+		let date = NSDate()
+		let dict = ["test":date]
+		XCTAssert(GET_DATE_FORMAT(dict, "second", NSDate.ISO8601StringFormat()) == nil)
+	}
+
 	// MARK: NSSTRING
 
 	func test_ShouldReturnValidString() {

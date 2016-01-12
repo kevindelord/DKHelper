@@ -153,6 +153,24 @@ NSNumber * _Nullable GET_NUMBER(NSDictionary * _Nullable dict, id _Nullable key)
 NSDate * _Nullable GET_DATE(NSDictionary * _Nullable dict, id _Nullable key);
 
 /**
+ * Extract a NSDate value out of a dictionary with a given key and a date format.
+ *
+ * @discussion This function add some validity tests to extract the value without crashing if an object isn't valid.
+ *
+ * If the object is a NSString the NSDate will be generated using the given format.
+ *
+ * If the object already is a NSDate then it will be simply returned.
+ *
+ * If the object is none of the above nil will be returned.
+ *
+ * @param dict The NSDictionary object to extract the object from.
+ * @param key An object used as a key.
+ * @param format the format of the given date
+ * @return A new NSDate value extracted from the given dictionary. If the object isn't valid returns nil instead.
+ */
+NSDate * _Nullable GET_DATE_FORMAT(NSDictionary * _Nullable dict, id _Nullable key, NSString* _Nullable format);
+
+/**
  * Extract a NSString value out of a dictionary with a given key.
  *
  * @discussion This function add some validity tests to extract the value without crashing if an object isn't valid.

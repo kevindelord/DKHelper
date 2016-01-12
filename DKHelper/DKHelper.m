@@ -81,6 +81,17 @@ NSDate * _Nullable GET_DATE(NSDictionary * _Nullable dict, id key) {
     return nil;
 }
 
+NSDate * _Nullable GET_DATE_FORMAT(NSDictionary * _Nullable dict, id _Nullable key, NSString* _Nullable format) {
+	if (format != nil && VALID(dict, key)) {
+		if ([dict[key] isKindOfClass:[NSDate class]]) {
+			return dict[key];
+		} else if ([dict[key] isKindOfClass:[NSString class]]) {
+			return [NSDate dateFromString:dict[key] format:format];
+		}
+	}
+	return nil;
+}
+
 NSString * _Nullable GET_STRING(NSDictionary * _Nullable dict, id key) {
     return ( VALID(dict, key) ? ( [dict[key] isEqualToString:@""] == false ? dict[key] : nil ) : nil);
 }
