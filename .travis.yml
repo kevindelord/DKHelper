@@ -18,7 +18,11 @@ before_script:
 before_deploy:
   - carthage build --no-skip-current
   - carthage archive $FRAMEWORK_NAME
-# skip_cleanup: true
-# on:
-#   repo: repo/repo
-#   tags: true
+deploy:
+  provider: releases
+  api_key: a337ae160bd51178c9890b3bfa175d0ea514b683
+  file: $FRAMEWORK_NAME.framework.zip
+  skip_cleanup: true
+  on:
+    repo: kevindelord/DKHelper
+    tags: true
