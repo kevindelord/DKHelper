@@ -1,5 +1,9 @@
 # DKHelper CHANGELOG
 
+## 2.1.2
+
+- Remove iOS7Delta define.
+
 ## 2.1.1
 
 - NSDate: add `GET_DATE_FORMAT` function.
