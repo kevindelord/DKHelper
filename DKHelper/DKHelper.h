@@ -213,7 +213,6 @@ unsigned long cUL(NSUInteger v);
 
 #define DK_APP_VERSION                              appVersion()
 #define __STRING_PRETTY_FUNCTION__                  [NSString stringWithFormat:@"%s", __PRETTY_FUNCTION__]
-#define iOS7Delta                                   [UIDevice iOS7Delta]
 #define is35InchScreen                              [UIScreen is35InchScreen]
 #define is4InchScreen                               [UIScreen is4InchScreen]
 #define is47InchScreen                              [UIScreen is47InchScreen]
