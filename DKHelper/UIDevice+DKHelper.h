@@ -49,6 +49,8 @@
  * @discussion For example, returns @"iPhone 5C (GSM)" for @"iPhone5,3".
  * If the given string does not match the device list, the parameter string is returned.
  *
+ * @see https://www.theiphonewiki.com/wiki/Models
+ *
  * @param platform A platform string representing an iOS device, for example @"iPhone5,3".
  * @return If recognized, a string describing the given platform with an user-friendly name; otherwise returns the given parameter.
  */

@@ -1,5 +1,10 @@
 # DKHelper CHANGELOG
 
+## 2.1.3
+
+- Add support for iPhone SE and iPro 9,7 inches.
+- Add `performBlock` C functions.
+
 ## 2.1.2
 
 - Remove iOS7Delta define.
