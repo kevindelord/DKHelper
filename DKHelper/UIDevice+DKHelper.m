@@ -32,7 +32,8 @@
 }
 
 + (NSString * _Nonnull)platformNameFromString:(NSString * _Nonnull)platform {
-
+	// https://www.theiphonewiki.com/wiki/Models
+	// https://en.wikipedia.org/wiki/List_of_iOS_devices
 	// Apple TV
 	if ([platform isEqualToString:@"AppleTV2,1"])   return @"Apple TV 2G";
 	if ([platform isEqualToString:@"AppleTV3,1"])   return @"Apple TV 3G";
@@ -61,6 +62,7 @@
 	if ([platform isEqualToString:@"iPhone7,2"])    return @"iPhone 6";
 	if ([platform isEqualToString:@"iPhone8,1"])    return @"iPhone 6s";
 	if ([platform isEqualToString:@"iPhone8,2"])    return @"iPhone 6s Plus";
+	if ([platform isEqualToString:@"iPhone8,4"])    return @"iPhone SE";
 
 	// iPod
 	if ([platform isEqualToString:@"iPod1,1"])      return @"iPod Touch";
@@ -87,6 +89,8 @@
 	if ([platform isEqualToString:@"iPad4,3"])      return @"iPad Air";
 	if ([platform isEqualToString:@"iPad5,3"])      return @"iPad Air 2 (WiFi)";
 	if ([platform isEqualToString:@"iPad5,4"])      return @"iPad Air 2 (Cellular)";
+	if ([platform isEqualToString:@"iPad6,3"])      return @"iPad Pro (WiFi)";
+	if ([platform isEqualToString:@"iPad6,4"])      return @"iPad Pro (Cellular)";
 	if ([platform isEqualToString:@"iPad6,7"])      return @"iPad Pro (WiFi)";
 	if ([platform isEqualToString:@"iPad6,8"])      return @"iPad Pro (Cellular)";
 
