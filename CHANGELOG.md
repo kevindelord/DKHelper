@@ -1,5 +1,9 @@
 # DKHelper CHANGELOG
 
+## 2.1.3
+
+- Add support for iPhone SE and iPro 9,7 inches.
+
 ## 2.1.2
 
 - Remove iOS7Delta define.
