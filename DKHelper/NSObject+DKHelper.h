@@ -67,4 +67,11 @@
 
 @end
 
+void performBlockWithCompletionBlock(dispatch_block_t _Nullable block, dispatch_block_t _Nullable completionBlock);
+void performBlockAfterDelayWithCompletionBlock(NSTimeInterval delay, dispatch_block_t _Nullable block, dispatch_block_t _Nullable completionBlock);
+void performBlockAfterDelay(NSTimeInterval delay, dispatch_block_t _Nullable block);
+void performBlockInMainThread(dispatch_block_t _Nullable block);
+void performBlockInBackground(dispatch_block_t _Nullable block);
+void performBlockInBackgroundWithCompletionBlock(dispatch_block_t _Nullable block, dispatch_block_t _Nullable completionBlock);
+
 #endif
