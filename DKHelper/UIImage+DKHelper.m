@@ -31,4 +31,12 @@
     return [self resizedImageToSize:screenSize.size];
 }
 
+- (CGSize)sizeInPixel {
+
+	CGSize imageSize = self.size;
+	imageSize.width *= self.scale;
+	imageSize.height *= self.scale;
+	return imageSize;
+}
+
 @end
