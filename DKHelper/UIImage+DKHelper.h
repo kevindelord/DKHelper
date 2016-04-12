@@ -40,4 +40,11 @@
  */
 - (UIImage * _Null_unspecified)resizedImageToScreenSize;
 
+/**
+ *  Calculated the size of the UIImage in pixels instead of points
+ *
+ *  @return Size of the image in pixels
+ */
+- (CGSize)sizeInPixel;
+
 @end
