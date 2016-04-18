@@ -46,3 +46,7 @@ CGSize CGSizeAdjustToCGSize(CGSize size, CGSize container) {
 
     return CGSizeMake(w, h);
 }
+
+CGSize CGSizeMultiply(CGSize size, CGFloat factor) {
+	return CGSizeMake(size.width * factor, size.height * factor);
+}

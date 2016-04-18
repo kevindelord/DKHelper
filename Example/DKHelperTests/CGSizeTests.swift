@@ -108,3 +108,19 @@ extension CGSizeTests {
 		XCTAssertEqual(fitSize.height, 10)
 	}
 }
+
+// MARK: - CGSizeMultiply
+
+extension CGSizeTests {
+
+	func test_ShouldMultiplyCGSize() {
+		let size = CGSize(width: 100, height: 100)
+		let scaleFactor = CGFloat(1.5)
+		let expectedResult = CGSize(width: 150, height: 150)
+
+		let multipliedSize = CGSizeMultiply(size, scaleFactor)
+
+		XCTAssertEqual(multipliedSize, expectedResult)
+	}
+}
+

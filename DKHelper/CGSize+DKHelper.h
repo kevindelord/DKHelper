@@ -36,4 +36,14 @@ CGSize CGSizeFitToCGSize(CGSize size, CGSize container);
  */
 CGSize CGSizeAdjustToCGSize(CGSize size, CGSize container);
 
+/**
+ * Returns a new CGSize structure corresponding to the given size multiplied by the given factor.
+ *
+ *  @param size   The base size
+ *  @param factor The factor the size should be multiplied with
+ *
+ *  @return A new CGSize structure.
+ */
+CGSize CGSizeMultiply(CGSize size, CGFloat factor);
+
 #endif
