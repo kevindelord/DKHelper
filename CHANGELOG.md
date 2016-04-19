@@ -1,5 +1,10 @@
 # DKHelper CHANGELOG
 
+## 2.1.4
+
+- UIImage: add `sizeInPixel`function.
+- CGSize: add `CGSizeMultiply` function.
+
 ## 2.1.3
 
 - Add support for iPhone SE and iPro 9,7 inches.
