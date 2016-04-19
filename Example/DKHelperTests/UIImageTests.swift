@@ -44,7 +44,7 @@ extension UIImageTests {
 	}
 }
 
-// MARK: - Reisze Image to Screen Size
+// MARK: - Resize Image to Screen Size
 
 extension UIImageTests {
 
@@ -58,6 +58,53 @@ extension UIImageTests {
 			XCTAssertEqual(newImage?.size.height, finalSize.height)
 		} else {
 			XCTAssert(false)
+		}
+	}
+}
+
+// MARK: - Calculate Image Size In Pixels
+
+extension UIImageTests {
+
+	private static func imageWithSize(size: CGSize, scale: CGFloat) -> UIImage {
+		UIGraphicsBeginImageContextWithOptions(size, true, scale)
+		let image = UIGraphicsGetImageFromCurrentImageContext()
+		UIGraphicsEndImageContext()
+		return image
+	}
+
+	func test_ShouldCalculateImageSizeInPixels() {
+
+		enum ImageSizeInPixelsTestData {
+			case OneX
+			case TwoX
+			case ThreeX
+
+			static func imageSize() -> CGSize {
+				return CGSize(width: 320, height: 240)
+			}
+
+			func image() -> UIImage {
+				let imageSize = ImageSizeInPixelsTestData.imageSize()
+				return UIImageTests.imageWithSize(imageSize, scale: self.scaleFactor())
+			}
+
+			func scaleFactor() -> CGFloat {
+				switch self {
+				case OneX:		return 1.0
+				case TwoX:		return 2.0
+				case ThreeX:	return 3.0
+				}
+			}
+
+			static func allValues() -> [ImageSizeInPixelsTestData] {
+				return [OneX, TwoX, ThreeX]
+			}
+		}
+
+		for testData in ImageSizeInPixelsTestData.allValues() {
+			let expectedSize = CGSizeMultiply(ImageSizeInPixelsTestData.imageSize(), testData.scaleFactor())
+			XCTAssertEqual(testData.image().sizeInPixel(), expectedSize)
 		}
 	}
 }
