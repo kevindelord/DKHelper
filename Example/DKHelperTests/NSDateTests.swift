@@ -183,12 +183,13 @@ extension NSDateTests {
 	}
 
 	func test_ShouldReturnTodaysMidnightDate() {
-		let date = today?.midnightDate()
+		let date = self.today?.midnightDate()
 		XCTAssertNotNil(date)
-		XCTAssertEqual(date?.year(), today?.year())
-		XCTAssertEqual(date?.day(), today?.day())
-		XCTAssertEqual(date?.month(), today?.month())
-		XCTAssertEqual(date?.hour(), 1, "expect Time Zone GMT+1")
+		XCTAssertEqual(date?.year(), self.today?.year())
+		XCTAssertEqual(date?.day(), self.today?.day())
+		XCTAssertEqual(date?.month(), self.today?.month())
+		let timezoneoffset = (NSTimeZone.systemTimeZone().secondsFromGMT / 3600)
+		XCTAssertEqual(date?.hour(), timezoneoffset, "expect Time Zone GMT+1")
 		XCTAssertEqual(date?.minute(), 0)
 		XCTAssertEqual(date?.second(), 0)
 	}
@@ -196,10 +197,11 @@ extension NSDateTests {
 	func test_ShouldReturnTodaysDayDate() {
 		let date = NSDate.currentDayDate()
 		XCTAssertNotNil(date)
-		XCTAssertEqual(date?.year(), today?.year())
-		XCTAssertEqual(date?.day(), today?.day())
-		XCTAssertEqual(date?.month(), today?.month())
-		XCTAssertEqual(date?.hour(), 1, "expect Time Zone GMT+1")
+		XCTAssertEqual(date?.year(), self.today?.year())
+		XCTAssertEqual(date?.day(), self.today?.day())
+		XCTAssertEqual(date?.month(), self.today?.month())
+		let timezoneoffset = (NSTimeZone.systemTimeZone().secondsFromGMT / 3600)
+		XCTAssertEqual(date?.hour(), timezoneoffset, "expect Time Zone GMT+1")
 		XCTAssertEqual(date?.minute(), 0)
 		XCTAssertEqual(date?.second(), 0)
 	}
