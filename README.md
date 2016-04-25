@@ -3,6 +3,7 @@
 [![Version](https://img.shields.io/cocoapods/v/DKHelper.svg?style=flat)](http://cocoadocs.org/docsets/DKHelper)
 [![License](https://img.shields.io/cocoapods/l/DKHelper.svg?style=flat)](http://cocoadocs.org/docsets/DKHelper)
 [![Platform](https://img.shields.io/cocoapods/p/DKHelper.svg?style=flat)](http://cocoadocs.org/docsets/DKHelper)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/kevindelord/DKHelper)
 
 ## Usage
 
@@ -14,7 +15,7 @@ The documentation is available on [CocoaDocs](http://cocoadocs.org/docsets/DKHel
 
 ## Requirements
 
-This pod requires ARC.
+This library requires ARC.
 
 ## Installation
 
@@ -30,4 +31,3 @@ kevindelord, delord.kevin@gmail.com
 ## License
 
 DKHelper is available under the MIT license. See the LICENSE file for more info.
-
