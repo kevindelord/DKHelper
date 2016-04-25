@@ -1,0 +1,672 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		757800121CCE510A000CD33F /* CGRect+DKHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 7578FFEE1CCE510A000CD33F /* CGRect+DKHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		757800131CCE510A000CD33F /* CGRect+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7578FFEF1CCE510A000CD33F /* CGRect+DKHelper.m */; };
+		757800141CCE510A000CD33F /* CGRect+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7578FFEF1CCE510A000CD33F /* CGRect+DKHelper.m */; };
+		757800151CCE510A000CD33F /* CGSize+DKHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 7578FFF01CCE510A000CD33F /* CGSize+DKHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		757800161CCE510A000CD33F /* CGSize+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7578FFF11CCE510A000CD33F /* CGSize+DKHelper.m */; };
+		757800171CCE510A000CD33F /* CGSize+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7578FFF11CCE510A000CD33F /* CGSize+DKHelper.m */; };
+		757800181CCE510A000CD33F /* DKHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 7578FFF21CCE510A000CD33F /* DKHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		757800191CCE510A000CD33F /* DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7578FFF31CCE510A000CD33F /* DKHelper.m */; };
+		7578001A1CCE510A000CD33F /* DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7578FFF31CCE510A000CD33F /* DKHelper.m */; };
+		7578001B1CCE510A000CD33F /* DKRegex.h in Headers */ = {isa = PBXBuildFile; fileRef = 7578FFF41CCE510A000CD33F /* DKRegex.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7578001C1CCE510A000CD33F /* DKRegex.m in Sources */ = {isa = PBXBuildFile; fileRef = 7578FFF51CCE510A000CD33F /* DKRegex.m */; };
+		7578001D1CCE510A000CD33F /* DKRegex.m in Sources */ = {isa = PBXBuildFile; fileRef = 7578FFF51CCE510A000CD33F /* DKRegex.m */; };
+		7578001E1CCE510A000CD33F /* NSArray+DKHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 7578FFF61CCE510A000CD33F /* NSArray+DKHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7578001F1CCE510A000CD33F /* NSArray+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7578FFF71CCE510A000CD33F /* NSArray+DKHelper.m */; };
+		757800201CCE510A000CD33F /* NSArray+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7578FFF71CCE510A000CD33F /* NSArray+DKHelper.m */; };
+		757800211CCE510A000CD33F /* NSBundle+DKHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 7578FFF81CCE510A000CD33F /* NSBundle+DKHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		757800221CCE510A000CD33F /* NSBundle+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7578FFF91CCE510A000CD33F /* NSBundle+DKHelper.m */; };
+		757800231CCE510A000CD33F /* NSBundle+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7578FFF91CCE510A000CD33F /* NSBundle+DKHelper.m */; };
+		757800241CCE510A000CD33F /* NSDate+DKHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 7578FFFA1CCE510A000CD33F /* NSDate+DKHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		757800251CCE510A000CD33F /* NSDate+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7578FFFB1CCE510A000CD33F /* NSDate+DKHelper.m */; };
+		757800261CCE510A000CD33F /* NSDate+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7578FFFB1CCE510A000CD33F /* NSDate+DKHelper.m */; };
+		757800271CCE510A000CD33F /* NSNumber+DKHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 7578FFFC1CCE510A000CD33F /* NSNumber+DKHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		757800281CCE510A000CD33F /* NSNumber+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7578FFFD1CCE510A000CD33F /* NSNumber+DKHelper.m */; };
+		757800291CCE510A000CD33F /* NSNumber+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7578FFFD1CCE510A000CD33F /* NSNumber+DKHelper.m */; };
+		7578002A1CCE510A000CD33F /* NSObject+DKHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 7578FFFE1CCE510A000CD33F /* NSObject+DKHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7578002B1CCE510A000CD33F /* NSObject+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7578FFFF1CCE510A000CD33F /* NSObject+DKHelper.m */; };
+		7578002C1CCE510A000CD33F /* NSObject+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7578FFFF1CCE510A000CD33F /* NSObject+DKHelper.m */; };
+		7578002D1CCE510A000CD33F /* NSOperationQueue+DKHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 757800001CCE510A000CD33F /* NSOperationQueue+DKHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7578002E1CCE510A000CD33F /* NSOperationQueue+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 757800011CCE510A000CD33F /* NSOperationQueue+DKHelper.m */; };
+		7578002F1CCE510A000CD33F /* NSOperationQueue+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 757800011CCE510A000CD33F /* NSOperationQueue+DKHelper.m */; };
+		757800301CCE510A000CD33F /* NSPredicate+DKHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 757800021CCE510A000CD33F /* NSPredicate+DKHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		757800311CCE510A000CD33F /* NSPredicate+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 757800031CCE510A000CD33F /* NSPredicate+DKHelper.m */; };
+		757800321CCE510A000CD33F /* NSPredicate+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 757800031CCE510A000CD33F /* NSPredicate+DKHelper.m */; };
+		757800331CCE510A000CD33F /* NSString+DKHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 757800041CCE510A000CD33F /* NSString+DKHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		757800341CCE510A000CD33F /* NSString+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 757800051CCE510A000CD33F /* NSString+DKHelper.m */; };
+		757800351CCE510A000CD33F /* NSString+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 757800051CCE510A000CD33F /* NSString+DKHelper.m */; };
+		757800361CCE510A000CD33F /* UIColor+DKHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 757800061CCE510A000CD33F /* UIColor+DKHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		757800371CCE510A000CD33F /* UIColor+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 757800071CCE510A000CD33F /* UIColor+DKHelper.m */; };
+		757800381CCE510A000CD33F /* UIColor+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 757800071CCE510A000CD33F /* UIColor+DKHelper.m */; };
+		757800391CCE510A000CD33F /* UIDevice+DKHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 757800081CCE510A000CD33F /* UIDevice+DKHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7578003A1CCE510A000CD33F /* UIDevice+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 757800091CCE510A000CD33F /* UIDevice+DKHelper.m */; };
+		7578003B1CCE510A000CD33F /* UIDevice+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 757800091CCE510A000CD33F /* UIDevice+DKHelper.m */; };
+		7578003C1CCE510A000CD33F /* UIImage+DKHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 7578000A1CCE510A000CD33F /* UIImage+DKHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7578003D1CCE510A000CD33F /* UIImage+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7578000B1CCE510A000CD33F /* UIImage+DKHelper.m */; };
+		7578003E1CCE510A000CD33F /* UIImage+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7578000B1CCE510A000CD33F /* UIImage+DKHelper.m */; };
+		7578003F1CCE510A000CD33F /* UIImageView+DKHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 7578000C1CCE510A000CD33F /* UIImageView+DKHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		757800401CCE510A000CD33F /* UIImageView+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7578000D1CCE510A000CD33F /* UIImageView+DKHelper.m */; };
+		757800411CCE510A000CD33F /* UIImageView+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7578000D1CCE510A000CD33F /* UIImageView+DKHelper.m */; };
+		757800421CCE510A000CD33F /* UIScreen+DKHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 7578000E1CCE510A000CD33F /* UIScreen+DKHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		757800431CCE510A000CD33F /* UIScreen+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7578000F1CCE510A000CD33F /* UIScreen+DKHelper.m */; };
+		757800441CCE510A000CD33F /* UIScreen+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7578000F1CCE510A000CD33F /* UIScreen+DKHelper.m */; };
+		757800451CCE510A000CD33F /* UIView+DKHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 757800101CCE510A000CD33F /* UIView+DKHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		757800461CCE510A000CD33F /* UIView+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 757800111CCE510A000CD33F /* UIView+DKHelper.m */; };
+		757800471CCE510A000CD33F /* UIView+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 757800111CCE510A000CD33F /* UIView+DKHelper.m */; };
+		7578005F1CCE5150000CD33F /* CGRectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757800491CCE5150000CD33F /* CGRectTests.swift */; };
+		757800601CCE5150000CD33F /* CGSizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7578004A1CCE5150000CD33F /* CGSizeTests.swift */; };
+		757800621CCE5150000CD33F /* DKHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7578004C1CCE5150000CD33F /* DKHelperTests.swift */; };
+		757800631CCE5150000CD33F /* DKRegexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7578004D1CCE5150000CD33F /* DKRegexTests.swift */; };
+		757800641CCE5150000CD33F /* NSArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7578004E1CCE5150000CD33F /* NSArrayTests.swift */; };
+		757800651CCE5150000CD33F /* NSBundleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7578004F1CCE5150000CD33F /* NSBundleTests.swift */; };
+		757800661CCE5150000CD33F /* NSDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757800501CCE5150000CD33F /* NSDateTests.swift */; };
+		757800671CCE5150000CD33F /* NSNumberTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757800511CCE5150000CD33F /* NSNumberTests.swift */; };
+		757800681CCE5150000CD33F /* NSObjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757800521CCE5150000CD33F /* NSObjectTests.swift */; };
+		757800691CCE5150000CD33F /* NSOperationQueueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757800531CCE5150000CD33F /* NSOperationQueueTests.swift */; };
+		7578006A1CCE5150000CD33F /* NSPredicateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757800541CCE5150000CD33F /* NSPredicateTests.swift */; };
+		7578006B1CCE5150000CD33F /* NSStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757800551CCE5150000CD33F /* NSStringTests.swift */; };
+		7578006D1CCE5150000CD33F /* DKViewTest.xib in Resources */ = {isa = PBXBuildFile; fileRef = 757800581CCE5150000CD33F /* DKViewTest.xib */; };
+		7578006E1CCE5150000CD33F /* UIColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757800591CCE5150000CD33F /* UIColorTests.swift */; };
+		7578006F1CCE5150000CD33F /* UIDeviceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7578005A1CCE5150000CD33F /* UIDeviceTests.swift */; };
+		757800701CCE5150000CD33F /* UIImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7578005B1CCE5150000CD33F /* UIImageTests.swift */; };
+		757800711CCE5150000CD33F /* UIImageViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7578005C1CCE5150000CD33F /* UIImageViewTests.swift */; };
+		757800721CCE5150000CD33F /* UIScreenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7578005D1CCE5150000CD33F /* UIScreenTests.swift */; };
+		757800731CCE5150000CD33F /* UIViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7578005E1CCE5150000CD33F /* UIViewTests.swift */; };
+		7578009C1CCE5917000CD33F /* TestImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 7578009B1CCE5917000CD33F /* TestImage.png */; };
+		7578009F1CCE66FA000CD33F /* DKHelper-Tests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7578004B1CCE5150000CD33F /* DKHelper-Tests-Info.plist */; };
+		7578FFDE1CCE50D0000CD33F /* DKHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7578FFD31CCE50D0000CD33F /* DKHelper.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7578FFDF1CCE50D0000CD33F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7578FFCA1CCE50D0000CD33F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7578FFD21CCE50D0000CD33F;
+			remoteInfo = DKHelper;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		757800001CCE510A000CD33F /* NSOperationQueue+DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSOperationQueue+DKHelper.h"; sourceTree = "<group>"; };
+		757800011CCE510A000CD33F /* NSOperationQueue+DKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSOperationQueue+DKHelper.m"; sourceTree = "<group>"; };
+		757800021CCE510A000CD33F /* NSPredicate+DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPredicate+DKHelper.h"; sourceTree = "<group>"; };
+		757800031CCE510A000CD33F /* NSPredicate+DKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPredicate+DKHelper.m"; sourceTree = "<group>"; };
+		757800041CCE510A000CD33F /* NSString+DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DKHelper.h"; sourceTree = "<group>"; };
+		757800051CCE510A000CD33F /* NSString+DKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DKHelper.m"; sourceTree = "<group>"; };
+		757800061CCE510A000CD33F /* UIColor+DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+DKHelper.h"; sourceTree = "<group>"; };
+		757800071CCE510A000CD33F /* UIColor+DKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+DKHelper.m"; sourceTree = "<group>"; };
+		757800081CCE510A000CD33F /* UIDevice+DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+DKHelper.h"; sourceTree = "<group>"; };
+		757800091CCE510A000CD33F /* UIDevice+DKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+DKHelper.m"; sourceTree = "<group>"; };
+		7578000A1CCE510A000CD33F /* UIImage+DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+DKHelper.h"; sourceTree = "<group>"; };
+		7578000B1CCE510A000CD33F /* UIImage+DKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+DKHelper.m"; sourceTree = "<group>"; };
+		7578000C1CCE510A000CD33F /* UIImageView+DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+DKHelper.h"; sourceTree = "<group>"; };
+		7578000D1CCE510A000CD33F /* UIImageView+DKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+DKHelper.m"; sourceTree = "<group>"; };
+		7578000E1CCE510A000CD33F /* UIScreen+DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+DKHelper.h"; sourceTree = "<group>"; };
+		7578000F1CCE510A000CD33F /* UIScreen+DKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+DKHelper.m"; sourceTree = "<group>"; };
+		757800101CCE510A000CD33F /* UIView+DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+DKHelper.h"; sourceTree = "<group>"; };
+		757800111CCE510A000CD33F /* UIView+DKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+DKHelper.m"; sourceTree = "<group>"; };
+		757800491CCE5150000CD33F /* CGRectTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectTests.swift; sourceTree = "<group>"; };
+		7578004A1CCE5150000CD33F /* CGSizeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGSizeTests.swift; sourceTree = "<group>"; };
+		7578004B1CCE5150000CD33F /* DKHelper-Tests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "DKHelper-Tests-Info.plist"; sourceTree = "<group>"; };
+		7578004C1CCE5150000CD33F /* DKHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKHelperTests.swift; sourceTree = "<group>"; };
+		7578004D1CCE5150000CD33F /* DKRegexTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DKRegexTests.swift; sourceTree = "<group>"; };
+		7578004E1CCE5150000CD33F /* NSArrayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSArrayTests.swift; sourceTree = "<group>"; };
+		7578004F1CCE5150000CD33F /* NSBundleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSBundleTests.swift; sourceTree = "<group>"; };
+		757800501CCE5150000CD33F /* NSDateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateTests.swift; sourceTree = "<group>"; };
+		757800511CCE5150000CD33F /* NSNumberTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSNumberTests.swift; sourceTree = "<group>"; };
+		757800521CCE5150000CD33F /* NSObjectTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObjectTests.swift; sourceTree = "<group>"; };
+		757800531CCE5150000CD33F /* NSOperationQueueTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSOperationQueueTests.swift; sourceTree = "<group>"; };
+		757800541CCE5150000CD33F /* NSPredicateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSPredicateTests.swift; sourceTree = "<group>"; };
+		757800551CCE5150000CD33F /* NSStringTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSStringTests.swift; sourceTree = "<group>"; };
+		757800581CCE5150000CD33F /* DKViewTest.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DKViewTest.xib; sourceTree = "<group>"; };
+		757800591CCE5150000CD33F /* UIColorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorTests.swift; sourceTree = "<group>"; };
+		7578005A1CCE5150000CD33F /* UIDeviceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDeviceTests.swift; sourceTree = "<group>"; };
+		7578005B1CCE5150000CD33F /* UIImageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageTests.swift; sourceTree = "<group>"; };
+		7578005C1CCE5150000CD33F /* UIImageViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewTests.swift; sourceTree = "<group>"; };
+		7578005D1CCE5150000CD33F /* UIScreenTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScreenTests.swift; sourceTree = "<group>"; };
+		7578005E1CCE5150000CD33F /* UIViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewTests.swift; sourceTree = "<group>"; };
+		757800741CCE51E8000CD33F /* DKHelper-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DKHelper-Bridging-Header.h"; sourceTree = "<group>"; };
+		7578009B1CCE5917000CD33F /* TestImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TestImage.png; sourceTree = "<group>"; };
+		7578FFD31CCE50D0000CD33F /* DKHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DKHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7578FFD81CCE50D0000CD33F /* DKHelper-Framework-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "DKHelper-Framework-Info.plist"; path = "DKHelper/DKHelper-Framework-Info.plist"; sourceTree = "<group>"; };
+		7578FFDD1CCE50D0000CD33F /* DKHelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DKHelperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7578FFEE1CCE510A000CD33F /* CGRect+DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CGRect+DKHelper.h"; sourceTree = "<group>"; };
+		7578FFEF1CCE510A000CD33F /* CGRect+DKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CGRect+DKHelper.m"; sourceTree = "<group>"; };
+		7578FFF01CCE510A000CD33F /* CGSize+DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CGSize+DKHelper.h"; sourceTree = "<group>"; };
+		7578FFF11CCE510A000CD33F /* CGSize+DKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CGSize+DKHelper.m"; sourceTree = "<group>"; };
+		7578FFF21CCE510A000CD33F /* DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKHelper.h; sourceTree = "<group>"; };
+		7578FFF31CCE510A000CD33F /* DKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKHelper.m; sourceTree = "<group>"; };
+		7578FFF41CCE510A000CD33F /* DKRegex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKRegex.h; sourceTree = "<group>"; };
+		7578FFF51CCE510A000CD33F /* DKRegex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKRegex.m; sourceTree = "<group>"; };
+		7578FFF61CCE510A000CD33F /* NSArray+DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+DKHelper.h"; sourceTree = "<group>"; };
+		7578FFF71CCE510A000CD33F /* NSArray+DKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+DKHelper.m"; sourceTree = "<group>"; };
+		7578FFF81CCE510A000CD33F /* NSBundle+DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+DKHelper.h"; sourceTree = "<group>"; };
+		7578FFF91CCE510A000CD33F /* NSBundle+DKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+DKHelper.m"; sourceTree = "<group>"; };
+		7578FFFA1CCE510A000CD33F /* NSDate+DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+DKHelper.h"; sourceTree = "<group>"; };
+		7578FFFB1CCE510A000CD33F /* NSDate+DKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+DKHelper.m"; sourceTree = "<group>"; };
+		7578FFFC1CCE510A000CD33F /* NSNumber+DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+DKHelper.h"; sourceTree = "<group>"; };
+		7578FFFD1CCE510A000CD33F /* NSNumber+DKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+DKHelper.m"; sourceTree = "<group>"; };
+		7578FFFE1CCE510A000CD33F /* NSObject+DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DKHelper.h"; sourceTree = "<group>"; };
+		7578FFFF1CCE510A000CD33F /* NSObject+DKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DKHelper.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7578FFCF1CCE50D0000CD33F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7578FFDA1CCE50D0000CD33F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7578FFDE1CCE50D0000CD33F /* DKHelper.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		757800481CCE5150000CD33F /* DKHelperTests */ = {
+			isa = PBXGroup;
+			children = (
+				757800561CCE5150000CD33F /* Resources */,
+				757800491CCE5150000CD33F /* CGRectTests.swift */,
+				7578004A1CCE5150000CD33F /* CGSizeTests.swift */,
+				7578004B1CCE5150000CD33F /* DKHelper-Tests-Info.plist */,
+				7578004C1CCE5150000CD33F /* DKHelperTests.swift */,
+				7578004D1CCE5150000CD33F /* DKRegexTests.swift */,
+				7578004E1CCE5150000CD33F /* NSArrayTests.swift */,
+				7578004F1CCE5150000CD33F /* NSBundleTests.swift */,
+				757800501CCE5150000CD33F /* NSDateTests.swift */,
+				757800511CCE5150000CD33F /* NSNumberTests.swift */,
+				757800521CCE5150000CD33F /* NSObjectTests.swift */,
+				757800531CCE5150000CD33F /* NSOperationQueueTests.swift */,
+				757800541CCE5150000CD33F /* NSPredicateTests.swift */,
+				757800551CCE5150000CD33F /* NSStringTests.swift */,
+				757800591CCE5150000CD33F /* UIColorTests.swift */,
+				7578005A1CCE5150000CD33F /* UIDeviceTests.swift */,
+				7578005B1CCE5150000CD33F /* UIImageTests.swift */,
+				7578005C1CCE5150000CD33F /* UIImageViewTests.swift */,
+				7578005D1CCE5150000CD33F /* UIScreenTests.swift */,
+				7578005E1CCE5150000CD33F /* UIViewTests.swift */,
+			);
+			path = DKHelperTests;
+			sourceTree = "<group>";
+		};
+		757800561CCE5150000CD33F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7578009B1CCE5917000CD33F /* TestImage.png */,
+				757800741CCE51E8000CD33F /* DKHelper-Bridging-Header.h */,
+				757800581CCE5150000CD33F /* DKViewTest.xib */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7578FFC91CCE50D0000CD33F = {
+			isa = PBXGroup;
+			children = (
+				7578FFD81CCE50D0000CD33F /* DKHelper-Framework-Info.plist */,
+				757800481CCE5150000CD33F /* DKHelperTests */,
+				7578FFED1CCE510A000CD33F /* Sources */,
+				7578FFD41CCE50D0000CD33F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7578FFD41CCE50D0000CD33F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7578FFD31CCE50D0000CD33F /* DKHelper.framework */,
+				7578FFDD1CCE50D0000CD33F /* DKHelperTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7578FFED1CCE510A000CD33F /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				7578FFEE1CCE510A000CD33F /* CGRect+DKHelper.h */,
+				7578FFEF1CCE510A000CD33F /* CGRect+DKHelper.m */,
+				7578FFF01CCE510A000CD33F /* CGSize+DKHelper.h */,
+				7578FFF11CCE510A000CD33F /* CGSize+DKHelper.m */,
+				7578FFF21CCE510A000CD33F /* DKHelper.h */,
+				7578FFF31CCE510A000CD33F /* DKHelper.m */,
+				7578FFF41CCE510A000CD33F /* DKRegex.h */,
+				7578FFF51CCE510A000CD33F /* DKRegex.m */,
+				7578FFF61CCE510A000CD33F /* NSArray+DKHelper.h */,
+				7578FFF71CCE510A000CD33F /* NSArray+DKHelper.m */,
+				7578FFF81CCE510A000CD33F /* NSBundle+DKHelper.h */,
+				7578FFF91CCE510A000CD33F /* NSBundle+DKHelper.m */,
+				7578FFFA1CCE510A000CD33F /* NSDate+DKHelper.h */,
+				7578FFFB1CCE510A000CD33F /* NSDate+DKHelper.m */,
+				7578FFFC1CCE510A000CD33F /* NSNumber+DKHelper.h */,
+				7578FFFD1CCE510A000CD33F /* NSNumber+DKHelper.m */,
+				7578FFFE1CCE510A000CD33F /* NSObject+DKHelper.h */,
+				7578FFFF1CCE510A000CD33F /* NSObject+DKHelper.m */,
+				757800001CCE510A000CD33F /* NSOperationQueue+DKHelper.h */,
+				757800011CCE510A000CD33F /* NSOperationQueue+DKHelper.m */,
+				757800021CCE510A000CD33F /* NSPredicate+DKHelper.h */,
+				757800031CCE510A000CD33F /* NSPredicate+DKHelper.m */,
+				757800041CCE510A000CD33F /* NSString+DKHelper.h */,
+				757800051CCE510A000CD33F /* NSString+DKHelper.m */,
+				757800061CCE510A000CD33F /* UIColor+DKHelper.h */,
+				757800071CCE510A000CD33F /* UIColor+DKHelper.m */,
+				757800081CCE510A000CD33F /* UIDevice+DKHelper.h */,
+				757800091CCE510A000CD33F /* UIDevice+DKHelper.m */,
+				7578000A1CCE510A000CD33F /* UIImage+DKHelper.h */,
+				7578000B1CCE510A000CD33F /* UIImage+DKHelper.m */,
+				7578000C1CCE510A000CD33F /* UIImageView+DKHelper.h */,
+				7578000D1CCE510A000CD33F /* UIImageView+DKHelper.m */,
+				7578000E1CCE510A000CD33F /* UIScreen+DKHelper.h */,
+				7578000F1CCE510A000CD33F /* UIScreen+DKHelper.m */,
+				757800101CCE510A000CD33F /* UIView+DKHelper.h */,
+				757800111CCE510A000CD33F /* UIView+DKHelper.m */,
+			);
+			name = Sources;
+			path = ../Sources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		7578FFD01CCE50D0000CD33F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				757800241CCE510A000CD33F /* NSDate+DKHelper.h in Headers */,
+				757800151CCE510A000CD33F /* CGSize+DKHelper.h in Headers */,
+				757800391CCE510A000CD33F /* UIDevice+DKHelper.h in Headers */,
+				7578003C1CCE510A000CD33F /* UIImage+DKHelper.h in Headers */,
+				7578002A1CCE510A000CD33F /* NSObject+DKHelper.h in Headers */,
+				7578003F1CCE510A000CD33F /* UIImageView+DKHelper.h in Headers */,
+				757800301CCE510A000CD33F /* NSPredicate+DKHelper.h in Headers */,
+				757800361CCE510A000CD33F /* UIColor+DKHelper.h in Headers */,
+				757800211CCE510A000CD33F /* NSBundle+DKHelper.h in Headers */,
+				757800331CCE510A000CD33F /* NSString+DKHelper.h in Headers */,
+				757800421CCE510A000CD33F /* UIScreen+DKHelper.h in Headers */,
+				7578002D1CCE510A000CD33F /* NSOperationQueue+DKHelper.h in Headers */,
+				757800121CCE510A000CD33F /* CGRect+DKHelper.h in Headers */,
+				757800181CCE510A000CD33F /* DKHelper.h in Headers */,
+				7578001E1CCE510A000CD33F /* NSArray+DKHelper.h in Headers */,
+				757800451CCE510A000CD33F /* UIView+DKHelper.h in Headers */,
+				757800271CCE510A000CD33F /* NSNumber+DKHelper.h in Headers */,
+				7578001B1CCE510A000CD33F /* DKRegex.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		7578FFD21CCE50D0000CD33F /* DKHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7578FFE71CCE50D0000CD33F /* Build configuration list for PBXNativeTarget "DKHelper" */;
+			buildPhases = (
+				7578FFCE1CCE50D0000CD33F /* Sources */,
+				7578FFCF1CCE50D0000CD33F /* Frameworks */,
+				7578FFD01CCE50D0000CD33F /* Headers */,
+				7578FFD11CCE50D0000CD33F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DKHelper;
+			productName = DKHelper;
+			productReference = 7578FFD31CCE50D0000CD33F /* DKHelper.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7578FFDC1CCE50D0000CD33F /* DKHelperTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7578FFEA1CCE50D0000CD33F /* Build configuration list for PBXNativeTarget "DKHelperTests" */;
+			buildPhases = (
+				7578FFD91CCE50D0000CD33F /* Sources */,
+				7578FFDA1CCE50D0000CD33F /* Frameworks */,
+				7578FFDB1CCE50D0000CD33F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7578FFE01CCE50D0000CD33F /* PBXTargetDependency */,
+			);
+			name = DKHelperTests;
+			productName = DKHelperTests;
+			productReference = 7578FFDD1CCE50D0000CD33F /* DKHelperTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7578FFCA1CCE50D0000CD33F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Kevin Delord";
+				TargetAttributes = {
+					7578FFD21CCE50D0000CD33F = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					7578FFDC1CCE50D0000CD33F = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = 7578FFCD1CCE50D0000CD33F /* Build configuration list for PBXProject "DKHelper" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7578FFC91CCE50D0000CD33F;
+			productRefGroup = 7578FFD41CCE50D0000CD33F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7578FFD21CCE50D0000CD33F /* DKHelper */,
+				7578FFDC1CCE50D0000CD33F /* DKHelperTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7578FFD11CCE50D0000CD33F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7578FFDB1CCE50D0000CD33F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7578009C1CCE5917000CD33F /* TestImage.png in Resources */,
+				7578006D1CCE5150000CD33F /* DKViewTest.xib in Resources */,
+				7578009F1CCE66FA000CD33F /* DKHelper-Tests-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7578FFCE1CCE50D0000CD33F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7578003D1CCE510A000CD33F /* UIImage+DKHelper.m in Sources */,
+				7578001F1CCE510A000CD33F /* NSArray+DKHelper.m in Sources */,
+				757800371CCE510A000CD33F /* UIColor+DKHelper.m in Sources */,
+				757800131CCE510A000CD33F /* CGRect+DKHelper.m in Sources */,
+				757800281CCE510A000CD33F /* NSNumber+DKHelper.m in Sources */,
+				757800461CCE510A000CD33F /* UIView+DKHelper.m in Sources */,
+				7578002E1CCE510A000CD33F /* NSOperationQueue+DKHelper.m in Sources */,
+				757800341CCE510A000CD33F /* NSString+DKHelper.m in Sources */,
+				757800401CCE510A000CD33F /* UIImageView+DKHelper.m in Sources */,
+				757800161CCE510A000CD33F /* CGSize+DKHelper.m in Sources */,
+				757800311CCE510A000CD33F /* NSPredicate+DKHelper.m in Sources */,
+				7578001C1CCE510A000CD33F /* DKRegex.m in Sources */,
+				7578002B1CCE510A000CD33F /* NSObject+DKHelper.m in Sources */,
+				7578003A1CCE510A000CD33F /* UIDevice+DKHelper.m in Sources */,
+				757800431CCE510A000CD33F /* UIScreen+DKHelper.m in Sources */,
+				757800191CCE510A000CD33F /* DKHelper.m in Sources */,
+				757800251CCE510A000CD33F /* NSDate+DKHelper.m in Sources */,
+				757800221CCE510A000CD33F /* NSBundle+DKHelper.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7578FFD91CCE50D0000CD33F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7578001A1CCE510A000CD33F /* DKHelper.m in Sources */,
+				757800351CCE510A000CD33F /* NSString+DKHelper.m in Sources */,
+				7578003B1CCE510A000CD33F /* UIDevice+DKHelper.m in Sources */,
+				757800681CCE5150000CD33F /* NSObjectTests.swift in Sources */,
+				7578002F1CCE510A000CD33F /* NSOperationQueue+DKHelper.m in Sources */,
+				7578006B1CCE5150000CD33F /* NSStringTests.swift in Sources */,
+				757800651CCE5150000CD33F /* NSBundleTests.swift in Sources */,
+				757800171CCE510A000CD33F /* CGSize+DKHelper.m in Sources */,
+				757800141CCE510A000CD33F /* CGRect+DKHelper.m in Sources */,
+				757800231CCE510A000CD33F /* NSBundle+DKHelper.m in Sources */,
+				757800321CCE510A000CD33F /* NSPredicate+DKHelper.m in Sources */,
+				757800661CCE5150000CD33F /* NSDateTests.swift in Sources */,
+				757800641CCE5150000CD33F /* NSArrayTests.swift in Sources */,
+				7578006F1CCE5150000CD33F /* UIDeviceTests.swift in Sources */,
+				757800691CCE5150000CD33F /* NSOperationQueueTests.swift in Sources */,
+				757800441CCE510A000CD33F /* UIScreen+DKHelper.m in Sources */,
+				757800411CCE510A000CD33F /* UIImageView+DKHelper.m in Sources */,
+				757800731CCE5150000CD33F /* UIViewTests.swift in Sources */,
+				757800701CCE5150000CD33F /* UIImageTests.swift in Sources */,
+				7578006A1CCE5150000CD33F /* NSPredicateTests.swift in Sources */,
+				7578003E1CCE510A000CD33F /* UIImage+DKHelper.m in Sources */,
+				757800291CCE510A000CD33F /* NSNumber+DKHelper.m in Sources */,
+				757800631CCE5150000CD33F /* DKRegexTests.swift in Sources */,
+				757800601CCE5150000CD33F /* CGSizeTests.swift in Sources */,
+				757800381CCE510A000CD33F /* UIColor+DKHelper.m in Sources */,
+				757800711CCE5150000CD33F /* UIImageViewTests.swift in Sources */,
+				757800471CCE510A000CD33F /* UIView+DKHelper.m in Sources */,
+				757800261CCE510A000CD33F /* NSDate+DKHelper.m in Sources */,
+				7578005F1CCE5150000CD33F /* CGRectTests.swift in Sources */,
+				757800671CCE5150000CD33F /* NSNumberTests.swift in Sources */,
+				7578001D1CCE510A000CD33F /* DKRegex.m in Sources */,
+				757800721CCE5150000CD33F /* UIScreenTests.swift in Sources */,
+				7578002C1CCE510A000CD33F /* NSObject+DKHelper.m in Sources */,
+				7578006E1CCE5150000CD33F /* UIColorTests.swift in Sources */,
+				757800201CCE510A000CD33F /* NSArray+DKHelper.m in Sources */,
+				757800621CCE5150000CD33F /* DKHelperTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7578FFE01CCE50D0000CD33F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7578FFD21CCE50D0000CD33F /* DKHelper */;
+			targetProxy = 7578FFDF1CCE50D0000CD33F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		7578FFE51CCE50D0000CD33F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7578FFE61CCE50D0000CD33F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7578FFE81CCE50D0000CD33F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "DKHelper/DKHelper-Framework-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.kevindelord.DKHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		7578FFE91CCE50D0000CD33F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "DKHelper/DKHelper-Framework-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.kevindelord.DKHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		7578FFEB1CCE50D0000CD33F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"UNITTEST=1",
+				);
+				INFOPLIST_FILE = "DKHelperTests/DKHelper-Tests-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) -D UNITTEST";
+				PRODUCT_BUNDLE_IDENTIFIER = io.kevindelord.DKHelperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DKHelperTests/Resources/DKHelper-Bridging-Header.h";
+			};
+			name = Debug;
+		};
+		7578FFEC1CCE50D0000CD33F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"UNITTEST=1",
+				);
+				INFOPLIST_FILE = "DKHelperTests/DKHelper-Tests-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) -D UNITTEST";
+				PRODUCT_BUNDLE_IDENTIFIER = io.kevindelord.DKHelperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DKHelperTests/Resources/DKHelper-Bridging-Header.h";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7578FFCD1CCE50D0000CD33F /* Build configuration list for PBXProject "DKHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7578FFE51CCE50D0000CD33F /* Debug */,
+				7578FFE61CCE50D0000CD33F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7578FFE71CCE50D0000CD33F /* Build configuration list for PBXNativeTarget "DKHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7578FFE81CCE50D0000CD33F /* Debug */,
+				7578FFE91CCE50D0000CD33F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7578FFEA1CCE50D0000CD33F /* Build configuration list for PBXNativeTarget "DKHelperTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7578FFEB1CCE50D0000CD33F /* Debug */,
+				7578FFEC1CCE50D0000CD33F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7578FFCA1CCE50D0000CD33F /* Project object */;
+}
