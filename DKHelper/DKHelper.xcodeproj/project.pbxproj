@@ -81,7 +81,6 @@
 		757800721CCE5150000CD33F /* UIScreenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7578005D1CCE5150000CD33F /* UIScreenTests.swift */; };
 		757800731CCE5150000CD33F /* UIViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7578005E1CCE5150000CD33F /* UIViewTests.swift */; };
 		7578009C1CCE5917000CD33F /* TestImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 7578009B1CCE5917000CD33F /* TestImage.png */; };
-		7578009F1CCE66FA000CD33F /* DKHelper-Tests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7578004B1CCE5150000CD33F /* DKHelper-Tests-Info.plist */; };
 		7578FFDE1CCE50D0000CD33F /* DKHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7578FFD31CCE50D0000CD33F /* DKHelper.framework */; };
 /* End PBXBuildFile section */
 
@@ -394,7 +393,6 @@
 			files = (
 				7578009C1CCE5917000CD33F /* TestImage.png in Resources */,
 				7578006D1CCE5150000CD33F /* DKViewTest.xib in Resources */,
-				7578009F1CCE66FA000CD33F /* DKHelper-Tests-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,6 +655,7 @@
 				7578FFE91CCE50D0000CD33F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7578FFEA1CCE50D0000CD33F /* Build configuration list for PBXNativeTarget "DKHelperTests" */ = {
 			isa = XCConfigurationList;
@@ -665,6 +664,7 @@
 				7578FFEC1CCE50D0000CD33F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
