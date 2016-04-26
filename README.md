@@ -4,10 +4,8 @@
 [![codecov.io](https://codecov.io/github/matej/MBProgressHUD/coverage.svg?branch=master)](https://codecov.io/gh/kevindelord/DKHelper)
 [![CocoaPods compatible](https://img.shields.io/cocoapods/v/DKHelper.svg?style=flat)](https://cocoapods.org/pods/DKHelper)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/kevindelord/DKHelper)
-[![Version](https://img.shields.io/cocoapods/v/DKHelper.svg?style=flat)](http://cocoadocs.org/docsets/DKHelper)
 [![License](https://img.shields.io/cocoapods/l/DKHelper.svg?style=flat)](http://cocoadocs.org/docsets/DKHelper)
 [![Platform](https://img.shields.io/cocoapods/p/DKHelper.svg?style=flat)](http://cocoadocs.org/docsets/DKHelper)
-[![License: MIT](https://img.shields.io/cocoapods/l/DKHelper.svg?style=flat)](http://opensource.org/licenses/MIT)
 
 ## Usage
 
