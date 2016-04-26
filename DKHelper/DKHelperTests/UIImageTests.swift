@@ -57,8 +57,8 @@ extension UIImageTests {
 			XCTAssertNotNil(img)
 			let newImage = img.resizedImageToScreenSize()
 			XCTAssertNotNil(newImage)
-			XCTAssertEqual(Int(newImage?.size.width ?? 0), Int(finalSize.width))
-			XCTAssertEqual(Int(newImage?.size.height ?? 0), Int(finalSize.height))
+			XCTAssertEqual(round(newImage?.size.width ?? 0), round(finalSize.width))
+			XCTAssertEqual(round(newImage?.size.height ?? 0), round(finalSize.height))
 		} else {
 			XCTAssert(false)
 		}

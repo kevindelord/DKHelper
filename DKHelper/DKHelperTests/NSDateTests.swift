@@ -177,7 +177,7 @@ extension NSDateTests {
 		XCTAssertEqual(date.year(), 1970)
 		XCTAssertEqual(date.day(), 1)
 		XCTAssertEqual(date.month(), 1)
-		let daylightHour = Int((NSTimeZone.systemTimeZone().daylightSavingTimeOffset / 3600))
+		let daylightHour = Int((NSTimeZone.defaultTimeZone().daylightSavingTimeOffset / 3600))
 		XCTAssertEqual(date.hour(), daylightHour)
 		XCTAssertEqual(date.minute(), 0)
 		XCTAssertEqual(date.second(), 0)

@@ -50,7 +50,7 @@
 #pragma mark - NSString+NSDate
 
 + (instancetype _Nonnull)stringFromDate:(NSDate * _Nonnull)date style:(NSDateFormatterStyle)style {
-	return [self stringFromDate:date style:style timeZone:[NSTimeZone systemTimeZone]];
+	return [self stringFromDate:date style:style timeZone:[NSTimeZone defaultTimeZone]];
 }
 
 + (instancetype _Nonnull)stringFromDate:(NSDate * _Nonnull)date style:(NSDateFormatterStyle)style timeZone:(NSTimeZone * _Nonnull)timeZone {
@@ -61,7 +61,7 @@
 }
 
 + (instancetype _Nonnull)stringFromDate:(NSDate * _Nonnull)date format:(NSString * _Nonnull)format {
-    return [self stringFromDate:date format:format timeZone:[NSTimeZone systemTimeZone]];
+    return [self stringFromDate:date format:format timeZone:[NSTimeZone defaultTimeZone]];
 }
 
 + (instancetype _Nonnull)stringFromDate:(NSDate * _Nonnull)date format:(NSString * _Nonnull)format timeZone:(NSTimeZone * _Nonnull)timeZone {
