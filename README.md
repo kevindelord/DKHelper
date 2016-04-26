@@ -1,9 +1,13 @@
 # DKHelper
 
+[![Build Status](https://travis-ci.org/matej/MBProgressHUD.svg?branch=master)](https://travis-ci.org/kevindelord/DKHelper)
+[![codecov.io](https://codecov.io/github/matej/MBProgressHUD/coverage.svg?branch=master)](https://codecov.io/gh/kevindelord/DKHelper)
+[![CocoaPods compatible](https://img.shields.io/cocoapods/v/DKHelper.svg?style=flat)](https://cocoapods.org/pods/DKHelper)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/kevindelord/DKHelper)
 [![Version](https://img.shields.io/cocoapods/v/DKHelper.svg?style=flat)](http://cocoadocs.org/docsets/DKHelper)
 [![License](https://img.shields.io/cocoapods/l/DKHelper.svg?style=flat)](http://cocoadocs.org/docsets/DKHelper)
 [![Platform](https://img.shields.io/cocoapods/p/DKHelper.svg?style=flat)](http://cocoadocs.org/docsets/DKHelper)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/kevindelord/DKHelper)
+[![License: MIT](https://img.shields.io/cocoapods/l/DKHelper.svg?style=flat)](http://opensource.org/licenses/MIT)
 
 ## Usage
 
@@ -30,4 +34,4 @@ kevindelord, delord.kevin@gmail.com
 
 ## License
 
-DKHelper is available under the MIT license. See the LICENSE file for more info.
+DKHelper is available under the [MIT license](https://github.com/kevindelord/DKHelper/blob/master/LICENSE).

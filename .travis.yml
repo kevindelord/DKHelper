@@ -11,15 +11,13 @@ env:
 before_install:
   - brew update
   - brew outdated carthage || brew upgrade carthage
-#script:
-  #xctool -workspace DKHelper.xcworkspace -scheme DKHelper -sdk iphonesimulator9.3 -destination "platform=iOS Simulator,name=iPhone 6s,OS=9.3" GCC_GENERATE_TEST_COVERAGE_FILES=YES build test 
-  #xctool -workspace DKHelper.xcworkspace -scheme DKHelper -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 6s,OS=9.3" build test GCC_GENERATE_TEST_COVERAGE_FILES=YES
 before_deploy:
   - carthage build --no-skip-current
   - carthage archive $FRAMEWORK_NAME
 deploy:
-  #file: $FRAMEWORK_NAME.framework.zip
   skip_cleanup: true
   on:
     repo: kevindelord/DKHelper
     tags: true
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
