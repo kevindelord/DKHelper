@@ -177,7 +177,7 @@ extension NSDateTests {
 		XCTAssertEqual(date.year(), 1970)
 		XCTAssertEqual(date.day(), 1)
 		XCTAssertEqual(date.month(), 1)
-		XCTAssertEqual(date.hour(), 1, "expect Time Zone GMT+1")
+		XCTAssertEqual(date.hour(), 1)
 		XCTAssertEqual(date.minute(), 0)
 		XCTAssertEqual(date.second(), 0)
 	}
@@ -188,8 +188,7 @@ extension NSDateTests {
 		XCTAssertEqual(date?.year(), self.today?.year())
 		XCTAssertEqual(date?.day(), self.today?.day())
 		XCTAssertEqual(date?.month(), self.today?.month())
-		let timezoneoffset = (NSTimeZone.systemTimeZone().secondsFromGMT / 3600)
-		XCTAssertEqual(date?.hour(), timezoneoffset, "expect Time Zone GMT+1")
+		XCTAssertEqual(date?.hour(), 0)
 		XCTAssertEqual(date?.minute(), 0)
 		XCTAssertEqual(date?.second(), 0)
 	}
@@ -200,8 +199,7 @@ extension NSDateTests {
 		XCTAssertEqual(date?.year(), self.today?.year())
 		XCTAssertEqual(date?.day(), self.today?.day())
 		XCTAssertEqual(date?.month(), self.today?.month())
-		let timezoneoffset = (NSTimeZone.systemTimeZone().secondsFromGMT / 3600)
-		XCTAssertEqual(date?.hour(), timezoneoffset, "expect Time Zone GMT+1")
+		XCTAssertEqual(date?.hour(), 0)
 		XCTAssertEqual(date?.minute(), 0)
 		XCTAssertEqual(date?.second(), 0)
 	}

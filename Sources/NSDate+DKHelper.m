@@ -137,31 +137,37 @@
 
 - (NSInteger)year {
 	NSCalendar *calendar = [NSCalendar currentCalendar];
+	calendar.timeZone = [NSTimeZone systemTimeZone];
     return [[calendar components:NSCalendarUnitYear fromDate:self] year];
 }
 
 - (NSInteger)month {
 	NSCalendar *calendar = [NSCalendar currentCalendar];
+	calendar.timeZone = [NSTimeZone systemTimeZone];
     return [[calendar components:NSCalendarUnitMonth fromDate:self] month];
 }
 
 - (NSInteger)day {
 	NSCalendar *calendar = [NSCalendar currentCalendar];
+	calendar.timeZone = [NSTimeZone systemTimeZone];
     return [[calendar components:NSCalendarUnitDay fromDate:self] day];
 }
 
 - (NSInteger)hour {
 	NSCalendar *calendar = [NSCalendar currentCalendar];
-    return [[calendar components:NSCalendarUnitHour|NSCalendarUnitTimeZone fromDate:self] hour];
+	calendar.timeZone = [NSTimeZone systemTimeZone];
+    return [[calendar components:NSCalendarUnitHour fromDate:self] hour];
 }
 
 - (NSInteger)minute {
 	NSCalendar *calendar = [NSCalendar currentCalendar];
+	calendar.timeZone = [NSTimeZone systemTimeZone];
     return [[calendar components:NSCalendarUnitMinute fromDate:self] minute];
 }
 
 - (NSInteger)second {
 	NSCalendar *calendar = [NSCalendar currentCalendar];
+	calendar.timeZone = [NSTimeZone systemTimeZone];
     return [[calendar components:NSCalendarUnitSecond fromDate:self] second];
 }
 
@@ -169,7 +175,7 @@
 	NSCalendar* gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
 	unsigned int unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitTimeZone;
 	NSDateComponents* dateComponents = [gregorian components:unitFlags fromDate:[NSDate date]];
-	dateComponents.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
+	dateComponents.timeZone = [NSTimeZone systemTimeZone];
 	[dateComponents setMinute:0];
 	[dateComponents setSecond:0];
 	[dateComponents setHour:0];
@@ -180,7 +186,7 @@
 	NSCalendar* gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
 	unsigned int unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitTimeZone;
 	NSDateComponents* dateComponents = [gregorian components:unitFlags fromDate:self];
-	dateComponents.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
+	dateComponents.timeZone = [NSTimeZone systemTimeZone];
 	[dateComponents setMinute:0];
 	[dateComponents setSecond:0];
 	[dateComponents setHour:0];
