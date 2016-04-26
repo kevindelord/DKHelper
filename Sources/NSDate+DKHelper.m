@@ -59,7 +59,7 @@
 
 + (instancetype _Nullable)dateFromString:(NSString * _Nonnull)string style:(NSDateFormatterStyle)style {
 	NSDateFormatter *df = [NSDateFormatter new];
-	df.timeZone = [NSTimeZone systemTimeZone];
+	df.timeZone = [NSTimeZone defaultTimeZone];
 	df.dateStyle = style;
 	df.timeStyle = style;
 	df.locale = [NSLocale currentLocale];
@@ -69,7 +69,7 @@
 + (instancetype _Nullable)dateFromString:(NSString * _Nonnull)string format:(NSString * _Nonnull)format {
 	NSDateFormatter *df = [NSDateFormatter new];
 	df.dateFormat = format;
-	df.timeZone = [NSTimeZone systemTimeZone];
+	df.timeZone = [NSTimeZone defaultTimeZone];
 	return [df dateFromString:string];
 }
 
@@ -137,37 +137,37 @@
 
 - (NSInteger)year {
 	NSCalendar *calendar = [NSCalendar currentCalendar];
-	calendar.timeZone = [NSTimeZone systemTimeZone];
+	calendar.timeZone = [NSTimeZone defaultTimeZone];
     return [[calendar components:NSCalendarUnitYear fromDate:self] year];
 }
 
 - (NSInteger)month {
 	NSCalendar *calendar = [NSCalendar currentCalendar];
-	calendar.timeZone = [NSTimeZone systemTimeZone];
+	calendar.timeZone = [NSTimeZone defaultTimeZone];
     return [[calendar components:NSCalendarUnitMonth fromDate:self] month];
 }
 
 - (NSInteger)day {
 	NSCalendar *calendar = [NSCalendar currentCalendar];
-	calendar.timeZone = [NSTimeZone systemTimeZone];
+	calendar.timeZone = [NSTimeZone defaultTimeZone];
     return [[calendar components:NSCalendarUnitDay fromDate:self] day];
 }
 
 - (NSInteger)hour {
 	NSCalendar *calendar = [NSCalendar currentCalendar];
-	calendar.timeZone = [NSTimeZone systemTimeZone];
+	calendar.timeZone = [NSTimeZone defaultTimeZone];
     return [[calendar components:NSCalendarUnitHour fromDate:self] hour];
 }
 
 - (NSInteger)minute {
 	NSCalendar *calendar = [NSCalendar currentCalendar];
-	calendar.timeZone = [NSTimeZone systemTimeZone];
+	calendar.timeZone = [NSTimeZone defaultTimeZone];
     return [[calendar components:NSCalendarUnitMinute fromDate:self] minute];
 }
 
 - (NSInteger)second {
 	NSCalendar *calendar = [NSCalendar currentCalendar];
-	calendar.timeZone = [NSTimeZone systemTimeZone];
+	calendar.timeZone = [NSTimeZone defaultTimeZone];
     return [[calendar components:NSCalendarUnitSecond fromDate:self] second];
 }
 
@@ -175,7 +175,7 @@
 	NSCalendar* gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
 	unsigned int unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitTimeZone;
 	NSDateComponents* dateComponents = [gregorian components:unitFlags fromDate:[NSDate date]];
-	dateComponents.timeZone = [NSTimeZone systemTimeZone];
+	dateComponents.timeZone = [NSTimeZone defaultTimeZone];
 	[dateComponents setMinute:0];
 	[dateComponents setSecond:0];
 	[dateComponents setHour:0];
@@ -186,7 +186,7 @@
 	NSCalendar* gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
 	unsigned int unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitTimeZone;
 	NSDateComponents* dateComponents = [gregorian components:unitFlags fromDate:self];
-	dateComponents.timeZone = [NSTimeZone systemTimeZone];
+	dateComponents.timeZone = [NSTimeZone defaultTimeZone];
 	[dateComponents setMinute:0];
 	[dateComponents setSecond:0];
 	[dateComponents setHour:0];
