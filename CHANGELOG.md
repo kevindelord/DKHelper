@@ -1,5 +1,9 @@
 # DKHelper CHANGELOG
 
+## 2.2.1
+
+- Fix Carthage deploy.
+
 ## 2.2.0
 
 - Add Carthage support.
