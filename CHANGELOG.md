@@ -1,5 +1,13 @@
 # DKHelper CHANGELOG
 
+## 2.2.0
+
+- Add Carthage support.
+- Add `logAppVersion` function.
+- NSBundle: `entryInPlist`functions are now also object functions. 
+- NSDate: all helper functions now used the `defaultTimeZone`.
+- UIView: add `loadFromNib:fromBundle:` function.
+
 ## 2.1.4
 
 - UIImage: add `sizeInPixel`function.
