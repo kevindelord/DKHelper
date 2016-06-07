@@ -102,6 +102,16 @@ id _Nullable OBJECT_FOR_KEYS(NSDictionary * _Nullable dict, id _Nullable key1, i
  */
 BOOL VALID(NSDictionary * _Nullable dict, id _Nullable key);
 
+/**
+ * Check the validity of an object inside a dictionary and wheter it's kind of the given class.
+ *
+ * @param dict A NSDictionary object.
+ * @param key An object used as a key into the given dictionary.
+ * @param classType The desired Class.
+ * @return True if the dictionary if valid, the key and the value valid and different from NSNull and the object is kind of the given class. Returns false otherwise.
+ */
+BOOL VALID_AND_IS_CLASS(NSDictionary * _Nullable dict, id _Nullable key, Class _Nullable classType);
+
 #pragma mark - Getters
 
 /**
