@@ -1,5 +1,45 @@
 # DKHelper CHANGELOG
 
+## 2.2.1
+
+- Fix Carthage deploy.
+
+## 2.2.0
+
+- Add Carthage support.
+- Add `logAppVersion` function.
+- NSBundle: `entryInPlist`functions are now also object functions. 
+- NSDate: all helper functions now used the `defaultTimeZone`.
+- UIView: add `loadFromNib:fromBundle:` function.
+
+## 2.1.4
+
+- UIImage: add `sizeInPixel`function.
+- CGSize: add `CGSizeMultiply` function.
+
+## 2.1.3
+
+- Add support for iPhone SE and iPro 9,7 inches.
+- Add `performBlock` C functions.
+
+## 2.1.2
+
+- Remove iOS7Delta define.
+
+## 2.1.1
+
+- NSDate: add `GET_DATE_FORMAT` function.
+
+## 2.1.0
+
+- NSDate: `dateFromString` functions now use the system time zone.
+- NSDate: remove `gregorianCalendarIdentifier` deprecated function.
+- NSObject: add `performBlockInMainThread` function.
+- NSString: add `stringFromDate:format:timeZone:` function.
+- NSString: add `stringFromDate:style:timeZone:` function.
+
+This version also fix some unit tests.
+
 ## 2.0.0
 
 ### Breaking
