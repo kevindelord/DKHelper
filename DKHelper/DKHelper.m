@@ -40,6 +40,14 @@ BOOL        VALID(NSDictionary *dict, id key) {
 			dict != nil && dict[key] != nil && [dict[key] isEqual:[NSNull null]] == false);
 }
 
+BOOL        VALID_AND_IS_CLASS(NSDictionary *dict, id key, Class classType) {
+	if (classType != nil) {
+		return (VALID(dict, key) ? [dict[key] isKindOfClass:classType] : NO);
+	} else {
+		return VALID(dict, key);
+	}
+}
+
 #pragma mark - Localization
 
 NSString * _Nonnull L(NSString * _Nonnull key) {
@@ -82,7 +90,7 @@ NSDate * _Nullable GET_DATE(NSDictionary * _Nullable dict, id key) {
 }
 
 NSString * _Nullable GET_STRING(NSDictionary * _Nullable dict, id key) {
-    return ( VALID(dict, key) ? ( [dict[key] isEqualToString:@""] == false ? dict[key] : nil ) : nil);
+    return ( VALID_AND_IS_CLASS(dict, key, NSString.class) ? ( [dict[key] isEqualToString:@""] == false ? dict[key] : nil ) : nil);
 }
 
 #pragma mark - Numbers

@@ -147,6 +147,27 @@ extension DKHelperTests {
 		XCTAssertFalse(VALID(dict, "test"))
 	}
 
+	// MARK: VALID_AND_IS_CLASS
+
+	func test_ShouldVerifyValidClassValue() {
+		let dict = ["test":"string"]
+		XCTAssert(VALID_AND_IS_CLASS(dict, "test", NSString.self))
+	}
+
+	func test_ShouldVerifyNilOnInValidDictWithClassValue() {
+		XCTAssertFalse(VALID_AND_IS_CLASS(nil, "test", NSString.self))
+	}
+
+	func test_ShouldVerifyNilOnInValidClassValue() {
+		let dict = ["test":4]
+		XCTAssertFalse(VALID_AND_IS_CLASS(dict, "test", NSString.self))
+	}
+
+	func test_ShouldVerifyValidNilClassValue() {
+		let dict = ["test":4]
+		XCTAssert(VALID_AND_IS_CLASS(dict, "test", nil))
+	}
+
 	// MARK: OBJECT
 
 	func test_ShouldReturnValidValue() {
@@ -356,6 +377,11 @@ extension DKHelperTests {
 	func test_ShouldReturnNilStringFromWrongKey() {
 		let dict = ["test":NSDate()]
 		XCTAssert(GET_STRING(dict, "second") == nil)
+	}
+
+	func test_ShouldReturnNilStringFromWrongValue() {
+		let dict = ["test":4]
+		XCTAssert(GET_STRING(dict, "test") == nil)
 	}
 }
 
