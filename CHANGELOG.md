@@ -1,5 +1,9 @@
 # DKHelper CHANGELOG
 
+## 2.2.2
+
+- Fix crash on non NSString values when using GET_STRING()
+
 ## 2.2.1
 
 - Fix Carthage deploy.
@@ -8,7 +12,7 @@
 
 - Add Carthage support.
 - Add `logAppVersion` function.
-- NSBundle: `entryInPlist`functions are now also object functions. 
+- NSBundle: `entryInPlist` functions are now also object functions.
 - NSDate: all helper functions now used the `defaultTimeZone`.
 - UIView: add `loadFromNib:fromBundle:` function.
 
@@ -270,7 +274,7 @@ This version fixes crashes in the `performBlock` functions and add many helpers 
 ## 0.2.0
 
 - Improve UIDevice methods
-- Improve NSDarte default format: ISO8601 
+- Improve NSDarte default format: ISO8601
 
 ## 0.1.0
 
