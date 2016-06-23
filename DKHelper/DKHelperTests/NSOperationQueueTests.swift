@@ -30,25 +30,43 @@ extension NSOperationQueueTests {
 		XCTAssertNotNil(self.operationQueue?.addOperationWithBlock({ (operation) in }, timeout: 0.1, timeoutBlock: {}))
 	}
 
-	func test_addOperationWithBlockTimeoutTimeoutBlock() {
+	/**
+	Verifies the operation gets executed
+	*/
+	func test_addOperationWithBlockTimeoutTimeoutBlockShouldSucceed() {
 
-		self.operationQueue?.addOperationWithBlock({ (operation) in
+		weak var expectation = self.expectationWithDescription("addOperationWithBlock")
+
+		self.operationQueue?.addOperationWithBlock({ (operation: NSOperation?) in
 			XCTAssertNotNil(operation)
-			}, timeout: 1.0, timeoutBlock: {
-				XCTFail()
-		})
-
-		weak var failExpectation = self.expectationWithDescription("timeout")
-
-		self.operationQueue?.addOperationWithBlock({ (operation) in
-			NSThread.sleepForTimeInterval(2.0)
+			expectation?.fulfill()
+		}, timeout: 1.0, timeoutBlock: {
 			XCTFail()
-			failExpectation?.fulfill()
-			}, timeout: 0.1, timeoutBlock: {
-				XCTAssert(true)
-				failExpectation?.fulfill()
+			expectation?.fulfill()
 		})
 
-		self.waitForExpectationsWithTimeout(0.5) { (error) -> Void in }
+		self.waitForExpectationsWithTimeout(0.5, handler: nil)
+	}
+
+	/**
+	Verifies the timeout block gets called when an operation exceeds the desired timeout
+	*/
+	func test_addOperationWithBlockTimeoutTimeoutBlockShouldFail() {
+
+		weak var expectation = self.expectationWithDescription("addOperationWithBlock timeout")
+
+		self.operationQueue?.addOperationWithBlock({ (operation: NSOperation?) in
+			// simulate an operation that takes 2 seconds
+			sleep(2)
+
+			// fail since the timeout for the operation is set to 0.1 seconds
+			XCTFail()
+			expectation?.fulfill()
+		}, timeout: 0.1, timeoutBlock: {
+			XCTAssert(true)
+			expectation?.fulfill()
+		})
+
+		self.waitForExpectationsWithTimeout(0.5, handler: nil)
 	}
 }

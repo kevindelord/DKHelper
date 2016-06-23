@@ -15,6 +15,10 @@ before_deploy:
   - carthage build --no-skip-current
   - carthage archive $FRAMEWORK_NAME
 deploy:
+  provider: releases
+  api_key:
+    secure: sGJ0vtInfqVsJSkloYz5gPP5VjScrU8KpoWAU+1NH89L59/D/gFEa5UanwasXblSDDws8BbTIhRnTVXURBQxPxozQ4YRXSIVpWgL7QvwzUDObv0TyCGubqd3vE7pIG84PjGaGQpfY+ZzkWC9VKDF+bGL0zlRjj42tjJfRv9xcQ4X/Wjw+e5B+Fj9Eiu2nSFpGphPylOTV3YQnAGVeNEmJ+IspnoVN1HpCcDAYQRCInx1eo1cFz5LT7JA/vvghbBXDetvLquFB/hGqp9HBIKP3M/76CRBg6Qk5/DAmCu1EGAP4EPPFrig78PvjufLdPm/XrDx8LG69tZI6VoFPIrBxZ5m78UPWdSVHRf0t79ZVEz9AfrXRwNMY7zMidObQkd4USl+qZ/jRoYVn+8i5LrmL/g9U5TGlBsRGLBMEPbAj7fCkoO+kbRKMc3cApyTFWx5gVQhIUa8agvhepslo3nSn4kj9yzSDVJpy8P2i0lqMwwkTHcGjewdwS1gTPEJE9ycEgfcmsTGgA8Cu9fSLwaqXFnnZZ4iCaWx/AdbPP8xJO4nomJH9E+gDLXsZF20lwzCQNPF1TDx6zZy5Wx7ca1U/5S3j2ooE8LMmSINAGBBfDW6JAf+C1zTcDYUlLqMYHvW1aODw9ZbbTdC5vEiEMV81zQ4n3c5aANIPNLIzmJXSbw=
+  file: $FRAMEWORK_NAME.framework.zip
   skip_cleanup: true
   provider: releases
   api_key:
