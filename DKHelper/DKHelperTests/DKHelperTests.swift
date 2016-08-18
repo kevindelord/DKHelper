@@ -55,7 +55,13 @@ class DKHelperTests: XCTestCase {
 
 extension DKHelperTests {
 
-	func test_ShouldReturnKeyWhenValueNotFound() {
+	func test_ShouldReturnLocalizedStringWhenKeyExists() {
+		let txt = L("EXISTING_KEY")
+		XCTAssertNotNil(txt)
+		XCTAssertEqual(txt, NSLocalizedString("EXISTING_KEY", comment: ""))
+	}
+
+	func test_ShouldReturnKeyWhenLocalizedStringNotFound() {
 		let txt = L("WELCOME_TEXT_WRONG")
 		XCTAssertNotNil(txt)
 		XCTAssertEqual(txt, "WELCOME_TEXT_WRONG")
