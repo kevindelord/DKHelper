@@ -1,5 +1,9 @@
 # DKHelper CHANGELOG
 
+## 2.2.3
+
+- Print a warning if a localized string can't be found.
+
 ## 2.2.2
 
 - Fix crash on non NSString values when using GET_STRING()
