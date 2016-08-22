@@ -51,7 +51,13 @@ BOOL        VALID_AND_IS_CLASS(NSDictionary *dict, id key, Class classType) {
 #pragma mark - Localization
 
 NSString * _Nonnull L(NSString * _Nonnull key) {
-    return NSLocalizedString(key, nil);
+	static NSString *DEFAULT_STRING = @"+++DKHelper_Unique_Default_String+++";
+	NSString *localizedString = NSLocalizedStringWithDefaultValue(key, nil, [NSBundle mainBundle], DEFAULT_STRING, nil);
+	if ([localizedString isEqualToString:DEFAULT_STRING]) {
+		DKLog(YES, @"Warning: Localized string with key '%@' can't be found!", key);
+		return key;
+	}
+	return localizedString;
 }
 
 #pragma mark - Getters

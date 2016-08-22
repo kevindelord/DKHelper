@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3AF99C301D65C09600B42C16 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3AF99C2F1D65C09600B42C16 /* Localizable.strings */; };
 		757800121CCE510A000CD33F /* CGRect+DKHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 7578FFEE1CCE510A000CD33F /* CGRect+DKHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		757800131CCE510A000CD33F /* CGRect+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7578FFEF1CCE510A000CD33F /* CGRect+DKHelper.m */; };
 		757800141CCE510A000CD33F /* CGRect+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7578FFEF1CCE510A000CD33F /* CGRect+DKHelper.m */; };
@@ -95,6 +96,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3AF99C2F1D65C09600B42C16 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		757800001CCE510A000CD33F /* NSOperationQueue+DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSOperationQueue+DKHelper.h"; sourceTree = "<group>"; };
 		757800011CCE510A000CD33F /* NSOperationQueue+DKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSOperationQueue+DKHelper.m"; sourceTree = "<group>"; };
 		757800021CCE510A000CD33F /* NSPredicate+DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPredicate+DKHelper.h"; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				7578009B1CCE5917000CD33F /* TestImage.png */,
 				757800741CCE51E8000CD33F /* DKHelper-Bridging-Header.h */,
 				757800581CCE5150000CD33F /* DKViewTest.xib */,
+				3AF99C2F1D65C09600B42C16 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7578009C1CCE5917000CD33F /* TestImage.png in Resources */,
+				3AF99C301D65C09600B42C16 /* Localizable.strings in Resources */,
 				7578006D1CCE5150000CD33F /* DKViewTest.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

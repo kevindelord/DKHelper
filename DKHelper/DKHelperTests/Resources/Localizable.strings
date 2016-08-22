@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  Example
+
+  Created by Hans Seiffert on 18.08.16.
+  Copyright © 2016 Kevin Delord. All rights reserved.
+*/
+
+"EXISTING_KEY" = "VALUE";
