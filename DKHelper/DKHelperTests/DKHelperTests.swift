@@ -125,9 +125,9 @@ extension DKHelperTests {
 
 // MARK: - Object verification
 
-extension DKHelperTests {
+// MARK: VALID
 
-	// MARK: VALID
+extension DKHelperTests {
 
 	func test_ShouldVerifyValidValue() {
 		let dict = ["test":4]
@@ -152,8 +152,11 @@ extension DKHelperTests {
 		let dict = ["test":NSNull()]
 		XCTAssertFalse(VALID(dict, "test"))
 	}
+}
 
-	// MARK: VALID_AND_IS_CLASS
+// MARK: VALID_AND_IS_CLASS
+
+extension DKHelperTests {
 
 	func test_ShouldVerifyValidClassValue() {
 		let dict = ["test":"string"]
@@ -173,8 +176,11 @@ extension DKHelperTests {
 		let dict = ["test":4]
 		XCTAssert(VALID_AND_IS_CLASS(dict, "test", nil))
 	}
+}
 
-	// MARK: OBJECT
+// MARK: OBJECT
+
+extension DKHelperTests {
 
 	func test_ShouldReturnValidValue() {
 		let dict = ["test":4]
@@ -204,8 +210,11 @@ extension DKHelperTests {
 		let dict = ["test":NSNull()]
 		XCTAssert(OBJECT(dict, "test") == nil)
 	}
+}
 
-	// MARK: OBJECT_FOR_KEYS
+// MARK: OBJECT_FOR_KEYS
+
+extension DKHelperTests {
 
 	func test_ShouldReturnSecondValidValue() {
 		let dict = ["first":["second":4]]
@@ -254,9 +263,9 @@ extension DKHelperTests {
 
 // MARK: - Getters
 
-extension DKHelperTests {
+// MARK: FLOAT
 
-	// MARK: FLOAT
+extension DKHelperTests {
 
 	func test_ShouldReturnFloatValue() {
 		let dict = ["test":4.0]
@@ -271,8 +280,11 @@ extension DKHelperTests {
 		let dict = ["test":4.0]
 		XCTAssert(GET_FLOAT(dict, nil) == 0.0)
 	}
+}
 
-	// MARK: INT
+// MARK: INT
+
+extension DKHelperTests {
 
 	func test_ShouldReturnIntValue() {
 		let dict = ["test":4.0]
@@ -287,8 +299,11 @@ extension DKHelperTests {
 		let dict = ["test":4.0]
 		XCTAssert(GET_INTEGER(dict, nil) == 0)
 	}
+}
 
-	// MARK: NSNUMBER
+// MARK: NSNUMBER
+
+extension DKHelperTests {
 
 	func test_ShouldReturnNumberFromDict() {
 		let dict = ["test":4.0]
@@ -328,39 +343,11 @@ extension DKHelperTests {
 	func test_ShouldReturnNilNumberFromNilDict() {
 		XCTAssertNil(GET_NUMBER(nil, "test"))
 	}
+}
 
-	// MARK: NSDATE
+// MARK: DateFormat
 
-	func test_ShouldReturnValidDate() {
-		let date = NSDate()
-		let dict = ["test":date]
-		let retrievedDate = GET_DATE(dict, "test") as NSDate?
-		XCTAssertNotNil(retrievedDate)
-		XCTAssert(retrievedDate == date)
-	}
-
-	func test_ShouldReturnDateFromString() {
-		let date = Date()
-		let dict = ["test":NSString(from: date, format: NSDate.iso8601StringFormat())]
-		XCTAssertEqual((GET_DATE(dict, "test") as NSDate?)?.stringValue(), (date as NSDate).stringValue())
-	}
-
-	func test_ShouldReturnNilFromInvalidDict() {
-		XCTAssert(GET_DATE(nil, "test") == nil)
-	}
-
-	func test_ShouldReturnNilFromInvalidKey() {
-		let dict = ["test":Date()]
-		XCTAssert(GET_DATE(dict, nil) == nil)
-	}
-
-	func test_ShouldReturnNilFromWrongKey() {
-		let date = Date()
-		let dict = ["test":date]
-		XCTAssert(GET_DATE(dict, "second") == nil)
-	}
-
-	//MARK: DateFormat
+extension DKHelperTests {
 
 	func test_ShouldReturnValidDateAndIgnoreFormat() {
 		let date = NSDate()
@@ -412,8 +399,11 @@ extension DKHelperTests {
 		let dict = ["test":date]
 		XCTAssert(GET_DATE_FORMAT(dict, "second", NSDate.iso8601StringFormat()) == nil)
 	}
+}
 
-	// MARK: NSSTRING
+// MARK: NSSTRING
+
+extension DKHelperTests {
 
 	func test_ShouldReturnValidString() {
 		let dict = ["test":"value"]
@@ -442,6 +432,40 @@ extension DKHelperTests {
 	func test_ShouldReturnNilStringFromWrongValue() {
 		let dict = ["test":4]
 		XCTAssert(GET_STRING(dict, "test") == nil)
+	}
+}
+
+// MARK: NSDATE
+
+extension DKHelperTests {
+
+	func test_ShouldReturnValidDate() {
+		let date = NSDate()
+		let dict = ["test":date]
+		let retrievedDate = GET_DATE(dict, "test") as NSDate?
+		XCTAssertNotNil(retrievedDate)
+		XCTAssert(retrievedDate == date)
+	}
+
+	func test_ShouldReturnDateFromString() {
+		let date = Date()
+		let dict = ["test":NSString(from: date, format: NSDate.iso8601StringFormat())]
+		XCTAssertEqual((GET_DATE(dict, "test") as NSDate?)?.stringValue(), (date as NSDate).stringValue())
+	}
+
+	func test_ShouldReturnNilFromInvalidDict() {
+		XCTAssert(GET_DATE(nil, "test") == nil)
+	}
+
+	func test_ShouldReturnNilFromInvalidKey() {
+		let dict = ["test":Date()]
+		XCTAssert(GET_DATE(dict, nil) == nil)
+	}
+
+	func test_ShouldReturnNilFromWrongKey() {
+		let date = Date()
+		let dict = ["test":date]
+		XCTAssert(GET_DATE(dict, "second") == nil)
 	}
 }
 
