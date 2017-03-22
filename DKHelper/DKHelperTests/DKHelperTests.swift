@@ -439,6 +439,24 @@ extension DKHelperTests {
 
 extension DKHelperTests {
 
+	func test_ShouldReturnNilWithInvalidDateString() {
+		let dict = ["test":"lifuhiuoerfhioeruh"]
+		let retrievedDate = GET_DATE(dict, "test") as NSDate?
+		XCTAssertNil(retrievedDate)
+	}
+
+	func test_ShouldReturnNilWithWrongDateString() {
+		let dict = ["test":"2017-18-42T00:00:12"]
+		let retrievedDate = GET_DATE(dict, "test") as NSDate?
+		XCTAssertNil(retrievedDate)
+	}
+
+	func test_ShouldReturnValidDateFromDateString() {
+		let dict = ["test":"2017-02-10T02:03:00"]
+		let retrievedDate = GET_DATE(dict, "test") as NSDate?
+		XCTAssertNotNil(retrievedDate)
+	}
+
 	func test_ShouldReturnValidDate() {
 		let date = NSDate()
 		let dict = ["test":date]
