@@ -11,7 +11,7 @@ import XCTest
 
 class NSOperationQueueTests: XCTestCase {
 
-	var operationQueue : NSOperationQueue?
+	var operationQueue : OperationQueue?
 
 }
 
@@ -20,14 +20,14 @@ class NSOperationQueueTests: XCTestCase {
 extension NSOperationQueueTests {
 
 	override func setUp() {
-		self.operationQueue = NSOperationQueue()
+		self.operationQueue = OperationQueue()
 	}
 
 	func test_objectCreation() {
 
-		XCTAssertNil(self.operationQueue?.addOperationWithBlock(nil, timeout: 0.1, timeoutBlock: {}))
-		XCTAssertNil(self.operationQueue?.addOperationWithBlock({ (operation) in }, timeout: 0.1, timeoutBlock: nil))
-		XCTAssertNotNil(self.operationQueue?.addOperationWithBlock({ (operation) in }, timeout: 0.1, timeoutBlock: {}))
+		XCTAssertNil(self.operationQueue?.addOperation(nil, timeout: 0.1, timeoutBlock: {}))
+		XCTAssertNil(self.operationQueue?.addOperation({ (operation) in }, timeout: 0.1, timeoutBlock: nil))
+		XCTAssertNotNil(self.operationQueue?.addOperation({ (operation) in }, timeout: 0.1, timeoutBlock: {}))
 	}
 
 	/**
@@ -35,9 +35,9 @@ extension NSOperationQueueTests {
 	*/
 	func test_addOperationWithBlockTimeoutTimeoutBlockShouldSucceed() {
 
-		weak var expectation = self.expectationWithDescription("addOperationWithBlock")
+		weak var expectation = self.expectation(description: "addOperationWithBlock")
 
-		self.operationQueue?.addOperationWithBlock({ (operation: NSOperation?) in
+		self.operationQueue?.addOperation({ (operation: Operation?) in
 			XCTAssertNotNil(operation)
 			expectation?.fulfill()
 		}, timeout: 1.0, timeoutBlock: {
@@ -45,7 +45,7 @@ extension NSOperationQueueTests {
 			expectation?.fulfill()
 		})
 
-		self.waitForExpectationsWithTimeout(0.5, handler: nil)
+		self.waitForExpectations(timeout: 0.5, handler: nil)
 	}
 
 	/**
@@ -53,9 +53,9 @@ extension NSOperationQueueTests {
 	*/
 	func test_addOperationWithBlockTimeoutTimeoutBlockShouldFail() {
 
-		weak var expectation = self.expectationWithDescription("addOperationWithBlock timeout")
+		weak var expectation = self.expectation(description: "addOperationWithBlock timeout")
 
-		self.operationQueue?.addOperationWithBlock({ (operation: NSOperation?) in
+		self.operationQueue?.addOperation({ (operation: Operation?) in
 			// simulate an operation that takes 2 seconds
 			sleep(2)
 
@@ -67,6 +67,6 @@ extension NSOperationQueueTests {
 			expectation?.fulfill()
 		})
 
-		self.waitForExpectationsWithTimeout(0.5, handler: nil)
+		self.waitForExpectations(timeout: 0.5, handler: nil)
 	}
 }

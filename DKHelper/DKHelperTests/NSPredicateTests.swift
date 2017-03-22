@@ -19,28 +19,28 @@ extension NSPredicateTests {
 
 	func test_ShouldReturnSelfPredicateIfORParameterIsNil() {
 		var predicate = NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z]+")
-		XCTAssert(predicate.evaluateWithObject("YTFU") == true)
-		XCTAssert(predicate.evaluateWithObject("YTFU)-") == false)
-		XCTAssert(predicate.evaluateWithObject(")-") == false)
+		XCTAssert(predicate.evaluate(with: "YTFU") == true)
+		XCTAssert(predicate.evaluate(with: "YTFU)-") == false)
+		XCTAssert(predicate.evaluate(with: ")-") == false)
 
-		predicate = predicate.OR(nil)
+		predicate = predicate.or(nil)
 
-		XCTAssert(predicate.evaluateWithObject("YTFU") == true)
-		XCTAssert(predicate.evaluateWithObject("YTFU)-") == false)
-		XCTAssert(predicate.evaluateWithObject(")-") == false)
+		XCTAssert(predicate.evaluate(with: "YTFU") == true)
+		XCTAssert(predicate.evaluate(with: "YTFU)-") == false)
+		XCTAssert(predicate.evaluate(with: ")-") == false)
 	}
 
 	func test_ShouldReturnNewORPredicate() {
 		var predicate = NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z]+")
-		XCTAssert(predicate.evaluateWithObject("YTFU") == true)
-		XCTAssert(predicate.evaluateWithObject("YTFU)-") == false)
-		XCTAssert(predicate.evaluateWithObject(")-") == false)
+		XCTAssert(predicate.evaluate(with: "YTFU") == true)
+		XCTAssert(predicate.evaluate(with: "YTFU)-") == false)
+		XCTAssert(predicate.evaluate(with: ")-") == false)
 
-		predicate = predicate.OR(NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z()-_]+"))
+		predicate = predicate.or(NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z()-_]+"))
 
-		XCTAssert(predicate.evaluateWithObject("YTFU") == true)
-		XCTAssert(predicate.evaluateWithObject("YTFU)-") == true)
-		XCTAssert(predicate.evaluateWithObject(")-") == true)
+		XCTAssert(predicate.evaluate(with: "YTFU") == true)
+		XCTAssert(predicate.evaluate(with: "YTFU)-") == true)
+		XCTAssert(predicate.evaluate(with: ")-") == true)
 	}
 }
 
@@ -54,14 +54,14 @@ extension NSPredicateTests {
 
 	func test_ShouldReturnORPredicateIfFirstParameterIsNil() {
 		let predicate = NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z]+")
-		XCTAssert(predicate.evaluateWithObject("YTFU") == true)
-		XCTAssert(predicate.evaluateWithObject("YTFU)-") == false)
-		XCTAssert(predicate.evaluateWithObject(")-") == false)
+		XCTAssert(predicate.evaluate(with: "YTFU") == true)
+		XCTAssert(predicate.evaluate(with: "YTFU)-") == false)
+		XCTAssert(predicate.evaluate(with: ")-") == false)
 
 		if let orPredicate = OR_PREDICATE(nil, predicate) {
-			XCTAssert(orPredicate.evaluateWithObject("YTFU") == true)
-			XCTAssert(orPredicate.evaluateWithObject("YTFU)-") == false)
-			XCTAssert(orPredicate.evaluateWithObject(")-") == false)
+			XCTAssert(orPredicate.evaluate(with: "YTFU") == true)
+			XCTAssert(orPredicate.evaluate(with: "YTFU)-") == false)
+			XCTAssert(orPredicate.evaluate(with: ")-") == false)
 		} else {
 			XCTFail("valid predicate should have been returned")
 		}
@@ -69,14 +69,14 @@ extension NSPredicateTests {
 
 	func test_ShouldReturnORPredicateIfSecondParameterIsNil() {
 		let predicate = NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z]+")
-		XCTAssert(predicate.evaluateWithObject("YTFU") == true)
-		XCTAssert(predicate.evaluateWithObject("YTFU)-") == false)
-		XCTAssert(predicate.evaluateWithObject(")-") == false)
+		XCTAssert(predicate.evaluate(with: "YTFU") == true)
+		XCTAssert(predicate.evaluate(with: "YTFU)-") == false)
+		XCTAssert(predicate.evaluate(with: ")-") == false)
 
 		if let orPredicate = OR_PREDICATE(predicate, nil) {
-			XCTAssert(orPredicate.evaluateWithObject("YTFU") == true)
-			XCTAssert(orPredicate.evaluateWithObject("YTFU)-") == false)
-			XCTAssert(orPredicate.evaluateWithObject(")-") == false)
+			XCTAssert(orPredicate.evaluate(with: "YTFU") == true)
+			XCTAssert(orPredicate.evaluate(with: "YTFU)-") == false)
+			XCTAssert(orPredicate.evaluate(with: ")-") == false)
 		} else {
 			XCTFail("valid predicate should have been returned")
 		}
@@ -93,14 +93,14 @@ extension NSPredicateTests {
 
 	func test_ShouldReturnANDPredicateIfFirstParameterIsNil() {
 		let predicate = NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z]+")
-		XCTAssert(predicate.evaluateWithObject("YTFU") == true)
-		XCTAssert(predicate.evaluateWithObject("YTFU)-") == false)
-		XCTAssert(predicate.evaluateWithObject(")-") == false)
+		XCTAssert(predicate.evaluate(with: "YTFU") == true)
+		XCTAssert(predicate.evaluate(with: "YTFU)-") == false)
+		XCTAssert(predicate.evaluate(with: ")-") == false)
 
 		if let andPredicate = AND_PREDICATE(nil, predicate) {
-			XCTAssert(andPredicate.evaluateWithObject("YTFU") == true)
-			XCTAssert(andPredicate.evaluateWithObject("YTFU)-") == false)
-			XCTAssert(andPredicate.evaluateWithObject(")-") == false)
+			XCTAssert(andPredicate.evaluate(with: "YTFU") == true)
+			XCTAssert(andPredicate.evaluate(with: "YTFU)-") == false)
+			XCTAssert(andPredicate.evaluate(with: ")-") == false)
 		} else {
 			XCTFail("valid predicate should have been returned")
 		}
@@ -108,14 +108,14 @@ extension NSPredicateTests {
 
 	func test_ShouldReturnANDPredicateIfSecondParameterIsNil() {
 		let predicate = NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z]+")
-		XCTAssert(predicate.evaluateWithObject("YTFU") == true)
-		XCTAssert(predicate.evaluateWithObject("YTFU)-") == false)
-		XCTAssert(predicate.evaluateWithObject(")-") == false)
+		XCTAssert(predicate.evaluate(with: "YTFU") == true)
+		XCTAssert(predicate.evaluate(with: "YTFU)-") == false)
+		XCTAssert(predicate.evaluate(with: ")-") == false)
 
 		if let andPredicate = AND_PREDICATE(predicate, nil) {
-			XCTAssert(andPredicate.evaluateWithObject("YTFU") == true)
-			XCTAssert(andPredicate.evaluateWithObject("YTFU)-") == false)
-			XCTAssert(andPredicate.evaluateWithObject(")-") == false)
+			XCTAssert(andPredicate.evaluate(with: "YTFU") == true)
+			XCTAssert(andPredicate.evaluate(with: "YTFU)-") == false)
+			XCTAssert(andPredicate.evaluate(with: ")-") == false)
 		} else {
 			XCTFail("valid predicate should have been returned")
 		}
@@ -128,34 +128,34 @@ extension NSPredicateTests {
 
 	func test_ShouldReturnSelfPredicateIfANDParameterIsNil() {
 		var predicate = NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z]+")
-		XCTAssert(predicate.evaluateWithObject("YTFU") == true)
-		XCTAssert(predicate.evaluateWithObject("YTFU)-") == false)
-		XCTAssert(predicate.evaluateWithObject(")-") == false)
+		XCTAssert(predicate.evaluate(with: "YTFU") == true)
+		XCTAssert(predicate.evaluate(with: "YTFU)-") == false)
+		XCTAssert(predicate.evaluate(with: ")-") == false)
 
-		predicate = predicate.AND(nil)
+		predicate = predicate.and(nil)
 
-		XCTAssert(predicate.evaluateWithObject("YTFU") == true)
-		XCTAssert(predicate.evaluateWithObject("YTFU)-") == false)
-		XCTAssert(predicate.evaluateWithObject(")-") == false)
+		XCTAssert(predicate.evaluate(with: "YTFU") == true)
+		XCTAssert(predicate.evaluate(with: "YTFU)-") == false)
+		XCTAssert(predicate.evaluate(with: ")-") == false)
 	}
 
 	func test_ShouldValidateNewANDPredicate() {
 		let dict = ["attributeName": 4]
 		var a = NSPredicate(format: "attributeName in %@", [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 		let b = NSPredicate(format: "attributeName > 3")
-		XCTAssert(a.evaluateWithObject(dict) == true)
-		XCTAssert(b.evaluateWithObject(dict) == true)
-		a = a.AND(b)
-		XCTAssert(a.evaluateWithObject(dict) == true)
+		XCTAssert(a.evaluate(with: dict) == true)
+		XCTAssert(b.evaluate(with: dict) == true)
+		a = a.and(b)
+		XCTAssert(a.evaluate(with: dict) == true)
 	}
 
 	func test_ShouldNotValidateNewANDPredicate() {
 		let dict = ["attributeName": 2]
 		var a = NSPredicate(format: "attributeName in %@", [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 		let b = NSPredicate(format: "attributeName > 3")
-		XCTAssert(a.evaluateWithObject(dict) == true)
-		XCTAssert(b.evaluateWithObject(dict) == false)
-		a = a.AND(b)
-		XCTAssert(a.evaluateWithObject(dict) == false)
+		XCTAssert(a.evaluate(with: dict) == true)
+		XCTAssert(b.evaluate(with: dict) == false)
+		a = a.and(b)
+		XCTAssert(a.evaluate(with: dict) == false)
 	}
 }

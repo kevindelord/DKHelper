@@ -11,7 +11,7 @@ import XCTest
 
 class CGSizeTests: XCTestCase {
 
-	private func checkSizeValues(size: CGSize, width: CGFloat, height: CGFloat) {
+	fileprivate func checkSizeValues(_ size: CGSize, width: CGFloat, height: CGFloat) {
 		XCTAssertEqual(size.height, height)
 		XCTAssertEqual(size.width, width)
 	}

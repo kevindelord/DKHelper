@@ -11,8 +11,8 @@ import XCTest
 
 class UIImageTests: XCTestCase {
 
-	private var currentBundle : NSBundle {
-		return NSBundle(forClass: UIImageTests.self)
+	fileprivate var currentBundle : Bundle {
+		return Bundle(for: UIImageTests.self)
 	}
 }
 
@@ -21,12 +21,12 @@ class UIImageTests: XCTestCase {
 extension UIImageTests {
 
 	func test_ShouldCreateANewImageObjectThatFitASize() {
-		if let img = UIImage(named: "TestImage", inBundle: self.currentBundle, compatibleWithTraitCollection: nil) {
+		if let img = UIImage(named: "TestImage", in: self.currentBundle, compatibleWith: nil) {
 			XCTAssertNotNil(img)
-			let newImage = UIImage.scaleImage(img, size: CGSize(width: 100, height: 200))
+			let newImage = UIImage.scale(img, size: CGSize(width: 100, height: 200))
 			XCTAssertNotNil(newImage)
-			XCTAssertEqual(newImage.size.width, 100)
-			XCTAssertEqual(newImage.size.height, 200)
+			XCTAssertEqual(newImage?.size.width, 100)
+			XCTAssertEqual(newImage?.size.height, 200)
 		} else {
 			XCTAssert(false)
 		}
@@ -38,9 +38,9 @@ extension UIImageTests {
 extension UIImageTests {
 
 	func test_ShouldResizeExistingImageToNewSize() {
-		let img = UIImage(named: "TestImage", inBundle: self.currentBundle, compatibleWithTraitCollection: nil)
+		let img = UIImage(named: "TestImage", in: self.currentBundle, compatibleWith: nil)
 		XCTAssertNotNil(img)
-		let newImage = img?.resizedImageToSize(CGSize(width: 50, height: 50))
+		let newImage = img?.resizedImage(to: CGSize(width: 50, height: 50))
 		XCTAssertNotNil(newImage)
 		XCTAssertEqual(newImage?.size.width, 35)
 		XCTAssertEqual(newImage?.size.height, 50)
@@ -52,8 +52,8 @@ extension UIImageTests {
 extension UIImageTests {
 
 	func test_ShouldResizeExistingImageToScreenSize() {
-		if let img = UIImage(named: "TestImage", inBundle: self.currentBundle, compatibleWithTraitCollection: nil) {
-			let finalSize = CGSizeAdjustToCGSize(img.size, UIScreen.mainScreen().bounds.size)
+		if let img = UIImage(named: "TestImage", in: self.currentBundle, compatibleWith: nil) {
+			let finalSize = CGSizeAdjustToCGSize(img.size, UIScreen.main.bounds.size)
 			XCTAssertNotNil(img)
 			let newImage = img.resizedImageToScreenSize()
 			XCTAssertNotNil(newImage)
@@ -69,19 +69,19 @@ extension UIImageTests {
 
 extension UIImageTests {
 
-	private static func imageWithSize(size: CGSize, scale: CGFloat) -> UIImage {
+	fileprivate static func imageWithSize(_ size: CGSize, scale: CGFloat) -> UIImage {
 		UIGraphicsBeginImageContextWithOptions(size, true, scale)
 		let image = UIGraphicsGetImageFromCurrentImageContext()
 		UIGraphicsEndImageContext()
-		return image
+		return image!
 	}
 
 	func test_ShouldCalculateImageSizeInPixels() {
 
 		enum ImageSizeInPixelsTestData {
-			case OneX
-			case TwoX
-			case ThreeX
+			case oneX
+			case twoX
+			case threeX
 
 			static func imageSize() -> CGSize {
 				return CGSize(width: 320, height: 240)
@@ -94,14 +94,14 @@ extension UIImageTests {
 
 			func scaleFactor() -> CGFloat {
 				switch self {
-				case OneX:		return 1.0
-				case TwoX:		return 2.0
-				case ThreeX:	return 3.0
+				case .oneX:		return 1.0
+				case .twoX:		return 2.0
+				case .threeX:	return 3.0
 				}
 			}
 
 			static func allValues() -> [ImageSizeInPixelsTestData] {
-				return [OneX, TwoX, ThreeX]
+				return [oneX, twoX, threeX]
 			}
 		}
 

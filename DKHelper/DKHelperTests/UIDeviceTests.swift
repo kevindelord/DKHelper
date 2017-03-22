@@ -44,7 +44,7 @@ extension UIDeviceTests {
 
 	func test_ShouldReturnSimulatorForCurrentPlatform() {
 		let platformString = UIDevice.currentPlatform()
-		let name = UIDevice.platformNameFromString(platformString)
+		let name = UIDevice.platformName(from: platformString)
 		XCTAssert(name.characters.count > 0)
 		XCTAssertEqual(name, "Simulator")
 	}
@@ -80,13 +80,13 @@ extension UIDeviceTests {
 			("iPad5,2", "iPad mini 4 (Cellular)"), ("i386", "Simulator"), ("x86_64", "Simulator")]
 
 		for (key, value) in allPairs {
-			let name = UIDevice.platformNameFromString(key)
+			let name = UIDevice.platformName(from: key)
 			XCTAssertEqual(name, value)
 		}
 	}
 
 	func test_ShouldReturnParamOnUnknownPlatform() {
-		let name = UIDevice.platformNameFromString("fake_platform")
+		let name = UIDevice.platformName(from: "fake_platform")
 		XCTAssertEqual(name, "fake_platform")
 	}
 }
@@ -96,15 +96,15 @@ extension UIDeviceTests {
 extension UIDeviceTests {
 
 	func test_ShouldRecognizeASlowDevice() {
-		XCTAssert(UIDevice.isSlowDeviceForPlatform("iPod1,1") == true)
+		XCTAssert(UIDevice.isSlow(forPlatform: "iPod1,1") == true)
 	}
 
 	func test_ShouldNotRecognizeAFastDevice() {
-		XCTAssert(UIDevice.isSlowDeviceForPlatform("iPhone7,1") == false)
+		XCTAssert(UIDevice.isSlow(forPlatform: "iPhone7,1") == false)
 	}
 
 	func test_ShouldNotRecognizeAnUnkownDevice() {
-		XCTAssert(UIDevice.isSlowDeviceForPlatform("SuperIphone") == false)
+		XCTAssert(UIDevice.isSlow(forPlatform: "SuperIphone") == false)
 	}
 }
 
@@ -113,7 +113,7 @@ extension UIDeviceTests {
 extension UIDeviceTests {
 
 	func test_ShouldRecognizeCurrentSimulatorAsFastDeviceDevice() {
-		XCTAssert(UIDevice.currentDevice().isSlowDevice == false)
+		XCTAssert(UIDevice.current.isSlowDevice == false)
 	}
 }
 
@@ -122,7 +122,7 @@ extension UIDeviceTests {
 extension UIDeviceTests {
 
 	func test_ShouldRecognizeCurrentSimulatorAsNoIPad() {
-		XCTAssert(UIDevice.currentDevice().isIPad == false)
+		XCTAssert(UIDevice.current.isIPad == false)
 	}
 }
 
@@ -131,16 +131,16 @@ extension UIDeviceTests {
 extension UIDeviceTests {
 
 	func test_SystemVersionIsEqualToCurrentVersion() {
-		let currentVersion = UIDevice.currentDevice().systemVersion
-		XCTAssert(UIDevice.systemVersionEqualTo(currentVersion) == true)
+		let currentVersion = UIDevice.current.systemVersion
+		XCTAssert(UIDevice.systemVersionEqual(to: currentVersion) == true)
 	}
 
 	func test_SystemVersionIsNotEqualToWrongVersion() {
-		XCTAssert(UIDevice.systemVersionEqualTo("9.92") == false)
+		XCTAssert(UIDevice.systemVersionEqual(to: "9.92") == false)
 	}
 
 	func test_SystemVersionIsNotEqualToFakeVersion() {
-		XCTAssert(UIDevice.systemVersionEqualTo("uyergfiyegr") == false)
+		XCTAssert(UIDevice.systemVersionEqual(to: "uyergfiyegr") == false)
 	}
 }
 
@@ -153,7 +153,7 @@ extension UIDeviceTests {
 	}
 
 	func test_SystemVersionIsNotGreaterThanCurrentVersion() {
-		let currentVersion = UIDevice.currentDevice().systemVersion
+		let currentVersion = UIDevice.current.systemVersion
 		XCTAssert(UIDevice.systemVersionGreaterThan(currentVersion) == false)
 	}
 
@@ -171,20 +171,20 @@ extension UIDeviceTests {
 extension UIDeviceTests {
 
 	func test_SystemVersionIsGreaterThanOrEqualToSmallVersion() {
-		XCTAssert(UIDevice.systemVersionGreaterThanOrEqualTo("1.34") == true)
+		XCTAssert(UIDevice.systemVersionGreaterThanOrEqual(to: "1.34") == true)
 	}
 
 	func test_SystemVersionIsGreaterThanOrEqualToCurrentVersion() {
-		let currentVersion = UIDevice.currentDevice().systemVersion
-		XCTAssert(UIDevice.systemVersionGreaterThanOrEqualTo(currentVersion) == true)
+		let currentVersion = UIDevice.current.systemVersion
+		XCTAssert(UIDevice.systemVersionGreaterThanOrEqual(to: currentVersion) == true)
 	}
 
 	func test_SystemVersionIsNotGreaterThanOrEqualToCurrentVersion() {
-		XCTAssert(UIDevice.systemVersionGreaterThanOrEqualTo("uyergfiyegr") == false)
+		XCTAssert(UIDevice.systemVersionGreaterThanOrEqual(to: "uyergfiyegr") == false)
 	}
 
 	func test_SystemVersionIsNotGreaterOrEqualToThanBigVersion() {
-		XCTAssert(UIDevice.systemVersionGreaterThanOrEqualTo("100.3") == false)
+		XCTAssert(UIDevice.systemVersionGreaterThanOrEqual(to: "100.3") == false)
 	}
 }
 
@@ -198,7 +198,7 @@ extension UIDeviceTests {
 	}
 
 	func test_SystemVersionIsNotLessThanCurrentVersion() {
-		let currentVersion = UIDevice.currentDevice().systemVersion
+		let currentVersion = UIDevice.current.systemVersion
 		XCTAssert(UIDevice.systemVersionLessThan(currentVersion) == false)
 	}
 
@@ -214,19 +214,19 @@ extension UIDeviceTests {
 extension UIDeviceTests {
 
 	func test_SystemVersionIsNotLessThanOrEqualToBigVersion() {
-		XCTAssert(UIDevice.systemVersionLessThanOrEqualTo("100.34") == true)
+		XCTAssert(UIDevice.systemVersionLessThanOrEqual(to: "100.34") == true)
 	}
 
 	func test_SystemVersionIsLessThanOrEqualToCurrentVersion() {
-		let currentVersion = UIDevice.currentDevice().systemVersion
-		XCTAssert(UIDevice.systemVersionLessThanOrEqualTo(currentVersion) == true)
+		let currentVersion = UIDevice.current.systemVersion
+		XCTAssert(UIDevice.systemVersionLessThanOrEqual(to: currentVersion) == true)
 	}
 
 	func test_SystemVersionIsNotLessThanOrEqualToFakeVersion() {
-		XCTAssert(UIDevice.systemVersionLessThanOrEqualTo("uyergfiyegr") == false)
+		XCTAssert(UIDevice.systemVersionLessThanOrEqual(to: "uyergfiyegr") == false)
 	}
 
 	func test_SystemVersionIsNotLessThanOrEqualToSmallVersion() {
-		XCTAssert(UIDevice.systemVersionLessThanOrEqualTo("1.3") == false)
+		XCTAssert(UIDevice.systemVersionLessThanOrEqual(to: "1.3") == false)
 	}
 }
