@@ -8,7 +8,7 @@ xcode_sdk: iphonesimulator10.0
 script:
   - xcodebuild -version
   - xcodebuild -showsdks
-  - xcodebuild test -project "DKHelper/DKHelper.xcodeproj" -scheme "DKHelper" -destination "platform=iOS Simulator,name=iPhone 6s" | xcpretty
+  - xcodebuild test -project "DKHelper/DKHelper.xcodeproj" -scheme "DKHelper" -destination "platform=iOS Simulator,name=iPhone 6s" GCC_GENERATE_TEST_COVERAGE_FILES=YES GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES | xcpretty
 
 before_deploy:
   - carthage build --no-skip-current
