@@ -4,6 +4,7 @@
 
 - UIDevice: add new iPhone and AppleWatch devices.
 - UIColor: init function now forces the RGB values to be between 0.0 and 1.0.
+- UIImage: `resizedImage` functions now return an optional object.
 - Minor `GET_DATE` function improvement.
 
 ## 2.2.3
