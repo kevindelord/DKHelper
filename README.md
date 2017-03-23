@@ -44,19 +44,19 @@ Here is a small list of available functions. Many more are available, please che
 
 The DKHelper makes it easier to deal with blocks [in brackground](http://cocoadocs.org/docsets/DKHelper/2.2.4/Categories/NSObject+Block.html#//api/name/performBlockInBackground:completion:) or [in the main thread](http://cocoadocs.org/docsets/DKHelper/2.2.4/Categories/NSObject+Block.html#//api/name/performBlockInMainThread:). You do not need to remember the GCD syntax or anything.
 
-	performBlockInMainThread {
+	performBlock(inMainThread: {
 		// Block executed on background thread.
-	}
-
-	performBlockInBackground({
+	})
+	
+	performBlock(inBackground: {
 		// Block executed on background thread.
-		}) {
-			// completion block on main thread.
+	}) {
+		// Completion block executed on main thread.
 	}
 
 Some functions also exist giving the possibility to [execute a block after a certain delay](http://cocoadocs.org/docsets/DKHelper/2.2.4/Categories/NSObject+Block.html#//api/name/performBlockAfterDelay:block:):
 
-	performBlockAfterDelay(0.3) {
+	performBlock(afterDelay: 0.3) {
 		// Block executed after 0.3 seconds.
 	}
 
@@ -80,9 +80,9 @@ There are also function to directly get the [day](http://cocoadocs.org/docsets/D
 
 It is also possible to add some time interval to a date. For example [add 2 years](http://cocoadocs.org/docsets/DKHelper/2.2.4/Categories/NSDate+DKHelper.html#//api/name/dateByAddingYearInterval:) or [5 days](http://cocoadocs.org/docsets/DKHelper/2.2.4/Categories/NSDate+DKHelper.html#//api/name/dateByAddingDayInterval:):
 
-	aDate.dateByAddingYearInterval(2)
+	aDate.addingYearInterval(2)
 
-	aDate.dateByAddingDayInterval(5)
+	aDate.addingDayInterval(5)
 
 ### [NSString](http://cocoadocs.org/docsets/DKHelper/2.2.4/Categories/NSString+DKHelper.html)
 
@@ -102,17 +102,17 @@ There are properties to check whether a string is
 
 But also functions to generate a string object from a date [with style](http://cocoadocs.org/docsets/DKHelper/2.2.4/Categories/NSString+DKHelper.html#//api/name/stringFromDate:style:) or [with format](http://cocoadocs.org/docsets/DKHelper/2.2.4/Categories/NSString+DKHelper.html#//api/name/stringFromDate:format:):
 
-	NSString(fromDate: aDate, style: .ShortStyle)
+	NSString(from: aDate, style: .ShortStyle)
 
-	NSString(fromDate: aDate, format: NSDate.ISO8601StringFormat(), timeZone: NSTimeZone.defaultTimeZone())
+	NSString(from: aDate, format: NSDate.ISO8601StringFormat(), timeZone: TimeZone.current)
 
 ### [UIColor](http://cocoadocs.org/docsets/DKHelper/2.2.4/Categories/UIColor+DKHelper.html)
 
 There is function to generate a color from [RGB](http://cocoadocs.org/docsets/DKHelper/2.2.4/Categories/UIColor+DKHelper.html#//api/name/r:g:b:), [RGBA](http://cocoadocs.org/docsets/DKHelper/2.2.4/Categories/UIColor+DKHelper.html#//api/name/r:g:b:a:), and [Hexa strings](http://cocoadocs.org/docsets/DKHelper/2.2.4/Categories/UIColor+DKHelper.html#//api/name/colorFromHexString:):
 
-	UIColor(123, g: 46, b: 14)
+	UIColor.r(123, g: 46, b: 14)
 
-	UIColor(123, g: 46, b: 14, a: 0.7)
+	UIColor.r(123, g: 46, b: 14, a: 0.7)
 
 	UIColor(fromHexString: "#FF34DD")
 
@@ -136,7 +136,7 @@ Check the [current system version](http://cocoadocs.org/docsets/DKHelper/2.2.4/C
 
 or if it [is an iPad](http://cocoadocs.org/docsets/DKHelper/2.2.4/Categories/UIDevice+Model.html#//api/name/isIPad):
 
-	UIDevice.currentDevice().isIPad
+	UIDevice.current.isIPad
 
 or even the [current platform name](http://cocoadocs.org/docsets/DKHelper/2.2.4/Categories/UIDevice+Model.html#//api/name/currentPlatformName), for example `"iPhone 5C (GSM)"`
 
@@ -152,11 +152,11 @@ Functions to get to know the [size in inches of the current screen](http://cocoa
 
 [Loads a view from a nib file](http://cocoadocs.org/docsets/DKHelper/2.2.4/Categories/UIView+DKHelper.html#//api/name/loadFromNib:) within the main bundle.
 
-	UIView.loadFromNib("myAwesomeNibFile")
+	UIView.load(fromNib: "myAwesomeNibFile")
 
 Add [rounded corners](http://cocoadocs.org/docsets/DKHelper/2.2.4/Categories/UIView+DKHelper.html#//api/name/roundCorner:radius:):
 
-	myView.roundCorner(.AllCorners, radius: 10)
+	myView.roundCorner(.allCorners, radius: 10)
 
 Or to quickly access the [current width](http://cocoadocs.org/docsets/DKHelper/2.2.4/Categories/UIView+DKHelper.html#//api/name/frameWidth) of the view:
 

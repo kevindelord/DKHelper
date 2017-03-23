@@ -130,12 +130,11 @@ extension NSObjectTests {
 		// backgroundBlock: ON
 		// completionBlock: ON
 		let expectation = self.expectation(description: "execute block in background")
-		self.performBlock(inBackground: { () -> Void in
+		self.performBlock(inBackground: {
 			XCTAssert(Thread.isMainThread == false)
-
-			}) { () -> Void in
-				XCTAssert(Thread.isMainThread == true)
-				expectation.fulfill()
+		}) {
+			XCTAssert(Thread.isMainThread == true)
+			expectation.fulfill()
 		}
 		waitForExpectations(timeout: 2) { error in
 			XCTAssert(true, "didn't crash")
