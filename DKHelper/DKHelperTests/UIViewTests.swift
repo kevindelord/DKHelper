@@ -13,14 +13,14 @@ class DKViewTest : UIView {
 
 	override func awakeFromNib() {
 		super.awakeFromNib()
-		self.backgroundColor = UIColor.redColor()
+		self.backgroundColor = UIColor.red
 	}
 }
 
 class UIViewTests: XCTestCase {
 
-	private var currentBundle : NSBundle {
-		return NSBundle(forClass: UIImageTests.self)
+	fileprivate var currentBundle : Bundle {
+		return Bundle(for: UIImageTests.self)
 	}
 }
 
@@ -29,17 +29,17 @@ class UIViewTests: XCTestCase {
 extension UIViewTests {
 
 	func test_ShouldReturnNilWhenLoadinFromInvalidNibInMainBundle() {
-		let view = UIView.loadFromNib("uiview")
+		let view = UIView.load(fromNib: "uiview")
 		XCTAssertNil(view)
 	}
 
 	func test_ShouldReturnNilWhenLoadinFromInvalidNib() {
-		let view = UIView.loadFromNib("uiview", fromBundle: self.currentBundle)
+		let view = UIView.load(fromNib: "uiview", from: self.currentBundle)
 		XCTAssertNil(view)
 	}
 
 	func test_ShouldReturnValidViewFromNib() {
-		let view = UIView.loadFromNib("DKViewTest", fromBundle: self.currentBundle)
+		let view = UIView.load(fromNib: "DKViewTest", from: self.currentBundle)
 		XCTAssertNotNil(view)
 		XCTAssert((view is DKViewTest) == true)
 	}
@@ -51,7 +51,7 @@ extension UIViewTests {
 
 	func test_ShouldCreateVerticalGradientLayerWithCorrectFrame() {
 		let frame = CGRect(x: 0, y: 0, width: 200, height: 200)
-		let view = UIView.verticalGradientLayer(frame, topColor: UIColor.greenColor(), bottomColor: UIColor.blueColorWithAlpha(0.3))
+		let view = UIView.verticalGradientLayer(frame, topColor: UIColor.green, bottomColor: UIColor.blueColor(withAlpha: 0.3))
 		XCTAssertNotNil(view)
 		XCTAssertNotNil(view.layer)
 		XCTAssertEqual(view.frame, frame)
@@ -59,20 +59,20 @@ extension UIViewTests {
 
 	func test_ShouldCreateGradientWithValidColors() {
 		let frame = CGRect(x: 0, y: 0, width: 200, height: 200)
-		let view = UIView.verticalGradientLayer(frame, topColor: UIColor.greenColor(), bottomColor: UIColor.blueColorWithAlpha(0.3))
+		let view = UIView.verticalGradientLayer(frame, topColor: UIColor.green, bottomColor: UIColor.blueColor(withAlpha: 0.3))
 
 		XCTAssertEqual(view.layer.sublayers?.first is CAGradientLayer, true)
 		let gradientLayer = view.layer.sublayers?.first as? CAGradientLayer
-		let colors = gradientLayer?.colors as? [CGColorRef]
+		let colors = gradientLayer?.colors as? [CGColor]
 		XCTAssertNotNil(colors)
 		XCTAssertEqual(colors?.count, 2)
-		XCTAssert(CGColorEqualToColor(colors?.first, UIColor.greenColor().CGColor) == true)
-		XCTAssert(CGColorEqualToColor(colors?.last, UIColor.blueColorWithAlpha(0.3).CGColor) == true)
+		XCTAssert(colors?.first == UIColor.green.cgColor)
+		XCTAssert(colors?.last == UIColor.blueColor(withAlpha: 0.3).cgColor)
 	}
 
 	func test_ShouldCreateGradientWithValidStartAndEndPoints() {
 		let frame = CGRect(x: 0, y: 0, width: 200, height: 200)
-		let view = UIView.verticalGradientLayer(frame, topColor: UIColor.greenColor(), bottomColor: UIColor.blueColorWithAlpha(0.3))
+		let view = UIView.verticalGradientLayer(frame, topColor: UIColor.green, bottomColor: UIColor.blueColor(withAlpha: 0.3))
 
 		XCTAssertEqual(view.layer.sublayers?.first is CAGradientLayer, true)
 		let gradientLayer = view.layer.sublayers?.first as? CAGradientLayer
@@ -117,10 +117,10 @@ extension UIViewTests {
 
 		// verify bottom constraint
 		for constraint in constraints {
-			for attribute in [NSLayoutAttribute.Bottom, NSLayoutAttribute.Top, NSLayoutAttribute.Left, NSLayoutAttribute.Right]
+			for attribute in [NSLayoutAttribute.bottom, NSLayoutAttribute.top, NSLayoutAttribute.left, NSLayoutAttribute.right]
 				where (attribute == constraint.firstAttribute) {
 					XCTAssertEqual(constraint.firstItem as? UIView, view)
-					XCTAssertEqual(constraint.relation, NSLayoutRelation.Equal)
+					XCTAssertEqual(constraint.relation, NSLayoutRelation.equal)
 					XCTAssertEqual(constraint.secondItem as? UIView, superview)
 					XCTAssertEqual(constraint.multiplier, 1.0)
 					XCTAssertEqual(constraint.constant, 0)
@@ -139,7 +139,7 @@ extension UIViewTests {
 		let view = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
 		// there is no mask
 		XCTAssertNil(view.layer.mask)
-		view.roundCorner(UIRectCorner.AllCorners, radius: 10, maskToBounds: true)
+		view.roundCorner(UIRectCorner.allCorners, radius: 10, maskToBounds: true)
 		// verify new mask's validity
 		XCTAssertNotNil(view.layer.mask)
 		XCTAssertEqual(view.layer.mask?.bounds, CGRect(x: 0, y: 0, width: 200, height: 200))
@@ -151,7 +151,7 @@ extension UIViewTests {
 		let view = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
 		// there is no mask
 		XCTAssertNil(view.layer.mask)
-		view.roundCorner(UIRectCorner.AllCorners, radius: 10, maskToBounds: false)
+		view.roundCorner(UIRectCorner.allCorners, radius: 10, maskToBounds: false)
 		// verify new mask's validity
 		XCTAssertNotNil(view.layer.mask)
 		XCTAssertEqual(view.layer.mask?.bounds, CGRect(x: 0, y: 0, width: 200, height: 200))
@@ -163,7 +163,7 @@ extension UIViewTests {
 		let view = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
 		// there is no mask
 		XCTAssertNil(view.layer.mask)
-		view.roundCorner(UIRectCorner.AllCorners, radius: 10)
+		view.roundCorner(UIRectCorner.allCorners, radius: 10)
 		// verify new mask's validity
 		XCTAssertNotNil(view.layer.mask)
 		XCTAssertEqual(view.layer.mask?.bounds, CGRect(x: 0, y: 0, width: 200, height: 200))

@@ -86,10 +86,11 @@ NSNumber * _Nullable GET_NUMBER(NSDictionary * _Nullable dict, id _Nullable key)
 
 NSDate * _Nullable GET_DATE(NSDictionary * _Nullable dict, id key) {
     if (VALID(dict, key)) {
-        if ([dict[key] isKindOfClass:[NSDate class]]) {
-            return dict[key];
-        } else if ([dict[key] isKindOfClass:[NSString class]]) {
-            return [NSDate dateFromISOString:dict[key]];
+		id object = dict[key];
+        if ([object isKindOfClass:[NSDate class]]) {
+            return object;
+        } else if (object != NULL && [object isKindOfClass:[NSString class]]) {
+            return [NSDate dateFromISOString:object];
         }
     }
     return nil;
@@ -107,7 +108,7 @@ NSDate * _Nullable GET_DATE_FORMAT(NSDictionary * _Nullable dict, id _Nullable k
 }
 
 NSString * _Nullable GET_STRING(NSDictionary * _Nullable dict, id key) {
-    return ( VALID_AND_IS_CLASS(dict, key, NSString.class) ? ( [dict[key] isEqualToString:@""] == false ? dict[key] : nil ) : nil);
+    return (VALID_AND_IS_CLASS(dict, key, NSString.class) ? ( [dict[key] isEqualToString:@""] == false ? dict[key] : nil ) : nil);
 }
 
 #pragma mark - Numbers

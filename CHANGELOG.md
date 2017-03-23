@@ -1,5 +1,13 @@
 # DKHelper CHANGELOG
 
+## 2.2.4
+
+- UIDevice: add new iPhone and AppleWatch devices.
+- UIColor: init function now forces the RGB values to be between 0.0 and 1.0.
+- UIImage: `resizedImage` functions now return an optional object.
+- Minor `GET_DATE` function improvement.
+- Update README with examples written in Swift 3.
+
 ## 2.2.3
 
 - Print a warning if a localized string can't be found.

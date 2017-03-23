@@ -1,29 +1,28 @@
 language: objective-c
-osx_image: xcode7.3
-xcode_workspace: DKHelper.xcworkspace
-xcode_scheme: DKHelper
-xcode_sdk: iphonesimulator9.3
-xctool_args: -destination "platform=iOS Simulator,name=iPhone 6s,OS=9.3" GCC_GENERATE_TEST_COVERAGE_FILES=YES GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES
 sudo: false
-env:
-  global:
-    - FRAMEWORK_NAME=DKHelper
+xcode_project: DKHelper/DKHelper.xcodeproj
+xcode_scheme: DKHelper
+osx_image: xcode8
+xcode_sdk: iphonesimulator10.0
+
 before_install:
   - brew update
   - brew outdated carthage || brew upgrade carthage
+
+script:
+  - xcodebuild -version
+  - xcodebuild -showsdks
+  - xcodebuild test -project "DKHelper/DKHelper.xcodeproj" -scheme "DKHelper" -destination "platform=iOS Simulator,name=iPhone 6s" | xcpretty
+
 before_deploy:
   - carthage build --no-skip-current
   - carthage archive $FRAMEWORK_NAME
 deploy:
-  provider: releases
-  api_key:
-    secure: sGJ0vtInfqVsJSkloYz5gPP5VjScrU8KpoWAU+1NH89L59/D/gFEa5UanwasXblSDDws8BbTIhRnTVXURBQxPxozQ4YRXSIVpWgL7QvwzUDObv0TyCGubqd3vE7pIG84PjGaGQpfY+ZzkWC9VKDF+bGL0zlRjj42tjJfRv9xcQ4X/Wjw+e5B+Fj9Eiu2nSFpGphPylOTV3YQnAGVeNEmJ+IspnoVN1HpCcDAYQRCInx1eo1cFz5LT7JA/vvghbBXDetvLquFB/hGqp9HBIKP3M/76CRBg6Qk5/DAmCu1EGAP4EPPFrig78PvjufLdPm/XrDx8LG69tZI6VoFPIrBxZ5m78UPWdSVHRf0t79ZVEz9AfrXRwNMY7zMidObQkd4USl+qZ/jRoYVn+8i5LrmL/g9U5TGlBsRGLBMEPbAj7fCkoO+kbRKMc3cApyTFWx5gVQhIUa8agvhepslo3nSn4kj9yzSDVJpy8P2i0lqMwwkTHcGjewdwS1gTPEJE9ycEgfcmsTGgA8Cu9fSLwaqXFnnZZ4iCaWx/AdbPP8xJO4nomJH9E+gDLXsZF20lwzCQNPF1TDx6zZy5Wx7ca1U/5S3j2ooE8LMmSINAGBBfDW6JAf+C1zTcDYUlLqMYHvW1aODw9ZbbTdC5vEiEMV81zQ4n3c5aANIPNLIzmJXSbw=
-  file: $FRAMEWORK_NAME.framework.zip
   skip_cleanup: true
   provider: releases
+  file: $FRAMEWORK_NAME.framework.zip
   api_key:
     secure: Q4A/AaeXS9N6JL9k5WS1PDPnMGoo1qmD5wlbMEu9H8ZQQhOQKLY/x8xQbi/82eyfXWyTgjVxgscH19atzYLr9jogmZj2v0nNASqjql/bNxvu7VBKY0N6P+sQU4cCoQw+3oqhP4U+owMyvabfV7sWlvpYa3GPYGVNAtFfotsqpCkvB0COmggCIddU2LS6pl+hg5QgP195ldBBAQW+z5PO5Wmq8Gvd88IG330r2jslCz+3O38qwJIZSZnfQuG9LDJVEitp67S1y9AAn7Wp5oPNRJ6nOwkI4bgGxnLJDwDB13DEAvG8sJtEqBV8gBx0KYJTQNqJTYKLHy102UG/WBBcRNTuIaookEvf8RHzbFBnX9mGK5Q2jF9G+q8r7zjw1sq1DghknxX9m8M0GZLner7J4A36T4BtHoVzogPUIIsN7moEDbgJY9Zu2oR+JFl675EB3rVuhR0EnbZUqV1u1Jo3AsOBu+ZdnnPgc4FD2JxZODOc2kzw/uAY0HcgUcqz4sR7e31Ozs8zizUM268FXMohryoMotrCfREM3AIPQsyBf9Uh9ZGpCNyrk9GiDT+wgSrSceiFOsQqsPbCDp8ED7lp3Q+7WttOXIc9fZ8tPFsiA0jyxLF6PqxUEYBaGAy6GdFC1zh7URQ9Iy6ERdzXF/cVunLIVITraij6EwY8+G3pUrE=
-  file: $FRAMEWORK_NAME.framework.zip
   on:
     repo: kevindelord/DKHelper
     tags: true

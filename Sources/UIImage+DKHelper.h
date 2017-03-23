@@ -20,7 +20,7 @@
  * @param size The desired image size.
  * @return A new UIImage object.
  */
-+ (UIImage * _Null_unspecified)scaleImage:(UIImage * _Nonnull)image size:(CGSize)size;
++ (UIImage * __nullable)scaleImage:(UIImage * _Nonnull)image size:(CGSize)size;
 
 /**
  * Creates a new UIImage object that fit given size.
@@ -29,7 +29,7 @@
  *
  * @return A new UIImage object.
  */
-- (UIImage * _Null_unspecified)resizedImageToSize:(CGSize)newSize;
+- (UIImage * __nullable)resizedImageToSize:(CGSize)newSize;
 
 /**
  * Creates a new UIImage object that fit the current screen size.
@@ -38,7 +38,7 @@
  *
  * @return A new UIImage object.
  */
-- (UIImage * _Null_unspecified)resizedImageToScreenSize;
+- (UIImage * __nullable)resizedImageToScreenSize;
 
 /**
  *  Calculated the size of the UIImage in pixels instead of points

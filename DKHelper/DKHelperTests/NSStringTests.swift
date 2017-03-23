@@ -104,7 +104,7 @@ extension NSStringTests {
 extension NSStringTests {
 
 	func test_ShouldCreateRandomString() {
-		let str = NSString.randomString()
+		let str = NSString.random()
 		XCTAssertNotNil(str)
 		XCTAssert(str.length >= 1)
 		XCTAssert(str.length <= 100)
@@ -112,7 +112,7 @@ extension NSStringTests {
 	}
 
 	func test_ShouldCreateDifferentRandomStrings() {
-		let left = NSString.randomString()
+		let left = NSString.random()
 		let right = NSString.randomString(10)
 
 		XCTAssert(right != left)
@@ -125,16 +125,16 @@ extension NSStringTests {
 
 	func test_ShouldRandomizeString() {
 		let str = "abcdefgh"
-		let randomized = str.randomizedString()
+		let randomized = str.randomized()
 
 		XCTAssertNotNil(randomized)
 		XCTAssert(str.characters.count == randomized.length)
-		XCTAssert(str != randomized)
+		XCTAssert(str != randomized as String)
 	}
 
 	func test_RandomizeStringShouldHaveSameLength() {
 		let str = NSString.randomString(20)
-		let randomized = str.randomizedString()
+		let randomized = str.randomized()
 
 		XCTAssertNotNil(randomized)
 		XCTAssert(str.length == randomized.length)
@@ -148,16 +148,16 @@ extension NSStringTests {
 
 	func test_ShouldCreateAStringFromDateWithNoStyle() {
 		let date = (NSDate(fromDayString: "1991-01-19") ?? NSDate())
-		let string = NSString(fromDate: date, style: NSDateFormatterStyle.NoStyle)
+		let string = NSString(from: date as Date, style: DateFormatter.Style.none)
 		XCTAssert(string == "")
 	}
 
 	func test_ShouldCreateAStringFromDateWithShortStyle() {
 		let date = (NSDate(fromDayString: "1991-01-19") ?? NSDate())
-		let string = NSString(fromDate: date, style: NSDateFormatterStyle.ShortStyle)
-		if (NSLocale.currentLocale().localeIdentifier.hasPrefix("en_DE") == true) {
+		let string = NSString(from: date as Date, style: DateFormatter.Style.short)
+		if (Locale.current.identifier.hasPrefix("en_DE") == true) {
 			XCTAssertEqual(string, "19/01/91")
-		} else if (NSLocale.currentLocale().localeIdentifier.hasPrefix("de_DE") == true) {
+		} else if (Locale.current.identifier.hasPrefix("de_DE") == true) {
 			XCTAssertEqual(string, "19.01.91")
 		} else {
 			XCTAssertEqual(string, "1/19/91")
@@ -166,10 +166,10 @@ extension NSStringTests {
 
 	func test_ShouldCreateAStringFromDateWithMediumStyle() {
 		let date = (NSDate(fromDayString: "1991-01-19") ?? NSDate())
-		let string = NSString(fromDate: date, style: NSDateFormatterStyle.MediumStyle)
-		if (NSLocale.currentLocale().localeIdentifier.hasPrefix("en_DE") == true) {
+		let string = NSString(from: date as Date, style: DateFormatter.Style.medium)
+		if (Locale.current.identifier.hasPrefix("en_DE") == true) {
 			XCTAssertEqual(string, "19 Jan 1991")
-		} else if (NSLocale.currentLocale().localeIdentifier.hasPrefix("de_DE") == true) {
+		} else if (Locale.current.identifier.hasPrefix("de_DE") == true) {
 			XCTAssertEqual(string, "19.01.1991")
 		} else {
 			XCTAssertEqual(string, "Jan 19, 1991")
@@ -178,10 +178,10 @@ extension NSStringTests {
 
 	func test_ShouldCreateAStringFromDateWithLongStyle() {
 		let date = (NSDate(fromDayString: "1991-01-19") ?? NSDate())
-		let string = NSString(fromDate: date, style: NSDateFormatterStyle.LongStyle)
-		if (NSLocale.currentLocale().localeIdentifier.hasPrefix("en_DE") == true) {
+		let string = NSString(from: date as Date, style: DateFormatter.Style.long)
+		if (Locale.current.identifier.hasPrefix("en_DE") == true) {
 			XCTAssertEqual(string, "19 January 1991")
-		} else if (NSLocale.currentLocale().localeIdentifier.hasPrefix("de_DE") == true) {
+		} else if (Locale.current.identifier.hasPrefix("de_DE") == true) {
 			XCTAssertEqual(string, "19. Januar 1991")
 		} else {
 			XCTAssertEqual(string, "January 19, 1991")
@@ -190,10 +190,10 @@ extension NSStringTests {
 
 	func test_ShouldCreateAStringFromDateWithFullStyle() {
 		let date = (NSDate(fromDayString: "1991-01-19") ?? NSDate())
-		let string = NSString(fromDate: date, style: NSDateFormatterStyle.FullStyle)
-		if (NSLocale.currentLocale().localeIdentifier.hasPrefix("en_DE") == true) {
+		let string = NSString(from: date as Date, style: DateFormatter.Style.full)
+		if (Locale.current.identifier.hasPrefix("en_DE") == true) {
 			XCTAssertEqual(string, "Saturday 19 January 1991")
-		} else if (NSLocale.currentLocale().localeIdentifier.hasPrefix("de_DE") == true) {
+		} else if (Locale.current.identifier.hasPrefix("de_DE") == true) {
 			XCTAssertEqual(string, "Samstag, 19. Januar 1991")
 		} else {
 			XCTAssertEqual(string, "Saturday, January 19, 1991")
@@ -362,28 +362,28 @@ extension NSStringTests {
 
 	func test_ShouldFindOccurenceForPatternInString() {
 		let str = "SuperTest"
-		let occurence = str.firstOccuranceForPattern("upe+.*es")
+		let occurence = str.firstOccurance(forPattern: "upe+.*es")
 		XCTAssertNotNil(occurence)
 		XCTAssertEqual(occurence, "uperTes")
 	}
 
 	func test_ShouldFindOnlyOneOccurenceForPatternInString() {
 		let str = "SuperTestSuper_est"
-		let occurence = str.firstOccuranceForPattern("upe+.*es")
+		let occurence = str.firstOccurance(forPattern: "upe+.*es")
 		XCTAssertNotNil(occurence)
 		XCTAssertEqual(occurence, "uperTestSuper_es")
 	}
 
 	func test_ShouldFindOnlyFirstOccurenceForPatternInString() {
 		let str = "SuperTestSuper_est"
-		let occurence = str.firstOccuranceForPattern("er[_A-Z]*es")
+		let occurence = str.firstOccurance(forPattern: "er[_A-Z]*es")
 		XCTAssertNotNil(occurence)
 		XCTAssertEqual(occurence, "erTes")
 	}
 
 	func test_ShouldReturnNilIfNoOccurenceFound() {
 		let str = "SuperTestSuper_est"
-		let occurence = str.firstOccuranceForPattern("[0-9]")
+		let occurence = str.firstOccurance(forPattern: "[0-9]")
 		XCTAssertNil(occurence)
 	}
 }
@@ -394,28 +394,28 @@ extension NSStringTests {
 
 	func test_ShouldFindLastOccurenceForPatternInString() {
 		let str = "SuperTest"
-		let occurence = str.lastOccuranceForPattern("upe+.*es")
+		let occurence = str.lastOccurance(forPattern: "upe+.*es")
 		XCTAssertNotNil(occurence)
 		XCTAssertEqual(occurence, "uperTes")
 	}
 
 	func test_ShouldFindOnlyOneLastOccurenceForPatternInString() {
 		let str = "SuperTestSuper_est"
-		let occurence = str.lastOccuranceForPattern("upe+.*es")
+		let occurence = str.lastOccurance(forPattern: "upe+.*es")
 		XCTAssertNotNil(occurence)
 		XCTAssertEqual(occurence, "uperTestSuper_es")
 	}
 
 	func test_ShouldFindOnlyLastOccurenceForPatternInString() {
 		let str = "SuperTestSuper_est"
-		let occurence = str.lastOccuranceForPattern("er[_A-Z]*es")
+		let occurence = str.lastOccurance(forPattern: "er[_A-Z]*es")
 		XCTAssertNotNil(occurence)
 		XCTAssertEqual(occurence, "er_es")
 	}
 
 	func test_ShouldReturnNilIfNoLastOccurenceFound() {
 		let str = "SuperTestSuper_est"
-		let occurence = str.lastOccuranceForPattern("[0-9]")
+		let occurence = str.lastOccurance(forPattern: "[0-9]")
 		XCTAssertNil(occurence)
 	}
 }
@@ -436,14 +436,14 @@ extension NSStringTests {
 		let str = "abcd"
 		let clearedStr = str.removeDuplicatedCharacters()
 		XCTAssertNotNil(clearedStr)
-		XCTAssert(clearedStr == str)
+		XCTAssert(clearedStr as String == str)
 	}
 
 	func test_RemoveDuplicatedCharactersShouldReturnSameInvalidString() {
 		let str = ""
 		let clearedStr = str.removeDuplicatedCharacters()
 		XCTAssertNotNil(clearedStr)
-		XCTAssert(clearedStr == str)
+		XCTAssert(clearedStr as String == str)
 	}
 }
 
@@ -455,7 +455,7 @@ extension NSStringTests {
 		let str = "  super test \n • \t   "
 		let trimmed = str.trimWhitespaces()
 		XCTAssertNotNil(trimmed)
-		XCTAssert(str != trimmed)
+		XCTAssert(str != trimmed as String)
 		XCTAssertEqual(trimmed, "super test \n •")
 	}
 
@@ -463,7 +463,7 @@ extension NSStringTests {
 		let str = "super test  \t  hello world"
 		let trimmed = str.trimWhitespaces()
 		XCTAssertNotNil(trimmed)
-		XCTAssert(str == trimmed)
+		XCTAssert(str == trimmed as String)
 		XCTAssertEqual(trimmed, "super test  \t  hello world")
 	}
 }
@@ -476,7 +476,7 @@ extension NSStringTests {
 		let str = "  super\r test \n • \t   \n"
 		let trimmed = str.removeAllNewlinesAndIllegalChars()
 		XCTAssertNotNil(trimmed)
-		XCTAssert(str != trimmed)
+		XCTAssert(str != trimmed as String)
 		XCTAssertEqual(trimmed, "super\r test \n •")
 	}
 }

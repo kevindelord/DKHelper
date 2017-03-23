@@ -25,17 +25,17 @@ extension DKRegexTests {
 
 	func test_ShouldVerifyFileExtensionRegex() {
 		let str : NSString = "drferG.gt"
-		XCTAssert(str.lastOccuranceForPattern(DKRegex.fileExtension()) == ".gt")
+		XCTAssert(str.lastOccurance(forPattern: DKRegex.fileExtension()) == ".gt")
 	}
 
 	func test_ShouldNotVerifyInvalidString() {
 		let str : NSString = "drferG"
-		XCTAssert(str.lastOccuranceForPattern(DKRegex.fileExtension()) == nil)
+		XCTAssert(str.lastOccurance(forPattern: DKRegex.fileExtension()) == nil)
 	}
 
 	func test_ShouldNotVerifyEmptyString() {
 		let str : NSString = ""
-		XCTAssert(str.lastOccuranceForPattern(DKRegex.fileExtension()) == nil)
+		XCTAssert(str.lastOccurance(forPattern: DKRegex.fileExtension()) == nil)
 	}
 }
 
@@ -51,26 +51,26 @@ extension DKRegexTests {
 
 	func test_ShouldVerifyFilenameAndExtensionRegex() {
 		let str : NSString = "drferG.gt"
-		XCTAssert(str.lastOccuranceForPattern(DKRegex.filenameAndExtension()) == "drferG.gt")
+		XCTAssert(str.lastOccurance(forPattern: DKRegex.filenameAndExtension()) == "drferG.gt")
 	}
 
 	func test_ShouldNotVerifyInvalidFilenameString() {
 		let str : NSString = "drferG"
-		XCTAssert(str.lastOccuranceForPattern(DKRegex.filenameAndExtension()) == nil)
+		XCTAssert(str.lastOccurance(forPattern: DKRegex.filenameAndExtension()) == nil)
 	}
 
 	func test_ShouldNotVerifyEmptyFilenameString() {
 		let str : NSString = ""
-		XCTAssert(str.lastOccuranceForPattern(DKRegex.filenameAndExtension()) == nil)
+		XCTAssert(str.lastOccurance(forPattern: DKRegex.filenameAndExtension()) == nil)
 	}
 
 	func test_ShouldVerifyOnlyExtensionString() {
 		let str : NSString = ".zip"
-		XCTAssert(str.lastOccuranceForPattern(DKRegex.filenameAndExtension()) == nil)
+		XCTAssert(str.lastOccurance(forPattern: DKRegex.filenameAndExtension()) == nil)
 	}
 
 	func test_ShouldOnlyReturnOneOccurenceString() {
 		let str : NSString = "test.super.zip"
-		XCTAssert(str.lastOccuranceForPattern(DKRegex.filenameAndExtension()) == "super.zip")
+		XCTAssert(str.lastOccurance(forPattern: DKRegex.filenameAndExtension()) == "super.zip")
 	}
 }

@@ -11,7 +11,7 @@
 
 @implementation UIImage (DKHelper)
 
-+ (UIImage * _Null_unspecified)scaleImage:(UIImage * _Nonnull)image size:(CGSize)size {
++ (UIImage * __nullable)scaleImage:(UIImage * _Nonnull)image size:(CGSize)size {
     UIGraphicsBeginImageContext(size);
     [image drawInRect:CGRectMake(0,0,size.width,size.height)];
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
@@ -19,13 +19,13 @@
     return newImage;
 }
 
-- (UIImage * _Null_unspecified)resizedImageToSize:(CGSize)newSize {
+- (UIImage * __nullable)resizedImageToSize:(CGSize)newSize {
 
     CGSize adjustedSize = CGSizeAdjustToCGSize(self.size, newSize);
     return [UIImage scaleImage:self size:adjustedSize];
 }
 
-- (UIImage * _Null_unspecified)resizedImageToScreenSize {
+- (UIImage * __nullable)resizedImageToScreenSize {
 
     CGRect screenSize = UIScreen.mainScreen.bounds;
     return [self resizedImageToSize:screenSize.size];
