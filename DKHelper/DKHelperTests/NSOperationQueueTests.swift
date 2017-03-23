@@ -37,7 +37,7 @@ extension NSOperationQueueTests {
 
 		weak var expectation = self.expectation(description: "addOperationWithBlock")
 
-		self.operationQueue?.addOperation({ (operation: Operation?) in
+		_ = self.operationQueue?.addOperation({ (operation: Operation?) in
 			XCTAssertNotNil(operation)
 			expectation?.fulfill()
 		}, timeout: 1.0, timeoutBlock: {
@@ -55,7 +55,7 @@ extension NSOperationQueueTests {
 
 		weak var expectation = self.expectation(description: "addOperationWithBlock timeout")
 
-		self.operationQueue?.addOperation({ (operation: Operation?) in
+		_ = self.operationQueue?.addOperation({ (operation: Operation?) in
 			// simulate an operation that takes 2 seconds
 			sleep(2)
 
