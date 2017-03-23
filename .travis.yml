@@ -5,6 +5,11 @@ xcode_scheme: DKHelper
 osx_image: xcode8
 xcode_sdk: iphonesimulator10.0
 
+before_install:
+  - rvm get stable
+  - brew update
+  - brew outdated carthage || brew upgrade carthage
+
 script:
   - xcodebuild -version
   - xcodebuild -showsdks
@@ -13,6 +18,7 @@ script:
 before_deploy:
   - carthage build --no-skip-current
   - carthage archive DKHelper
+
 deploy:
   skip_cleanup: true
   provider: releases
@@ -22,5 +28,6 @@ deploy:
   on:
     repo: kevindelord/DKHelper
     tags: true
+
 after_success:
   - bash <(curl -s https://codecov.io/bash)
