@@ -11,8 +11,8 @@ import XCTest
 
 class NSBundleTests: XCTestCase {
 
-	private var currentBundle : NSBundle {
-		return NSBundle(forClass: NSBundleTests.self)
+	fileprivate var currentBundle : Bundle {
+		return Bundle(for: NSBundleTests.self)
 	}
 }
 
@@ -21,10 +21,10 @@ class NSBundleTests: XCTestCase {
 extension NSBundleTests {
 
 	func test_ShouldReturnNilFromMainBundle() {
-		NSBundle.entryInPListForKey("CFBundleDevelopmentRegion")
-		NSBundle.booleanEntryInPListForKey("UIRequiresFullScreen")
-		NSBundle.stringEntryInPListForKey("CFBundleVersion")
-		NSBundle.numberEntryInPListForKey("CFBundleInfoDictionaryVersion")
+		Bundle.entryInPList(forKey: "CFBundleDevelopmentRegion")
+		Bundle.booleanEntryInPList(forKey: "UIRequiresFullScreen")
+		Bundle.stringEntryInPList(forKey: "CFBundleVersion")
+		Bundle.numberEntryInPList(forKey: "CFBundleInfoDictionaryVersion")
 		XCTAssert(true) // did not crash
 	}
 }
@@ -34,7 +34,7 @@ extension NSBundleTests {
 extension NSBundleTests {
 
 	func test_ShouldReturnValidValue() {
-		let value = self.currentBundle.entryInPListForKey("CFBundleDevelopmentRegion")
+		let value = self.currentBundle.entryInPList(forKey: "CFBundleDevelopmentRegion")
 		XCTAssertNotNil(value)
 		XCTAssert(value is String)
 		XCTAssert((value as? String) == "en")
@@ -46,7 +46,7 @@ extension NSBundleTests {
 extension NSBundleTests {
 
 	func test_ShouldReturnValidStringValue() {
-		let value = self.currentBundle.stringEntryInPListForKey("CFBundleDevelopmentRegion")
+		let value = self.currentBundle.stringEntryInPList(forKey: "CFBundleDevelopmentRegion")
 		XCTAssertNotNil(value)
 		XCTAssert(value != "")
 		XCTAssert(value.characters.count > 0)
@@ -58,14 +58,14 @@ extension NSBundleTests {
 extension NSBundleTests {
 
 	func test_ShouldReturnValidTrueBooleanValue() {
-		let value = self.currentBundle.booleanEntryInPListForKey("UIRequiresFullScreen")
+		let value = self.currentBundle.booleanEntryInPList(forKey: "UIRequiresFullScreen")
 		XCTAssertNotNil(value)
 		XCTAssert(value == false)
 		XCTAssert(value != true)
 	}
 
 	func test_ShouldReturnValidFalseBooleanValue() {
-		let value = self.currentBundle.booleanEntryInPListForKey("UnitTestTrue")
+		let value = self.currentBundle.booleanEntryInPList(forKey: "UnitTestTrue")
 		XCTAssertNotNil(value)
 		XCTAssert(value == true)
 		XCTAssert(value != false)
@@ -77,14 +77,14 @@ extension NSBundleTests {
 extension NSBundleTests {
 
 	func test_ShouldReturnValidNumberValue() {
-		let value = self.currentBundle.numberEntryInPListForKey("CFBundleVersion")
+		let value = self.currentBundle.numberEntryInPList(forKey: "CFBundleVersion")
 		XCTAssertNotNil(value)
-		XCTAssert(value.integerValue > 0 && value.integerValue < Int.max)
+		XCTAssert(value.intValue > 0 && value.intValue < Int.max)
 	}
 
 	func test_ShouldReturnValidNumberValueFromString() {
-		let value = self.currentBundle.numberEntryInPListForKey("CFBundleInfoDictionaryVersion")
+		let value = self.currentBundle.numberEntryInPList(forKey: "CFBundleInfoDictionaryVersion")
 		XCTAssertNotNil(value)
-		XCTAssert(value.integerValue == 6)
+		XCTAssert(value.intValue == 6)
 	}
 }

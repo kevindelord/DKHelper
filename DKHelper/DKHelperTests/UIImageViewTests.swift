@@ -11,8 +11,8 @@ import XCTest
 
 class UIImageViewTests: XCTestCase {
 
-	private var currentBundle : NSBundle {
-		return NSBundle(forClass: UIImageTests.self)
+	fileprivate var currentBundle : Bundle {
+		return Bundle(for: UIImageTests.self)
 	}
 
 	func test_ShouldCreateImageViewWithImageNamed() {
@@ -29,7 +29,7 @@ class UIImageViewTests: XCTestCase {
 
 	func test_ShouldCreateImageViewWithImageAndFrame() {
 		let frame = CGRect(x: 10, y: 10, width: 100, height: 100)
-		if let img = UIImage(named: "TestImage", inBundle: self.currentBundle, compatibleWithTraitCollection: nil) {
+		if let img = UIImage(named: "TestImage", in: self.currentBundle, compatibleWith: nil) {
 			let imgView = UIImageView(frame:frame, image: img)
 			XCTAssertNotNil(imgView)
 			XCTAssertEqual(imgView.frame, frame)

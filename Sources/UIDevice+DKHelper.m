@@ -43,6 +43,10 @@
 	// Apple Watch
 	if ([platform isEqualToString:@"Watch1,1"])     return @"Apple Watch";
 	if ([platform isEqualToString:@"Watch1,2"])     return @"Apple Watch";
+	if ([platform isEqualToString:@"Watch2,6"])     return @"Apple Watch Series 1";
+	if ([platform isEqualToString:@"Watch2,7"])     return @"Apple Watch Series 1";
+	if ([platform isEqualToString:@"Watch2,3"])     return @"Apple Watch Series 2";
+	if ([platform isEqualToString:@"Watch2,4"])     return @"Apple Watch Series 2";
 
 	// iPhone
 	if ([platform isEqualToString:@"iPhone1,1"])    return @"iPhone";
@@ -63,6 +67,10 @@
 	if ([platform isEqualToString:@"iPhone8,1"])    return @"iPhone 6s";
 	if ([platform isEqualToString:@"iPhone8,2"])    return @"iPhone 6s Plus";
 	if ([platform isEqualToString:@"iPhone8,4"])    return @"iPhone SE";
+	if ([platform isEqualToString:@"iPhone9,1"])    return @"iPhone 7";
+	if ([platform isEqualToString:@"iPhone9,3"])    return @"iPhone 7";
+	if ([platform isEqualToString:@"iPhone9,2"])    return @"iPhone 7 Plus";
+	if ([platform isEqualToString:@"iPhone9,4"])    return @"iPhone 7 Plus";
 
 	// iPod
 	if ([platform isEqualToString:@"iPod1,1"])      return @"iPod Touch";
@@ -93,6 +101,8 @@
 	if ([platform isEqualToString:@"iPad6,4"])      return @"iPad Pro (Cellular)";
 	if ([platform isEqualToString:@"iPad6,7"])      return @"iPad Pro (WiFi)";
 	if ([platform isEqualToString:@"iPad6,8"])      return @"iPad Pro (Cellular)";
+	if ([platform isEqualToString:@"iPad6,11"])     return @"iPad 5 (WiFi)";
+	if ([platform isEqualToString:@"iPad6,12"])     return @"iPad 5 (Cellular)";
 
 	// iPad Mini
 	if ([platform isEqualToString:@"iPad2,5"])      return @"iPad Mini (WiFi)";

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3AF99C301D65C09600B42C16 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3AF99C2F1D65C09600B42C16 /* Localizable.strings */; };
+		750B76A41E82DC0300004FFF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 750B76A31E82DC0300004FFF /* UIKit.framework */; };
+		750B76A61E82DC2500004FFF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 750B76A51E82DC2500004FFF /* Foundation.framework */; };
 		757800121CCE510A000CD33F /* CGRect+DKHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 7578FFEE1CCE510A000CD33F /* CGRect+DKHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		757800131CCE510A000CD33F /* CGRect+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7578FFEF1CCE510A000CD33F /* CGRect+DKHelper.m */; };
 		757800141CCE510A000CD33F /* CGRect+DKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7578FFEF1CCE510A000CD33F /* CGRect+DKHelper.m */; };
@@ -97,6 +99,8 @@
 
 /* Begin PBXFileReference section */
 		3AF99C2F1D65C09600B42C16 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		750B76A31E82DC0300004FFF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		750B76A51E82DC2500004FFF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		757800001CCE510A000CD33F /* NSOperationQueue+DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSOperationQueue+DKHelper.h"; sourceTree = "<group>"; };
 		757800011CCE510A000CD33F /* NSOperationQueue+DKHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSOperationQueue+DKHelper.m"; sourceTree = "<group>"; };
 		757800021CCE510A000CD33F /* NSPredicate+DKHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPredicate+DKHelper.h"; sourceTree = "<group>"; };
@@ -165,6 +169,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				750B76A61E82DC2500004FFF /* Foundation.framework in Frameworks */,
+				750B76A41E82DC0300004FFF /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +185,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		750B76A21E82DC0300004FFF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				750B76A51E82DC2500004FFF /* Foundation.framework */,
+				750B76A31E82DC0300004FFF /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		757800481CCE5150000CD33F /* DKHelperTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,6 +239,7 @@
 				757800481CCE5150000CD33F /* DKHelperTests */,
 				7578FFED1CCE510A000CD33F /* Sources */,
 				7578FFD41CCE50D0000CD33F /* Products */,
+				750B76A21E82DC0300004FFF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -353,7 +369,7 @@
 		7578FFCA1CCE50D0000CD33F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Kevin Delord";
 				TargetAttributes = {
 					7578FFD21CCE50D0000CD33F = {
@@ -361,6 +377,7 @@
 					};
 					7578FFDC1CCE50D0000CD33F = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -496,8 +513,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -544,8 +563,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -565,6 +586,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -576,6 +598,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 38;
@@ -594,6 +617,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 38;
@@ -621,6 +645,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.kevindelord.DKHelperTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "DKHelperTests/Resources/DKHelper-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -637,6 +662,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.kevindelord.DKHelperTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "DKHelperTests/Resources/DKHelper-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
