@@ -7,6 +7,7 @@
 //
 
 #import "UIColor+DKHelper.h"
+#import "DKHelper.h"
 
 @implementation UIColor (DKHelper)
 
@@ -44,7 +45,10 @@
 }
 
 + (instancetype _Nonnull)r:(CGFloat)red g:(CGFloat)green b:(CGFloat)blue a:(CGFloat)alpha {
-	return [UIColor colorWithRed:red / 255. green:green / 255. blue:blue / 255. alpha:alpha];
+	red = MINMAX(red / 255.0, 0.0, 1.0);
+	green = MINMAX(green / 255.0, 0.0, 1.0);
+	blue = MINMAX(blue / 255.0, 0.0, 1.0);
+	return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
 }
 
 #pragma mark - Hexa

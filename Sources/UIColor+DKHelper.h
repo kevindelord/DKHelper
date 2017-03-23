@@ -80,6 +80,8 @@
  * @discussion The color information represented by this object is in the device RGBA colorspace.
  * @discussion The alpha is set by default to 1.0
  *
+ * @dicussion To use the extended range sRGB color space on a P3 display use the native functions.
+ *
  * @param red The red component of the color object, specified as a value from 0.0 to 255.0.
  * @param green The green component of the color object, specified as a value from 0.0 to 255.0.
  * @param blue The blue component of the color object, specified as a value from 0.0 to 255.0.
@@ -92,6 +94,8 @@
  *
  * @discussion Values below 0.0 are interpreted as 0.0, values above 255.0 as 255.0 and values aboves 1.0 as 1.0.
  * @discussion The color information represented by this object is in the device RGBA colorspace.
+ *
+ * @dicussion To use the extended range sRGB color space on a P3 display use the native functions.
  *
  * @param red The red component of the color object, specified as a value from 0.0 to 255.0.
  * @param green The green component of the color object, specified as a value from 0.0 to 255.0.

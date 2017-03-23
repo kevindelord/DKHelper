@@ -34,14 +34,15 @@ class UIColorTests: XCTestCase {
 		color?.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
 
 		// expected
-		XCTAssertEqual(red, expectedResults.red)
-		XCTAssertEqual(green, expectedResults.green)
-		XCTAssertEqual(blue, expectedResults.blue)
-		XCTAssertEqual(alpha, expectedResults.alpha)
 		XCTAssertNotEqual(red, -1)
 		XCTAssertNotEqual(green, -1)
 		XCTAssertNotEqual(blue, -1)
 		XCTAssertNotEqual(alpha, -1)
+		XCTAssertEqual(red, expectedResults.red)
+		XCTAssertEqual(green, expectedResults.green)
+		XCTAssertEqual(blue, expectedResults.blue)
+		XCTAssertEqual(alpha, expectedResults.alpha)
+
 
 		// not expected
 		XCTAssertNotEqual(red, expectedResults.wrongRed)
@@ -198,13 +199,15 @@ extension UIColorTests {
 		self.testRGBColor(UIColor.r(0, g: 127.5, b: 63.75, a: 0.45), expectedResults: results)
 	}
 
-	func test_ShouldCreateColorFromInvalidRGBA() {
+	func test_ShouldCreateColorFromInvalidRGBAWithoutAlpha() {
 		// check invalid color with invalid alpha
-		var results = UIColorTests.RGBResults(red: 1, green: 1, blue: 0, alpha: 0, wrongRed: 3, wrongGreen: 8684, wrongBlue: 133, wrongAlpha: 0.4)
+		let results = UIColorTests.RGBResults(red: 1, green: 1, blue: 0, alpha: 0, wrongRed: 3, wrongGreen: 8684, wrongBlue: 133, wrongAlpha: 0.4)
 		self.testRGBColor(UIColor.r(396, g: 7654, b: -833, a: -875), expectedResults: results)
+	}
 
+	func test_ShouldCreateColorFromInvalidRGBAWithAlpha() {
 		// check invalid color with invalid alpha
-		results = UIColorTests.RGBResults(red: 1, green: 1, blue: 0, alpha: 1, wrongRed: 3, wrongGreen: 8684, wrongBlue: 133, wrongAlpha: 0.4)
+		let results = UIColorTests.RGBResults(red: 1, green: 1, blue: 0, alpha: 1, wrongRed: 3, wrongGreen: 8684, wrongBlue: 133, wrongAlpha: 0.4)
 		self.testRGBColor(UIColor.r(396, g: 7654, b: -833, a: 2), expectedResults: results)
 	}
 }

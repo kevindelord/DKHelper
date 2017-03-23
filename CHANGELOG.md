@@ -3,6 +3,7 @@
 ## 2.2.4
 
 - UIDevice: add new iPhone and AppleWatch devices.
+- UIColor: init function now forces the RGB values to be between 0.0 and 1.0.
 - Minor `GET_DATE` function improvement.
 
 ## 2.2.3
