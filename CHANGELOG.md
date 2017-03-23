@@ -1,5 +1,10 @@
 # DKHelper CHANGELOG
 
+## 2.2.4
+
+- UIDevice: add new iPhone and AppleWatch devices.
+- Minor `GET_DATE` function improvement.
+
 ## 2.2.3
 
 - Print a warning if a localized string can't be found.
