@@ -89,7 +89,7 @@ NSDate * _Nullable GET_DATE(NSDictionary * _Nullable dict, id key) {
 		id object = dict[key];
         if ([object isKindOfClass:[NSDate class]]) {
             return object;
-        } else if ([object isKindOfClass:[NSString class]]) {
+        } else if (object != NULL && [object isKindOfClass:[NSString class]]) {
             return [NSDate dateFromISOString:object];
         }
     }
