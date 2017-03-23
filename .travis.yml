@@ -11,16 +11,9 @@ sudo: false
 #     - SKD=iphonesimulator10.1
 #     - DESTINATION="platform=iOS Simulator,name=iPhone 7,OS=10.1"
 #     - XCARGS="GCC_GENERATE_TEST_COVERAGE_FILES=YES GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES"
-
-# before_install:
-#   - brew update
-#   - brew outdated carthage || brew upgrade carthage
 # script:
 #   - set -o pipefail
-#   - xcodebuild -version
-#   - xcodebuild -showsdks
 #   - xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Release "$XCARGS" test | xcpretty
-
 # xcodebuild -workspace DKHelper.xcworkspace -scheme DKHelper -sdk "iphonesimulator10.2" -destination "platform=iOS Simulator,id=767716CA-F49B-480B-86F0-4E6E9D773736,OS=10.2" -configuration Debug GCC_GENERATE_TEST_COVERAGE_FILES=YES GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES test | xcpretty
 
 xcode_project: DKHelper/DKHelper.xcodeproj
@@ -28,8 +21,14 @@ xcode_scheme: DKHelper
 osx_image: xcode8
 xcode_sdk: iphonesimulator10.0
 
+before_install:
+  - brew update
+  - brew outdated carthage || brew upgrade carthage
+
 script:
-  - xcodebuild test -project "DKHelper/DKHelper.xcodeproj" -scheme "DKHelper" -destination "platform=iOS Simulator,name=iPhone 6s"
+  - xcodebuild -version
+  - xcodebuild -showsdks
+  - xcodebuild test -project "DKHelper/DKHelper.xcodeproj" -scheme "DKHelper" -destination "platform=iOS Simulator,name=iPhone 6s" | xcpretty
 
 before_deploy:
   - carthage build --no-skip-current
